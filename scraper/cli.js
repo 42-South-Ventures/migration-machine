@@ -616,6 +616,7 @@ async function status() {
         { value: 'export', label: '📦 Export case data', hint: 'runAll.js → data/<caseId>.json (resumes)' },
         { value: 'docs', label: '📄 Download documents', hint: 'downloadDocuments.js → documents/ (resumes)' },
         { value: 'upload', label: '⬆️  Upload to NotusPoint', hint: 'uploadCases.js → importer API (resumes)' },
+        { value: 'requirements', label: '🔗 Generate requirement mapping', hint: 'CM Referral Types → NotusPoint requirements' },
         { value: 'verify', label: '✅ Verify migration', hint: 'cross-check ledger vs case list vs files on disk' },
         { value: 'status', label: '📊 Status', hint: 'per-stage progress and importer reachability' },
         { value: 'wipe', label: '🧹 Wipe migration state', hint: 'start afresh, or reset upload records after a DB clear' },
@@ -640,6 +641,7 @@ async function status() {
         break;
       }
       case 'upload': await uploadMenu(); break;
+      case 'requirements': await step('Generate requirement mapping', 'generateRequirementMapping.js'); break;
       case 'verify': await verify(); break;
       case 'status': await status(); break;
       case 'wipe': await wipeMenu(); break;

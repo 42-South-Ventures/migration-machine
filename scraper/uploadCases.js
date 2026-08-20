@@ -4,6 +4,9 @@ const path = require("path");
 const { roots } = require("./lib/paths");
 const { loadLedger } = require("./lib/ledger");
 const { createLimiter, mapPool } = require("./lib/pool");
+const { resolveRequirementId } = require("./utils/matchRequirement");
+const { buildLookupMap, buildCustomer } = require("./lib/structured");
+const { createCustomerResolver } = require("./lib/importerCustomer");
 
 const args = process.argv.slice(2);
 // --skip-files: upload cases and costs only; costs then import without file
@@ -26,16 +29,51 @@ const IMPORT_STAFF_URL =
 const IMPORT_COSTS_URL =
   process.env.IMPORT_COSTS_URL ||
   "http://localhost:8080/api/importer/case/costs";
+const IMPORT_CUSTOMER_URL =
+  process.env.IMPORT_CUSTOMER_URL ||
+  IMPORT_URL.replace(/\/case\/?$/, "/customer");
 // Cases uploaded at once; each case's file POSTs additionally share the
 // global file limiter below, which is what actually bounds importer load.
 const CASE_CONCURRENCY = Number(process.env.UPLOAD_CASE_CONCURRENCY ?? 8);
 const FILE_CONCURRENCY = Number(process.env.UPLOAD_FILE_CONCURRENCY ?? 32);
+const IMPORTER_API_KEY = process.env.IMPORTER_API_KEY;
+const REQUIREMENT_MAPPING_FILE = path.join(__dirname, "requirementMapping.js");
 
 if (!fs.existsSync(DATA_DIR) || !fs.existsSync(paths.sharedFile)) {
   console.error(`Export data not found (${DATA_DIR} / ${paths.sharedFile})`);
   console.error("Run runAll.js first to export case data");
   process.exit(1);
 }
+
+if (!IMPORTER_API_KEY) {
+  console.error("IMPORTER_API_KEY not set (see scraper/.env)");
+  process.exit(1);
+}
+
+if (!fs.existsSync(REQUIREMENT_MAPPING_FILE)) {
+  console.error(`Requirement mapping not found (${REQUIREMENT_MAPPING_FILE})`);
+  console.error("Run the CLI option 'Generate requirement mapping' before uploading");
+  process.exit(1);
+}
+
+const requirementMapping = require(REQUIREMENT_MAPPING_FILE);
+if (!requirementMapping || typeof requirementMapping !== "object") {
+  console.error(`Requirement mapping is invalid (${REQUIREMENT_MAPPING_FILE})`);
+  process.exit(1);
+}
+if (typeof requirementMapping.UNMATCHED_REQUIREMENT_ID !== "string") {
+  console.error(`Requirement mapping is outdated (${REQUIREMENT_MAPPING_FILE})`);
+  console.error("Run the CLI option 'Generate requirement mapping' again before uploading");
+  process.exit(1);
+}
+
+// Guard rejects unauthenticated/misconfigured requests with a bare 404, so
+// every importer request carries this header alongside its other headers.
+const AUTH_HEADERS = { "x-api-key": IMPORTER_API_KEY };
+const resolveCustomerId = createCustomerResolver({
+  url: IMPORT_CUSTOMER_URL,
+  apiKey: IMPORTER_API_KEY,
+});
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -110,7 +148,7 @@ function toCostImportDtos(
   return { costs, skipped, unmatchedDocuments };
 }
 
-function toCaseImportDto(caseRecord, resolvedEmailByEmployeeId) {
+function toCaseImportDto(caseRecord, resolvedEmailByEmployeeId, customerId) {
   const address = caseRecord.clientAddress || {};
   const referrer = caseRecord.referrer || {};
 
@@ -139,8 +177,8 @@ function toCaseImportDto(caseRecord, resolvedEmailByEmployeeId) {
       fax: referrer.fax || "",
       position: referrer.position || "",
     },
-    customerId: "b6db684c-1bfa-479d-93ad-0d6d4402966a", // TODO: Replace with actual customer ID, mapped from old to new
-    requirementId: "64360683-a5bd-4262-b82f-12800e9f96b9", // TODO: Replace with actual requirement ID, mapped from old to new
+    customerId,
+    requirementId: resolveRequirementId(requirementMapping, caseRecord),
   };
 
   // No referral date in Case Manager -> none in NotusPoint; a placeholder
@@ -190,8 +228,10 @@ function toCaseImportDto(caseRecord, resolvedEmailByEmployeeId) {
       if (c.fax) contact.fax = cut(c.fax, 20);
       if (c.role) contact.role = c.role;
       const address = c.address ?? {};
-      if (address.addressLine1) contact.addressLine1 = cut(address.addressLine1, 200);
-      if (address.addressLine2) contact.addressLine2 = cut(address.addressLine2, 200);
+      if (address.addressLine1)
+        contact.addressLine1 = cut(address.addressLine1, 200);
+      if (address.addressLine2)
+        contact.addressLine2 = cut(address.addressLine2, 200);
       if (address.suburb) contact.suburb = cut(address.suburb, 100);
       if (address.postcode) contact.postcode = cut(address.postcode, 20);
       if (address.state) contact.state = cut(address.state, 100);
@@ -217,7 +257,7 @@ function toCaseImportDto(caseRecord, resolvedEmailByEmployeeId) {
 async function uploadStaff(dto) {
   const res = await fetch(IMPORT_STAFF_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...AUTH_HEADERS },
     body: JSON.stringify(dto),
   });
 
@@ -235,7 +275,7 @@ async function uploadStaff(dto) {
 async function uploadCase(dto) {
   const res = await fetch(IMPORT_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...AUTH_HEADERS },
     body: JSON.stringify(dto),
   });
 
@@ -285,7 +325,11 @@ async function uploadCaseFile(caseId, entry, uploadedById) {
   if (uploadedById) form.append("uploadedById", uploadedById);
   form.append("dateUploaded", entry.dateUploaded || new Date().toISOString());
 
-  const res = await fetch(IMPORT_FILE_URL, { method: "POST", body: form });
+  const res = await fetch(IMPORT_FILE_URL, {
+    method: "POST",
+    headers: AUTH_HEADERS,
+    body: form,
+  });
 
   if (!res.ok) {
     const body = await res.text().catch(() => "");
@@ -301,7 +345,7 @@ async function uploadCaseFile(caseId, entry, uploadedById) {
 async function uploadCosts(caseId, costs) {
   const res = await fetch(IMPORT_COSTS_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json", ...AUTH_HEADERS },
     body: JSON.stringify({ caseId, costs }),
   });
 
@@ -315,7 +359,8 @@ async function uploadCosts(caseId, costs) {
 
 (async () => {
   const ledger = loadLedger(paths.root);
-  const { employees } = JSON.parse(fs.readFileSync(paths.sharedFile, "utf8"));
+  const { employees, lookups } = JSON.parse(fs.readFileSync(paths.sharedFile, "utf8"));
+  const lookup = buildLookupMap(lookups ?? {});
 
   // Importable records come from the per-case export files; raw endpoint data
   // is dropped as each file is read so only the small structured records stay
@@ -329,14 +374,34 @@ async function uploadCosts(caseId, costs) {
   const cases = [];
   let noClient = 0;
   for (const caseId of caseIds) {
-    const { structured } = JSON.parse(
+    const { structured, endpoints } = JSON.parse(
       fs.readFileSync(path.join(DATA_DIR, `${caseId}.json`), "utf8"),
     );
-    if (structured) cases.push(structured);
+    if (structured) {
+      // Exports created before referralTypeId was added still contain the raw
+      // /Case/GetData response, so recover it without forcing a re-export.
+      if (!structured.referralTypeId) {
+        const referralTypeId = endpoints?.["/Case/GetData"]?.[0]?.ReferralTypeID;
+        if (
+          referralTypeId &&
+          referralTypeId !== "00000000-0000-0000-0000-000000000000"
+        ) {
+          structured.referralTypeId = referralTypeId;
+        }
+      }
+      if (!structured.customer) {
+        const contactList = endpoints?.["/CaseContact/_List"]?.[0]?.data ?? [];
+        const contactDetails = endpoints?.["/CaseContact/GetData"] ?? [];
+        structured.customer = buildCustomer(contactList, contactDetails, lookup);
+      }
+      cases.push(structured);
+    }
     else noClient++;
   }
   if (noClient) {
-    console.error(`${noClient} exported case(s) have no Client contact - not importable, skipped`);
+    console.error(
+      `${noClient} exported case(s) have no Client contact - not importable, skipped`,
+    );
   }
 
   // Only cases whose documents are fully downloaded upload (unless
@@ -345,7 +410,10 @@ async function uploadCosts(caseId, costs) {
   const ready = [];
   let waitingDocs = 0;
   for (const caseRecord of cases) {
-    if (!SKIP_FILES && ledger.stageStatus(caseRecord.caseId, "documents") !== "done") {
+    if (
+      !SKIP_FILES &&
+      ledger.stageStatus(caseRecord.caseId, "documents") !== "done"
+    ) {
       waitingDocs++;
       continue;
     }
@@ -386,7 +454,9 @@ async function uploadCosts(caseId, costs) {
       resolvedUserIdByEmployeeId.set(employeeId, known.userId);
     }
   }
-  const pendingStaff = staff.filter((e) => !resolvedUserIdByEmployeeId.has(e.id));
+  const pendingStaff = staff.filter(
+    (e) => !resolvedUserIdByEmployeeId.has(e.id),
+  );
 
   console.error(
     `Total: ${staff.length} staff referenced, ${staff.length - pendingStaff.length} already uploaded, ${pendingStaff.length} to upload`,
@@ -406,7 +476,10 @@ async function uploadCosts(caseId, costs) {
       process.stderr.write(`${progress} Uploading staff ${dto.email}... `);
       const user = await uploadStaff(dto);
       if (user?.id) resolvedUserIdByEmployeeId.set(employee.id, user.id);
-      ledger.setStaff(employee.id, { email: dto.email, userId: user?.id ?? "" });
+      ledger.setStaff(employee.id, {
+        email: dto.email,
+        userId: user?.id ?? "",
+      });
       console.error("done");
     } catch (err) {
       console.error(`FAILED: ${err.message}`);
@@ -421,9 +494,12 @@ async function uploadCosts(caseId, costs) {
   }
 
   console.error(`Total: ${ready.length} case(s) ready to upload`);
+  console.error(`Customer target: ${IMPORT_CUSTOMER_URL}`);
   console.error(`Target: ${IMPORT_URL}`);
   if (SKIP_FILES) {
-    console.error("--skip-files: file uploads disabled, costs will have no file links");
+    console.error(
+      "--skip-files: file uploads disabled, costs will have no file links",
+    );
   }
   console.error("");
 
@@ -457,7 +533,9 @@ async function uploadCosts(caseId, costs) {
     const caseDir = path.join(DOCUMENTS_DIR, caseId);
     if (!fs.existsSync(caseDir)) return false;
     fs.rmSync(caseDir, { recursive: true, force: true });
-    ledger.updateStage(caseId, "upload", { purgedAt: new Date().toISOString() });
+    ledger.updateStage(caseId, "upload", {
+      purgedAt: new Date().toISOString(),
+    });
     docsPurged++;
     return true;
   }
@@ -478,7 +556,9 @@ async function uploadCosts(caseId, costs) {
 
     const manifest = SKIP_FILES ? [] : loadManifest(caseId);
     const caseDone = up.case?.status === "done";
-    const filesDone = up.files?.status === "done" && (up.files.uploaded ?? 0) >= manifest.length;
+    const filesDone =
+      up.files?.status === "done" &&
+      (up.files.uploaded ?? 0) >= manifest.length;
     const costsDone = up.costs?.status === "done";
     if (caseDone && filesDone && costsDone) {
       alreadyComplete++;
@@ -491,13 +571,20 @@ async function uploadCosts(caseId, costs) {
 
     // 1. The case itself (with billing templates)
     if (!caseDone) {
-      const dto = toCaseImportDto(caseRecord, resolvedEmailByEmployeeId);
       try {
+        const customerId = await resolveCustomerId(caseRecord.customer);
+        const dto = toCaseImportDto(
+          caseRecord,
+          resolvedEmailByEmployeeId,
+          customerId,
+        );
         await uploadCase(dto);
         ledger.updateStage(caseId, "upload", { case: { status: "done" } });
         parts.push("case ok");
       } catch (err) {
-        ledger.updateStage(caseId, "upload", { case: { status: "failed", error: err.message } });
+        ledger.updateStage(caseId, "upload", {
+          case: { status: "failed", error: err.message },
+        });
         failed.push({ caseId, error: err.message });
         return `case FAILED: ${err.message}`;
       }
@@ -518,7 +605,9 @@ async function uploadCosts(caseId, costs) {
     await Promise.all(
       pendingEntries.map((entry) =>
         fileLimiter(async () => {
-          const uploadedById = resolvedUserIdByEmployeeId.get(entry.createdById);
+          const uploadedById = resolvedUserIdByEmployeeId.get(
+            entry.createdById,
+          );
           try {
             const file = await uploadCaseFile(caseId, entry, uploadedById);
             uploadState.byDocumentId[entryKey(entry)] = file?.id ?? "";
@@ -526,8 +615,14 @@ async function uploadCosts(caseId, costs) {
             filesUploaded++;
           } catch (err) {
             caseFileFailures++;
-            failedFiles.push({ caseId, filename: entry.filename, error: err.message });
-            console.error(`  file "${entry.filename}" on case ${caseId} FAILED: ${err.message}`);
+            failedFiles.push({
+              caseId,
+              filename: entry.filename,
+              error: err.message,
+            });
+            console.error(
+              `  file "${entry.filename}" on case ${caseId} FAILED: ${err.message}`,
+            );
           }
         }),
       ),
@@ -541,7 +636,9 @@ async function uploadCosts(caseId, costs) {
           failed: caseFileFailures,
         },
       });
-      parts.push(`files ${Object.keys(uploadState.byDocumentId).length}/${manifest.length}`);
+      parts.push(
+        `files ${Object.keys(uploadState.byDocumentId).length}/${manifest.length}`,
+      );
     }
 
     // 3. Costs — one batch per case. While files are still failing the batch
@@ -566,7 +663,9 @@ async function uploadCosts(caseId, costs) {
         fileIdByDocumentId,
       );
       if (skipped) {
-        parts.push(`${skipped} cost(s) not linked to an estimate item - skipped`);
+        parts.push(
+          `${skipped} cost(s) not linked to an estimate item - skipped`,
+        );
       }
       if (unmatchedDocuments && !SKIP_FILES) {
         parts.push(`${unmatchedDocuments} cost(s) missing their file link`);
@@ -602,14 +701,19 @@ async function uploadCosts(caseId, costs) {
     const summary = await uploadOneCase(caseRecord);
     completedCases++;
     if (summary) {
-      console.error(`[${completedCases}/${ready.length}] Case ${caseRecord.caseId}: ${summary}`);
+      console.error(
+        `[${completedCases}/${ready.length}] Case ${caseRecord.caseId}: ${summary}`,
+      );
     }
   });
 
   const attempted = ready.length - alreadyComplete;
   console.error(
     `\nFinished. ${attempted - failed.length}/${attempted} case(s) uploaded successfully` +
-      (alreadyComplete ? ` (${alreadyComplete} already complete, skipped)` : "") + ".",
+      (alreadyComplete
+        ? ` (${alreadyComplete} already complete, skipped)`
+        : "") +
+      ".",
   );
   console.error(
     `${filesUploaded} file(s) uploaded, ${filesSkipped} already uploaded, ${failedFiles.length} failed.`,
@@ -620,10 +724,14 @@ async function uploadCosts(caseId, costs) {
     );
   }
   if (waitingDocs) {
-    console.error(`${waitingDocs} case(s) still waiting for documents - re-run to pick them up.`);
+    console.error(
+      `${waitingDocs} case(s) still waiting for documents - re-run to pick them up.`,
+    );
   }
   if (costsBlocked) {
-    console.error(`${costsBlocked} case(s) have costs held back behind failed file uploads.`);
+    console.error(
+      `${costsBlocked} case(s) have costs held back behind failed file uploads.`,
+    );
   }
   if (failed.length) {
     console.error(`${failed.length} case(s) failed:`);

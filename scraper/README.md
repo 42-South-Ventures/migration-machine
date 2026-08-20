@@ -12,7 +12,12 @@ Create a `.env` file in this directory (already present, not committed) with:
 ```
 CM_USER=your-username
 CM_PASS=your-password
+IMPORTER_API_KEY=your-importer-api-key
 ```
+
+`IMPORTER_API_KEY` must match `IMPORTER_API_KEY` in the NotusPoint server's
+own `.env` — the importer rejects requests (with a 404, same as when it's
+disabled) that don't send it as `x-api-key`.
 
 Install dependencies (already done if `node_modules` exists):
 
@@ -47,6 +52,12 @@ Launches a menu that drives the whole pipeline:
 - **📦 / 📄 / ⬆️** — run any individual stage on its own (all
   resume-aware). The upload step lets you pick the full export or any
   single-case workspace, and can skip file uploads.
+- **🔗 Generate requirement mapping** — fetches Case Manager's Referral Type
+  lookup and NotusPoint's requirements from
+  `/api/importer/requirements/matching`, normalises their names, and writes
+  `requirementMapping.js` as a CM Referral Type ID → NotusPoint requirement ID
+  map. Unmatched or duplicate names are assigned to the NotusPoint requirement
+  named exactly `Unmatched Requirements` and called out in comments.
 - **✅ Verify migration** — cross-checks the ledger against `caseList.txt`
   and the files on disk: export done per case, documents
   expected = downloaded = present on disk, case/files/costs uploaded, and
@@ -182,12 +193,18 @@ document. Emails/notes always fetch `GetData` — their bodies live there.
 
 Uploads staff, then each importable case to the production importer API
 (`http://localhost:8080/api/importer/case` by default, override with
-`IMPORT_URL` / `IMPORT_FILE_URL` / `IMPORT_STAFF_URL` / `IMPORT_COSTS_URL`).
+`IMPORT_URL` / `IMPORT_CUSTOMER_URL` / `IMPORT_FILE_URL` /
+`IMPORT_STAFF_URL` / `IMPORT_COSTS_URL`).
 
 Each case uploads in three passes so costs can link to the files created
 from their Case Manager documents:
 
-1. Case + billing templates (no costs) to `/api/importer/case`.
+1. The Case Manager contact with the `Referrer` role is found or created as a
+   NotusPoint customer through `/api/importer/customer`; its returned ID is
+   used for the case + billing templates sent to `/api/importer/case`. The
+   customer name is also used as `billingTo`, and its billing address mirrors
+   its main address. Cases without a usable Referrer are assigned to a
+   find-or-created customer named exactly `Unmatched Customers`.
 2. Documents: reads `documents/{caseId}/manifest.json` and POSTs each file
    as `multipart/form-data`, recording each created file id against the
    manifest entry's Case Manager `documentId`.
@@ -226,6 +243,20 @@ time across `UPLOAD_CASE_CONCURRENCY` concurrent cases. `--skip-files`
 uploads cases and costs only (costs then import without file links) — only
 for quick data-checking runs.
 
+### `node generateRequirementMapping.js`
+
+Fetches the `ReferralType` lookup from Case Manager and the requirement list
+from the NotusPoint importer's `GET /api/importer/requirements/matching`
+endpoint, then writes `requirementMapping.js`. The generated object maps each
+old CM Referral Type ID to the NotusPoint requirement ID whose normalised name
+matches. The importer endpoint can be overridden with
+`IMPORT_REQUIREMENTS_URL`; otherwise it uses the same host as `IMPORT_URL`.
+The uploader requires this file and resolves every case's CM `ReferralTypeID`
+through it before sending the case to NotusPoint. Existing exports are
+compatible: the uploader recovers the field from their raw `/Case/GetData`
+response. A case with no Referral Type selected also uses `Unmatched
+Requirements`.
+
 ### `node getCase.js <caseId>`
 
 Legacy single-case fetch into `cases.json`. Superseded by the CLI's
@@ -253,7 +284,5 @@ Re-running any step resumes/retries; wipe via the CLI to start over.
 - Document handling has only been verified against `.pdf`, `.docx`, `.eml`,
   and `.cmrtf` from a handful of cases — other document/record types may
   appear at scale and aren't explicitly handled yet.
-- Hardcoded `customerId` / `requirementId` TODOs in `uploadCases.js` must be
-  replaced before a production run.
 - Verification is against the ledger + local disk; it does not (yet) query
   NotusPoint to independently confirm record counts.

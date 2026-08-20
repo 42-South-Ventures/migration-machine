@@ -54,6 +54,39 @@ function buildAddress(map, { street, suburb, postalCode, regionId, countryId }) 
   };
 }
 
+function contactHasRole(contact, role) {
+  if (contact?.PrimaryRoleName === role) return true;
+  return (contact?.RoleNames ?? '')
+    .split(',')
+    .map((name) => name.trim())
+    .includes(role);
+}
+
+function buildCustomer(contactList, contactDetails, lookup) {
+  const referrer = contactList.find((contact) => contactHasRole(contact, 'Referrer'));
+  if (!referrer) return null;
+
+  const detail = contactDetails.find((item) => item.ID === referrer.ID)?.ContactInfo ?? {};
+  const companyName = detail.CompanyName || referrer.CompanyName || '';
+  const firstName = detail.FirstName || referrer.FirstName || '';
+  const lastName = detail.LastName || referrer.LastName || '';
+  const personName = `${firstName} ${lastName}`.trim();
+  const name = companyName || personName || referrer.ContactName || '';
+  const address = buildAddress(lookup, {
+    street: detail.Street,
+    suburb: detail.Suburb,
+    postalCode: detail.PostalCode,
+    regionId: detail.RegionID,
+    countryId: detail.CountryID,
+  });
+
+  return {
+    name,
+    ...address,
+    email: detail.Email1 || referrer.Email || '',
+  };
+}
+
 // Each estimate in the source system becomes one billing template, its cost
 // rows the template's items. A /CaseEstimate/GetData response is a flat tree:
 // the row carrying an Estimate payload is the estimate itself (ItemType is
@@ -164,6 +197,7 @@ function buildStructuredCase(caseId, endpoints, lookup, employeeMap) {
   );
   const contactInfo = contactInfoById.get(client.ID) ?? {};
   const referrerInfo = endpoints?.referrerContact?.[0]?.ContactInfo ?? {};
+  const customer = buildCustomer(contactList, contactDetails, lookup);
 
   const causeId = nullId(caseInfo.CauseID) ? '' : caseInfo.CauseID;
   const conditionId = nullId(caseInfo.ConditionID) ? '' : caseInfo.ConditionID;
@@ -171,6 +205,10 @@ function buildStructuredCase(caseId, endpoints, lookup, employeeMap) {
   const statusId = nullId(caseInfo.StatusID) ? '' : caseInfo.StatusID;
   const categoryId = nullId(caseInfo.CategoryID) ? '' : caseInfo.CategoryID;
   const requirementId = nullId(caseInfo.RequirementID) ? '' : caseInfo.RequirementID;
+  // A CM case's Referral Type is what corresponds to a NotusPoint
+  // requirement. requirementId above is retained as source data, but is not
+  // used for the NotusPoint requirement mapping.
+  const referralTypeId = nullId(caseInfo.ReferralTypeID) ? '' : caseInfo.ReferralTypeID;
 
   const assignedUserId = nullId(caseInfo.AssignedToID) ? '' : caseInfo.AssignedToID;
   const assignedUser = employeeMap[assignedUserId];
@@ -205,11 +243,12 @@ function buildStructuredCase(caseId, endpoints, lookup, employeeMap) {
   };
 
   // Client and Referrer already migrate as first-class records; QA and
-  // Workcom Admin are internal contacts that aren't wanted in NotusPoint
+  // Workcom Admin are internal contacts that aren't wanted in NotusPoint.
   const EXCLUDED_CONTACT_ROLES = new Set(['Client', 'Referrer', 'QA', 'Workcom Admin']);
   const caseContacts = [];
   for (const row of contactList) {
     const roles = (row.RoleNames ?? '').split(',').map(r => r.trim()).filter(Boolean);
+    if (row.PrimaryRoleName) roles.push(row.PrimaryRoleName);
     if (roles.some(role => EXCLUDED_CONTACT_ROLES.has(role))) continue;
 
     const detail = contactInfoById.get(row.ID) ?? {};
@@ -260,12 +299,15 @@ function buildStructuredCase(caseId, endpoints, lookup, employeeMap) {
     categoryDescription: resolveId(lookup, caseInfo.CategoryID),
     requirementId,
     requirementDescription: resolveId(lookup, caseInfo.RequirementID),
+    referralTypeId,
+    referralTypeDescription: resolveId(lookup, caseInfo.ReferralTypeID),
     assignedUserId,
     assignedUserName,
     assignedUserEmail,
     clientAddress,
     clientBillingAddress,
     referrer,
+    customer,
     caseContacts,
     employmentStatusId,
     employmentStatusDescription: resolveId(lookup, caseInfo.EmploymentStatusID),
@@ -290,4 +332,6 @@ function countsFor(structured) {
   };
 }
 
-module.exports = { buildLookupMap, buildEmployeeMap, buildStructuredCase, countsFor };
+module.exports = {
+  buildLookupMap, buildEmployeeMap, buildCustomer, buildStructuredCase, countsFor,
+};
