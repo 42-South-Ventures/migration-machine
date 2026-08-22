@@ -6,12 +6,11 @@ const {
   buildRequirementMapping,
   writeRequirementMappingFile,
 } = require('./utils/matchRequirement');
+const { getNotusPointConfig } = require('./lib/notuspointConfig');
 
 const USERNAME = process.env.CM_USER || '';
 const PASSWORD = process.env.CM_PASS || '';
-const IMPORT_REQUIREMENTS_URL = process.env.IMPORT_REQUIREMENTS_URL
-  || process.env.IMPORT_URL?.replace(/\/case\/?$/, '/requirements/matching')
-  || 'http://localhost:8080/api/importer/requirements/matching';
+const IMPORT_REQUIREMENTS_URL = getNotusPointConfig().requirementsUrl;
 const IMPORTER_API_KEY = process.env.IMPORTER_API_KEY || '';
 
 function cmReferralTypesToNames(referralTypes) {

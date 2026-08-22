@@ -7,6 +7,7 @@ const { createLimiter, mapPool } = require("./lib/pool");
 const { resolveRequirementId } = require("./utils/matchRequirement");
 const { buildLookupMap, buildCustomer } = require("./lib/structured");
 const { createCustomerResolver } = require("./lib/importerCustomer");
+const { getNotusPointConfig } = require("./lib/notuspointConfig");
 
 const args = process.argv.slice(2);
 // --skip-files: upload cases and costs only; costs then import without file
@@ -20,24 +21,18 @@ const COSTS_WITHOUT_FILES = args.includes("--costs-without-files");
 const paths = roots();
 const DATA_DIR = paths.dataDir;
 const DOCUMENTS_DIR = paths.documentsDir;
-const IMPORT_URL =
-  process.env.IMPORT_URL || "http://localhost:8080/api/importer/case";
-const IMPORT_FILE_URL =
-  process.env.IMPORT_FILE_URL || "http://localhost:8080/api/importer/case/file";
-const IMPORT_STAFF_URL =
-  process.env.IMPORT_STAFF_URL || "http://localhost:8080/api/importer/staff";
-const IMPORT_COSTS_URL =
-  process.env.IMPORT_COSTS_URL ||
-  "http://localhost:8080/api/importer/case/costs";
-const IMPORT_CUSTOMER_URL =
-  process.env.IMPORT_CUSTOMER_URL ||
-  IMPORT_URL.replace(/\/case\/?$/, "/customer");
+const notusPoint = getNotusPointConfig();
+const IMPORT_URL = notusPoint.caseUrl;
+const IMPORT_FILE_URL = notusPoint.fileUrl;
+const IMPORT_STAFF_URL = notusPoint.staffUrl;
+const IMPORT_COSTS_URL = notusPoint.costsUrl;
+const IMPORT_CUSTOMER_URL = notusPoint.customerUrl;
 // Cases uploaded at once; each case's file POSTs additionally share the
 // global file limiter below, which is what actually bounds importer load.
 const CASE_CONCURRENCY = Number(process.env.UPLOAD_CASE_CONCURRENCY ?? 8);
 const FILE_CONCURRENCY = Number(process.env.UPLOAD_FILE_CONCURRENCY ?? 32);
 const IMPORTER_API_KEY = process.env.IMPORTER_API_KEY;
-const REQUIREMENT_MAPPING_FILE = path.join(__dirname, "requirementMapping.js");
+const REQUIREMENT_MAPPING_FILE = path.join(__dirname, "mappings", "requirementMapping.js");
 
 if (!fs.existsSync(DATA_DIR) || !fs.existsSync(paths.sharedFile)) {
   console.error(`Export data not found (${DATA_DIR} / ${paths.sharedFile})`);

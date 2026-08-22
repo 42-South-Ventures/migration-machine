@@ -8,7 +8,8 @@
   },
   "scripts": {
     "start": "node cli.js",
-    "migrate": "node cli.js"
+    "migrate": "node cli.js",
+    "test": "node --test"
   },
   "keywords": [],
   "author": "",

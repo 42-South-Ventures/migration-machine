@@ -13,11 +13,18 @@ Create a `.env` file in this directory (already present, not committed) with:
 CM_USER=your-username
 CM_PASS=your-password
 IMPORTER_API_KEY=your-importer-api-key
+NOTUSPOINT_URL=http://localhost:8080
 ```
 
 `IMPORTER_API_KEY` must match `IMPORTER_API_KEY` in the NotusPoint server's
 own `.env` — the importer rejects requests (with a 404, same as when it's
 disabled) that don't send it as `x-api-key`.
+
+Set `NOTUSPOINT_URL` to the NotusPoint environment you want to migrate into.
+For example, use `http://localhost:8080` for dev and your deployed NotusPoint
+origin for production. You can supply either the origin or a URL ending in
+`/api/importer`; all individual importer endpoint paths are derived from it.
+Restart the CLI after changing `.env`.
 
 Install dependencies (already done if `node_modules` exists):
 
@@ -55,9 +62,21 @@ Launches a menu that drives the whole pipeline:
 - **🔗 Generate requirement mapping** — fetches Case Manager's Referral Type
   lookup and NotusPoint's requirements from
   `/api/importer/requirements/matching`, normalises their names, and writes
-  `requirementMapping.js` as a CM Referral Type ID → NotusPoint requirement ID
+  `mappings/requirementMapping.js` as a CM Referral Type ID → NotusPoint requirement ID
   map. Unmatched or duplicate names are assigned to the NotusPoint requirement
   named exactly `Unmatched Requirements` and called out in comments.
+- **🧩 Generate custom field mapping** — fetches active fields from Case
+  Manager's `/CustomFieldList/_List` and all NotusPoint fields from
+  `/api/importer/custom-fields/matching`, then writes `mappings/customFieldMapping.js`
+  as a Case Manager field ID → NotusPoint field ID map. Matching is
+  case/whitespace-insensitive and requires compatible field types; short and
+  long text are mutually compatible. Every Case Manager field is included in
+  the generated object; unmatched, ambiguous, unsupported, and type-mismatched
+  fields have a `null` destination ID and an explanatory inline comment. A
+  compact list of all unmatched fields is repeated at the bottom for review.
+  After exact matching, a conservative fuzzy pass handles punctuation and
+  apostrophe differences, small misspellings, and names missing a word. It
+  accepts only a strong, clear best match; close candidates remain unmatched.
 - **✅ Verify migration** — cross-checks the ledger against `caseList.txt`
   and the files on disk: export done per case, documents
   expected = downloaded = present on disk, case/files/costs uploaded, and
@@ -191,10 +210,11 @@ document. Emails/notes always fetch `GetData` — their bodies live there.
 
 ### `node uploadCases.js [--skip-files] [--costs-without-files]`
 
-Uploads staff, then each importable case to the production importer API
-(`http://localhost:8080/api/importer/case` by default, override with
-`IMPORT_URL` / `IMPORT_CUSTOMER_URL` / `IMPORT_FILE_URL` /
-`IMPORT_STAFF_URL` / `IMPORT_COSTS_URL`).
+Uploads staff, then each importable case to the selected importer API.
+`NOTUSPOINT_URL` selects the environment and defaults to `http://localhost:8080`.
+The advanced `IMPORT_URL` / `IMPORT_CUSTOMER_URL` / `IMPORT_FILE_URL` /
+`IMPORT_STAFF_URL` / `IMPORT_COSTS_URL` settings can still override individual
+endpoints when needed.
 
 Each case uploads in three passes so costs can link to the files created
 from their Case Manager documents:
@@ -247,15 +267,36 @@ for quick data-checking runs.
 
 Fetches the `ReferralType` lookup from Case Manager and the requirement list
 from the NotusPoint importer's `GET /api/importer/requirements/matching`
-endpoint, then writes `requirementMapping.js`. The generated object maps each
+endpoint, then writes `mappings/requirementMapping.js`. The generated object maps each
 old CM Referral Type ID to the NotusPoint requirement ID whose normalised name
-matches. The importer endpoint can be overridden with
-`IMPORT_REQUIREMENTS_URL`; otherwise it uses the same host as `IMPORT_URL`.
+matches. When no exact match exists, a conservative fuzzy pass handles
+punctuation/apostrophe differences, small misspellings, and multi-word names
+missing a word. Only a strong best candidate is accepted; close ties remain
+`null` and use `Unmatched Requirements`. The importer endpoint can be overridden with
+`IMPORT_REQUIREMENTS_URL`; otherwise it is derived from `NOTUSPOINT_URL` (or
+the legacy `IMPORT_URL` override).
 The uploader requires this file and resolves every case's CM `ReferralTypeID`
 through it before sending the case to NotusPoint. Existing exports are
 compatible: the uploader recovers the field from their raw `/Case/GetData`
 response. A case with no Referral Type selected also uses `Unmatched
 Requirements`.
+
+### `node generateCustomFieldMapping.js`
+
+Fetches active Case Manager custom-field definitions (`ShowInactive=false`)
+and the NotusPoint custom-field matching list, then writes
+`mappings/customFieldMapping.js`. `List`, `Boolean`, single/multiline `Text`,
+`Number`, and `Date` are translated to NotusPoint's `SELECT`, `SELECT`,
+`SHORT_TEXT`/`LONG_TEXT`, `NUMBER`, and `DATE` types respectively. Boolean
+fields therefore match multiple-choice fields. Short and long text fields are
+considered mutually compatible, and a Case Manager date may map to NotusPoint
+short text so its formatted value can be transferred as text. A field receives
+a NotusPoint ID only when its normalised name and
+compatible type have one unique match. Every other Case Manager field remains
+visible in the generated object with a `null` value. Exact matching is followed
+by the same conservative fuzzy pass used for requirements. Override the importer URL with
+`IMPORT_CUSTOM_FIELDS_URL`; otherwise it is derived from `NOTUSPOINT_URL` (or
+the legacy `IMPORT_URL` override).
 
 ### `node getCase.js <caseId>`
 

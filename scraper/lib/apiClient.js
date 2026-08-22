@@ -68,6 +68,15 @@ async function getEmployeeList(context, token) {
   return body.data ?? [];
 }
 
+async function getCustomFieldList(context, token) {
+  const res = await context.request.post(`${BASE_URL}/CustomFieldList/_List`, {
+    headers: buildHeaders(token, 'application/x-www-form-urlencoded; charset=UTF-8'),
+    form: { ShowInactive: false },
+  });
+  const body = await res.json();
+  return body.data ?? [];
+}
+
 async function getCaseEstimates(context, token, caseId) {
   const res = await context.request.post(`${BASE_URL}/CaseEstimate/_List`, {
     headers: buildHeaders(token, 'application/x-www-form-urlencoded; charset=UTF-8'),
@@ -212,7 +221,7 @@ async function downloadDocumentAttachment(context, documentId, attachmentId) {
 
 module.exports = {
   login, getCaseData, getCaseContacts, getCaseContactData, getLookupList, getAllLookups,
-  getEmployeeList, captureCase,
+  getEmployeeList, getCustomFieldList, captureCase,
   getCaseEstimates, getCaseEstimateData, getCaseCosts, getCaseCostData,
   getCaseDocuments, downloadDocumentFile, downloadDocumentAttachment, getCaseDocumentData,
   LOOKUP_TYPES,

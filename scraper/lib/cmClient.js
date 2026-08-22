@@ -173,6 +173,15 @@ async function createClient({
       return body.data ?? [];
     },
 
+    getCustomFieldList: async () => {
+      const body = await postForm(
+        '/CustomFieldList/_List',
+        '/CustomFieldList/_List',
+        { ShowInactive: false },
+      );
+      return body.data ?? [];
+    },
+
     getCaseEstimates: (caseId) => request('/CaseEstimate/_List', async (t) => {
       const res = await context.request.post(`${BASE_URL}/CaseEstimate/_List`, {
         headers: buildHeaders(t, FORM_CT),

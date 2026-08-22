@@ -17,12 +17,13 @@ const {
 const pc = require('picocolors');
 const { roots } = require('./lib/paths');
 const { loadLedger, LEDGER_NAME } = require('./lib/ledger');
+const { getNotusPointConfig } = require('./lib/notuspointConfig');
 
 const DIR = __dirname;
 const MAIN = roots(DIR);
 const SINGLE_DIR = path.join(DIR, 'single');
 const LEGACY_FILES = ['cases.json', 'structuredData.json'].map((f) => path.join(DIR, f));
-const IMPORT_URL = process.env.IMPORT_URL || 'http://localhost:8080/api/importer/case';
+const IMPORT_URL = getNotusPointConfig().caseUrl;
 
 // Wall-clock stamp appended to every log line (runs span days, so keep the date)
 function ts() {
@@ -231,7 +232,7 @@ async function runPipeline({ fresh }) {
   // retry" picks them up. The only hard precondition is a reachable
   // importer, checked here instead of asked about.
   if (!(await importerReachable())) {
-    log.error(`NotusPoint importer not reachable at ${IMPORT_URL} — start the dev server (:8080) and re-run.`);
+    log.error(`NotusPoint importer not reachable at ${IMPORT_URL} — check NOTUSPOINT_URL and make sure that environment is running.`);
     return;
   }
   log.info(`Uploading to ${IMPORT_URL} as documents complete. If the NotusPoint DB was cleared since the last upload, Ctrl+C and wipe the upload records first (menu → Wipe migration state).`);
@@ -617,6 +618,7 @@ async function status() {
         { value: 'docs', label: '📄 Download documents', hint: 'downloadDocuments.js → documents/ (resumes)' },
         { value: 'upload', label: '⬆️  Upload to NotusPoint', hint: 'uploadCases.js → importer API (resumes)' },
         { value: 'requirements', label: '🔗 Generate requirement mapping', hint: 'CM Referral Types → NotusPoint requirements' },
+        { value: 'custom-fields', label: '🧩 Generate custom field mapping', hint: 'CM custom fields → NotusPoint custom fields' },
         { value: 'verify', label: '✅ Verify migration', hint: 'cross-check ledger vs case list vs files on disk' },
         { value: 'status', label: '📊 Status', hint: 'per-stage progress and importer reachability' },
         { value: 'wipe', label: '🧹 Wipe migration state', hint: 'start afresh, or reset upload records after a DB clear' },
@@ -642,6 +644,7 @@ async function status() {
       }
       case 'upload': await uploadMenu(); break;
       case 'requirements': await step('Generate requirement mapping', 'generateRequirementMapping.js'); break;
+      case 'custom-fields': await step('Generate custom field mapping', 'generateCustomFieldMapping.js'); break;
       case 'verify': await verify(); break;
       case 'status': await status(); break;
       case 'wipe': await wipeMenu(); break;
