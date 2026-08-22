@@ -81,6 +81,7 @@ function buildCustomFieldMapping(fieldsFromCM, fieldsFromNP) {
       type: oldField.type,
       sourceType: oldField.sourceType,
       ...(oldField.valueKey ? { valueKey: oldField.valueKey } : {}),
+      ...(Array.isArray(oldField.valueKeys) ? { valueKeys: oldField.valueKeys } : {}),
       ...(Array.isArray(oldField.options) ? { options: oldField.options } : {}),
     };
     if (!oldField.type || !NP_TYPES.has(oldField.type)) {

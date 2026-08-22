@@ -150,6 +150,8 @@ requests wait on. Knobs (env vars):
 | `CM_FORCE_GETDATA` | unset | Set to `1` to fetch per-file GetData for exact creator attribution (~2x the CM requests; see `downloadDocuments.js` below) |
 | `UPLOAD_CASE_CONCURRENCY` | 8 | Cases uploaded at once |
 | `UPLOAD_FILE_CONCURRENCY` | 32 | Concurrent file POSTs to the importer (global, across all cases) |
+| `UPLOAD_EMAIL_COMPLETION_CONCURRENCY` | 2 | Concurrent NotusPoint completion requests for directly uploaded emails |
+| `NOTUSPOINT_RETRY_ATTEMPTS` | 5 | Attempts for transient NotusPoint direct-upload, customer, and custom-field-option requests |
 
 **Download and upload always run at the same time** in the CLI pipeline
 (🚀 / ▶️): after the export, upload passes drain each case as its documents
@@ -236,13 +238,32 @@ from their Case Manager documents:
    IDs are resolved through the Case Manager `/CustomField/GetAllLookups`
    snapshot stored in that mapping, then matched case-insensitively after
    trimming against NotusPoint option labels. Missing destination options are
-   created idempotently through `/api/importer/custom-fields/:id/options`. The
+   created idempotently through `/api/importer/custom-fields/:id/options`.
+   A populated source option ID missing from the lookup snapshot is transferred
+   using a reusable `Unknown` destination option; source ID `0` remains empty.
+   The
    customer name is also used as `billingTo`, and its billing address mirrors
    its main address. Cases without a usable Referrer are assigned to a
-   find-or-created customer named exactly `Unmatched Customers`.
+   find-or-created customer named exactly `Unmatched Customers`. General case
+   contacts are sent once per transferable role: `Client`, `Referrer`, `QA`,
+   and `Workcom Admin` roles are removed, while each remaining role creates a
+   separate contact entry.
+   CaseManager's case `TeamID` lookup description is sent as `clientRegion`,
+   and its `OfficeID` lookup description is sent as `clientSubregion`.
+   Australian state names on client, billing, customer, and general-contact
+   addresses are normalized to `ACT`, `NSW`, `NT`, `QLD`, `SA`, `TAS`, `VIC`,
+   or `WA` before import.
 2. Documents: reads `documents/{caseId}/manifest.json` and POSTs each file
    as `multipart/form-data`, recording each created file id against the
-   manifest entry's Case Manager `documentId`.
+   manifest entry's Case Manager `documentId`. Email files and all files at or
+   above 24 MiB use NotusPoint's direct-upload flow instead: the importer
+   creates a resumable GCS session, the scraper streams the file straight to
+   GCS (bypassing App Engine's request-body limit), then a small completion
+   request creates the case-file record. Email completions use their own
+   concurrency cap and retry transient failures with exponential backoff. Set
+   `DIRECT_FILE_UPLOAD_THRESHOLD_BYTES` to change the non-email cutoff.
+   `IMPORT_FILE_UPLOAD_SESSION_URL` and
+   `IMPORT_FILE_UPLOAD_COMPLETE_URL` override the derived endpoints.
 3. Costs to `/api/importer/case/costs`, with each cost's `fileId` resolved
    from its `documentId`. CaseManager `CostType` maps as `0 → HOURLY`,
    `1 → ITEM`, and `2 → FIXED_AMOUNT`; hourly `quantity` and

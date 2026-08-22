@@ -4,6 +4,16 @@ const CUSTOM_FIELD_META_KEYS = new Set([
   'CaseNumber', 'Source', 'DisplayOnCaseDetails', 'CategoryID', 'ROP',
 ]);
 
+// Some CaseManager response properties are legacy internal names with no
+// reliable textual relationship to their displayed field label.
+const VALUE_KEYS_BY_FIELD_LABEL = new Map([
+  ['metlife date of update', ['ccUpdated___date']],
+  [
+    'metlife outcome status at time of completion',
+    ['ccMetlife_Outcome_status_at_the_time_of_completion'],
+  ],
+]);
+
 function normaliseCaseManagerValueKey(value) {
   return normaliseFuzzyName(
     String(value ?? '')
@@ -38,18 +48,40 @@ function attachCaseManagerLookupOptions(fields, lookupRows) {
   return fields.map((field) => {
     if (field.type !== 'SELECT') return field;
 
+    const configuredKeys = [
+      ...(field.valueKey ? [field.valueKey] : []),
+      ...(Array.isArray(field.valueKeys) ? field.valueKeys : []),
+      ...(VALUE_KEYS_BY_FIELD_LABEL.get(normaliseFuzzyName(field.name)) ?? []),
+    ];
+    const configured = [...new Set(configuredKeys)]
+      .filter((lookupType) => rowsByLookupType.has(lookupType))
+      .map((lookupType) => ({ lookupType }));
     const fieldName = normaliseFuzzyName(field.name);
     const exact = lookupTypes.filter(({ name }) => name === fieldName);
-    let selected = exact.length === 1 ? exact[0] : null;
-    if (!selected && exact.length === 0) {
-      selected = findFuzzyMatch(field.name, lookupTypes)?.candidate ?? null;
+    let selected = configured.length ? configured : exact;
+    if (!selected.length) {
+      const fuzzy = findFuzzyMatch(field.name, lookupTypes)?.candidate;
+      selected = fuzzy ? [fuzzy] : [];
     }
-    if (!selected) return field;
+    if (!selected.length) return field;
 
-    const options = rowsByLookupType.get(selected.lookupType)
+    // CaseManager can expose multiple lookup properties whose punctuation is
+    // the only difference (for example ccClosure_Outcome and
+    // ccClosure_Outcome_). Keep all keys and merge their option rows instead
+    // of discarding the field as ambiguous.
+    const valueKeys = selected.map(({ lookupType }) => lookupType);
+    const options = selected
+      .flatMap(({ lookupType }) => rowsByLookupType.get(lookupType))
       .filter((row) => String(row.ID) !== '0')
-      .map((row) => ({ value: String(row.ID), label: String(row.Description) }));
-    return { ...field, valueKey: selected.lookupType, options };
+      .map((row) => ({ value: String(row.ID), label: String(row.Description) }))
+      .filter((option, index, all) =>
+        all.findIndex((candidate) => candidate.value === option.value) === index,
+      );
+    return {
+      ...field,
+      ...(valueKeys.length === 1 ? { valueKey: valueKeys[0] } : { valueKeys }),
+      options,
+    };
   });
 }
 
@@ -59,6 +91,7 @@ function buildCaseManagerFieldMetadata(fields) {
     type: field.type,
     sourceType: field.sourceType,
     ...(field.valueKey ? { valueKey: field.valueKey } : {}),
+    ...(Array.isArray(field.valueKeys) ? { valueKeys: field.valueKeys } : {}),
     ...(Array.isArray(field.options) ? { options: field.options } : {}),
   }]));
 }
@@ -76,8 +109,16 @@ function rawValueGroups(raw) {
 }
 
 function findRawValue(field, raw, groups) {
-  if (field.valueKey && Object.prototype.hasOwnProperty.call(raw, field.valueKey)) {
-    return [{ key: field.valueKey, value: raw[field.valueKey] }];
+  const configuredKeys = [
+    ...(field.valueKey ? [field.valueKey] : []),
+    ...(Array.isArray(field.valueKeys) ? field.valueKeys : []),
+    ...(VALUE_KEYS_BY_FIELD_LABEL.get(normaliseFuzzyName(field.label)) ?? []),
+  ];
+  const configuredValues = [...new Set(configuredKeys)]
+    .filter((key) => Object.prototype.hasOwnProperty.call(raw, key))
+    .map((key) => ({ key, value: raw[key] }));
+  if (configuredValues.length) {
+    return configuredValues;
   }
 
   const label = normaliseFuzzyName(field.label);
@@ -128,9 +169,11 @@ function sourceSelectLabel(field, value) {
   const option = field.options?.find((item) => String(item.value) === String(value));
   if (option) return option.label;
   if (typeof value === 'string' && !/^\d+$/.test(value.trim())) return value.trim();
-  throw new Error(
-    `Case Manager option ${value} for "${field.label}" has no label in GetAllLookups`,
-  );
+  // A populated legacy option can be absent from GetAllLookups (for example,
+  // an inactive/deleted lookup row). Preserve the fact that the field had a
+  // value without inventing a label; the destination resolver reuses or
+  // creates one shared "Unknown" option.
+  return 'Unknown';
 }
 
 function scalarValue(field, value) {
@@ -212,6 +255,7 @@ async function buildNotusPointCustomFields({
   raw,
   mapping,
   resolveOption,
+  onMappedField,
 }) {
   if (!raw || typeof raw !== 'object') {
     throw new Error(`Case ${caseId} has no /CustomField/GetData export; re-export it before uploading`);
@@ -232,13 +276,25 @@ async function buildNotusPointCustomFields({
     const rawValue = combineRawValues(matchedValues, field);
     if (rawValue === undefined) continue;
 
+    const sourceOptionLabel = field.type === 'SELECT'
+      ? sourceSelectLabel(field, rawValue)
+      : undefined;
     const value = field.type === 'SELECT'
-      ? await resolveOption(cmFieldId, npFieldId, sourceSelectLabel(field, rawValue))
+      ? await resolveOption(cmFieldId, npFieldId, sourceOptionLabel)
       : scalarValue(field, rawValue);
     if (Object.prototype.hasOwnProperty.call(output, npFieldId) && output[npFieldId] !== value) {
       throw new Error(`Case ${caseId} has conflicting values mapped to custom field ${npFieldId}`);
     }
     output[npFieldId] = value;
+    onMappedField?.({
+      caseManagerFieldId: cmFieldId,
+      caseManagerLabel: field.label,
+      caseManagerValues: matchedValues,
+      sourceValue: rawValue,
+      ...(sourceOptionLabel !== undefined ? { sourceOptionLabel } : {}),
+      notusPointFieldId: npFieldId,
+      sentValue: value,
+    });
   }
   return output;
 }

@@ -1,0 +1,88 @@
+{
+  "staff": {
+    "36dc9e74-5f96-4edc-9836-5e2692e3afa7": {
+      "email": "bronwyn.brown@workcom.com.au",
+      "userId": "74758dcb-17cb-449c-8066-e89ac878ebfc",
+      "at": "2026-08-22T06:03:32.779Z"
+    },
+    "5618ce41-068d-4b67-afce-5d5287e9832e": {
+      "email": "carly.stewart@workcom.com.au",
+      "userId": "69c654a8-aed5-4d94-94a7-8a62abc440d8",
+      "at": "2026-08-22T06:03:33.122Z"
+    },
+    "972825c1-fa7f-43f3-be15-6f67efc6e874": {
+      "email": "carmen.pascoe@workcom.com.au",
+      "userId": "f28202c8-a5f8-4e14-98d3-1c7b9783f5cf",
+      "at": "2026-08-22T06:03:33.613Z"
+    },
+    "198a05d4-9e2c-4acd-9019-f5facc1d3e2d": {
+      "email": "gemma.atkinson@workcom.com.au",
+      "userId": "29d87588-5718-4b74-9748-a7eade052f7d",
+      "at": "2026-08-22T06:03:33.826Z"
+    },
+    "7b41a989-a578-450e-9f11-f0600cd21a24": {
+      "email": "hanna.peebles@workcom.com.au",
+      "userId": "fc5373c7-7845-4620-ad68-a05c7b2f72de",
+      "at": "2026-08-22T06:03:34.053Z"
+    },
+    "71dbbba1-1d43-43bb-bb4f-710435c5f60a": {
+      "email": "kat.stubbs@workcom.com.au",
+      "userId": "fefde907-52bc-49fc-9dc5-86516a8a55c1",
+      "at": "2026-08-22T06:03:34.264Z"
+    },
+    "97087f3a-d01c-45bd-8d87-d6274d2ffba4": {
+      "email": "monica.soraru@workcom.com.au",
+      "userId": "aa57382d-2325-4e65-ace1-a1826ca2a6d2",
+      "at": "2026-08-22T06:03:34.480Z"
+    },
+    "ac8bb291-6a8b-434e-b204-3d9446e2da05": {
+      "email": "suzie.cooper@workcom.com.au",
+      "userId": "efc28284-7573-4c6d-9d13-23d1c918c808",
+      "at": "2026-08-22T06:03:34.692Z"
+    }
+  },
+  "cases": {
+    "17135": {
+      "export": {
+        "status": "done",
+        "hasClient": true,
+        "counts": {
+          "contacts": 5,
+          "billingTemplates": 1,
+          "billingItems": 1,
+          "costs": 37
+        },
+        "at": "2026-08-22T06:02:51.597Z"
+      },
+      "documents": {
+        "status": "done",
+        "expected": 164,
+        "downloaded": 164,
+        "reused": 0,
+        "placeholders": 0,
+        "failed": 0,
+        "at": "2026-08-22T06:03:32.243Z"
+      },
+      "upload": {
+        "case": {
+          "status": "done"
+        },
+        "at": "2026-08-22T06:13:24.509Z",
+        "files": {
+          "status": "done",
+          "expected": 164,
+          "uploaded": 164,
+          "failed": 0
+        },
+        "costs": {
+          "status": "done",
+          "expected": 37,
+          "imported": 37,
+          "skippedUnlinked": 0,
+          "missingFileLinks": 0
+        },
+        "purgedAt": "2026-08-22T06:13:24.509Z"
+      }
+    }
+  }
+}

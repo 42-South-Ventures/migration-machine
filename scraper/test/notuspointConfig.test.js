@@ -8,6 +8,8 @@ test('derives every importer endpoint from NOTUSPOINT_URL', () => {
     caseUrl: 'https://dev.example.com/api/importer/case',
     customerUrl: 'https://dev.example.com/api/importer/customer',
     fileUrl: 'https://dev.example.com/api/importer/case/file',
+    fileUploadSessionUrl: 'https://dev.example.com/api/importer/case/file/upload-session',
+    fileUploadCompleteUrl: 'https://dev.example.com/api/importer/case/file/complete',
     staffUrl: 'https://dev.example.com/api/importer/staff',
     costsUrl: 'https://dev.example.com/api/importer/case/costs',
     requirementsUrl: 'https://dev.example.com/api/importer/requirements/matching',
@@ -25,6 +27,8 @@ test('keeps legacy and endpoint-specific overrides working', () => {
   assert.equal(config.caseUrl, 'https://legacy.example.com/api/importer/case');
   assert.equal(config.staffUrl, 'https://legacy.example.com/api/importer/staff');
   assert.equal(config.fileUrl, 'https://uploads.example.com/file');
+  assert.equal(config.fileUploadSessionUrl, 'https://uploads.example.com/file/upload-session');
+  assert.equal(config.fileUploadCompleteUrl, 'https://uploads.example.com/file/complete');
   assert.equal(config.requirementsUrl, 'https://legacy.example.com/api/importer/requirements/matching');
 });
 

@@ -26,11 +26,18 @@ function cmCustomFieldsToMatchingFields(customFields, lookupRows = []) {
       if (!field?.ID || !field?.Label) {
         throw new TypeError(`Case Manager custom field at index ${index} must contain ID and Label`);
       }
+      const columnName = field.ColumnName ?? field.columnName;
+      const valueKey = columnName == null || String(columnName).trim() === ''
+        ? null
+        : /^cc/i.test(String(columnName).trim())
+          ? String(columnName).trim()
+          : `cc${String(columnName).trim()}`;
       return {
         id: String(field.ID),
         name: String(field.Label),
         type: normaliseCmType(field.DataTypeName, field.IsMultiline === true),
         sourceType: String(field.DataTypeName ?? ''),
+        ...(valueKey ? { valueKey } : {}),
       };
     });
   return attachCaseManagerLookupOptions(fields, lookupRows);

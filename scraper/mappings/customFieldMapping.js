@@ -730,7 +730,37 @@ const caseManagerFieldsById = {
   "d48b17c1-a632-4944-9434-299812315256": {
     "label": "Employability Assessment Completed",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKeys": [
+      "ccEmployability_Assessment_Completed",
+      "ccEmployability_Assessment_Completed_"
+    ],
+    "options": [
+      {
+        "value": "13914",
+        "label": "Yes - no options identified"
+      },
+      {
+        "value": "13915",
+        "label": "No"
+      },
+      {
+        "value": "13916",
+        "label": "Yes - options identified"
+      },
+      {
+        "value": "13694",
+        "label": "Yes - options identified"
+      },
+      {
+        "value": "13695",
+        "label": "Yes - no options identified"
+      },
+      {
+        "value": "13696",
+        "label": "No"
+      }
+    ]
   },
   "8b9a82c2-4658-4fec-bfd3-8184d6adc94e": {
     "label": "CSAT Case Closure",
@@ -952,7 +982,178 @@ const caseManagerFieldsById = {
   "42299b4d-c7af-42fd-a30d-d5df4ae77b2f": {
     "label": "Closure Outcome",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKeys": [
+      "ccClosure___Outcome",
+      "ccClosure_Outcome",
+      "ccClosure_Outcome_"
+    ],
+    "options": [
+      {
+        "value": "436",
+        "label": "New employer / Partial RTW"
+      },
+      {
+        "value": "437",
+        "label": "New employer / Full RTW"
+      },
+      {
+        "value": "438",
+        "label": "Pre-dis employer / Partial RTW"
+      },
+      {
+        "value": "439",
+        "label": "Pre-dis employer / Full RTW"
+      },
+      {
+        "value": "440",
+        "label": "No RTW - medical barriers"
+      },
+      {
+        "value": "441",
+        "label": "No RTW - psychosocial barriers"
+      },
+      {
+        "value": "442",
+        "label": "No RTW - work ready"
+      },
+      {
+        "value": "443",
+        "label": "No RTW - independently job seeking"
+      },
+      {
+        "value": "444",
+        "label": "Did not proceed past IA - Insured not interested"
+      },
+      {
+        "value": "445",
+        "label": "Did not proceed past IA - Insured not ready"
+      },
+      {
+        "value": "446",
+        "label": "One-off Assessment Only"
+      },
+      {
+        "value": "447",
+        "label": "Exercise program completed - increased capacity for work"
+      },
+      {
+        "value": "448",
+        "label": "Exercise program completed - little/no change in capacity for work"
+      },
+      {
+        "value": "449",
+        "label": "Wellbeing service - can transition to RTW"
+      },
+      {
+        "value": "450",
+        "label": "Wellbeing service - RTW services not suitable"
+      },
+      {
+        "value": "451",
+        "label": "TPD single service provided"
+      },
+      {
+        "value": "13829",
+        "label": "RTW - Same Employer (Original Duties)"
+      },
+      {
+        "value": "13830",
+        "label": "RTW - Same Employer (Alternative Duties)"
+      },
+      {
+        "value": "13831",
+        "label": "RTW - New Employer"
+      },
+      {
+        "value": "13832",
+        "label": "Self-Employed"
+      },
+      {
+        "value": "13833",
+        "label": "Independent Job Seeker"
+      },
+      {
+        "value": "13834",
+        "label": "Further Vocational Assistance Required"
+      },
+      {
+        "value": "13835",
+        "label": "No Return to Work"
+      },
+      {
+        "value": "13988",
+        "label": "Assessment Only"
+      },
+      {
+        "value": "12519",
+        "label": "Single service - Assessment complete"
+      },
+      {
+        "value": "12520",
+        "label": "Claim Declined"
+      },
+      {
+        "value": "12521",
+        "label": "RTH - Job Seeking Independently"
+      },
+      {
+        "value": "12524",
+        "label": "RTW - New employer full hours"
+      },
+      {
+        "value": "12525",
+        "label": "No RTW - No capacity"
+      },
+      {
+        "value": "12526",
+        "label": "RTW - Same employer partial hours"
+      },
+      {
+        "value": "13521",
+        "label": "Did not proceed"
+      },
+      {
+        "value": "13781",
+        "label": "No RTW - Partial capacity"
+      },
+      {
+        "value": "13782",
+        "label": "RTH - Participating in retraining"
+      },
+      {
+        "value": "13783",
+        "label": "RTH - Participating in volunteering"
+      },
+      {
+        "value": "13785",
+        "label": "RTW - New employer partial hours"
+      },
+      {
+        "value": "13786",
+        "label": "RTW - Same employer full hours"
+      },
+      {
+        "value": "13965",
+        "label": "RTH - Community integration"
+      },
+      {
+        "value": "13966",
+        "label": "RTH - Improved functional capacity"
+      },
+      {
+        "value": "13967",
+        "label": "No change to RTH/RTW outcome"
+      },
+      {
+        "value": "13968",
+        "label": "Claimant withdrew"
+      },
+      {
+        "value": "13969",
+        "label": "Claimant resigned"
+      }
+    ]
   },
   "77b63a72-4b7a-4fa1-8c37-4a832d20855d": {
     "label": "Client Contact Due Date",
@@ -1153,7 +1354,50 @@ const caseManagerFieldsById = {
   "7d5974e6-020e-41ad-a568-175134f97278": {
     "label": "Metlife Outcome status at time of completion",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKey": "ccMetlife_Outcome_status_at_the_time_of_completion",
+    "options": [
+      {
+        "value": "13976",
+        "label": "Assessment only"
+      },
+      {
+        "value": "13977",
+        "label": "Not working full capacity"
+      },
+      {
+        "value": "13978",
+        "label": "Not working no capacity"
+      },
+      {
+        "value": "13979",
+        "label": "Not working partial capacity"
+      },
+      {
+        "value": "13980",
+        "label": "Program provided"
+      },
+      {
+        "value": "13981",
+        "label": "Volunteering/studying"
+      },
+      {
+        "value": "13982",
+        "label": "Working alternate duties full hours"
+      },
+      {
+        "value": "13983",
+        "label": "Working alternate duties reduced hours"
+      },
+      {
+        "value": "13984",
+        "label": "Working same duties full hours"
+      },
+      {
+        "value": "13985",
+        "label": "Working same duties partial hours"
+      }
+    ]
   },
   "c43f1cc1-9281-48bd-8ec7-e7cf803f2abf": {
     "label": "Metlife Issues/Concerns",
@@ -1649,12 +1893,508 @@ const caseManagerFieldsById = {
   "cd3354e5-a4a6-448d-b3a4-571bc6d4d037": {
     "label": "ORAMS - Agency",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKeys": [
+      "ccORAMS_Agency",
+      "ccORAMS___Agency"
+    ],
+    "options": [
+      {
+        "value": "12818",
+        "label": "ATO"
+      },
+      {
+        "value": "12819",
+        "label": "ATC"
+      },
+      {
+        "value": "12820",
+        "label": "CASA"
+      },
+      {
+        "value": "12821",
+        "label": "Comcare"
+      },
+      {
+        "value": "12822",
+        "label": "CSIROD"
+      },
+      {
+        "value": "12823",
+        "label": "AWR"
+      },
+      {
+        "value": "12824",
+        "label": "AWR"
+      },
+      {
+        "value": "12825",
+        "label": "DOF"
+      },
+      {
+        "value": "12826",
+        "label": "DOE"
+      },
+      {
+        "value": "12827",
+        "label": "DEE"
+      },
+      {
+        "value": "12828",
+        "label": "DFAT"
+      },
+      {
+        "value": "12829",
+        "label": "DoH"
+      },
+      {
+        "value": "12830",
+        "label": "DHS"
+      },
+      {
+        "value": "12831",
+        "label": "DIM"
+      },
+      {
+        "value": "12832",
+        "label": "DSS"
+      },
+      {
+        "value": "12833",
+        "label": "CDPP"
+      },
+      {
+        "value": "12834",
+        "label": "DVA"
+      },
+      {
+        "value": "12835",
+        "label": "CDPP"
+      },
+      {
+        "value": "12836",
+        "label": "PMC"
+      },
+      {
+        "value": "12837",
+        "label": "IPA"
+      },
+      {
+        "value": "12838",
+        "label": "NAA"
+      },
+      {
+        "value": "12839",
+        "label": "NLA"
+      },
+      {
+        "value": "12840",
+        "label": "ONA"
+      },
+      {
+        "value": "12861",
+        "label": "SA"
+      },
+      {
+        "value": "12862",
+        "label": "DOD"
+      },
+      {
+        "value": "13128",
+        "label": "ABS"
+      },
+      {
+        "value": "13129",
+        "label": "ACCC"
+      },
+      {
+        "value": "13130",
+        "label": "ACIC"
+      },
+      {
+        "value": "13131",
+        "label": "ACQSC"
+      },
+      {
+        "value": "13132",
+        "label": "ADHA"
+      },
+      {
+        "value": "13133",
+        "label": "AFMA"
+      },
+      {
+        "value": "13134",
+        "label": "AFP"
+      },
+      {
+        "value": "13135",
+        "label": "ANAO"
+      },
+      {
+        "value": "13136",
+        "label": "ANMM"
+      },
+      {
+        "value": "13137",
+        "label": "ARPNSA"
+      },
+      {
+        "value": "13138",
+        "label": "ASIC"
+      },
+      {
+        "value": "13139",
+        "label": "ATO"
+      },
+      {
+        "value": "13140",
+        "label": "ATSB"
+      },
+      {
+        "value": "13141",
+        "label": "AUST"
+      },
+      {
+        "value": "13142",
+        "label": "CASA"
+      },
+      {
+        "value": "13143",
+        "label": "CCA"
+      },
+      {
+        "value": "13144",
+        "label": "COMCARE"
+      },
+      {
+        "value": "13145",
+        "label": "CSIRO"
+      },
+      {
+        "value": "13146",
+        "label": "DAFF"
+      },
+      {
+        "value": "13147",
+        "label": "DCCEEWR"
+      },
+      {
+        "value": "13148",
+        "label": "DEWR"
+      },
+      {
+        "value": "13149",
+        "label": "DFAT"
+      },
+      {
+        "value": "13150",
+        "label": "DoD"
+      },
+      {
+        "value": "13151",
+        "label": "DPMC"
+      },
+      {
+        "value": "13152",
+        "label": "DPS"
+      },
+      {
+        "value": "13153",
+        "label": "DSS"
+      },
+      {
+        "value": "13154",
+        "label": "DVA"
+      },
+      {
+        "value": "13155",
+        "label": "EDU"
+      },
+      {
+        "value": "13156",
+        "label": "GG"
+      },
+      {
+        "value": "13157",
+        "label": "HEALTH"
+      },
+      {
+        "value": "13158",
+        "label": "HOM"
+      },
+      {
+        "value": "13159",
+        "label": "IPA"
+      },
+      {
+        "value": "13160",
+        "label": "NAA"
+      },
+      {
+        "value": "13161",
+        "label": "NDIA"
+      },
+      {
+        "value": "13162",
+        "label": "NDIS"
+      },
+      {
+        "value": "13163",
+        "label": "NIAA"
+      },
+      {
+        "value": "13164",
+        "label": "NLA"
+      },
+      {
+        "value": "13165",
+        "label": "ONI"
+      },
+      {
+        "value": "13166",
+        "label": "PC"
+      },
+      {
+        "value": "13167",
+        "label": "PSR"
+      },
+      {
+        "value": "13168",
+        "label": "SA"
+      },
+      {
+        "value": "13169",
+        "label": "SWA"
+      },
+      {
+        "value": "13170",
+        "label": "TT"
+      }
+    ]
   },
   "ed44fae2-999b-4505-95a9-de3e3ac4327a": {
     "label": "ORAMS - Region",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKeys": [
+      "ccORAMS_Region",
+      "ccORAMS___Region"
+    ],
+    "options": [
+      {
+        "value": "12794",
+        "label": "NSW Metro"
+      },
+      {
+        "value": "12795",
+        "label": "ACT"
+      },
+      {
+        "value": "12796",
+        "label": "NSW Mid North"
+      },
+      {
+        "value": "12797",
+        "label": "NSW North"
+      },
+      {
+        "value": "12798",
+        "label": "NSW North West"
+      },
+      {
+        "value": "12799",
+        "label": "NSW South"
+      },
+      {
+        "value": "12800",
+        "label": "NSW South West"
+      },
+      {
+        "value": "12801",
+        "label": "NSW West"
+      },
+      {
+        "value": "12802",
+        "label": "NT Metro"
+      },
+      {
+        "value": "12803",
+        "label": "QLD Central"
+      },
+      {
+        "value": "12804",
+        "label": "QLD Far North"
+      },
+      {
+        "value": "12805",
+        "label": "QLD North"
+      },
+      {
+        "value": "12806",
+        "label": "QLD South East"
+      },
+      {
+        "value": "12807",
+        "label": "QLD Sunshine Coast"
+      },
+      {
+        "value": "12808",
+        "label": "QLD West"
+      },
+      {
+        "value": "12809",
+        "label": "SA Metro"
+      },
+      {
+        "value": "12810",
+        "label": "SA North"
+      },
+      {
+        "value": "12811",
+        "label": "TAS Metro"
+      },
+      {
+        "value": "12812",
+        "label": "TAS Regional"
+      },
+      {
+        "value": "12813",
+        "label": "VIC East"
+      },
+      {
+        "value": "12814",
+        "label": "VIC Metro"
+      },
+      {
+        "value": "12815",
+        "label": "VIC North"
+      },
+      {
+        "value": "12816",
+        "label": "VIC West"
+      },
+      {
+        "value": "12817",
+        "label": "WA Metro"
+      },
+      {
+        "value": "12973",
+        "label": "ACT"
+      },
+      {
+        "value": "12974",
+        "label": "NSW Metro"
+      },
+      {
+        "value": "12975",
+        "label": "NSW Mid North"
+      },
+      {
+        "value": "12976",
+        "label": "NSW North"
+      },
+      {
+        "value": "12977",
+        "label": "NSW North West"
+      },
+      {
+        "value": "12978",
+        "label": "NSW South"
+      },
+      {
+        "value": "12979",
+        "label": "NSW South West"
+      },
+      {
+        "value": "12980",
+        "label": "NSW West"
+      },
+      {
+        "value": "12981",
+        "label": "NT Metro"
+      },
+      {
+        "value": "12982",
+        "label": "QLD Central"
+      },
+      {
+        "value": "12983",
+        "label": "QLD Far North"
+      },
+      {
+        "value": "12984",
+        "label": "QLD North"
+      },
+      {
+        "value": "12985",
+        "label": "QLD South East"
+      },
+      {
+        "value": "12986",
+        "label": "QLD Sunshine Coast"
+      },
+      {
+        "value": "12987",
+        "label": "QLD West"
+      },
+      {
+        "value": "12988",
+        "label": "SA Metro"
+      },
+      {
+        "value": "12989",
+        "label": "SA North"
+      },
+      {
+        "value": "12990",
+        "label": "TAS Metro"
+      },
+      {
+        "value": "12991",
+        "label": "TAS Regional"
+      },
+      {
+        "value": "12992",
+        "label": "VIC East"
+      },
+      {
+        "value": "12993",
+        "label": "VIC Metro"
+      },
+      {
+        "value": "12994",
+        "label": "VIC North"
+      },
+      {
+        "value": "12995",
+        "label": "VIC West"
+      },
+      {
+        "value": "12996",
+        "label": "WA Metro"
+      },
+      {
+        "value": "13589",
+        "label": "NT Central"
+      },
+      {
+        "value": "13590",
+        "label": "SA South East"
+      },
+      {
+        "value": "13591",
+        "label": "VIC North West"
+      },
+      {
+        "value": "13592",
+        "label": "WA South"
+      },
+      {
+        "value": "13593",
+        "label": "WA South West"
+      }
+    ]
   },
   "61fbf844-65d7-4743-b031-5a417350c97e": {
     "label": "ORAMS - Accepted Date",
@@ -3313,7 +4053,193 @@ const caseManagerFieldsById = {
   "f07572d8-2712-40da-b897-0295b2f0e054": {
     "label": "Current Service",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKeys": [
+      "ccCurrent_Service",
+      "ccCurrent_Service_"
+    ],
+    "options": [
+      {
+        "value": "2819",
+        "label": "Activities of Daily Living Assessment"
+      },
+      {
+        "value": "2820",
+        "label": "Business Coaching"
+      },
+      {
+        "value": "2821",
+        "label": "Case Management Services"
+      },
+      {
+        "value": "2822",
+        "label": "Career Coaching"
+      },
+      {
+        "value": "2823",
+        "label": "Employability Assessment"
+      },
+      {
+        "value": "2824",
+        "label": "Ergonomic Assessment"
+      },
+      {
+        "value": "2825",
+        "label": "Functional Capacity Assessment (Physical)"
+      },
+      {
+        "value": "2826",
+        "label": "Health Coaching"
+      },
+      {
+        "value": "2827",
+        "label": "Initial Needs Assessment (Physical)"
+      },
+      {
+        "value": "2828",
+        "label": "Initial Needs Assessment (Psychological)"
+      },
+      {
+        "value": "2829",
+        "label": "Job Seeking Services"
+      },
+      {
+        "value": "2830",
+        "label": "Job Task Analysis (Physical)"
+      },
+      {
+        "value": "2831",
+        "label": "Job Task Analysis (Psychological)"
+      },
+      {
+        "value": "2832",
+        "label": "Labour Market Analysis"
+      },
+      {
+        "value": "2833",
+        "label": "Medical Case Conference"
+      },
+      {
+        "value": "2834",
+        "label": "RTW Plan Monitoring"
+      },
+      {
+        "value": "2835",
+        "label": "Transferable Skills Assessment"
+      },
+      {
+        "value": "2836",
+        "label": "Vocational Assessment"
+      },
+      {
+        "value": "2837",
+        "label": "Vocational Counselling"
+      },
+      {
+        "value": "2838",
+        "label": "Work Conditioning"
+      },
+      {
+        "value": "2839",
+        "label": "Workplace Assessment (WPA)"
+      },
+      {
+        "value": "2869",
+        "label": "Initial Needs Assessment (Physical & Psychological)"
+      },
+      {
+        "value": "12609",
+        "label": "Functional Capacity Assessment (Phychological)"
+      },
+      {
+        "value": "13604",
+        "label": "Social Work Services"
+      },
+      {
+        "value": "4935",
+        "label": "Activities of Daily Living Assessment"
+      },
+      {
+        "value": "4936",
+        "label": "Business Coaching"
+      },
+      {
+        "value": "4937",
+        "label": "Case Management Services"
+      },
+      {
+        "value": "4938",
+        "label": "Employability Assessment"
+      },
+      {
+        "value": "4939",
+        "label": "Ergonomic Assessment"
+      },
+      {
+        "value": "4940",
+        "label": "Functional Capacity Evaluation"
+      },
+      {
+        "value": "4941",
+        "label": "Health Coaching"
+      },
+      {
+        "value": "4942",
+        "label": "Initial Needs Assessment (Physical & Psychological)"
+      },
+      {
+        "value": "4943",
+        "label": "Initial Needs Assessment (Physical)"
+      },
+      {
+        "value": "4944",
+        "label": "Initial Needs Assessment (Psychological)"
+      },
+      {
+        "value": "4945",
+        "label": "Job Seeking Services"
+      },
+      {
+        "value": "4946",
+        "label": "Job Task Analysis (Physical)"
+      },
+      {
+        "value": "4947",
+        "label": "Job Task Analysis (Psychological)"
+      },
+      {
+        "value": "4948",
+        "label": "Lbour Market Analysis"
+      },
+      {
+        "value": "4949",
+        "label": "Medical Case Conference"
+      },
+      {
+        "value": "4950",
+        "label": "RTW Services"
+      },
+      {
+        "value": "4951",
+        "label": "Trasnferable Skills Assessment"
+      },
+      {
+        "value": "4952",
+        "label": "Vocational Assessment"
+      },
+      {
+        "value": "4953",
+        "label": "Vocational Counselling"
+      },
+      {
+        "value": "4954",
+        "label": "Work Conditioning"
+      },
+      {
+        "value": "4955",
+        "label": "Workplace Assessment (WPA)"
+      }
+    ]
   },
   "7f21202b-5093-4fdf-9a99-d45d1b846619": {
     "label": "Progress Status / Future Strategies",
@@ -3481,7 +4407,69 @@ const caseManagerFieldsById = {
   "c9825103-f40e-4f6b-8718-24aa86816261": {
     "label": "Employment Outcome",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKeys": [
+      "ccEmployment_Outcome",
+      "ccEmployment_Outcome_"
+    ],
+    "options": [
+      {
+        "value": "12062",
+        "label": "RTW - New Employer"
+      },
+      {
+        "value": "12063",
+        "label": "RTW - Same Employer"
+      },
+      {
+        "value": "12064",
+        "label": "Job Seeking"
+      },
+      {
+        "value": "12065",
+        "label": "No RTW - Unfit"
+      },
+      {
+        "value": "12066",
+        "label": "Studying"
+      },
+      {
+        "value": "12067",
+        "label": "Assessment Only"
+      },
+      {
+        "value": "12068",
+        "label": "Other"
+      },
+      {
+        "value": "12069",
+        "label": "RTW - Same Employer"
+      },
+      {
+        "value": "12070",
+        "label": "RTW - New Employer"
+      },
+      {
+        "value": "12071",
+        "label": "Studying"
+      },
+      {
+        "value": "12072",
+        "label": "Assessment Only"
+      },
+      {
+        "value": "12073",
+        "label": "No RTW - Medical Barriers"
+      },
+      {
+        "value": "12074",
+        "label": "Request Cancelled"
+      },
+      {
+        "value": "12075",
+        "label": "Job Seeking"
+      }
+    ]
   },
   "c9546117-760a-47cd-88ce-ff1a9347179d": {
     "label": "Please also complete CLOSURE TAB for TAL",
@@ -3645,7 +4633,178 @@ const caseManagerFieldsById = {
   "901b4e28-d8b4-4018-a697-4adb76fba851": {
     "label": "Closure Outcome.",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKeys": [
+      "ccClosure___Outcome",
+      "ccClosure_Outcome",
+      "ccClosure_Outcome_"
+    ],
+    "options": [
+      {
+        "value": "436",
+        "label": "New employer / Partial RTW"
+      },
+      {
+        "value": "437",
+        "label": "New employer / Full RTW"
+      },
+      {
+        "value": "438",
+        "label": "Pre-dis employer / Partial RTW"
+      },
+      {
+        "value": "439",
+        "label": "Pre-dis employer / Full RTW"
+      },
+      {
+        "value": "440",
+        "label": "No RTW - medical barriers"
+      },
+      {
+        "value": "441",
+        "label": "No RTW - psychosocial barriers"
+      },
+      {
+        "value": "442",
+        "label": "No RTW - work ready"
+      },
+      {
+        "value": "443",
+        "label": "No RTW - independently job seeking"
+      },
+      {
+        "value": "444",
+        "label": "Did not proceed past IA - Insured not interested"
+      },
+      {
+        "value": "445",
+        "label": "Did not proceed past IA - Insured not ready"
+      },
+      {
+        "value": "446",
+        "label": "One-off Assessment Only"
+      },
+      {
+        "value": "447",
+        "label": "Exercise program completed - increased capacity for work"
+      },
+      {
+        "value": "448",
+        "label": "Exercise program completed - little/no change in capacity for work"
+      },
+      {
+        "value": "449",
+        "label": "Wellbeing service - can transition to RTW"
+      },
+      {
+        "value": "450",
+        "label": "Wellbeing service - RTW services not suitable"
+      },
+      {
+        "value": "451",
+        "label": "TPD single service provided"
+      },
+      {
+        "value": "13829",
+        "label": "RTW - Same Employer (Original Duties)"
+      },
+      {
+        "value": "13830",
+        "label": "RTW - Same Employer (Alternative Duties)"
+      },
+      {
+        "value": "13831",
+        "label": "RTW - New Employer"
+      },
+      {
+        "value": "13832",
+        "label": "Self-Employed"
+      },
+      {
+        "value": "13833",
+        "label": "Independent Job Seeker"
+      },
+      {
+        "value": "13834",
+        "label": "Further Vocational Assistance Required"
+      },
+      {
+        "value": "13835",
+        "label": "No Return to Work"
+      },
+      {
+        "value": "13988",
+        "label": "Assessment Only"
+      },
+      {
+        "value": "12519",
+        "label": "Single service - Assessment complete"
+      },
+      {
+        "value": "12520",
+        "label": "Claim Declined"
+      },
+      {
+        "value": "12521",
+        "label": "RTH - Job Seeking Independently"
+      },
+      {
+        "value": "12524",
+        "label": "RTW - New employer full hours"
+      },
+      {
+        "value": "12525",
+        "label": "No RTW - No capacity"
+      },
+      {
+        "value": "12526",
+        "label": "RTW - Same employer partial hours"
+      },
+      {
+        "value": "13521",
+        "label": "Did not proceed"
+      },
+      {
+        "value": "13781",
+        "label": "No RTW - Partial capacity"
+      },
+      {
+        "value": "13782",
+        "label": "RTH - Participating in retraining"
+      },
+      {
+        "value": "13783",
+        "label": "RTH - Participating in volunteering"
+      },
+      {
+        "value": "13785",
+        "label": "RTW - New employer partial hours"
+      },
+      {
+        "value": "13786",
+        "label": "RTW - Same employer full hours"
+      },
+      {
+        "value": "13965",
+        "label": "RTH - Community integration"
+      },
+      {
+        "value": "13966",
+        "label": "RTH - Improved functional capacity"
+      },
+      {
+        "value": "13967",
+        "label": "No change to RTH/RTW outcome"
+      },
+      {
+        "value": "13968",
+        "label": "Claimant withdrew"
+      },
+      {
+        "value": "13969",
+        "label": "Claimant resigned"
+      }
+    ]
   },
   "7c6334f3-d044-45f8-9a82-47ab86468979": {
     "label": "If No RTW - Reason",
@@ -4659,6 +5818,14 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "9-alternative-employer--full-hrs--modified-or-alternative-duties",
       "label": "9.       Alternative employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "7044ae14-4e4c-4691-8a5f-ef2f7ca0b5e2",
+      "label": "Unknown"
+    },
+    {
+      "value": "e064b182-44f3-4c4e-b5be-3e1a59f57bc3",
+      "label": "Assessment Only (No ongoing service)"
     }
   ],
   "4b0bfbd3-a54a-4a4a-9251-9c25779890b4": [
@@ -5021,6 +6188,10 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "volunteering",
       "label": "Volunteering"
+    },
+    {
+      "value": "04a30aaa-fe91-4f57-8e8b-882033bc25ef",
+      "label": "Unknown"
     }
   ],
   "31052097-21bf-4445-8f30-43c897ab2b86": [
@@ -6985,6 +8156,10 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "volunteering",
       "label": "Volunteering"
+    },
+    {
+      "value": "04a30aaa-fe91-4f57-8e8b-882033bc25ef",
+      "label": "Unknown"
     }
   ],
   "7c6334f3-d044-45f8-9a82-47ab86468979": [

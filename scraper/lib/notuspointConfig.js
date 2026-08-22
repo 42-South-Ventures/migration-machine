@@ -21,6 +21,10 @@ function getNotusPointConfig(env = process.env) {
     caseUrl,
     customerUrl: env.IMPORT_CUSTOMER_URL || `${root}/customer`,
     fileUrl: env.IMPORT_FILE_URL || `${caseUrl}/file`,
+    fileUploadSessionUrl:
+      env.IMPORT_FILE_UPLOAD_SESSION_URL || `${env.IMPORT_FILE_URL || `${caseUrl}/file`}/upload-session`,
+    fileUploadCompleteUrl:
+      env.IMPORT_FILE_UPLOAD_COMPLETE_URL || `${env.IMPORT_FILE_URL || `${caseUrl}/file`}/complete`,
     staffUrl: env.IMPORT_STAFF_URL || `${root}/staff`,
     costsUrl: env.IMPORT_COSTS_URL || `${caseUrl}/costs`,
     requirementsUrl: env.IMPORT_REQUIREMENTS_URL || `${root}/requirements/matching`,

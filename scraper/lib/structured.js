@@ -2,6 +2,7 @@
 // record (CaseImportDto fields + billing templates + costs). Extracted from
 // runAll.js so the transformation runs per case at export time and the result
 // is stored alongside the raw data in data/<caseId>.json.
+const { normaliseAustralianState } = require('./importerCustomer');
 
 function buildLookupMap(lookups) {
   const map = {};
@@ -57,7 +58,7 @@ function buildAddress(map, { street, suburb, postalCode, regionId, countryId }) 
     addressLine1: street ?? '',
     addressLine2: '',
     suburb: suburb ?? '',
-    state: resolveId(map, regionId),
+    state: normaliseAustralianState(resolveId(map, regionId)),
     postcode: postalCode ?? '',
     country: resolveId(map, countryId),
   };
@@ -69,6 +70,30 @@ function contactHasRole(contact, role) {
     .split(',')
     .map((name) => name.trim())
     .includes(role);
+}
+
+const EXCLUDED_CONTACT_ROLES = new Set(
+  ['Client', 'Referrer', 'QA', 'Workcom Admin'].map(role => role.toLowerCase()),
+);
+
+function contactRolesForImport(contact) {
+  const sourceRoles = [
+    contact?.PrimaryRoleName,
+    ...(contact?.RoleNames ?? '').split(','),
+  ].map(role => String(role ?? '').trim()).filter(Boolean);
+
+  const seen = new Set();
+  const roles = [];
+  for (const role of sourceRoles) {
+    const normalized = role.toLowerCase();
+    if (seen.has(normalized)) continue;
+    seen.add(normalized);
+    if (!EXCLUDED_CONTACT_ROLES.has(normalized)) roles.push(role);
+  }
+
+  // Preserve a genuinely roleless contact as one contact without a role.
+  // A contact whose only roles were excluded should not be transferred.
+  return sourceRoles.length ? roles : [''];
 }
 
 function buildCustomer(contactList, contactDetails, lookup) {
@@ -256,22 +281,20 @@ function buildStructuredCase(caseId, endpoints, lookup, employeeMap) {
 
   // Client and Referrer already migrate as first-class records; QA and
   // Workcom Admin are internal contacts that aren't wanted in NotusPoint.
-  const EXCLUDED_CONTACT_ROLES = new Set(['Client', 'Referrer', 'QA', 'Workcom Admin']);
+  // Other roles are expanded so NotusPoint receives one contact per role.
   const caseContacts = [];
   for (const row of contactList) {
-    const roles = (row.RoleNames ?? '').split(',').map(r => r.trim()).filter(Boolean);
-    if (row.PrimaryRoleName) roles.push(row.PrimaryRoleName);
-    if (roles.some(role => EXCLUDED_CONTACT_ROLES.has(role))) continue;
+    const roles = contactRolesForImport(row);
+    if (!roles.length) continue;
 
     const detail = contactInfoById.get(row.ID) ?? {};
-    caseContacts.push({
+    const contact = {
       firstName: detail.FirstName || row.FirstName || '',
       lastName: detail.LastName || row.LastName || '',
       email: detail.Email1 || row.Email || '',
       company: detail.CompanyName || row.CompanyName || '',
       phone: detail.Mobile || detail.Phone1 || detail.Phone2 || row.Phone || '',
       fax: detail.Fax || '',
-      role: row.PrimaryRoleName || roles[0] || '',
       address: buildAddress(lookup, {
         street: detail.Street,
         suburb: detail.Suburb,
@@ -279,7 +302,8 @@ function buildStructuredCase(caseId, endpoints, lookup, employeeMap) {
         regionId: detail.RegionID,
         countryId: detail.CountryID,
       }),
-    });
+    };
+    for (const role of roles) caseContacts.push({ ...contact, role });
   }
 
   const billingTemplates = buildBillingTemplates(caseId, endpoints);
@@ -313,6 +337,8 @@ function buildStructuredCase(caseId, endpoints, lookup, employeeMap) {
     requirementDescription: resolveId(lookup, caseInfo.RequirementID),
     referralTypeId,
     referralTypeDescription: resolveId(lookup, caseInfo.ReferralTypeID),
+    clientRegion: resolveId(lookup, caseInfo.TeamID),
+    clientSubregion: resolveId(lookup, caseInfo.OfficeID),
     assignedUserId,
     assignedUserName,
     assignedUserEmail,
@@ -346,5 +372,6 @@ function countsFor(structured) {
 
 module.exports = {
   billingTypeFromCaseManagerCostType,
+  contactRolesForImport,
   buildLookupMap, buildEmployeeMap, buildCustomer, buildStructuredCase, countsFor,
 };

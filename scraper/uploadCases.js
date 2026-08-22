@@ -6,9 +6,14 @@ const { loadLedger } = require("./lib/ledger");
 const { createLimiter, mapPool } = require("./lib/pool");
 const { resolveRequirementId } = require("./utils/matchRequirement");
 const { buildLookupMap, buildCustomer } = require("./lib/structured");
-const { createCustomerResolver } = require("./lib/importerCustomer");
+const {
+  createCustomerResolver,
+  normaliseAustralianState,
+} = require("./lib/importerCustomer");
 const { getNotusPointConfig } = require("./lib/notuspointConfig");
 const { toCostImportDtos } = require("./lib/costImport");
+const { uploadToResumableSession } = require("./lib/resumableUpload");
+const { fetchWithRetry } = require("./lib/retryFetch");
 const {
   createCustomFieldOptionResolver,
   buildNotusPointCustomFields,
@@ -29,6 +34,8 @@ const DOCUMENTS_DIR = paths.documentsDir;
 const notusPoint = getNotusPointConfig();
 const IMPORT_URL = notusPoint.caseUrl;
 const IMPORT_FILE_URL = notusPoint.fileUrl;
+const IMPORT_FILE_UPLOAD_SESSION_URL = notusPoint.fileUploadSessionUrl;
+const IMPORT_FILE_UPLOAD_COMPLETE_URL = notusPoint.fileUploadCompleteUrl;
 const IMPORT_STAFF_URL = notusPoint.staffUrl;
 const IMPORT_COSTS_URL = notusPoint.costsUrl;
 const IMPORT_CUSTOMER_URL = notusPoint.customerUrl;
@@ -37,6 +44,56 @@ const IMPORT_CUSTOM_FIELD_OPTIONS_URL = notusPoint.customFieldOptionsUrl;
 // global file limiter below, which is what actually bounds importer load.
 const CASE_CONCURRENCY = Number(process.env.UPLOAD_CASE_CONCURRENCY ?? 8);
 const FILE_CONCURRENCY = Number(process.env.UPLOAD_FILE_CONCURRENCY ?? 32);
+const EMAIL_COMPLETION_CONCURRENCY = Math.max(
+  1,
+  Number(process.env.UPLOAD_EMAIL_COMPLETION_CONCURRENCY ?? 2),
+);
+const NOTUSPOINT_RETRY_ATTEMPTS = Math.max(
+  1,
+  Number(process.env.NOTUSPOINT_RETRY_ATTEMPTS ?? 5),
+);
+const emailCompletionLimiter = createLimiter(EMAIL_COMPLETION_CONCURRENCY);
+
+function fetchNotusPointWithRetry(url, init) {
+  return fetchWithRetry(url, init, {
+    maxAttempts: NOTUSPOINT_RETRY_ATTEMPTS,
+    onRetry: ({ attempt, nextAttempt, delayMs, status, error }) => {
+      const reason = status ? `HTTP ${status}` : error?.message ?? "network error";
+      console.error(
+        `[retry] NotusPoint ${reason}; attempt ${attempt} failed, `
+        + `retrying attempt ${nextAttempt}/${NOTUSPOINT_RETRY_ATTEMPTS} in ${delayMs}ms`,
+      );
+    },
+  });
+}
+
+function logCustomFieldTransfers(caseId, transfers, customFields) {
+  console.error(
+    `[custom-fields] Case ${caseId}: sending ${transfers.length} custom field value(s)`,
+  );
+  for (const transfer of transfers) {
+    const source = transfer.caseManagerValues
+      .map(({ key, value }) => `${key}=${JSON.stringify(value)}`)
+      .join(", ");
+    const option = transfer.sourceOptionLabel === undefined
+      ? ""
+      : `, option=${JSON.stringify(transfer.sourceOptionLabel)}`;
+    console.error(
+      `[custom-fields]   ${JSON.stringify(transfer.caseManagerLabel)} `
+      + `(CM ${transfer.caseManagerFieldId}; ${source}${option}) `
+      + `-> NP ${transfer.notusPointFieldId}=${JSON.stringify(transfer.sentValue)}`,
+    );
+  }
+  console.error(
+    `[custom-fields] Case ${caseId} payload: ${JSON.stringify(customFields)}`,
+  );
+}
+// Multipart requests approaching App Engine's 32 MB request limit fail before
+// reaching Nest. Leave ample room for multipart headers and route larger files
+// directly to the GCS resumable session returned by NotusPoint.
+const DIRECT_FILE_UPLOAD_THRESHOLD_BYTES = Number(
+  process.env.DIRECT_FILE_UPLOAD_THRESHOLD_BYTES ?? 24 * 1024 * 1024,
+);
 const IMPORTER_API_KEY = process.env.IMPORTER_API_KEY;
 const REQUIREMENT_MAPPING_FILE = path.join(__dirname, "mappings", "requirementMapping.js");
 const CUSTOM_FIELD_MAPPING_FILE = path.join(__dirname, "mappings", "customFieldMapping.js");
@@ -88,6 +145,7 @@ const AUTH_HEADERS = { "x-api-key": IMPORTER_API_KEY };
 const resolveCustomerId = createCustomerResolver({
   url: IMPORT_CUSTOMER_URL,
   apiKey: IMPORTER_API_KEY,
+  fetchImpl: fetchNotusPointWithRetry,
 });
 const resolveCustomFieldOption = createCustomFieldOptionResolver({
   baseUrl: IMPORT_CUSTOM_FIELD_OPTIONS_URL,
@@ -95,6 +153,7 @@ const resolveCustomFieldOption = createCustomFieldOptionResolver({
   fieldMapping: customFieldMapping,
   optionsByCaseManagerFieldId:
     customFieldMapping.OPTIONS_BY_CASE_MANAGER_FIELD_ID ?? {},
+  fetchImpl: fetchNotusPointWithRetry,
 });
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -138,14 +197,13 @@ function toCaseImportDto(
     clientLastName: caseRecord.clientLastName || "Unknown",
     clientEmail: caseRecord.clientEmail || "unknown@example.com",
     clientPhone: caseRecord.clientPhone || "0000 0000 0000",
-    clientTitle: caseRecord.clientTitle || "Unknown",
     claimNumber: caseRecord.claimNumber || "Unknown",
     dateClosed: caseRecord.dateClosed || "",
     clientAddress: {
       addressLine1: address.addressLine1 || "Unknown",
       addressLine2: address.addressLine2 || "",
       suburb: address.suburb || "Unknown",
-      state: address.state || "Unknown",
+      state: normaliseAustralianState(address.state) || "Unknown",
       postcode: address.postcode || "0000",
       country: address.country || "Unknown",
     },
@@ -161,6 +219,9 @@ function toCaseImportDto(
     requirementId: resolveRequirementId(requirementMapping, caseRecord),
   };
 
+  const clientTitle = String(caseRecord.clientTitle ?? "").trim();
+  if (clientTitle) dto.clientTitle = clientTitle;
+
   // No referral date in Case Manager -> none in NotusPoint; a placeholder
   // string would be parsed into an invalid Date and rejected by the DB
   if (caseRecord.referralDate) dto.referralDate = caseRecord.referralDate;
@@ -169,6 +230,10 @@ function toCaseImportDto(
   // rejects values it doesn't recognise rather than guessing
   if (caseRecord.statusDescription) dto.status = caseRecord.statusDescription;
   if (caseRecord.billerCode) dto.billerCode = caseRecord.billerCode;
+  if (caseRecord.clientRegion) dto.clientRegion = caseRecord.clientRegion;
+  if (caseRecord.clientSubregion) {
+    dto.clientSubregion = caseRecord.clientSubregion;
+  }
   if (caseRecord.conditionDate) dto.conditionDate = caseRecord.conditionDate;
   // Lookup descriptions from Case Manager; the importer matches them against
   // the configurable lists (case-insensitively) or creates new entries
@@ -190,7 +255,10 @@ function toCaseImportDto(
   }
 
   if (caseRecord.clientBillingAddress) {
-    dto.clientBillingAddress = caseRecord.clientBillingAddress;
+    dto.clientBillingAddress = {
+      ...caseRecord.clientBillingAddress,
+      state: normaliseAustralianState(caseRecord.clientBillingAddress.state),
+    };
   }
 
   if (caseRecord.caseContacts?.length) {
@@ -214,7 +282,9 @@ function toCaseImportDto(
         contact.addressLine2 = cut(address.addressLine2, 200);
       if (address.suburb) contact.suburb = cut(address.suburb, 100);
       if (address.postcode) contact.postcode = cut(address.postcode, 20);
-      if (address.state) contact.state = cut(address.state, 100);
+      if (address.state) {
+        contact.state = cut(normaliseAustralianState(address.state), 100);
+      }
       if (address.country) contact.country = cut(address.country, 100);
       return contact;
     });
@@ -299,6 +369,16 @@ function saveUploadState(caseId, state) {
 
 async function uploadCaseFile(caseId, entry, uploadedById) {
   const filePath = path.join(DOCUMENTS_DIR, caseId, entry.filename);
+  const size = fs.statSync(filePath).size;
+  // Every email uses the idempotent direct-to-GCS path. Besides avoiding App
+  // Engine's multipart limit, this keeps email bytes out of the Node process
+  // and makes transient completion retries safe.
+  if (entry.fileType === "EMAIL" || size >= DIRECT_FILE_UPLOAD_THRESHOLD_BYTES) {
+    console.error(
+      `  direct-uploading "${entry.filename}" (${(size / 1024 / 1024).toFixed(1)} MiB) to GCS`,
+    );
+    return uploadCaseFileDirect(caseId, entry, uploadedById, filePath, size);
+  }
   const buffer = fs.readFileSync(filePath);
 
   const form = new FormData();
@@ -324,6 +404,59 @@ async function uploadCaseFile(caseId, entry, uploadedById) {
 
   // The created case file; its id links costs to the file they came from
   return res.json();
+}
+
+async function importerJson(url, body) {
+  const response = await fetchNotusPointWithRetry(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...AUTH_HEADERS },
+    body: JSON.stringify(body),
+  });
+  const responseBody = await response.text().catch(() => "");
+  if (!response.ok) {
+    throw new Error(
+      `${response.status} ${response.statusText}${responseBody ? ` - ${responseBody}` : ""}`,
+    );
+  }
+  try {
+    return JSON.parse(responseBody);
+  } catch {
+    throw new Error(`Importer returned invalid JSON: ${responseBody.slice(0, 200)}`);
+  }
+}
+
+async function uploadCaseFileDirect(caseId, entry, uploadedById, filePath, size) {
+  const sourceDocumentId = entry.documentId || entry.filename;
+  const session = await importerJson(IMPORT_FILE_UPLOAD_SESSION_URL, {
+    caseId,
+    sourceDocumentId,
+    originalName: entry.filename,
+  });
+  if (!session?.uploadUrl || !session?.storagePath || !session?.mimeType) {
+    throw new Error("Importer returned an invalid direct-upload session");
+  }
+
+  await uploadToResumableSession({
+    uploadUrl: session.uploadUrl,
+    filePath,
+    mimeType: session.mimeType,
+    totalSize: size,
+  });
+
+  const complete = () => importerJson(IMPORT_FILE_UPLOAD_COMPLETE_URL, {
+    caseId,
+    sourceDocumentId,
+    originalName: entry.filename,
+    storagePath: session.storagePath,
+    size,
+    title: entry.title,
+    fileType: entry.fileType,
+    ...(uploadedById ? { uploadedById } : {}),
+    dateUploaded: entry.dateUploaded || new Date().toISOString(),
+  });
+  return entry.fileType === "EMAIL"
+    ? emailCompletionLimiter(complete)
+    : complete();
 }
 
 async function uploadCosts(caseId, costs) {
@@ -372,6 +505,19 @@ async function uploadCosts(caseId, costs) {
         ) {
           structured.referralTypeId = referralTypeId;
         }
+      }
+      // Compatibility for older exports: NotusPoint clientRegion is
+      // CaseManager Team; clientSubregion is CaseManager Office. The
+      // region/subregion fallbacks cover the short-lived legacy field names.
+      if (!structured.clientRegion) {
+        structured.clientRegion = structured.region
+          || lookup[endpoints?.["/Case/GetData"]?.[0]?.TeamID]
+          || "";
+      }
+      if (!structured.clientSubregion) {
+        structured.clientSubregion = structured.subregion
+          || lookup[endpoints?.["/Case/GetData"]?.[0]?.OfficeID]
+          || "";
       }
       if (!structured.customer) {
         const contactList = endpoints?.["/CaseContact/_List"]?.[0]?.data ?? [];
@@ -558,12 +704,15 @@ async function uploadCosts(caseId, costs) {
     if (!caseDone) {
       try {
         const customerId = await resolveCustomerId(caseRecord.customer);
+        const customFieldTransfers = [];
         const customFields = await buildNotusPointCustomFields({
           caseId,
           raw: caseRecord.customFieldData,
           mapping: customFieldMapping,
           resolveOption: resolveCustomFieldOption,
+          onMappedField: (transfer) => customFieldTransfers.push(transfer),
         });
+        logCustomFieldTransfers(caseId, customFieldTransfers, customFields);
         const dto = toCaseImportDto(
           caseRecord,
           resolvedEmailByEmployeeId,
