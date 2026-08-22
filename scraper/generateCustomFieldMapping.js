@@ -49,7 +49,27 @@ function unwrapImporterCustomFields(body) {
     if (id == null || name == null || type == null) {
       throw new TypeError(`Importer custom field at index ${index} must contain id, name and type`);
     }
-    return { id: String(id), name: String(name), type: String(type).toUpperCase() };
+    let options;
+    if (field.options != null) {
+      if (!Array.isArray(field.options)) {
+        throw new TypeError(`Importer custom field at index ${index}.options must be an array`);
+      }
+      options = field.options.map((option, optionIndex) => {
+        if (option?.value == null || option?.label == null) {
+          throw new TypeError(
+            `Importer custom field at index ${index}.options[${optionIndex}] must contain value and label`,
+          );
+        }
+        return { value: String(option.value), label: String(option.label) };
+      });
+    }
+
+    return {
+      id: String(id),
+      name: String(name),
+      type: String(type).toUpperCase(),
+      ...(options !== undefined ? { options } : {}),
+    };
   });
 }
 

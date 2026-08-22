@@ -70,6 +70,7 @@ function buildCustomFieldMapping(fieldsFromCM, fieldsFromNP) {
   const typeMismatches = [];
   const unsupported = [];
   const entries = [];
+  const optionsByCaseManagerFieldId = {};
 
   for (const oldField of fieldsFromCM) {
     if (!oldField.type || !NP_TYPES.has(oldField.type)) {
@@ -112,12 +113,22 @@ function buildCustomFieldMapping(fieldsFromCM, fieldsFromNP) {
 
     const newField = candidates[0];
     mapping[oldField.id] = newField.id;
+    if (Array.isArray(newField.options)) {
+      optionsByCaseManagerFieldId[oldField.id] = newField.options;
+    }
     matches.push({ oldField, newField, matchType, score });
     entries.push({ oldField, newField, matchType, score });
   }
 
   return {
-    mapping, entries, matches, unmatched, ambiguous, typeMismatches, unsupported,
+    mapping,
+    optionsByCaseManagerFieldId,
+    entries,
+    matches,
+    unmatched,
+    ambiguous,
+    typeMismatches,
+    unsupported,
   };
 }
 
@@ -149,7 +160,19 @@ function renderMappingFile(result) {
     );
   }
 
-  lines.push('};', '', 'module.exports = customFieldMapping;', '');
+  lines.push(
+    '};',
+    '',
+    '// NotusPoint option IDs and labels, keyed by Case Manager custom field ID.',
+    `const customFieldOptionsByCaseManagerId = ${JSON.stringify(result.optionsByCaseManagerFieldId, null, 2)};`,
+    '',
+    "Object.defineProperty(customFieldMapping, 'OPTIONS_BY_CASE_MANAGER_FIELD_ID', {",
+    '  value: customFieldOptionsByCaseManagerId,',
+    '});',
+    '',
+    'module.exports = customFieldMapping;',
+    '',
+  );
 
   const unmatchedEntries = result.entries.filter(({ newField }) => !newField);
   if (unmatchedEntries.length) {

@@ -74,6 +74,9 @@ Launches a menu that drives the whole pipeline:
   the generated object; unmatched, ambiguous, unsupported, and type-mismatched
   fields have a `null` destination ID and an explanatory inline comment. A
   compact list of all unmatched fields is repeated at the bottom for review.
+  Destination multiple-choice options are retained as `{ value, label }`
+  pairs under the generated mapping's non-enumerable
+  `OPTIONS_BY_CASE_MANAGER_FIELD_ID` lookup, keyed by the source field ID.
   After exact matching, a conservative fuzzy pass handles punctuation and
   apostrophe differences, small misspellings, and names missing a word. It
   accepts only a strong, clear best match; close candidates remain unmatched.

@@ -93,10 +93,64 @@ test('normalises Case Manager response fields and excludes inactive fields', () 
 
 test('unwraps the NotusPoint matching DTO response', () => {
   assert.deepEqual(unwrapImporterCustomFields([
-    { id: 'new-1', name: 'Benefit Type', type: 'SELECT' },
+    {
+      id: 'new-1',
+      name: 'Benefit Type',
+      type: 'SELECT',
+      options: [
+        { value: 'option-1', label: 'Weekly benefit' },
+        { value: 2, label: 20 },
+      ],
+    },
   ]), [
-    { id: 'new-1', name: 'Benefit Type', type: 'SELECT' },
+    {
+      id: 'new-1',
+      name: 'Benefit Type',
+      type: 'SELECT',
+      options: [
+        { value: 'option-1', label: 'Weekly benefit' },
+        { value: '2', label: '20' },
+      ],
+    },
   ]);
+});
+
+test('rejects malformed NotusPoint custom-field options', () => {
+  assert.throws(
+    () => unwrapImporterCustomFields([{
+      id: 'new-1',
+      name: 'Benefit Type',
+      type: 'SELECT',
+      options: [{ label: 'Missing value' }],
+    }]),
+    /must contain value and label/,
+  );
+});
+
+test('stores destination options by Case Manager custom field ID', () => {
+  const result = buildCustomFieldMapping([
+    { id: 'old-1', name: 'Benefit Type', type: 'SELECT', sourceType: 'List' },
+    { id: 'old-2', name: 'Empty List', type: 'SELECT', sourceType: 'List' },
+  ], [
+    {
+      id: 'new-1',
+      name: 'Benefit Type',
+      type: 'SELECT',
+      options: [{ value: 'option-1', label: 'Weekly benefit' }],
+    },
+    { id: 'new-2', name: 'Empty List', type: 'SELECT', options: [] },
+  ]);
+
+  assert.deepEqual(result.optionsByCaseManagerFieldId, {
+    'old-1': [{ value: 'option-1', label: 'Weekly benefit' }],
+    'old-2': [],
+  });
+
+  const output = renderMappingFile(result);
+  assert.match(output, /const customFieldOptionsByCaseManagerId =/);
+  assert.match(output, /"value": "option-1"/);
+  assert.match(output, /"label": "Weekly benefit"/);
+  assert.match(output, /OPTIONS_BY_CASE_MANAGER_FIELD_ID/);
 });
 
 test('matches only a unique normalised name with the same type', () => {

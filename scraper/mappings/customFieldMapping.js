@@ -4,456 +4,3562 @@
 // Every active Case Manager custom field is listed; null means it will not be transferred.
 const customFieldMapping = {
   // CaseManager custom field ID                 NotusPoint custom field ID
-  "f2d5fa6a-b545-42ff-b0f2-9ac7beba6f54":
-    "a2a2d416-91a8-4740-9236-db9fa41a22a1", // "Acenda Benefit Type." Custom Field in CaseManager (SELECT) becomes "Acenda Benefit Type" Custom Field in NotusPoint (SELECT) (fuzzy match 100%)
-  "683222f7-53d9-45f9-8c59-6ac0a48fbbfe":
-    "450ee3db-5120-4395-9feb-d8b88412e850", // "Acenda Report / Email Update Required" Custom Field in CaseManager (SELECT) becomes "Acenda Report / Email Update Required" Custom Field in NotusPoint (SELECT)
-  "2605d8cc-8229-42d1-a00c-27b18e1a1569":
-    "2c0b9443-3b8a-4944-ba7a-96d6b23e2486", // "Acenda Rehab Status" Custom Field in CaseManager (SELECT) becomes "Acenda Rehab Status" Custom Field in NotusPoint (SELECT)
-  "58676ac7-b10a-42f5-bd4b-17616300a008":
-    "39b8f5e3-cdbc-4ea6-a454-79e44ccd90d1", // "Acenda support provision" Custom Field in CaseManager (SELECT) becomes "Acenda support provision" Custom Field in NotusPoint (SELECT)
-  "2481bc13-6253-4fb9-9c11-e83d9f3f86b9":
-    "c3616bef-e4ac-49f2-9650-3c20c4958ec7", // "Acenda - service option" Custom Field in CaseManager (SELECT) becomes "Acenda - service option" Custom Field in NotusPoint (SELECT)
-  "8d46a3d0-e6d9-4028-9c92-a0e45370d004":
-    "c682b6a7-4dce-4f65-9615-97fd4a270ff3", // "Acenda - service goal" Custom Field in CaseManager (SELECT) becomes "Acenda - service goal" Custom Field in NotusPoint (SELECT)
-  "29e958fe-c3d8-460e-ae2f-70dd199d631d":
-    "c8bdb872-d3b8-445e-b1bf-3e909042d6d7", // "Acenda - status at referral" Custom Field in CaseManager (SELECT) becomes "Acenda - status at referral" Custom Field in NotusPoint (SELECT)
-  "7e84e642-1096-4130-b843-1860d688db79":
-    "fa5537a7-d12f-4696-a27f-32b2bb7b19b0", // "Acenda - status at reporting" Custom Field in CaseManager (SELECT) becomes "Acenda - status at reporting" Custom Field in NotusPoint (SELECT)
-  "15bbfe83-b38c-422d-b803-3d76c6c83478":
-    "45204659-0e13-44ea-b8b2-73a4cf2a765e", // "Acenda - status at closure" Custom Field in CaseManager (SELECT) becomes "Acenda - status at closure" Custom Field in NotusPoint (SELECT)
-  "1bec8062-3133-4898-b04a-a867d21f1730": null, // "Asx Date-" Will not be transferred into NotusPoint as no match could be found.
-  "4b0bfbd3-a54a-4a4a-9251-9c25779890b4":
-    "2bcbde56-5e4a-412a-b1d0-294709cbe5a0", // "Insurer Update Request" Custom Field in CaseManager (SELECT) becomes "Insurer Update Request" Custom Field in NotusPoint (SELECT)
-  "d9e4e33f-72a3-4705-b1c9-bb85c4226887":
-    "3fb7d5be-cba6-49e3-9822-a486bd252526", // "Report / Initial Summary Submitted" Custom Field in CaseManager (DATE) becomes "Report / Initial Summary Submitted" Custom Field in NotusPoint (DATE)
-  "200c9983-9de0-4e29-916c-d15f03a76143":
-    "7c358888-155f-43fa-a5ff-cbbd7e9729d2", // "if >20 Days Delay on Report - Reason" Custom Field in CaseManager (SHORT_TEXT) becomes "If >20 Days Delay on Report - Reason" Custom Field in NotusPoint (SHORT_TEXT)
-  "c67cad1e-8564-4371-9ceb-5d147656ca71":
-    "7491e2c7-92f4-47f0-83ad-f1591b4a3914", // "MedEbridge - Date Consent Form Uploaded" Custom Field in CaseManager (DATE) becomes "MedEbridge - Date Consent Form Uploaded" Custom Field in NotusPoint (DATE)
-  "ef162754-938b-4b8f-ad5b-2973779f972a":
-    "6132f8e8-cb9c-470f-9ac3-520171b6b2ab", // "AIA Status" Custom Field in CaseManager (LONG_TEXT) becomes "AIA Status" Custom Field in NotusPoint (LONG_TEXT)
-  "ee44020b-026a-4f10-a42d-f241f27a2cb4":
-    "072e2081-5236-4d2b-887a-ef3abbaa231b", // "AIA Proposed Action" Custom Field in CaseManager (LONG_TEXT) becomes "AIA Proposed Action" Custom Field in NotusPoint (LONG_TEXT)
-  "d8e9cfd9-fa94-4f93-ba5b-6899be1a917f":
-    "ec580f90-050a-4081-a584-fdf817199723", // "AIA Date of Update" Custom Field in CaseManager (DATE) becomes "AIA Date of Update" Custom Field in NotusPoint (DATE)
-  "3561f8bd-ffd6-46a1-95e7-5484f257a3a7":
-    "12d85ae1-6b12-4eb0-a2b9-1ed123f41edf", // "AIA Outcome Status at the time of completion" Custom Field in CaseManager (SELECT) becomes "AIA Outcome Status at the time of completion" Custom Field in NotusPoint (SELECT)
-  "45d4ba64-c3a3-4811-b7dd-7c81d4769dbc":
-    "552c6bd2-3448-4a25-b145-cdb4524c3d9e", // "AIA Issues/concerns" Custom Field in CaseManager (SHORT_TEXT) becomes "AIA Issues/concerns" Custom Field in NotusPoint (LONG_TEXT)
-  "9668e544-00e0-4b3c-bec2-e6e615bf361c":
-    "6cb131e9-4df4-448d-807c-8dbdc69f5f52", // "AIA Further Rehab Recommended" Custom Field in CaseManager (SELECT) becomes "AIA Further Rehab Recommended" Custom Field in NotusPoint (SELECT)
-  "d48b17c1-a632-4944-9434-299812315256":
-    "d4b9d377-cb5e-4bf6-a4a0-237483a03e63", // "Employability Assessment Completed" Custom Field in CaseManager (SELECT) becomes "Employability Assessment Completed" Custom Field in NotusPoint (SELECT)
-  "8b9a82c2-4658-4fec-bfd3-8184d6adc94e":
-    "c52ecde4-9daa-40cb-9184-7bfd8ff7712e", // "CSAT Case Closure" Custom Field in CaseManager (SELECT) becomes "CSAT Case Closure" Custom Field in NotusPoint (SELECT)
-  "6cb1c118-ff39-459d-be52-ba14ffbe1455":
-    "7c85bdc5-f8ad-4cd2-9c86-e3f6b3667b93", // "NPS Score at time of Closure" Custom Field in CaseManager (SELECT) becomes "NPS Score at time of Closure" Custom Field in NotusPoint (SELECT)
-  "17562bc2-5333-459f-9934-f7f1849b0da2":
-    "827e7cec-b78b-48a8-9cbe-6f1c3bf65f73", // "NPS Outcome" Custom Field in CaseManager (SELECT) becomes "NPS Outcome" Custom Field in NotusPoint (SELECT)
-  "31c251c2-c69b-41d6-a2f6-8fde06a53f71":
-    "f60e8955-09d9-4f53-add8-84c93712bf44", // "Met QA Requirements" Custom Field in CaseManager (SELECT) becomes "Met QA Requirements" Custom Field in NotusPoint (SELECT)
-  "162ea8d0-a776-429d-976c-88c50b7f4229":
-    "0552ed30-e7cc-44ed-b5ea-3476cc95e2cf", // "QA Not Met Reason" Custom Field in CaseManager (SHORT_TEXT) becomes "QA Not Met Reason" Custom Field in NotusPoint (LONG_TEXT)
-  "c63fd704-5485-47f6-91e4-6a96304d57b7":
-    "7e270118-48ee-4db8-8621-e8869e47b350", // "Plan closing - AIR not required" Custom Field in CaseManager (SELECT) becomes "Plan closing - AIR not required" Custom Field in NotusPoint (SELECT)
-  "f120d0f7-a433-4e06-9e47-4115083c06a1":
-    "84592366-3eb7-49dd-b68f-ec37356b688c", // "AIR plan extension due date" Custom Field in CaseManager (DATE) becomes "AIR plan extension due date" Custom Field in NotusPoint (DATE)
-  "93f6fedb-99b6-42c5-8f58-c545237fdd33":
-    "c856c88e-60cd-4203-a245-3287047d295a", // "AIR plan extension upload date" Custom Field in CaseManager (DATE) becomes "AIR plan extension upload date" Custom Field in NotusPoint (DATE)
-  "36248f6b-eaef-49ea-8ed6-f7869087461b":
-    "7e8ed86d-9eaa-4255-b9d7-4d47a2fc763e", // "AIR plan extension reason" Custom Field in CaseManager (SHORT_TEXT) becomes "AIR plan extension reason" Custom Field in NotusPoint (SHORT_TEXT)
-  "6d0038a7-c7e1-447d-87a2-53cded02595d":
-    "0f569ba2-aca7-4705-bf06-20f195c1efe6", // "AIR notes" Custom Field in CaseManager (LONG_TEXT) becomes "AIR notes" Custom Field in NotusPoint (LONG_TEXT)
-  "8cbf9695-0373-4ceb-9f8c-440fdbbcd7cb":
-    "9816303f-c304-451c-94b2-54e8853e4a84", // "Assessment due date" Custom Field in CaseManager (DATE) becomes "Assessment due date" Custom Field in NotusPoint (DATE)
-  "dcdc2cbc-f39d-4209-99c5-6de0d283a9f8":
-    "d91177eb-ce15-4309-8131-e47d9a3651fd", // "Assessment completed date" Custom Field in CaseManager (DATE) becomes "Assessment completed date" Custom Field in NotusPoint (DATE)
-  "1eb741c2-e390-4192-ac5c-3e677744213b":
-    "c9c3a0e4-6f63-4642-b44b-91ef57f93017", // "Assessment/plan due date" Custom Field in CaseManager (DATE) becomes "Assessment/plan due date" Custom Field in NotusPoint (DATE)
-  "cfc479c5-6640-484a-a138-135312438b09":
-    "2dab68b1-e4c3-48a8-be6e-43380407f6b2", // "Assessment/plan upload date" Custom Field in CaseManager (DATE) becomes "Assessment/plan upload date" Custom Field in NotusPoint (DATE)
-  "08b9a6f6-e4c0-4d27-9739-db72364a7c5b":
-    "8a7f31ff-9bda-4088-a691-652a1a40bd4f", // "Assessment/plan extension reason" Custom Field in CaseManager (SELECT) becomes "Assessment/plan extension reason" Custom Field in NotusPoint (SELECT)
-  "0c062d08-b59a-4124-ab66-77256016b56a":
-    "2d954d89-02ca-4e90-add0-6d9bb4277e62", // "DVA consent to proceed date" Custom Field in CaseManager (DATE) becomes "DVA consent to proceed date" Custom Field in NotusPoint (DATE)
-  "f5bb28e3-9a4f-4b03-ab2d-68aa2a232c23":
-    "3e0985b5-eb2e-463a-8a0f-ea23f6c238f2", // "Ongoing File Audit Completion Date" Custom Field in CaseManager (DATE) becomes "Ongoing File Audit Completion Date" Custom Field in NotusPoint (DATE)
-  "a3e6a7d4-3ff6-49d5-94df-c035092e7695":
-    "36cb4a16-6680-4c99-805c-aa47eccb69da", // "Ongoing File Audit Corrective Actions/Feedback" Custom Field in CaseManager (SHORT_TEXT) becomes "Ongoing File Audit Corrective Actions/Feedback" Custom Field in NotusPoint (LONG_TEXT)
-  "42299b4d-c7af-42fd-a30d-d5df4ae77b2f":
-    "4e5146b0-70cc-40bd-9e3a-7102284ac473", // "Closure Outcome" Custom Field in CaseManager (SELECT) becomes "Closure Outcome" Custom Field in NotusPoint (SELECT)
-  "77b63a72-4b7a-4fa1-8c37-4a832d20855d":
-    "c3858f98-de7e-41df-b97d-b8cf666f6c64", // "Client Contact Due Date" Custom Field in CaseManager (DATE) becomes "Client Contact Due Date" Custom Field in NotusPoint (DATE)
-  "c5fbbf31-9ad6-47bc-aeea-5384b0a629dc":
-    "f69ff37b-36da-4318-8f02-06c77360aea0", // "Client Contact - Date" Custom Field in CaseManager (DATE) becomes "Client Contact - Date" Custom Field in NotusPoint (DATE)
-  "5c69a0da-3382-48a8-b642-1faf0290d575":
-    "e94bf632-fcf1-4621-8d02-b3f93a6b5359", // "ADL Assessment Due Date" Custom Field in CaseManager (DATE) becomes "ADL Assessment Due Date" Custom Field in NotusPoint (DATE)
-  "4ce008ab-f6af-41b3-9ff4-5449d64c324b":
-    "1724f67e-eef2-4017-b624-d8ba8afc85d1", // "ADL Assessment Date" Custom Field in CaseManager (DATE) becomes "ADL Assessment Date" Custom Field in NotusPoint (DATE)
-  "cac8183f-40f8-406f-9c78-68ce81e565da":
-    "cf4c7ac8-b1ad-447e-bd5e-f19b8ff21baf", // "ADL Assessment Report Due Date" Custom Field in CaseManager (DATE) becomes "ADL Assessment Report Due Date" Custom Field in NotusPoint (DATE)
-  "43028c35-db12-4763-b2a8-f1d7e76baab8":
-    "e46994ec-974c-4195-b665-26c2bd032672", // "ADL Assessment Report Upload Date" Custom Field in CaseManager (DATE) becomes "ADL Assessment Report Upload Date" Custom Field in NotusPoint (DATE)
-  "31052097-21bf-4445-8f30-43c897ab2b86":
-    "fcd2f364-c0d7-48d6-afef-76bb3ac1e0d9", // "Employer Contacted" Custom Field in CaseManager (SELECT) becomes "Employer Contacted" Custom Field in NotusPoint (SELECT)
-  "c94818ad-2d99-4ddc-b1bb-75f41dfbf35a":
-    "d1871180-24fe-4d09-b6ef-f44c23d690d4", // "Treater/GP Contacted" Custom Field in CaseManager (SELECT) becomes "Treater/GP Contacted" Custom Field in NotusPoint (SELECT)
-  "c7265fb1-6e2d-4c4b-8fdf-b2efb9fe14fe":
-    "cd5babe9-c80a-4d42-b0a5-3ca992789533", // "Verbatim Feedback" Custom Field in CaseManager (LONG_TEXT) becomes "Verbatim Feedback" Custom Field in NotusPoint (LONG_TEXT)
-  "b9875e7a-914c-4514-b0e1-e55cbf9ea2fb":
-    "18d629dc-7bc5-4d1f-9c6d-8d44036b2ac1", // "Assessment Status at time of completion" Custom Field in CaseManager (SELECT) becomes "Assessment Status at time of completion" Custom Field in NotusPoint (SELECT)
-  "5372b3ee-3882-4e67-862f-f2aff271924c":
-    "bcf24bcb-4f28-41b4-8bbb-8673f8d9caef", // "EE Outcome" Custom Field in CaseManager (SELECT) becomes "EE Outcome" Custom Field in NotusPoint (SELECT)
-  "661c171e-4c0e-436a-8057-3a1e1744b8fe":
-    "1a455494-c406-4f4e-8666-cb2cb3f94189", // "Further Referral" Custom Field in CaseManager (SELECT) becomes "Further Referral" Custom Field in NotusPoint (SELECT)
-  "47f56f20-daf6-4eea-b535-6106dee4131e":
-    "892c5b68-878b-455d-b552-ce5783955631", // "PCN provided date" Custom Field in CaseManager (DATE) becomes "PCN provided date" Custom Field in NotusPoint (DATE)
-  "f1bf1229-ac72-4684-bc2d-d34e838dcb3a":
-    "2e98aab3-8a3e-422d-bb4d-de7d550fb82a", // "PCN client refused" Custom Field in CaseManager (SELECT) becomes "PCN client refused" Custom Field in NotusPoint (SELECT)
-  "6393ac14-c276-4b45-b80a-7cee43fdc664":
-    "ccf2aaf1-d066-45cf-9228-b83f70c78528", // "Medical disclosure form signed" Custom Field in CaseManager (SELECT) becomes "Medical disclosure form signed" Custom Field in NotusPoint (SELECT)
-  "a83aa059-a20d-495c-a6aa-a47a2ccffba5":
-    "682e5545-9ae7-459e-adac-08fb4187435a", // "Medical disclosure client refused" Custom Field in CaseManager (SELECT) becomes "Medical disclosure client refused" Custom Field in NotusPoint (SELECT)
-  "720e0fe4-6db4-407d-84f0-1a0cef2ad7c7":
-    "611c17a8-81f0-4b4b-9b9f-a0938fddaafe", // "Referral acknowledged date" Custom Field in CaseManager (DATE) becomes "Referral acknowledged date" Custom Field in NotusPoint (DATE)
-  "f7870f12-86a4-4da9-92ce-f0d15d6b1eda":
-    "59ec5cf5-5ded-4f65-9dc3-bec154017940", // "Client contact date" Custom Field in CaseManager (DATE) becomes "Client contact date" Custom Field in NotusPoint (DATE)
-  "b0f0260e-b5ee-4a62-878e-0aa3e37e670c":
-    "a9df460d-411e-40bf-aee9-e39d0ab8ea9e", // "Metlife Status" Custom Field in CaseManager (LONG_TEXT) becomes "Metlife Status" Custom Field in NotusPoint (LONG_TEXT)
-  "746e852d-5e87-4297-86bf-e058c156e240":
-    "893dae62-f01e-493e-97c2-129b19193395", // "Metlife Proposed Action" Custom Field in CaseManager (LONG_TEXT) becomes "Metlife Proposed Action" Custom Field in NotusPoint (LONG_TEXT)
-  "1ff32a39-0f6a-4bf2-a579-22f6c87fd5de":
-    "e95d61ae-f480-44fd-925f-fe6aa859223c", // "Metlife Date of Update" Custom Field in CaseManager (DATE) becomes "Metlife Date of Update" Custom Field in NotusPoint (DATE)
-  "21459d95-d3a2-4d25-bcfa-280c6b3e0d4f":
-    "664b6a03-cc4c-4a58-af97-32049c6d2344", // "Metlife Outcome capacity at time of completion" Custom Field in CaseManager (SELECT) becomes "Metlife Outcome capacity at time of completion" Custom Field in NotusPoint (SELECT)
-  "7d5974e6-020e-41ad-a568-175134f97278":
-    "3ff88b31-c1d7-4d06-8d97-d4ff9cc1f892", // "Metlife Outcome status at time of completion" Custom Field in CaseManager (SELECT) becomes "Metlife Outcome status at time of completion" Custom Field in NotusPoint (SELECT)
-  "c43f1cc1-9281-48bd-8ec7-e7cf803f2abf":
-    "5c4c4bc8-6acd-41fc-8554-99e42871699f", // "Metlife Issues/Concerns" Custom Field in CaseManager (SHORT_TEXT) becomes "Metlife Issues/Concerns" Custom Field in NotusPoint (LONG_TEXT)
-  "7e4443a5-5b61-406b-bb0b-44f789648292":
-    "254992cd-ebf2-49b5-8e8b-f0d1d5c48b6e", // "Metlife Further Rehab Recommended" Custom Field in CaseManager (SELECT) becomes "Metlife Further Rehab Recommended" Custom Field in NotusPoint (SELECT)
-  "0ceaa9fe-4598-409f-9cf6-9a60288d0917":
-    "7fe125db-090f-4a2a-9dde-f32a36f1a526", // "ORAMS Ax Referral Method" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Referral Method" Custom Field in NotusPoint (SELECT)
-  "51a68359-a6d7-45fe-9d12-0be4f9017690":
-    "a5bd2162-491e-464f-86e2-18ddb0095b38", // "ORAMS Ax Agency" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Agency" Custom Field in NotusPoint (SELECT)
-  "37cb7a00-f6c7-46cc-8c60-51e62f3ba170":
-    "4d3a9e49-f0ea-4744-8033-7a53abbad6f5", // "ORAMS Ax Region" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Region" Custom Field in NotusPoint (SELECT)
-  "3dc63933-1707-426d-8664-65947690119c":
-    "8f9d35a5-a0ea-4680-873b-17848344340f", // "ORAMS Ax Accepted Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Accepted Date" Custom Field in NotusPoint (DATE)
-  "b9ab977d-89bb-4727-ac31-e3c6b216212a":
-    "73671de7-78b3-4dca-b317-b17126d24f7f", // "ORAMS Ax Assessment Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Assessment Due Date" Custom Field in NotusPoint (DATE)
-  "ca6c9aeb-3114-463a-a890-74d70380bacc":
-    "a532ddf3-fe8f-46b1-92f3-4a4b6d3fe720", // "ORAMS Ax Assessment Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Assessment Date" Custom Field in NotusPoint (DATE)
-  "eaa3e827-fac8-4438-9cb3-7fa9d14e2389":
-    "d3633f07-5b9b-43de-9e58-be4e9444137a", // "ORAMS Ax Preliminary Findings Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Preliminary Findings Due Date" Custom Field in NotusPoint (DATE)
-  "976df2d5-9d83-480f-84d5-1c9ed872926c":
-    "a1c6ba6c-e539-4811-8908-dec24d9ba28f", // "ORAMS Ax Preliminary Findings Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Preliminary Findings Date" Custom Field in NotusPoint (DATE)
-  "95af407e-dfad-4dc3-80aa-4c1b7f42c525":
-    "776e9a5c-a4e5-4196-b0e1-726d571cdbc6", // "ORAMS Ax Assessment Report Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Assessment Report Due Date" Custom Field in NotusPoint (DATE)
-  "9a1d1278-e943-4d06-889c-6c3b9b09ff52":
-    "9b058935-c589-4fc9-9442-0c9d0a8f293c", // "ORAMS Ax Assessment Report Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Assessment Report Submitted Date" Custom Field in NotusPoint (DATE)
-  "022f07b7-9854-4ada-8117-093e44b437c1":
-    "725cb675-de0c-4163-9248-a1b44bc282d8", // "ORAMS Ax Referral Acceptance Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Referral Acceptance Exception Reason" Custom Field in NotusPoint (SELECT)
-  "62c09f72-ebdc-4b07-89ef-4bfb0214c995":
-    "7a24c8d6-b371-4199-9ebe-30cefc4d876c", // "ORAMS Ax Referral Acceptance Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS Ax Referral Acceptance Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
-  "871d9da9-3011-4dec-af39-89a9a8d3c76f":
-    "174acd33-0789-4284-adc1-bb1d44e6da9c", // "ORAMS Ax Assessment Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Assessment Completed Exception Reason" Custom Field in NotusPoint (SELECT)
-  "24358e08-5e56-40ce-a5c0-505a9d0fa4be":
-    "fa841b92-f43e-4371-b455-706c7872cc40", // "ORAMS Ax Assessment Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS Ax Assessment Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
-  "48fec116-0408-4a24-94c4-6c56e430cd86":
-    "ccf7794a-aa47-4a23-86c8-5bdb85f1d4c8", // "ORAMS Ax Report Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Report Completed Exception Reason" Custom Field in NotusPoint (SELECT)
-  "b0973f78-4eae-4323-bd09-5241bed006c0":
-    "104f390d-72d3-476e-8ee3-9431b7054a39", // "ORAMS Ax Report Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS Ax Report Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
-  "3d6f6b86-a935-4761-9d1e-d9532fb6d5d5":
-    "559e5c0d-9b90-4f8b-9bb9-572ce7ac519c", // "ORAMS - Referral Method" Custom Field in CaseManager (SELECT) becomes "ORAMS - Referral Method" Custom Field in NotusPoint (SELECT)
-  "cd3354e5-a4a6-448d-b3a4-571bc6d4d037":
-    "8f7ec5f7-d813-469b-97ac-150688fb3196", // "ORAMS - Agency" Custom Field in CaseManager (SELECT) becomes "ORAMS - Agency" Custom Field in NotusPoint (SELECT)
-  "ed44fae2-999b-4505-95a9-de3e3ac4327a":
-    "9bf13aa6-a377-4da6-bf2c-c33d6f5d94e6", // "ORAMS - Region" Custom Field in CaseManager (SELECT) becomes "ORAMS - Region" Custom Field in NotusPoint (SELECT)
-  "61fbf844-65d7-4743-b031-5a417350c97e":
-    "c2485b9b-2abf-4dac-b8bb-c59ff6c2d8c4", // "ORAMS - Accepted Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Accepted Date" Custom Field in NotusPoint (DATE)
-  "b68134e4-6e41-4904-a3e7-7ed35170f066":
-    "08c266c0-5b72-4cf0-aa9e-629613dd255a", // "ORAMS - Draft Program Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Draft Program Due Date" Custom Field in NotusPoint (DATE)
-  "2dc2aa01-7ac0-40d2-be56-745c272343ad":
-    "73e76896-7daa-4e17-aaf7-9d752a056a40", // "ORAMS - Draft Program Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Draft Program Submitted Date" Custom Field in NotusPoint (DATE)
-  "96906dee-da24-42da-aaae-220ab0bfc938":
-    "c4b04d54-a57c-4808-81d8-b1245375ed42", // "ORAMS - Program Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Program Due Date" Custom Field in NotusPoint (DATE)
-  "4cd0f8e2-65a2-4e8c-b04e-7b9d722ed53b":
-    "fd38d9b9-1efb-40e2-a197-754117936408", // "ORAMS - Program Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Program Submitted Date" Custom Field in NotusPoint (DATE)
-  "d6ab72c0-17bc-4dcd-a33e-1e652ef63ec2":
-    "71902b90-6bf8-4eb8-950d-b7b9f0b4b136", // "ORAMS - Program Expiry Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Program Expiry Date" Custom Field in NotusPoint (DATE)
-  "4be0ae15-cbe2-4e82-a850-28bdcc002c58":
-    "d03b66ce-cedb-4baa-a193-35bad11d6c57", // "ORAMS - Program Alteration Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Program Alteration Due Date" Custom Field in NotusPoint (DATE)
-  "f717a90d-aadf-48d7-aa48-4d29381a3933":
-    "42166424-26b1-4ecd-9ae7-003d9add1ee8", // "ORAMS - Program Alteration Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Program Alteration Submitted Date" Custom Field in NotusPoint (DATE)
-  "34a99a66-e01e-443a-9b04-ea70663329a2":
-    "a53d5697-531d-4b92-9c3d-dd5a95bf8a94", // "ORAMS - Service Cessation Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Service Cessation Date" Custom Field in NotusPoint (DATE)
-  "2a18d289-3485-45b6-9d62-37eb8b95beb9":
-    "e1fbb4b2-b0ff-44f1-b818-9cda7166681c", // "ORAMS - Cessation Report Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Cessation Report Due Date" Custom Field in NotusPoint (DATE)
-  "f928296d-fb46-40bd-8871-42aec37dafc7":
-    "1df2c592-2bc0-4245-a6a5-d4a603a65e73", // "ORAMS - Cessation Report Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Cessation Report Submitted Date" Custom Field in NotusPoint (DATE)
-  "91144622-2584-498b-bdf3-c1fdafa9f6c1":
-    "16474d5e-fd1c-4f2c-8dfe-85330b715b88", // "ORAMS - Referral Acceptance Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS - Referral Acceptance Exception Reason" Custom Field in NotusPoint (SELECT)
-  "fa02ad8f-4749-40b7-8ff2-e220d7cfa87c":
-    "f813970b-c339-4c6f-9692-ab6ed71c0872", // "ORAMS - Referral Acceptance Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS - Referral Acceptance Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
-  "1ad3ec4c-ed6d-4325-8512-562bce24bab7":
-    "37c5a38b-ad02-4919-ad0f-75aa88156ed8", // "ORAMS - Program Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS - Program Completed Exception Reason" Custom Field in NotusPoint (SELECT)
-  "d6319d39-facc-47c6-8f98-7d69ce5f6be7":
-    "ab97963b-99d2-43eb-8e7c-67428de9575c", // "ORAMS - Program Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS - Program Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
-  "4a0949ae-dd10-46dc-a180-8726e3242ccc":
-    "832845c1-d80d-4c29-b005-8dedc23a4900", // "ORAMS - Cessation Report Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS - Cessation Report Completed Exception Reason" Custom Field in NotusPoint (SELECT)
-  "cbd30b2b-cbe4-4215-8a37-4e187d706db0":
-    "36c1b1e1-e15f-45ab-abbc-24eb0bfa3df0", // "ORAMS - Cessation Report Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS - Cessation Report Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
-  "0acca878-6809-4fb8-bc95-e35a7cfb4585":
-    "a1057854-f478-47df-8c25-d1a05e2bc57c", // "ORAMS - RTW Outcome" Custom Field in CaseManager (SELECT) becomes "ORAMS - RTW Outcome" Custom Field in NotusPoint (SELECT)
-  "cf5a9e76-aa4c-496a-970d-e881cf46b51e":
-    "35bd9344-5ead-4879-96bb-99b3a2486b3c", // "ORAMS SS Referral Method" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Referral Method" Custom Field in NotusPoint (SELECT)
-  "0d1809dd-6f63-4682-ab68-0798f26b5f87":
-    "2fb25a2a-3521-4169-a8b9-7c5a2d5feaa6", // "ORAMS SS Agency" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Agency" Custom Field in NotusPoint (SELECT)
-  "90e00aa5-ebe1-47be-90c4-29a23977f8b6":
-    "a3a14df4-66f7-499c-ab33-0359289dbb5d", // "ORAMS SS Region" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Region" Custom Field in NotusPoint (SELECT)
-  "29e31196-2804-42d5-82d9-6efc04a98678":
-    "3ff766e0-33ac-40ff-8e87-9681be903657", // "ORAMS SS Accepted Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Accepted Date" Custom Field in NotusPoint (DATE)
-  "ddd8b5c0-82a8-4809-889e-ebebb673097c":
-    "2f70ada5-cff4-481d-8261-9d443b5b24a6", // "ORAMS SS Assessment Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Assessment Due Date" Custom Field in NotusPoint (DATE)
-  "28fee365-2676-4291-89a5-7d0a8c4e0324":
-    "8563653d-4d8c-4a18-868e-82e475e413eb", // "ORAMS SS Assessment Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Assessment Date" Custom Field in NotusPoint (DATE)
-  "4b06dfaf-3fcb-43cf-aefa-0d959d3a84f6":
-    "f19299ef-0b80-4672-b6a0-20d1b8669ba9", // "ORAMS SS Preliminary Findings Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Preliminary Findings Due Date" Custom Field in NotusPoint (DATE)
-  "0b6e9d17-03d2-4148-a002-f2e209c83cd0":
-    "5e70a750-8ec4-49e7-993a-282e92229812", // "ORAMS SS Preliminary Findings Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Preliminary Findings Date" Custom Field in NotusPoint (DATE)
-  "d949debf-6e06-45df-9130-60171e4eab01":
-    "02ae1802-344d-4296-806f-deddb09dcf8b", // "ORAMS SS Report Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Report Due Date" Custom Field in NotusPoint (DATE)
-  "63c1d516-367c-4063-99ce-bcffc34a83d5":
-    "7af0cab4-7b35-42e4-b608-6724594737f7", // "ORAMS SS Report Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Report Submitted Date" Custom Field in NotusPoint (DATE)
-  "fd210e22-923d-4176-a9b4-c6d5b135c269":
-    "dbe25411-9b08-42ce-a4c5-a5cf6c98adbf", // "ORAMS SS Referral Acceptance Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Referral Acceptance Exception Reason" Custom Field in NotusPoint (SELECT)
-  "69104ccd-5cc8-4514-b7b6-b988f78d061e":
-    "deaaf87a-859f-483c-93e3-3cb6f3a55b97", // "ORAMS SS Referral Acceptance Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS SS Referral Acceptance Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
-  "764ffe6d-62a6-4f04-90dd-993ee8a7ff4b":
-    "b83e4d34-3672-4948-9624-1b8ad70e1d95", // "ORAMS SS Assessment Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Assessment Completed Exception Reason" Custom Field in NotusPoint (SELECT)
-  "15ea3b1f-f290-489e-9304-6fc9f84d951d":
-    "89a8b103-7b13-4b12-9aba-8470cabe6a60", // "ORAMS SS Assessment Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS SS Assessment Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
-  "76b54f37-2462-429e-a21c-c7f85b3583a0":
-    "6cfb273f-0c1b-4095-b157-6bf44613b0aa", // "ORAMS SS Report Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Report Completed Exception Reason" Custom Field in NotusPoint (SELECT)
-  "59a9d119-8d4e-47bc-b414-f15b4cb2d87b":
-    "d91e3487-e128-4541-a9b6-02fb837cd300", // "ORAMS SS Report Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS SS Report Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
-  "87becc33-2ccb-4d4f-ab35-dcdc6135af32":
-    "f110fe42-19a1-404b-9193-e29037ba313c", // "Plan completion due date" Custom Field in CaseManager (DATE) becomes "Plan completion due date" Custom Field in NotusPoint (DATE)
-  "faf1ee3c-f3d3-4d0c-b9cb-01d1b348df92":
-    "652fbbb8-620f-4d91-b271-0baf396a2c35", // "Plan completion actual date" Custom Field in CaseManager (DATE) becomes "Plan completion actual date" Custom Field in NotusPoint (DATE)
-  "0b228c5d-cfc0-4d18-bed3-6d92cd8bba96":
-    "314f8759-f2dd-4b9e-94dc-8638bd6a70df", // "Plan extension granted" Custom Field in CaseManager (SELECT) becomes "Plan extension granted" Custom Field in NotusPoint (SELECT)
-  "e9be40b5-400a-47c9-ba50-20ffa14a6886":
-    "b61e8d42-89e8-4c29-a71c-a401704e5a87", // "Closure report upload date" Custom Field in CaseManager (DATE) becomes "Closure report upload date" Custom Field in NotusPoint (DATE)
-  "6c4de319-d922-4b26-a5fd-e8fcb45c44dc":
-    "08e57978-1216-4eb5-a5e5-ea0de31ea9d4", // "PR 1 due date" Custom Field in CaseManager (DATE) becomes "PR 1 due date" Custom Field in NotusPoint (DATE)
-  "ebefb454-1986-43dd-b5f8-af9e81efa373":
-    "e45e3267-66f8-468a-b9d1-197b1b485679", // "PR 1 upload date" Custom Field in CaseManager (DATE) becomes "PR 1 upload date" Custom Field in NotusPoint (DATE)
-  "6e791b41-7235-4722-9c6e-a9bb02818a18":
-    "9c0558f8-20c0-4e16-85cc-acac6033d62a", // "PR 2 due date" Custom Field in CaseManager (DATE) becomes "PR 2 due date" Custom Field in NotusPoint (DATE)
-  "ea1022f9-7bfc-45c7-b47e-212071f5586d":
-    "d63c9b61-1bf3-4bb6-aeff-6b32ba10ee03", // "PR 2 upload date" Custom Field in CaseManager (DATE) becomes "PR 2 upload date" Custom Field in NotusPoint (DATE)
-  "2d17af61-cccb-4d25-b8d5-b563979b2bdb":
-    "376e3c07-3368-4a08-a259-df8ddbd57b9b", // "PR 3 due date" Custom Field in CaseManager (DATE) becomes "PR 3 due date" Custom Field in NotusPoint (DATE)
-  "7f30bebe-d601-4b46-86db-d49d31e60d49":
-    "31cfa17a-1f0f-4721-94cc-3c9151975186", // "PR 3 upload date" Custom Field in CaseManager (DATE) becomes "PR 3 upload date" Custom Field in NotusPoint (DATE)
-  "e5368ce5-e6fd-4cab-b5c5-d6a01a51eaee":
-    "85143f56-41f0-46e8-886c-b7bdf45ef936", // "PR 4 due date" Custom Field in CaseManager (DATE) becomes "PR 4 due date" Custom Field in NotusPoint (DATE)
-  "bfddd2ee-a262-47bf-b2d0-f17e88c290ca":
-    "679fd2d0-c0cb-4ab2-98b7-20746b537640", // "PR 4 upload date" Custom Field in CaseManager (DATE) becomes "PR 4 upload date" Custom Field in NotusPoint (DATE)
-  "facdce8e-a2f1-4422-9896-07b3b7c2374c":
-    "f0d03c4a-b98c-44fd-899a-44782c71a9b7", // "PR 5 due date" Custom Field in CaseManager (DATE) becomes "PR 5 due date" Custom Field in NotusPoint (DATE)
-  "4fba8f58-8f37-4d36-98e6-5f4709318922":
-    "6059b499-6b9b-4f70-8139-dc313dc464bd", // "PR 5 upload date" Custom Field in CaseManager (DATE) becomes "PR 5 upload date" Custom Field in NotusPoint (DATE)
-  "bb2b0a7d-4854-4ff1-9e92-a8d2f120f344":
-    "7ad17e6a-5272-44a7-9087-98278d05ca30", // "PR 6 due date" Custom Field in CaseManager (DATE) becomes "PR 6 due date" Custom Field in NotusPoint (DATE)
-  "0a4c21e4-3fd0-410e-a1ab-b59413ded5b0":
-    "56c630ff-32ad-4195-b2c5-be49371dc3e2", // "PR 6 upload date" Custom Field in CaseManager (DATE) becomes "PR 6 upload date" Custom Field in NotusPoint (DATE)
-  "58e2b0c1-b774-4b84-8d5d-b5177b6f3f6c":
-    "fd3e732b-7675-4150-a0f7-e70850d2b67a", // "PR 7 due date" Custom Field in CaseManager (DATE) becomes "PR 7 due date" Custom Field in NotusPoint (DATE)
-  "296a1df2-223a-46a2-bc15-b3cfdab13a50":
-    "fc99ecb8-27f9-471c-8581-8f138ab978fa", // "PR 7 upload date" Custom Field in CaseManager (DATE) becomes "PR 7 upload date" Custom Field in NotusPoint (DATE)
-  "291db64e-45a7-487b-b05f-6842445dc492":
-    "c6edb6a3-19a2-45c0-8a2e-1b225725406b", // "PR 8 due date" Custom Field in CaseManager (DATE) becomes "PR 8 due date" Custom Field in NotusPoint (DATE)
-  "b31a678d-4845-4769-8434-494b4f192129":
-    "01f386d7-2d64-4792-a7ec-f137954c5614", // "PR 8 upload date" Custom Field in CaseManager (DATE) becomes "PR 8 upload date" Custom Field in NotusPoint (DATE)
-  "0c19e9bd-3b36-466c-8abc-199e064cd271":
-    "e473c604-053e-4dda-8aa2-827c709291e0", // "PR 9 due date" Custom Field in CaseManager (DATE) becomes "PR 9 due date" Custom Field in NotusPoint (DATE)
-  "0058b1de-e47b-4333-a70d-618fc5f75f57":
-    "33ec3c59-4568-4e82-9777-cfa00449e1e8", // "PR 9 upload date" Custom Field in CaseManager (DATE) becomes "PR 9 upload date" Custom Field in NotusPoint (DATE)
-  "85cf3010-a91e-4dbc-8006-a4cdf9584e60":
-    "88c22510-875d-4803-9122-cb1265a95917", // "PR 10 due date" Custom Field in CaseManager (DATE) becomes "PR 10 due date" Custom Field in NotusPoint (DATE)
-  "a4323061-cf16-47b9-a4d8-10eacecb7c36":
-    "3ce7da23-eab7-4ef6-ac83-7873444451a8", // "PR 10 upload date" Custom Field in CaseManager (DATE) becomes "PR 10 upload date" Custom Field in NotusPoint (DATE)
-  "6d9ccfb4-ab3a-4880-8112-6d324e0192d5":
-    "af00abb2-776c-4c0e-a9fc-cdb81c68f2e9", // "PR 11 due date" Custom Field in CaseManager (DATE) becomes "PR 11 due date" Custom Field in NotusPoint (DATE)
-  "46df2548-c492-4bde-985f-a1d00270aaf5":
-    "72b9d099-a560-4ddd-b782-973bc839683b", // "PR 11 upload date" Custom Field in CaseManager (DATE) becomes "PR 11 upload date" Custom Field in NotusPoint (DATE)
-  "969bf3a0-79d4-4e35-9ecf-b69a08ed7cf1":
-    "a8c3f675-c2c5-490a-aec2-84cd6882a083", // "PR 12 due date" Custom Field in CaseManager (DATE) becomes "PR 12 due date" Custom Field in NotusPoint (DATE)
-  "c41c5863-6250-4556-8db5-199178e466a1":
-    "355e247c-a97c-410c-8cb7-1a84c40eaec3", // "PR 12 upload date" Custom Field in CaseManager (DATE) becomes "PR 12 upload date" Custom Field in NotusPoint (DATE)
-  "c653a8ba-561a-428b-a2f1-c606b64121f2":
-    "0c0270c6-d247-4a0d-a765-12ca77dd763e", // "PR 13 due date" Custom Field in CaseManager (DATE) becomes "PR 13 due date" Custom Field in NotusPoint (DATE)
-  "5dd56e51-e252-488e-a2ab-c150f13dc60f":
-    "111084f4-d750-463b-bcfa-5e23e26bc314", // "PR 13 upload date" Custom Field in CaseManager (DATE) becomes "PR 13 upload date" Custom Field in NotusPoint (DATE)
-  "56b0da44-69ad-4b85-aeed-e828ce709c3f":
-    "cfd69f22-84a8-4d61-bb5f-f1854b55d3ff", // "PR 14 due date" Custom Field in CaseManager (DATE) becomes "PR 14 due date" Custom Field in NotusPoint (DATE)
-  "34a5a778-571b-4a79-9ad9-365a08a7a4ee":
-    "1e232038-204c-4a93-aa7d-21848a4c4e4d", // "PR 14 upload date" Custom Field in CaseManager (DATE) becomes "PR 14 upload date" Custom Field in NotusPoint (DATE)
-  "0b65d4f0-54ac-4232-97ab-ac154cd640aa":
-    "c786289c-a137-4665-940f-4335ce4e19d4", // "PR 15 due date" Custom Field in CaseManager (DATE) becomes "PR 15 due date" Custom Field in NotusPoint (DATE)
-  "873965f3-f6b7-49fa-844a-4c1710c09868":
-    "32a812b5-c726-424f-b8db-b5f306bad680", // "PR 15 upload date" Custom Field in CaseManager (DATE) becomes "PR 15 upload date" Custom Field in NotusPoint (DATE)
-  "c4807d65-932d-4681-998e-081dd1579ae1":
-    "4a16a428-2452-4dd6-a70c-8598adba173b", // "PR 16 due date" Custom Field in CaseManager (DATE) becomes "PR 16 due date" Custom Field in NotusPoint (DATE)
-  "d57e3701-3f0d-4fb5-97e1-acf1211b1f01":
-    "08482b0d-cc92-4b63-b426-bbfff7e6ce09", // "PR 16 upload date" Custom Field in CaseManager (DATE) becomes "PR 16 upload date" Custom Field in NotusPoint (DATE)
-  "c074252e-3905-44d5-bb26-52b6af53e515":
-    "9d89dd81-e59e-4b5e-ab24-21aa3ed1a8af", // "PR 17 due date" Custom Field in CaseManager (DATE) becomes "PR 17 due date" Custom Field in NotusPoint (DATE)
-  "0843ca15-32d7-4e05-b601-ef18ed380347":
-    "d33d38c2-573d-4756-b801-d5cb58c86c99", // "PR 17 upload date" Custom Field in CaseManager (DATE) becomes "PR 17 upload date" Custom Field in NotusPoint (DATE)
-  "bc054b2d-e25d-4690-889f-42f3a181ef9f":
-    "0cb7230b-89cf-4b45-ae2a-69b974678c61", // "PR 18 due date" Custom Field in CaseManager (DATE) becomes "PR 18 due date" Custom Field in NotusPoint (DATE)
-  "15d9d6a2-37b6-459c-ba79-13d56e6568f1":
-    "903af002-8d09-469d-93ac-71f16d49c8d0", // "PR 18 upload date" Custom Field in CaseManager (DATE) becomes "PR 18 upload date" Custom Field in NotusPoint (DATE)
-  "4c8c1ba1-aa1b-480e-974b-e33ad0dbe31b":
-    "33b3a4c2-d2b0-4ac5-b2f1-2b80117b318b", // "PR 19 due date" Custom Field in CaseManager (DATE) becomes "PR 19 due date" Custom Field in NotusPoint (DATE)
-  "25cd315f-44a7-49f6-88a7-daf283b9653e":
-    "46ea8210-af41-4585-890a-2a8a594f73aa", // "PR 19 upload date" Custom Field in CaseManager (DATE) becomes "PR 19 upload date" Custom Field in NotusPoint (DATE)
-  "c79f196a-2adf-451e-9083-d69c4b2eb54f":
-    "d5ff7fb3-088e-493e-8e7b-ef0dc5df2c3a", // "PR 20 due date" Custom Field in CaseManager (DATE) becomes "PR 20 due date" Custom Field in NotusPoint (DATE)
-  "ca23133c-a3c6-4a89-bb40-8a1b34f0b57e":
-    "abc6e9be-97bc-4140-b829-70138b1246b2", // "PR 20 upload date" Custom Field in CaseManager (DATE) becomes "PR 20 upload date" Custom Field in NotusPoint (DATE)
-  "e1487bee-a65e-4611-9ec7-e2c14732cdeb":
-    "a03694a0-37d9-46ba-9a4f-d560e38d263c", // "PR 21 due date" Custom Field in CaseManager (DATE) becomes "PR 21 due date" Custom Field in NotusPoint (DATE)
-  "0e025bc5-7957-4a57-a941-5ff15a4a7e1b":
-    "f0f72164-e81d-447e-9e42-b921b39131de", // "PR 21 upload date" Custom Field in CaseManager (DATE) becomes "PR 21 upload date" Custom Field in NotusPoint (DATE)
-  "9ab76dca-d4ab-43d4-9e48-7c4d97e9362b":
-    "93f0e393-1291-4859-a084-a21ac800f46e", // "PR 22 due date" Custom Field in CaseManager (DATE) becomes "PR 22 due date" Custom Field in NotusPoint (DATE)
-  "166ae180-ed7a-4da8-8122-0e93f2e2823c":
-    "8aaaa8c8-9135-49b4-be2e-70a89b1e4b61", // "PR 22 upload date" Custom Field in CaseManager (DATE) becomes "PR 22 upload date" Custom Field in NotusPoint (DATE)
-  "e4913065-f857-470b-8b5a-f243612b26a8":
-    "8d4aeaf4-8769-4cd4-93f9-5a39d8c89fd6", // "Status" Custom Field in CaseManager (LONG_TEXT) becomes "Status" Custom Field in NotusPoint (LONG_TEXT)
-  "3a5706ef-81c2-4214-8cd0-d9cdfd3809e8":
-    "dfc894ae-6725-4d2c-b058-b13c14561b78", // "Proposed Action" Custom Field in CaseManager (LONG_TEXT) becomes "Proposed Action" Custom Field in NotusPoint (LONG_TEXT)
-  "0a30857c-d0b6-44cc-b3a9-1e24f798345a":
-    "ab80efa6-2984-4a46-be91-843a1a798001", // "Date of Update." Custom Field in CaseManager (DATE) becomes "Date of Update" Custom Field in NotusPoint (DATE) (fuzzy match 100%)
-  "c55847a6-f829-4fc1-81b9-fe4d3b932184":
-    "c165afc8-0b62-4ef2-a14e-da04b6b6a065", // "Issues/Concerns" Custom Field in CaseManager (SHORT_TEXT) becomes "Issues/Concerns" Custom Field in NotusPoint (LONG_TEXT)
-  "2f7e31f7-7ec7-4ff3-8de8-f3457f5c1767":
-    "3aad6550-2924-4bfb-b2e1-ce15a77852b4", // "Outcome Capacity at time of completion" Custom Field in CaseManager (SELECT) becomes "Outcome Capacity at time of Completion" Custom Field in NotusPoint (SELECT)
-  "7ec598fb-ce34-4249-bffb-e1fdfd5e3c27":
-    "5a5a03df-ce34-4765-8234-ad2b4ca56840", // "Outcome Status at time of completion" Custom Field in CaseManager (SELECT) becomes "Outcome Status at time of Completion" Custom Field in NotusPoint (SELECT)
-  "7412af17-195e-4120-aa93-d4fc0c8dfe9c": null, // "Further Rehab Recommended" Will not be transferred into NotusPoint as no match could be found.
-  "c94d9cb2-500d-4b43-a5a6-adacfbcd8149":
-    "e016e5ea-07f5-403a-bff9-130a3053ec72", // "Survey Completed Type" Custom Field in CaseManager (SELECT) becomes "Survey Completed Type" Custom Field in NotusPoint (SELECT)
-  "bf2f4fd7-9a68-4718-a394-f012a2f14916":
-    "0eb3bd1c-d2b6-4567-a37e-52ab843524c6", // "Pre-Survey Assessment for Pain Scale" Custom Field in CaseManager (SELECT) becomes "Pre-Survey Assessment for Pain Scale" Custom Field in NotusPoint (SELECT)
-  "dde29b96-b8c5-44dd-8870-b4cba719c877":
-    "5cebfe6c-a88b-4a28-bea6-58dc2b3c614d", // "Post Survey Assessment for Pain Scale" Custom Field in CaseManager (SELECT) becomes "Post Survey Assessment for Pain Scale" Custom Field in NotusPoint (SELECT)
-  "0b1b5d5b-7486-41d7-9926-7c7b34523262":
-    "dd101367-5cdb-47d8-8bab-b83cd1c1ee76", // "Pre Survey Assessment for DASS 21 - Depression" Custom Field in CaseManager (SELECT) becomes "Pre Survey Assessment for DASS 21 - Depression" Custom Field in NotusPoint (SELECT)
-  "5cd95fe6-6281-4063-9b52-c9ede7d638f6":
-    "34f3bae7-49df-41cf-bb85-9816c5893ec2", // "Pre Survey Assessment for DASS 21 - Anxiety" Custom Field in CaseManager (SELECT) becomes "Pre Survey Assessment for DASS 21 - Anxiety" Custom Field in NotusPoint (SELECT)
-  "c7413058-d389-4d3c-979c-8aa2a0c8320f":
-    "0a6d3b54-6965-4e4a-a33f-c4eee28b1576", // "Pre Survey Assessment for DASS 21 - Stress" Custom Field in CaseManager (SELECT) becomes "Pre Survey Assessment for DASS 21 - Stress" Custom Field in NotusPoint (SELECT)
-  "fba05540-e971-496d-8319-ea1b423dff3a":
-    "3ed709bc-918a-4147-bc70-59893bfca418", // "Post Survey Assessment for DASS 21 - Depression" Custom Field in CaseManager (SELECT) becomes "Post Survey Assessment for DASS 21 - Depression" Custom Field in NotusPoint (SELECT)
-  "78a4b119-376a-4017-b373-748a3e659018":
-    "4afa1471-2484-426c-afbc-7f1d1bdf6c65", // "Post Survey Assessment for DASS 21 - Anxiety" Custom Field in CaseManager (SELECT) becomes "Post Survey Assessment for DASS 21 - Anxiety" Custom Field in NotusPoint (SELECT)
-  "9fa467db-8ad6-4060-afef-12ba66b5af41":
-    "c44b9106-1d40-42c3-bec7-af754087825e", // "Post Survey Assessment for DASS 21 - Stress" Custom Field in CaseManager (SELECT) becomes "Post Survey Assessment for DASS 21 - Stress" Custom Field in NotusPoint (SELECT)
-  "8af75556-16c7-4e42-b55d-1cb48c8536c5":
-    "694c2f33-a257-409f-a816-23bdff49c13c", // "Case Status" Custom Field in CaseManager (SELECT) becomes "Case Status" Custom Field in NotusPoint (SELECT)
-  "92ba1447-9a9a-4cc1-b347-51524094e5cd": null, // "ADMIN to Update" Will not be transferred into NotusPoint as no match could be found.
-  "4982e078-b182-459c-9c06-9059c3cc7ec7": null, // "Department" Will not be transferred into NotusPoint as no match could be found.
-  "4d62b424-e27c-419c-9f98-544d9f32b78d": null, // "Fund" Will not be transferred into NotusPoint as no match could be found.
-  "5b33eff4-c903-4f06-a229-aec179a00938": null, // "Insurance Type" Will not be transferred into NotusPoint as no match could be found.
-  "a6a0ca3f-91a3-4686-892c-be0daac8d76b": null, // ".......CONSULTANT TO UPDATE..............." Will not be transferred into NotusPoint as no match could be found.
-  "39363e8c-2c32-4c55-ae93-31be4de6f0d6": null, // "Employment status at time of referral." Will not be transferred into NotusPoint as no match could be found.
-  "49033eda-84a3-41c7-ac9e-fd8903654a98": null, // "Capacity at time of referral." Will not be transferred into NotusPoint as no match could be found.
-  "f07572d8-2712-40da-b897-0295b2f0e054": null, // "Current Service" Will not be transferred into NotusPoint as no match could be found.
-  "7f21202b-5093-4fdf-9a99-d45d1b846619": null, // "Progress Status / Future Strategies" Will not be transferred into NotusPoint as no match could be found.
-  "4ce4e0f5-b95b-443b-a68e-894b722bd46f":
-    "c165afc8-0b62-4ef2-a14e-da04b6b6a065", // "Issues or Concerns" Custom Field in CaseManager (SHORT_TEXT) becomes "Issues/Concerns" Custom Field in NotusPoint (LONG_TEXT) (fuzzy match 88%)
-  "723bd52c-28df-4707-b272-e0730d080091":
-    "ab80efa6-2984-4a46-be91-843a1a798001", // "Date of Update," Custom Field in CaseManager (DATE) becomes "Date of Update" Custom Field in NotusPoint (DATE) (fuzzy match 100%)
-  "dbd4b189-7265-471c-9483-9ac83d0c3f3a": null, // "......CLOSURE.(Consultant to Update)............." Will not be transferred into NotusPoint as no match could be found.
-  "59299e73-83de-4051-91dd-00885f54e6be": null, // "Work Capacity at time of closure" Will not be transferred into NotusPoint as no match could be found.
-  "c7b69734-1628-446d-8d29-98134b3107b0": null, // "Claimant Status at time of closure" Will not be transferred into NotusPoint as no match could be found.
-  "c9825103-f40e-4f6b-8718-24aa86816261": null, // "Employment Outcome" Will not be transferred into NotusPoint as no match could be found.
-  "c9546117-760a-47cd-88ce-ff1a9347179d": null, // "Please also complete CLOSURE TAB for TAL" Will not be transferred into NotusPoint as no match could be found.
-  "8ec390d6-0e6b-492a-b0f6-b9aaa3e2dbd3":
-    "e7ee516f-5aea-4365-b2e0-822379ad2614", // "VP Plan closing - AIR not required" Custom Field in CaseManager (SELECT) becomes "VP Plan closing - AIR not required" Custom Field in NotusPoint (SELECT)
-  "3981652a-aa3e-4657-86aa-b609a70984e3":
-    "f7e415d9-898a-4366-9d10-8befba1730e8", // "VP AIR plan extension due date" Custom Field in CaseManager (DATE) becomes "VP AIR plan extension due date" Custom Field in NotusPoint (DATE)
-  "5dbe3345-e51d-4b7c-80f7-a7e4d24383b3":
-    "2fe2ae00-d2c4-4e8e-8ecc-b6b243014766", // "VP AIR plan extension upload date" Custom Field in CaseManager (DATE) becomes "VP AIR plan extension upload date" Custom Field in NotusPoint (DATE)
-  "b59d7f2e-5b7c-44af-a50b-c4a11321a796":
-    "f6975f16-976c-43e1-87ff-60d4453854f4", // "VP AIR plan extension reason" Custom Field in CaseManager (SHORT_TEXT) becomes "VP AIR plan extension reason" Custom Field in NotusPoint (SHORT_TEXT)
-  "94a662cc-6d5f-4471-beaa-c2c2b395d50f":
-    "c45bcb48-aaa9-4540-b540-75953d758825", // "VP AIR notes" Custom Field in CaseManager (LONG_TEXT) becomes "VP AIR notes" Custom Field in NotusPoint (LONG_TEXT)
-  "86ca1ea1-d74a-4038-b93f-f2a650aea4bc":
-    "85ed6f5d-bd0a-40a8-b038-e8bd628e0379", // "VP Assessment due date" Custom Field in CaseManager (DATE) becomes "VP Assessment due date" Custom Field in NotusPoint (DATE)
-  "89c4cc1c-9284-455c-a37a-fc797c31af36":
-    "bbf8bcc7-5769-49cf-bf34-a92c16218b88", // "VP Assessment completed date" Custom Field in CaseManager (DATE) becomes "VP Assessment completed date" Custom Field in NotusPoint (DATE)
-  "9933bd5c-14ad-4e8e-ad7c-a25164740210":
-    "ee5ca54b-47d3-4b56-9522-d22ce237c5ff", // "VP Assessment/plan due date" Custom Field in CaseManager (DATE) becomes "VP Assessment/plan due date" Custom Field in NotusPoint (DATE)
-  "ee89366a-a14d-4469-a583-08ca116f1a2d":
-    "c376eaf4-827d-49b0-aede-6c7607afa68f", // "VP Assessment/plan upload date" Custom Field in CaseManager (DATE) becomes "VP Assessment/plan upload date" Custom Field in NotusPoint (DATE)
-  "81fe6d25-e210-4349-ae55-c812012b6cdb":
-    "58710448-acf5-4828-bd9f-e38318365125", // "VP Assessment/plan extension reason" Custom Field in CaseManager (SELECT) becomes "VP Assessment/plan extension reason" Custom Field in NotusPoint (SELECT)
-  "ded89c0a-554e-4f49-9863-eda4f59c25af":
-    "3b6459b2-f89f-4573-ac48-838ba19bd4c5", // "VP DVA consent to proceed date" Custom Field in CaseManager (DATE) becomes "VP DVA consent to proceed date" Custom Field in NotusPoint (DATE)
-  "0721ae47-8876-4a6a-a2e7-04aad092585e":
-    "244d33a1-0a81-4d13-aefe-5d3c4b7821ea", // "VP PCN provided date" Custom Field in CaseManager (DATE) becomes "VP PCN provided date" Custom Field in NotusPoint (DATE)
-  "7236d78e-3fea-4864-b695-d524bf409195":
-    "176fcca4-b6ac-4e18-b84f-1fa137fa0a18", // "VP PCN client refused" Custom Field in CaseManager (SELECT) becomes "VP PCN client refused" Custom Field in NotusPoint (SELECT)
-  "1608a94e-0548-48d8-a6f1-d4a6d55b5d9f":
-    "33759b72-074b-47c0-96ad-f2c9a5714af0", // "VP Medical disclosure form signed" Custom Field in CaseManager (SELECT) becomes "VP Medical disclosure form signed" Custom Field in NotusPoint (SELECT)
-  "32608ef8-22ca-4cf8-a61e-58bbd0a95970":
-    "51ab80a8-216c-4386-8cf7-40fa3bcac1d2", // "VP medical disclosure form client refused" Custom Field in CaseManager (SELECT) becomes "VP medical disclosure form client refused" Custom Field in NotusPoint (SELECT)
-  "87d8e8ea-bcd3-4dc2-b7c0-8d026c49bcf4":
-    "2588fc39-0463-472b-b1ab-ce0512674b57", // "VP Referral acknowledged date" Custom Field in CaseManager (DATE) becomes "VP Referral acknowledged date" Custom Field in NotusPoint (DATE)
-  "3c6871c1-ae3d-4820-b0bf-00187698cba0":
-    "d8d704e9-52bf-4548-bf58-699d331df4b3", // "VP Client contact date" Custom Field in CaseManager (DATE) becomes "VP Client contact date" Custom Field in NotusPoint (DATE)
-  "7294542f-e246-4043-a9e6-32303abf253b":
-    "4df8c6ad-ba43-4717-a396-ebffd64d5508", // "VP Plan completion due date" Custom Field in CaseManager (DATE) becomes "VP Plan completion due date" Custom Field in NotusPoint (DATE)
-  "0c90927d-2404-41a2-947f-b12712f0c0e7":
-    "ec3e35df-c9a3-4d22-9d7d-80a836751651", // "VP Plan completion actual date" Custom Field in CaseManager (DATE) becomes "VP Plan completion actual date" Custom Field in NotusPoint (DATE)
-  "7bcb8bda-5ba0-4e75-8d27-eebc1bc21b8a":
-    "9f09d1c3-1d76-42ae-988c-e1f4dacc23aa", // "VP Plan extension granted" Custom Field in CaseManager (SELECT) becomes "VP Plan extension granted" Custom Field in NotusPoint (SELECT)
-  "43b94917-aae6-4607-80cc-602fa8311335":
-    "46791082-3aac-4471-b5a9-039ee1bfcb59", // "VP Closure report upload date" Custom Field in CaseManager (DATE) becomes "VP Closure report upload date" Custom Field in NotusPoint (DATE)
-  "e548cf6e-0224-47be-a614-b6de07adcd93":
-    "f271b47b-ada2-44f8-a801-4f4b82ac738c", // "VP PR 1 due date" Custom Field in CaseManager (DATE) becomes "VP PR 1 due date" Custom Field in NotusPoint (DATE)
-  "c5f3c629-3175-420d-8921-49e33fc44e4c":
-    "fbfebae1-f875-480a-9ccd-c8634b81bcc0", // "VP PR 1 upload date" Custom Field in CaseManager (DATE) becomes "VP PR 1 upload date" Custom Field in NotusPoint (DATE)
-  "f46cf736-3818-4682-873b-220c27fbd7ae":
-    "2cdd87af-6a57-4c32-8fd7-29cd9efbc39d", // "WCQLD Status" Custom Field in CaseManager (LONG_TEXT) becomes "WCQLD Status" Custom Field in NotusPoint (LONG_TEXT)
-  "59f8d4a3-bcc1-4c98-a77d-b6e327c46b3c":
-    "2234a80b-c41b-4f60-8fe8-3bef13901f76", // "WCQLD Proposed Action" Custom Field in CaseManager (LONG_TEXT) becomes "WCQLD Proposed Action" Custom Field in NotusPoint (LONG_TEXT)
-  "9e5f63b6-80c0-4973-a186-95ec190ca7e7":
-    "8bf53388-1bf8-4a5b-9b5b-181b235fff58", // "WCQLD Date of Update" Custom Field in CaseManager (DATE) becomes "WCQLD Date of Update" Custom Field in NotusPoint (DATE)
-  "caf6a3a3-27bd-40b5-ac1f-41ac7f6c4d9c":
-    "421bed44-7c09-4cd9-9bb0-a5c090fb080f", // "WCQLD Issues/Concerns" Custom Field in CaseManager (SHORT_TEXT) becomes "WCQLD Issues/Concerns" Custom Field in NotusPoint (LONG_TEXT)
-  "901b4e28-d8b4-4018-a697-4adb76fba851":
-    "4e5146b0-70cc-40bd-9e3a-7102284ac473", // "Closure Outcome." Custom Field in CaseManager (SELECT) becomes "Closure Outcome" Custom Field in NotusPoint (SELECT) (fuzzy match 100%)
-  "7c6334f3-d044-45f8-9a82-47ab86468979":
-    "7b405ac0-4f90-4725-95ee-3ac24885c438", // "If No RTW - Reason" Custom Field in CaseManager (SELECT) becomes "If No RTW - Reason" Custom Field in NotusPoint (SELECT)
-  "c741e158-0796-4330-a774-ae0c55dea4c2":
-    "d061bd26-0657-42fb-a907-bc4478e42285", // "Welfare event notification received" Custom Field in CaseManager (DATE) becomes "Welfare event notification received" Custom Field in NotusPoint (SHORT_TEXT)
-  "62fb885e-4840-4673-b395-4788aa9510b2":
-    "3a70dc5f-05b1-434f-9f63-e0f4bd881ab5", // "Welfare event notified to DVA by phone" Custom Field in CaseManager (DATE) becomes "Welfare event notified to DVA by phone" Custom Field in NotusPoint (SHORT_TEXT)
-  "746e166b-81a3-4ead-84b0-f5df5ba63c22":
-    "76598670-9063-4e63-91bb-2ec12a33d14a", // "Welfare event report provided to DVA" Custom Field in CaseManager (DATE) becomes "Welfare event report provided to DVA" Custom Field in NotusPoint (SHORT_TEXT)
-  "d5435e79-26bf-4590-912f-5f1173758ff0":
-    "a47f135f-8000-4531-8948-6a11b3d8d31c", // "Welfare events notes" Custom Field in CaseManager (LONG_TEXT) becomes "Welfare events notes" Custom Field in NotusPoint (LONG_TEXT)
+  "f2d5fa6a-b545-42ff-b0f2-9ac7beba6f54": "a2a2d416-91a8-4740-9236-db9fa41a22a1", // "Acenda Benefit Type." Custom Field in CaseManager (SELECT) becomes "Acenda Benefit Type" Custom Field in NotusPoint (SELECT) (fuzzy match 100%)
+  "683222f7-53d9-45f9-8c59-6ac0a48fbbfe": "450ee3db-5120-4395-9feb-d8b88412e850", // "Acenda Report / Email Update Required" Custom Field in CaseManager (SELECT) becomes "Acenda Report / Email Update Required" Custom Field in NotusPoint (SELECT)
+  "2605d8cc-8229-42d1-a00c-27b18e1a1569": "2c0b9443-3b8a-4944-ba7a-96d6b23e2486", // "Acenda Rehab Status" Custom Field in CaseManager (SELECT) becomes "Acenda Rehab Status" Custom Field in NotusPoint (SELECT)
+  "58676ac7-b10a-42f5-bd4b-17616300a008": "39b8f5e3-cdbc-4ea6-a454-79e44ccd90d1", // "Acenda support provision" Custom Field in CaseManager (SELECT) becomes "Acenda support provision" Custom Field in NotusPoint (SELECT)
+  "2481bc13-6253-4fb9-9c11-e83d9f3f86b9": "c3616bef-e4ac-49f2-9650-3c20c4958ec7", // "Acenda - service option" Custom Field in CaseManager (SELECT) becomes "Acenda - service option" Custom Field in NotusPoint (SELECT)
+  "8d46a3d0-e6d9-4028-9c92-a0e45370d004": "c682b6a7-4dce-4f65-9615-97fd4a270ff3", // "Acenda - service goal" Custom Field in CaseManager (SELECT) becomes "Acenda - service goal" Custom Field in NotusPoint (SELECT)
+  "29e958fe-c3d8-460e-ae2f-70dd199d631d": "c8bdb872-d3b8-445e-b1bf-3e909042d6d7", // "Acenda - status at referral" Custom Field in CaseManager (SELECT) becomes "Acenda - status at referral" Custom Field in NotusPoint (SELECT)
+  "7e84e642-1096-4130-b843-1860d688db79": "fa5537a7-d12f-4696-a27f-32b2bb7b19b0", // "Acenda - status at reporting" Custom Field in CaseManager (SELECT) becomes "Acenda - status at reporting" Custom Field in NotusPoint (SELECT)
+  "15bbfe83-b38c-422d-b803-3d76c6c83478": "45204659-0e13-44ea-b8b2-73a4cf2a765e", // "Acenda - status at closure" Custom Field in CaseManager (SELECT) becomes "Acenda - status at closure" Custom Field in NotusPoint (SELECT)
+  "1bec8062-3133-4898-b04a-a867d21f1730": null,                                   // "Asx Date-" Will not be transferred into NotusPoint as no match could be found.
+  "4b0bfbd3-a54a-4a4a-9251-9c25779890b4": "2bcbde56-5e4a-412a-b1d0-294709cbe5a0", // "Insurer Update Request" Custom Field in CaseManager (SELECT) becomes "Insurer Update Request" Custom Field in NotusPoint (SELECT)
+  "d9e4e33f-72a3-4705-b1c9-bb85c4226887": "3fb7d5be-cba6-49e3-9822-a486bd252526", // "Report / Initial Summary Submitted" Custom Field in CaseManager (DATE) becomes "Report / Initial Summary Submitted" Custom Field in NotusPoint (DATE)
+  "200c9983-9de0-4e29-916c-d15f03a76143": "7c358888-155f-43fa-a5ff-cbbd7e9729d2", // "if >20 Days Delay on Report - Reason" Custom Field in CaseManager (SHORT_TEXT) becomes "If >20 Days Delay on Report - Reason" Custom Field in NotusPoint (SHORT_TEXT)
+  "c67cad1e-8564-4371-9ceb-5d147656ca71": "7491e2c7-92f4-47f0-83ad-f1591b4a3914", // "MedEbridge - Date Consent Form Uploaded" Custom Field in CaseManager (DATE) becomes "MedEbridge - Date Consent Form Uploaded" Custom Field in NotusPoint (DATE)
+  "ef162754-938b-4b8f-ad5b-2973779f972a": "6132f8e8-cb9c-470f-9ac3-520171b6b2ab", // "AIA Status" Custom Field in CaseManager (LONG_TEXT) becomes "AIA Status" Custom Field in NotusPoint (LONG_TEXT)
+  "ee44020b-026a-4f10-a42d-f241f27a2cb4": "072e2081-5236-4d2b-887a-ef3abbaa231b", // "AIA Proposed Action" Custom Field in CaseManager (LONG_TEXT) becomes "AIA Proposed Action" Custom Field in NotusPoint (LONG_TEXT)
+  "d8e9cfd9-fa94-4f93-ba5b-6899be1a917f": "ec580f90-050a-4081-a584-fdf817199723", // "AIA Date of Update" Custom Field in CaseManager (DATE) becomes "AIA Date of Update" Custom Field in NotusPoint (DATE)
+  "3561f8bd-ffd6-46a1-95e7-5484f257a3a7": "12d85ae1-6b12-4eb0-a2b9-1ed123f41edf", // "AIA Outcome Status at the time of completion" Custom Field in CaseManager (SELECT) becomes "AIA Outcome Status at the time of completion" Custom Field in NotusPoint (SELECT)
+  "45d4ba64-c3a3-4811-b7dd-7c81d4769dbc": "552c6bd2-3448-4a25-b145-cdb4524c3d9e", // "AIA Issues/concerns" Custom Field in CaseManager (SHORT_TEXT) becomes "AIA Issues/concerns" Custom Field in NotusPoint (LONG_TEXT)
+  "9668e544-00e0-4b3c-bec2-e6e615bf361c": "6cb131e9-4df4-448d-807c-8dbdc69f5f52", // "AIA Further Rehab Recommended" Custom Field in CaseManager (SELECT) becomes "AIA Further Rehab Recommended" Custom Field in NotusPoint (SELECT)
+  "d48b17c1-a632-4944-9434-299812315256": "d4b9d377-cb5e-4bf6-a4a0-237483a03e63", // "Employability Assessment Completed" Custom Field in CaseManager (SELECT) becomes "Employability Assessment Completed" Custom Field in NotusPoint (SELECT)
+  "8b9a82c2-4658-4fec-bfd3-8184d6adc94e": "c52ecde4-9daa-40cb-9184-7bfd8ff7712e", // "CSAT Case Closure" Custom Field in CaseManager (SELECT) becomes "CSAT Case Closure" Custom Field in NotusPoint (SELECT)
+  "6cb1c118-ff39-459d-be52-ba14ffbe1455": "7c85bdc5-f8ad-4cd2-9c86-e3f6b3667b93", // "NPS Score at time of Closure" Custom Field in CaseManager (SELECT) becomes "NPS Score at time of Closure" Custom Field in NotusPoint (SELECT)
+  "17562bc2-5333-459f-9934-f7f1849b0da2": "827e7cec-b78b-48a8-9cbe-6f1c3bf65f73", // "NPS Outcome" Custom Field in CaseManager (SELECT) becomes "NPS Outcome" Custom Field in NotusPoint (SELECT)
+  "31c251c2-c69b-41d6-a2f6-8fde06a53f71": "f60e8955-09d9-4f53-add8-84c93712bf44", // "Met QA Requirements" Custom Field in CaseManager (SELECT) becomes "Met QA Requirements" Custom Field in NotusPoint (SELECT)
+  "162ea8d0-a776-429d-976c-88c50b7f4229": "0552ed30-e7cc-44ed-b5ea-3476cc95e2cf", // "QA Not Met Reason" Custom Field in CaseManager (SHORT_TEXT) becomes "QA Not Met Reason" Custom Field in NotusPoint (LONG_TEXT)
+  "c63fd704-5485-47f6-91e4-6a96304d57b7": "7e270118-48ee-4db8-8621-e8869e47b350", // "Plan closing - AIR not required" Custom Field in CaseManager (SELECT) becomes "Plan closing - AIR not required" Custom Field in NotusPoint (SELECT)
+  "f120d0f7-a433-4e06-9e47-4115083c06a1": "84592366-3eb7-49dd-b68f-ec37356b688c", // "AIR plan extension due date" Custom Field in CaseManager (DATE) becomes "AIR plan extension due date" Custom Field in NotusPoint (DATE)
+  "93f6fedb-99b6-42c5-8f58-c545237fdd33": "c856c88e-60cd-4203-a245-3287047d295a", // "AIR plan extension upload date" Custom Field in CaseManager (DATE) becomes "AIR plan extension upload date" Custom Field in NotusPoint (DATE)
+  "36248f6b-eaef-49ea-8ed6-f7869087461b": "7e8ed86d-9eaa-4255-b9d7-4d47a2fc763e", // "AIR plan extension reason" Custom Field in CaseManager (SHORT_TEXT) becomes "AIR plan extension reason" Custom Field in NotusPoint (SHORT_TEXT)
+  "6d0038a7-c7e1-447d-87a2-53cded02595d": "0f569ba2-aca7-4705-bf06-20f195c1efe6", // "AIR notes" Custom Field in CaseManager (LONG_TEXT) becomes "AIR notes" Custom Field in NotusPoint (LONG_TEXT)
+  "8cbf9695-0373-4ceb-9f8c-440fdbbcd7cb": "9816303f-c304-451c-94b2-54e8853e4a84", // "Assessment due date" Custom Field in CaseManager (DATE) becomes "Assessment due date" Custom Field in NotusPoint (DATE)
+  "dcdc2cbc-f39d-4209-99c5-6de0d283a9f8": "d91177eb-ce15-4309-8131-e47d9a3651fd", // "Assessment completed date" Custom Field in CaseManager (DATE) becomes "Assessment completed date" Custom Field in NotusPoint (DATE)
+  "1eb741c2-e390-4192-ac5c-3e677744213b": "c9c3a0e4-6f63-4642-b44b-91ef57f93017", // "Assessment/plan due date" Custom Field in CaseManager (DATE) becomes "Assessment/plan due date" Custom Field in NotusPoint (DATE)
+  "cfc479c5-6640-484a-a138-135312438b09": "2dab68b1-e4c3-48a8-be6e-43380407f6b2", // "Assessment/plan upload date" Custom Field in CaseManager (DATE) becomes "Assessment/plan upload date" Custom Field in NotusPoint (DATE)
+  "08b9a6f6-e4c0-4d27-9739-db72364a7c5b": "8a7f31ff-9bda-4088-a691-652a1a40bd4f", // "Assessment/plan extension reason" Custom Field in CaseManager (SELECT) becomes "Assessment/plan extension reason" Custom Field in NotusPoint (SELECT)
+  "0c062d08-b59a-4124-ab66-77256016b56a": "2d954d89-02ca-4e90-add0-6d9bb4277e62", // "DVA consent to proceed date" Custom Field in CaseManager (DATE) becomes "DVA consent to proceed date" Custom Field in NotusPoint (DATE)
+  "f5bb28e3-9a4f-4b03-ab2d-68aa2a232c23": "3e0985b5-eb2e-463a-8a0f-ea23f6c238f2", // "Ongoing File Audit Completion Date" Custom Field in CaseManager (DATE) becomes "Ongoing File Audit Completion Date" Custom Field in NotusPoint (DATE)
+  "a3e6a7d4-3ff6-49d5-94df-c035092e7695": "36cb4a16-6680-4c99-805c-aa47eccb69da", // "Ongoing File Audit Corrective Actions/Feedback" Custom Field in CaseManager (SHORT_TEXT) becomes "Ongoing File Audit Corrective Actions/Feedback" Custom Field in NotusPoint (LONG_TEXT)
+  "42299b4d-c7af-42fd-a30d-d5df4ae77b2f": "4e5146b0-70cc-40bd-9e3a-7102284ac473", // "Closure Outcome" Custom Field in CaseManager (SELECT) becomes "Closure Outcome" Custom Field in NotusPoint (SELECT)
+  "77b63a72-4b7a-4fa1-8c37-4a832d20855d": "c3858f98-de7e-41df-b97d-b8cf666f6c64", // "Client Contact Due Date" Custom Field in CaseManager (DATE) becomes "Client Contact Due Date" Custom Field in NotusPoint (DATE)
+  "c5fbbf31-9ad6-47bc-aeea-5384b0a629dc": "f69ff37b-36da-4318-8f02-06c77360aea0", // "Client Contact - Date" Custom Field in CaseManager (DATE) becomes "Client Contact - Date" Custom Field in NotusPoint (DATE)
+  "5c69a0da-3382-48a8-b642-1faf0290d575": "e94bf632-fcf1-4621-8d02-b3f93a6b5359", // "ADL Assessment Due Date" Custom Field in CaseManager (DATE) becomes "ADL Assessment Due Date" Custom Field in NotusPoint (DATE)
+  "4ce008ab-f6af-41b3-9ff4-5449d64c324b": "1724f67e-eef2-4017-b624-d8ba8afc85d1", // "ADL Assessment Date" Custom Field in CaseManager (DATE) becomes "ADL Assessment Date" Custom Field in NotusPoint (DATE)
+  "cac8183f-40f8-406f-9c78-68ce81e565da": "cf4c7ac8-b1ad-447e-bd5e-f19b8ff21baf", // "ADL Assessment Report Due Date" Custom Field in CaseManager (DATE) becomes "ADL Assessment Report Due Date" Custom Field in NotusPoint (DATE)
+  "43028c35-db12-4763-b2a8-f1d7e76baab8": "e46994ec-974c-4195-b665-26c2bd032672", // "ADL Assessment Report Upload Date" Custom Field in CaseManager (DATE) becomes "ADL Assessment Report Upload Date" Custom Field in NotusPoint (DATE)
+  "31052097-21bf-4445-8f30-43c897ab2b86": "fcd2f364-c0d7-48d6-afef-76bb3ac1e0d9", // "Employer Contacted" Custom Field in CaseManager (SELECT) becomes "Employer Contacted" Custom Field in NotusPoint (SELECT)
+  "c94818ad-2d99-4ddc-b1bb-75f41dfbf35a": "d1871180-24fe-4d09-b6ef-f44c23d690d4", // "Treater/GP Contacted" Custom Field in CaseManager (SELECT) becomes "Treater/GP Contacted" Custom Field in NotusPoint (SELECT)
+  "c7265fb1-6e2d-4c4b-8fdf-b2efb9fe14fe": "cd5babe9-c80a-4d42-b0a5-3ca992789533", // "Verbatim Feedback" Custom Field in CaseManager (LONG_TEXT) becomes "Verbatim Feedback" Custom Field in NotusPoint (LONG_TEXT)
+  "b9875e7a-914c-4514-b0e1-e55cbf9ea2fb": "18d629dc-7bc5-4d1f-9c6d-8d44036b2ac1", // "Assessment Status at time of completion" Custom Field in CaseManager (SELECT) becomes "Assessment Status at time of completion" Custom Field in NotusPoint (SELECT)
+  "5372b3ee-3882-4e67-862f-f2aff271924c": "bcf24bcb-4f28-41b4-8bbb-8673f8d9caef", // "EE Outcome" Custom Field in CaseManager (SELECT) becomes "EE Outcome" Custom Field in NotusPoint (SELECT)
+  "661c171e-4c0e-436a-8057-3a1e1744b8fe": "1a455494-c406-4f4e-8666-cb2cb3f94189", // "Further Referral" Custom Field in CaseManager (SELECT) becomes "Further Referral" Custom Field in NotusPoint (SELECT)
+  "47f56f20-daf6-4eea-b535-6106dee4131e": "892c5b68-878b-455d-b552-ce5783955631", // "PCN provided date" Custom Field in CaseManager (DATE) becomes "PCN provided date" Custom Field in NotusPoint (DATE)
+  "f1bf1229-ac72-4684-bc2d-d34e838dcb3a": "2e98aab3-8a3e-422d-bb4d-de7d550fb82a", // "PCN client refused" Custom Field in CaseManager (SELECT) becomes "PCN client refused" Custom Field in NotusPoint (SELECT)
+  "6393ac14-c276-4b45-b80a-7cee43fdc664": "ccf2aaf1-d066-45cf-9228-b83f70c78528", // "Medical disclosure form signed" Custom Field in CaseManager (SELECT) becomes "Medical disclosure form signed" Custom Field in NotusPoint (SELECT)
+  "a83aa059-a20d-495c-a6aa-a47a2ccffba5": "682e5545-9ae7-459e-adac-08fb4187435a", // "Medical disclosure client refused" Custom Field in CaseManager (SELECT) becomes "Medical disclosure client refused" Custom Field in NotusPoint (SELECT)
+  "720e0fe4-6db4-407d-84f0-1a0cef2ad7c7": "611c17a8-81f0-4b4b-9b9f-a0938fddaafe", // "Referral acknowledged date" Custom Field in CaseManager (DATE) becomes "Referral acknowledged date" Custom Field in NotusPoint (DATE)
+  "f7870f12-86a4-4da9-92ce-f0d15d6b1eda": "59ec5cf5-5ded-4f65-9dc3-bec154017940", // "Client contact date" Custom Field in CaseManager (DATE) becomes "Client contact date" Custom Field in NotusPoint (DATE)
+  "b0f0260e-b5ee-4a62-878e-0aa3e37e670c": "a9df460d-411e-40bf-aee9-e39d0ab8ea9e", // "Metlife Status" Custom Field in CaseManager (LONG_TEXT) becomes "Metlife Status" Custom Field in NotusPoint (LONG_TEXT)
+  "746e852d-5e87-4297-86bf-e058c156e240": "893dae62-f01e-493e-97c2-129b19193395", // "Metlife Proposed Action" Custom Field in CaseManager (LONG_TEXT) becomes "Metlife Proposed Action" Custom Field in NotusPoint (LONG_TEXT)
+  "1ff32a39-0f6a-4bf2-a579-22f6c87fd5de": "e95d61ae-f480-44fd-925f-fe6aa859223c", // "Metlife Date of Update" Custom Field in CaseManager (DATE) becomes "Metlife Date of Update" Custom Field in NotusPoint (DATE)
+  "21459d95-d3a2-4d25-bcfa-280c6b3e0d4f": "664b6a03-cc4c-4a58-af97-32049c6d2344", // "Metlife Outcome capacity at time of completion" Custom Field in CaseManager (SELECT) becomes "Metlife Outcome capacity at time of completion" Custom Field in NotusPoint (SELECT)
+  "7d5974e6-020e-41ad-a568-175134f97278": "3ff88b31-c1d7-4d06-8d97-d4ff9cc1f892", // "Metlife Outcome status at time of completion" Custom Field in CaseManager (SELECT) becomes "Metlife Outcome status at time of completion" Custom Field in NotusPoint (SELECT)
+  "c43f1cc1-9281-48bd-8ec7-e7cf803f2abf": "5c4c4bc8-6acd-41fc-8554-99e42871699f", // "Metlife Issues/Concerns" Custom Field in CaseManager (SHORT_TEXT) becomes "Metlife Issues/Concerns" Custom Field in NotusPoint (LONG_TEXT)
+  "7e4443a5-5b61-406b-bb0b-44f789648292": "254992cd-ebf2-49b5-8e8b-f0d1d5c48b6e", // "Metlife Further Rehab Recommended" Custom Field in CaseManager (SELECT) becomes "Metlife Further Rehab Recommended" Custom Field in NotusPoint (SELECT)
+  "0ceaa9fe-4598-409f-9cf6-9a60288d0917": "7fe125db-090f-4a2a-9dde-f32a36f1a526", // "ORAMS Ax Referral Method" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Referral Method" Custom Field in NotusPoint (SELECT)
+  "51a68359-a6d7-45fe-9d12-0be4f9017690": "a5bd2162-491e-464f-86e2-18ddb0095b38", // "ORAMS Ax Agency" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Agency" Custom Field in NotusPoint (SELECT)
+  "37cb7a00-f6c7-46cc-8c60-51e62f3ba170": "4d3a9e49-f0ea-4744-8033-7a53abbad6f5", // "ORAMS Ax Region" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Region" Custom Field in NotusPoint (SELECT)
+  "3dc63933-1707-426d-8664-65947690119c": "8f9d35a5-a0ea-4680-873b-17848344340f", // "ORAMS Ax Accepted Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Accepted Date" Custom Field in NotusPoint (DATE)
+  "b9ab977d-89bb-4727-ac31-e3c6b216212a": "73671de7-78b3-4dca-b317-b17126d24f7f", // "ORAMS Ax Assessment Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Assessment Due Date" Custom Field in NotusPoint (DATE)
+  "ca6c9aeb-3114-463a-a890-74d70380bacc": "a532ddf3-fe8f-46b1-92f3-4a4b6d3fe720", // "ORAMS Ax Assessment Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Assessment Date" Custom Field in NotusPoint (DATE)
+  "eaa3e827-fac8-4438-9cb3-7fa9d14e2389": "d3633f07-5b9b-43de-9e58-be4e9444137a", // "ORAMS Ax Preliminary Findings Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Preliminary Findings Due Date" Custom Field in NotusPoint (DATE)
+  "976df2d5-9d83-480f-84d5-1c9ed872926c": "a1c6ba6c-e539-4811-8908-dec24d9ba28f", // "ORAMS Ax Preliminary Findings Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Preliminary Findings Date" Custom Field in NotusPoint (DATE)
+  "95af407e-dfad-4dc3-80aa-4c1b7f42c525": "776e9a5c-a4e5-4196-b0e1-726d571cdbc6", // "ORAMS Ax Assessment Report Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Assessment Report Due Date" Custom Field in NotusPoint (DATE)
+  "9a1d1278-e943-4d06-889c-6c3b9b09ff52": "9b058935-c589-4fc9-9442-0c9d0a8f293c", // "ORAMS Ax Assessment Report Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS Ax Assessment Report Submitted Date" Custom Field in NotusPoint (DATE)
+  "022f07b7-9854-4ada-8117-093e44b437c1": "725cb675-de0c-4163-9248-a1b44bc282d8", // "ORAMS Ax Referral Acceptance Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Referral Acceptance Exception Reason" Custom Field in NotusPoint (SELECT)
+  "62c09f72-ebdc-4b07-89ef-4bfb0214c995": "7a24c8d6-b371-4199-9ebe-30cefc4d876c", // "ORAMS Ax Referral Acceptance Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS Ax Referral Acceptance Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
+  "871d9da9-3011-4dec-af39-89a9a8d3c76f": "174acd33-0789-4284-adc1-bb1d44e6da9c", // "ORAMS Ax Assessment Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Assessment Completed Exception Reason" Custom Field in NotusPoint (SELECT)
+  "24358e08-5e56-40ce-a5c0-505a9d0fa4be": "fa841b92-f43e-4371-b455-706c7872cc40", // "ORAMS Ax Assessment Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS Ax Assessment Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
+  "48fec116-0408-4a24-94c4-6c56e430cd86": "ccf7794a-aa47-4a23-86c8-5bdb85f1d4c8", // "ORAMS Ax Report Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS Ax Report Completed Exception Reason" Custom Field in NotusPoint (SELECT)
+  "b0973f78-4eae-4323-bd09-5241bed006c0": "104f390d-72d3-476e-8ee3-9431b7054a39", // "ORAMS Ax Report Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS Ax Report Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
+  "3d6f6b86-a935-4761-9d1e-d9532fb6d5d5": "559e5c0d-9b90-4f8b-9bb9-572ce7ac519c", // "ORAMS - Referral Method" Custom Field in CaseManager (SELECT) becomes "ORAMS - Referral Method" Custom Field in NotusPoint (SELECT)
+  "cd3354e5-a4a6-448d-b3a4-571bc6d4d037": "8f7ec5f7-d813-469b-97ac-150688fb3196", // "ORAMS - Agency" Custom Field in CaseManager (SELECT) becomes "ORAMS - Agency" Custom Field in NotusPoint (SELECT)
+  "ed44fae2-999b-4505-95a9-de3e3ac4327a": "9bf13aa6-a377-4da6-bf2c-c33d6f5d94e6", // "ORAMS - Region" Custom Field in CaseManager (SELECT) becomes "ORAMS - Region" Custom Field in NotusPoint (SELECT)
+  "61fbf844-65d7-4743-b031-5a417350c97e": "c2485b9b-2abf-4dac-b8bb-c59ff6c2d8c4", // "ORAMS - Accepted Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Accepted Date" Custom Field in NotusPoint (DATE)
+  "b68134e4-6e41-4904-a3e7-7ed35170f066": "08c266c0-5b72-4cf0-aa9e-629613dd255a", // "ORAMS - Draft Program Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Draft Program Due Date" Custom Field in NotusPoint (DATE)
+  "2dc2aa01-7ac0-40d2-be56-745c272343ad": "73e76896-7daa-4e17-aaf7-9d752a056a40", // "ORAMS - Draft Program Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Draft Program Submitted Date" Custom Field in NotusPoint (DATE)
+  "96906dee-da24-42da-aaae-220ab0bfc938": "c4b04d54-a57c-4808-81d8-b1245375ed42", // "ORAMS - Program Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Program Due Date" Custom Field in NotusPoint (DATE)
+  "4cd0f8e2-65a2-4e8c-b04e-7b9d722ed53b": "fd38d9b9-1efb-40e2-a197-754117936408", // "ORAMS - Program Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Program Submitted Date" Custom Field in NotusPoint (DATE)
+  "d6ab72c0-17bc-4dcd-a33e-1e652ef63ec2": "71902b90-6bf8-4eb8-950d-b7b9f0b4b136", // "ORAMS - Program Expiry Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Program Expiry Date" Custom Field in NotusPoint (DATE)
+  "4be0ae15-cbe2-4e82-a850-28bdcc002c58": "d03b66ce-cedb-4baa-a193-35bad11d6c57", // "ORAMS - Program Alteration Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Program Alteration Due Date" Custom Field in NotusPoint (DATE)
+  "f717a90d-aadf-48d7-aa48-4d29381a3933": "42166424-26b1-4ecd-9ae7-003d9add1ee8", // "ORAMS - Program Alteration Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Program Alteration Submitted Date" Custom Field in NotusPoint (DATE)
+  "34a99a66-e01e-443a-9b04-ea70663329a2": "a53d5697-531d-4b92-9c3d-dd5a95bf8a94", // "ORAMS - Service Cessation Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Service Cessation Date" Custom Field in NotusPoint (DATE)
+  "2a18d289-3485-45b6-9d62-37eb8b95beb9": "e1fbb4b2-b0ff-44f1-b818-9cda7166681c", // "ORAMS - Cessation Report Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Cessation Report Due Date" Custom Field in NotusPoint (DATE)
+  "f928296d-fb46-40bd-8871-42aec37dafc7": "1df2c592-2bc0-4245-a6a5-d4a603a65e73", // "ORAMS - Cessation Report Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS - Cessation Report Submitted Date" Custom Field in NotusPoint (DATE)
+  "91144622-2584-498b-bdf3-c1fdafa9f6c1": "16474d5e-fd1c-4f2c-8dfe-85330b715b88", // "ORAMS - Referral Acceptance Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS - Referral Acceptance Exception Reason" Custom Field in NotusPoint (SELECT)
+  "fa02ad8f-4749-40b7-8ff2-e220d7cfa87c": "f813970b-c339-4c6f-9692-ab6ed71c0872", // "ORAMS - Referral Acceptance Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS - Referral Acceptance Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
+  "1ad3ec4c-ed6d-4325-8512-562bce24bab7": "37c5a38b-ad02-4919-ad0f-75aa88156ed8", // "ORAMS - Program Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS - Program Completed Exception Reason" Custom Field in NotusPoint (SELECT)
+  "d6319d39-facc-47c6-8f98-7d69ce5f6be7": "ab97963b-99d2-43eb-8e7c-67428de9575c", // "ORAMS - Program Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS - Program Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
+  "4a0949ae-dd10-46dc-a180-8726e3242ccc": "832845c1-d80d-4c29-b005-8dedc23a4900", // "ORAMS - Cessation Report Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS - Cessation Report Completed Exception Reason" Custom Field in NotusPoint (SELECT)
+  "cbd30b2b-cbe4-4215-8a37-4e187d706db0": "36c1b1e1-e15f-45ab-abbc-24eb0bfa3df0", // "ORAMS - Cessation Report Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS - Cessation Report Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
+  "0acca878-6809-4fb8-bc95-e35a7cfb4585": "a1057854-f478-47df-8c25-d1a05e2bc57c", // "ORAMS - RTW Outcome" Custom Field in CaseManager (SELECT) becomes "ORAMS - RTW Outcome" Custom Field in NotusPoint (SELECT)
+  "cf5a9e76-aa4c-496a-970d-e881cf46b51e": "35bd9344-5ead-4879-96bb-99b3a2486b3c", // "ORAMS SS Referral Method" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Referral Method" Custom Field in NotusPoint (SELECT)
+  "0d1809dd-6f63-4682-ab68-0798f26b5f87": "2fb25a2a-3521-4169-a8b9-7c5a2d5feaa6", // "ORAMS SS Agency" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Agency" Custom Field in NotusPoint (SELECT)
+  "90e00aa5-ebe1-47be-90c4-29a23977f8b6": "a3a14df4-66f7-499c-ab33-0359289dbb5d", // "ORAMS SS Region" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Region" Custom Field in NotusPoint (SELECT)
+  "29e31196-2804-42d5-82d9-6efc04a98678": "3ff766e0-33ac-40ff-8e87-9681be903657", // "ORAMS SS Accepted Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Accepted Date" Custom Field in NotusPoint (DATE)
+  "ddd8b5c0-82a8-4809-889e-ebebb673097c": "2f70ada5-cff4-481d-8261-9d443b5b24a6", // "ORAMS SS Assessment Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Assessment Due Date" Custom Field in NotusPoint (DATE)
+  "28fee365-2676-4291-89a5-7d0a8c4e0324": "8563653d-4d8c-4a18-868e-82e475e413eb", // "ORAMS SS Assessment Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Assessment Date" Custom Field in NotusPoint (DATE)
+  "4b06dfaf-3fcb-43cf-aefa-0d959d3a84f6": "f19299ef-0b80-4672-b6a0-20d1b8669ba9", // "ORAMS SS Preliminary Findings Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Preliminary Findings Due Date" Custom Field in NotusPoint (DATE)
+  "0b6e9d17-03d2-4148-a002-f2e209c83cd0": "5e70a750-8ec4-49e7-993a-282e92229812", // "ORAMS SS Preliminary Findings Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Preliminary Findings Date" Custom Field in NotusPoint (DATE)
+  "d949debf-6e06-45df-9130-60171e4eab01": "02ae1802-344d-4296-806f-deddb09dcf8b", // "ORAMS SS Report Due Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Report Due Date" Custom Field in NotusPoint (DATE)
+  "63c1d516-367c-4063-99ce-bcffc34a83d5": "7af0cab4-7b35-42e4-b608-6724594737f7", // "ORAMS SS Report Submitted Date" Custom Field in CaseManager (DATE) becomes "ORAMS SS Report Submitted Date" Custom Field in NotusPoint (DATE)
+  "fd210e22-923d-4176-a9b4-c6d5b135c269": "dbe25411-9b08-42ce-a4c5-a5cf6c98adbf", // "ORAMS SS Referral Acceptance Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Referral Acceptance Exception Reason" Custom Field in NotusPoint (SELECT)
+  "69104ccd-5cc8-4514-b7b6-b988f78d061e": "deaaf87a-859f-483c-93e3-3cb6f3a55b97", // "ORAMS SS Referral Acceptance Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS SS Referral Acceptance Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
+  "764ffe6d-62a6-4f04-90dd-993ee8a7ff4b": "b83e4d34-3672-4948-9624-1b8ad70e1d95", // "ORAMS SS Assessment Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Assessment Completed Exception Reason" Custom Field in NotusPoint (SELECT)
+  "15ea3b1f-f290-489e-9304-6fc9f84d951d": "89a8b103-7b13-4b12-9aba-8470cabe6a60", // "ORAMS SS Assessment Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS SS Assessment Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
+  "76b54f37-2462-429e-a21c-c7f85b3583a0": "6cfb273f-0c1b-4095-b157-6bf44613b0aa", // "ORAMS SS Report Completed Exception Reason" Custom Field in CaseManager (SELECT) becomes "ORAMS SS Report Completed Exception Reason" Custom Field in NotusPoint (SELECT)
+  "59a9d119-8d4e-47bc-b414-f15b4cb2d87b": "d91e3487-e128-4541-a9b6-02fb837cd300", // "ORAMS SS Report Completed Exception Comment" Custom Field in CaseManager (SHORT_TEXT) becomes "ORAMS SS Report Completed Exception Comment" Custom Field in NotusPoint (SHORT_TEXT)
+  "87becc33-2ccb-4d4f-ab35-dcdc6135af32": "f110fe42-19a1-404b-9193-e29037ba313c", // "Plan completion due date" Custom Field in CaseManager (DATE) becomes "Plan completion due date" Custom Field in NotusPoint (DATE)
+  "faf1ee3c-f3d3-4d0c-b9cb-01d1b348df92": "652fbbb8-620f-4d91-b271-0baf396a2c35", // "Plan completion actual date" Custom Field in CaseManager (DATE) becomes "Plan completion actual date" Custom Field in NotusPoint (DATE)
+  "0b228c5d-cfc0-4d18-bed3-6d92cd8bba96": "314f8759-f2dd-4b9e-94dc-8638bd6a70df", // "Plan extension granted" Custom Field in CaseManager (SELECT) becomes "Plan extension granted" Custom Field in NotusPoint (SELECT)
+  "e9be40b5-400a-47c9-ba50-20ffa14a6886": "b61e8d42-89e8-4c29-a71c-a401704e5a87", // "Closure report upload date" Custom Field in CaseManager (DATE) becomes "Closure report upload date" Custom Field in NotusPoint (DATE)
+  "6c4de319-d922-4b26-a5fd-e8fcb45c44dc": "08e57978-1216-4eb5-a5e5-ea0de31ea9d4", // "PR 1 due date" Custom Field in CaseManager (DATE) becomes "PR 1 due date" Custom Field in NotusPoint (DATE)
+  "ebefb454-1986-43dd-b5f8-af9e81efa373": "e45e3267-66f8-468a-b9d1-197b1b485679", // "PR 1 upload date" Custom Field in CaseManager (DATE) becomes "PR 1 upload date" Custom Field in NotusPoint (DATE)
+  "6e791b41-7235-4722-9c6e-a9bb02818a18": "9c0558f8-20c0-4e16-85cc-acac6033d62a", // "PR 2 due date" Custom Field in CaseManager (DATE) becomes "PR 2 due date" Custom Field in NotusPoint (DATE)
+  "ea1022f9-7bfc-45c7-b47e-212071f5586d": "d63c9b61-1bf3-4bb6-aeff-6b32ba10ee03", // "PR 2 upload date" Custom Field in CaseManager (DATE) becomes "PR 2 upload date" Custom Field in NotusPoint (DATE)
+  "2d17af61-cccb-4d25-b8d5-b563979b2bdb": "376e3c07-3368-4a08-a259-df8ddbd57b9b", // "PR 3 due date" Custom Field in CaseManager (DATE) becomes "PR 3 due date" Custom Field in NotusPoint (DATE)
+  "7f30bebe-d601-4b46-86db-d49d31e60d49": "31cfa17a-1f0f-4721-94cc-3c9151975186", // "PR 3 upload date" Custom Field in CaseManager (DATE) becomes "PR 3 upload date" Custom Field in NotusPoint (DATE)
+  "e5368ce5-e6fd-4cab-b5c5-d6a01a51eaee": "85143f56-41f0-46e8-886c-b7bdf45ef936", // "PR 4 due date" Custom Field in CaseManager (DATE) becomes "PR 4 due date" Custom Field in NotusPoint (DATE)
+  "bfddd2ee-a262-47bf-b2d0-f17e88c290ca": "679fd2d0-c0cb-4ab2-98b7-20746b537640", // "PR 4 upload date" Custom Field in CaseManager (DATE) becomes "PR 4 upload date" Custom Field in NotusPoint (DATE)
+  "facdce8e-a2f1-4422-9896-07b3b7c2374c": "f0d03c4a-b98c-44fd-899a-44782c71a9b7", // "PR 5 due date" Custom Field in CaseManager (DATE) becomes "PR 5 due date" Custom Field in NotusPoint (DATE)
+  "4fba8f58-8f37-4d36-98e6-5f4709318922": "6059b499-6b9b-4f70-8139-dc313dc464bd", // "PR 5 upload date" Custom Field in CaseManager (DATE) becomes "PR 5 upload date" Custom Field in NotusPoint (DATE)
+  "bb2b0a7d-4854-4ff1-9e92-a8d2f120f344": "7ad17e6a-5272-44a7-9087-98278d05ca30", // "PR 6 due date" Custom Field in CaseManager (DATE) becomes "PR 6 due date" Custom Field in NotusPoint (DATE)
+  "0a4c21e4-3fd0-410e-a1ab-b59413ded5b0": "56c630ff-32ad-4195-b2c5-be49371dc3e2", // "PR 6 upload date" Custom Field in CaseManager (DATE) becomes "PR 6 upload date" Custom Field in NotusPoint (DATE)
+  "58e2b0c1-b774-4b84-8d5d-b5177b6f3f6c": "fd3e732b-7675-4150-a0f7-e70850d2b67a", // "PR 7 due date" Custom Field in CaseManager (DATE) becomes "PR 7 due date" Custom Field in NotusPoint (DATE)
+  "296a1df2-223a-46a2-bc15-b3cfdab13a50": "fc99ecb8-27f9-471c-8581-8f138ab978fa", // "PR 7 upload date" Custom Field in CaseManager (DATE) becomes "PR 7 upload date" Custom Field in NotusPoint (DATE)
+  "291db64e-45a7-487b-b05f-6842445dc492": "c6edb6a3-19a2-45c0-8a2e-1b225725406b", // "PR 8 due date" Custom Field in CaseManager (DATE) becomes "PR 8 due date" Custom Field in NotusPoint (DATE)
+  "b31a678d-4845-4769-8434-494b4f192129": "01f386d7-2d64-4792-a7ec-f137954c5614", // "PR 8 upload date" Custom Field in CaseManager (DATE) becomes "PR 8 upload date" Custom Field in NotusPoint (DATE)
+  "0c19e9bd-3b36-466c-8abc-199e064cd271": "e473c604-053e-4dda-8aa2-827c709291e0", // "PR 9 due date" Custom Field in CaseManager (DATE) becomes "PR 9 due date" Custom Field in NotusPoint (DATE)
+  "0058b1de-e47b-4333-a70d-618fc5f75f57": "33ec3c59-4568-4e82-9777-cfa00449e1e8", // "PR 9 upload date" Custom Field in CaseManager (DATE) becomes "PR 9 upload date" Custom Field in NotusPoint (DATE)
+  "85cf3010-a91e-4dbc-8006-a4cdf9584e60": "88c22510-875d-4803-9122-cb1265a95917", // "PR 10 due date" Custom Field in CaseManager (DATE) becomes "PR 10 due date" Custom Field in NotusPoint (DATE)
+  "a4323061-cf16-47b9-a4d8-10eacecb7c36": "3ce7da23-eab7-4ef6-ac83-7873444451a8", // "PR 10 upload date" Custom Field in CaseManager (DATE) becomes "PR 10 upload date" Custom Field in NotusPoint (DATE)
+  "6d9ccfb4-ab3a-4880-8112-6d324e0192d5": "af00abb2-776c-4c0e-a9fc-cdb81c68f2e9", // "PR 11 due date" Custom Field in CaseManager (DATE) becomes "PR 11 due date" Custom Field in NotusPoint (DATE)
+  "46df2548-c492-4bde-985f-a1d00270aaf5": "72b9d099-a560-4ddd-b782-973bc839683b", // "PR 11 upload date" Custom Field in CaseManager (DATE) becomes "PR 11 upload date" Custom Field in NotusPoint (DATE)
+  "969bf3a0-79d4-4e35-9ecf-b69a08ed7cf1": "a8c3f675-c2c5-490a-aec2-84cd6882a083", // "PR 12 due date" Custom Field in CaseManager (DATE) becomes "PR 12 due date" Custom Field in NotusPoint (DATE)
+  "c41c5863-6250-4556-8db5-199178e466a1": "355e247c-a97c-410c-8cb7-1a84c40eaec3", // "PR 12 upload date" Custom Field in CaseManager (DATE) becomes "PR 12 upload date" Custom Field in NotusPoint (DATE)
+  "c653a8ba-561a-428b-a2f1-c606b64121f2": "0c0270c6-d247-4a0d-a765-12ca77dd763e", // "PR 13 due date" Custom Field in CaseManager (DATE) becomes "PR 13 due date" Custom Field in NotusPoint (DATE)
+  "5dd56e51-e252-488e-a2ab-c150f13dc60f": "111084f4-d750-463b-bcfa-5e23e26bc314", // "PR 13 upload date" Custom Field in CaseManager (DATE) becomes "PR 13 upload date" Custom Field in NotusPoint (DATE)
+  "56b0da44-69ad-4b85-aeed-e828ce709c3f": "cfd69f22-84a8-4d61-bb5f-f1854b55d3ff", // "PR 14 due date" Custom Field in CaseManager (DATE) becomes "PR 14 due date" Custom Field in NotusPoint (DATE)
+  "34a5a778-571b-4a79-9ad9-365a08a7a4ee": "1e232038-204c-4a93-aa7d-21848a4c4e4d", // "PR 14 upload date" Custom Field in CaseManager (DATE) becomes "PR 14 upload date" Custom Field in NotusPoint (DATE)
+  "0b65d4f0-54ac-4232-97ab-ac154cd640aa": "c786289c-a137-4665-940f-4335ce4e19d4", // "PR 15 due date" Custom Field in CaseManager (DATE) becomes "PR 15 due date" Custom Field in NotusPoint (DATE)
+  "873965f3-f6b7-49fa-844a-4c1710c09868": "32a812b5-c726-424f-b8db-b5f306bad680", // "PR 15 upload date" Custom Field in CaseManager (DATE) becomes "PR 15 upload date" Custom Field in NotusPoint (DATE)
+  "c4807d65-932d-4681-998e-081dd1579ae1": "4a16a428-2452-4dd6-a70c-8598adba173b", // "PR 16 due date" Custom Field in CaseManager (DATE) becomes "PR 16 due date" Custom Field in NotusPoint (DATE)
+  "d57e3701-3f0d-4fb5-97e1-acf1211b1f01": "08482b0d-cc92-4b63-b426-bbfff7e6ce09", // "PR 16 upload date" Custom Field in CaseManager (DATE) becomes "PR 16 upload date" Custom Field in NotusPoint (DATE)
+  "c074252e-3905-44d5-bb26-52b6af53e515": "9d89dd81-e59e-4b5e-ab24-21aa3ed1a8af", // "PR 17 due date" Custom Field in CaseManager (DATE) becomes "PR 17 due date" Custom Field in NotusPoint (DATE)
+  "0843ca15-32d7-4e05-b601-ef18ed380347": "d33d38c2-573d-4756-b801-d5cb58c86c99", // "PR 17 upload date" Custom Field in CaseManager (DATE) becomes "PR 17 upload date" Custom Field in NotusPoint (DATE)
+  "bc054b2d-e25d-4690-889f-42f3a181ef9f": "0cb7230b-89cf-4b45-ae2a-69b974678c61", // "PR 18 due date" Custom Field in CaseManager (DATE) becomes "PR 18 due date" Custom Field in NotusPoint (DATE)
+  "15d9d6a2-37b6-459c-ba79-13d56e6568f1": "903af002-8d09-469d-93ac-71f16d49c8d0", // "PR 18 upload date" Custom Field in CaseManager (DATE) becomes "PR 18 upload date" Custom Field in NotusPoint (DATE)
+  "4c8c1ba1-aa1b-480e-974b-e33ad0dbe31b": "33b3a4c2-d2b0-4ac5-b2f1-2b80117b318b", // "PR 19 due date" Custom Field in CaseManager (DATE) becomes "PR 19 due date" Custom Field in NotusPoint (DATE)
+  "25cd315f-44a7-49f6-88a7-daf283b9653e": "46ea8210-af41-4585-890a-2a8a594f73aa", // "PR 19 upload date" Custom Field in CaseManager (DATE) becomes "PR 19 upload date" Custom Field in NotusPoint (DATE)
+  "c79f196a-2adf-451e-9083-d69c4b2eb54f": "d5ff7fb3-088e-493e-8e7b-ef0dc5df2c3a", // "PR 20 due date" Custom Field in CaseManager (DATE) becomes "PR 20 due date" Custom Field in NotusPoint (DATE)
+  "ca23133c-a3c6-4a89-bb40-8a1b34f0b57e": "abc6e9be-97bc-4140-b829-70138b1246b2", // "PR 20 upload date" Custom Field in CaseManager (DATE) becomes "PR 20 upload date" Custom Field in NotusPoint (DATE)
+  "e1487bee-a65e-4611-9ec7-e2c14732cdeb": "a03694a0-37d9-46ba-9a4f-d560e38d263c", // "PR 21 due date" Custom Field in CaseManager (DATE) becomes "PR 21 due date" Custom Field in NotusPoint (DATE)
+  "0e025bc5-7957-4a57-a941-5ff15a4a7e1b": "f0f72164-e81d-447e-9e42-b921b39131de", // "PR 21 upload date" Custom Field in CaseManager (DATE) becomes "PR 21 upload date" Custom Field in NotusPoint (DATE)
+  "9ab76dca-d4ab-43d4-9e48-7c4d97e9362b": "93f0e393-1291-4859-a084-a21ac800f46e", // "PR 22 due date" Custom Field in CaseManager (DATE) becomes "PR 22 due date" Custom Field in NotusPoint (DATE)
+  "166ae180-ed7a-4da8-8122-0e93f2e2823c": "8aaaa8c8-9135-49b4-be2e-70a89b1e4b61", // "PR 22 upload date" Custom Field in CaseManager (DATE) becomes "PR 22 upload date" Custom Field in NotusPoint (DATE)
+  "e4913065-f857-470b-8b5a-f243612b26a8": "8d4aeaf4-8769-4cd4-93f9-5a39d8c89fd6", // "Status" Custom Field in CaseManager (LONG_TEXT) becomes "Status" Custom Field in NotusPoint (LONG_TEXT)
+  "3a5706ef-81c2-4214-8cd0-d9cdfd3809e8": "dfc894ae-6725-4d2c-b058-b13c14561b78", // "Proposed Action" Custom Field in CaseManager (LONG_TEXT) becomes "Proposed Action" Custom Field in NotusPoint (LONG_TEXT)
+  "0a30857c-d0b6-44cc-b3a9-1e24f798345a": "ab80efa6-2984-4a46-be91-843a1a798001", // "Date of Update." Custom Field in CaseManager (DATE) becomes "Date of Update" Custom Field in NotusPoint (DATE) (fuzzy match 100%)
+  "c55847a6-f829-4fc1-81b9-fe4d3b932184": "c165afc8-0b62-4ef2-a14e-da04b6b6a065", // "Issues/Concerns" Custom Field in CaseManager (SHORT_TEXT) becomes "Issues/Concerns" Custom Field in NotusPoint (LONG_TEXT)
+  "2f7e31f7-7ec7-4ff3-8de8-f3457f5c1767": "3aad6550-2924-4bfb-b2e1-ce15a77852b4", // "Outcome Capacity at time of completion" Custom Field in CaseManager (SELECT) becomes "Outcome Capacity at time of Completion" Custom Field in NotusPoint (SELECT)
+  "7ec598fb-ce34-4249-bffb-e1fdfd5e3c27": "5a5a03df-ce34-4765-8234-ad2b4ca56840", // "Outcome Status at time of completion" Custom Field in CaseManager (SELECT) becomes "Outcome Status at time of Completion" Custom Field in NotusPoint (SELECT)
+  "7412af17-195e-4120-aa93-d4fc0c8dfe9c": null,                                   // "Further Rehab Recommended" Will not be transferred into NotusPoint as no match could be found.
+  "c94d9cb2-500d-4b43-a5a6-adacfbcd8149": "e016e5ea-07f5-403a-bff9-130a3053ec72", // "Survey Completed Type" Custom Field in CaseManager (SELECT) becomes "Survey Completed Type" Custom Field in NotusPoint (SELECT)
+  "bf2f4fd7-9a68-4718-a394-f012a2f14916": "0eb3bd1c-d2b6-4567-a37e-52ab843524c6", // "Pre-Survey Assessment for Pain Scale" Custom Field in CaseManager (SELECT) becomes "Pre-Survey Assessment for Pain Scale" Custom Field in NotusPoint (SELECT)
+  "dde29b96-b8c5-44dd-8870-b4cba719c877": "5cebfe6c-a88b-4a28-bea6-58dc2b3c614d", // "Post Survey Assessment for Pain Scale" Custom Field in CaseManager (SELECT) becomes "Post Survey Assessment for Pain Scale" Custom Field in NotusPoint (SELECT)
+  "0b1b5d5b-7486-41d7-9926-7c7b34523262": "dd101367-5cdb-47d8-8bab-b83cd1c1ee76", // "Pre Survey Assessment for DASS 21 - Depression" Custom Field in CaseManager (SELECT) becomes "Pre Survey Assessment for DASS 21 - Depression" Custom Field in NotusPoint (SELECT)
+  "5cd95fe6-6281-4063-9b52-c9ede7d638f6": "34f3bae7-49df-41cf-bb85-9816c5893ec2", // "Pre Survey Assessment for DASS 21 - Anxiety" Custom Field in CaseManager (SELECT) becomes "Pre Survey Assessment for DASS 21 - Anxiety" Custom Field in NotusPoint (SELECT)
+  "c7413058-d389-4d3c-979c-8aa2a0c8320f": "0a6d3b54-6965-4e4a-a33f-c4eee28b1576", // "Pre Survey Assessment for DASS 21 - Stress" Custom Field in CaseManager (SELECT) becomes "Pre Survey Assessment for DASS 21 - Stress" Custom Field in NotusPoint (SELECT)
+  "fba05540-e971-496d-8319-ea1b423dff3a": "3ed709bc-918a-4147-bc70-59893bfca418", // "Post Survey Assessment for DASS 21 - Depression" Custom Field in CaseManager (SELECT) becomes "Post Survey Assessment for DASS 21 - Depression" Custom Field in NotusPoint (SELECT)
+  "78a4b119-376a-4017-b373-748a3e659018": "4afa1471-2484-426c-afbc-7f1d1bdf6c65", // "Post Survey Assessment for DASS 21 - Anxiety" Custom Field in CaseManager (SELECT) becomes "Post Survey Assessment for DASS 21 - Anxiety" Custom Field in NotusPoint (SELECT)
+  "9fa467db-8ad6-4060-afef-12ba66b5af41": "c44b9106-1d40-42c3-bec7-af754087825e", // "Post Survey Assessment for DASS 21 - Stress" Custom Field in CaseManager (SELECT) becomes "Post Survey Assessment for DASS 21 - Stress" Custom Field in NotusPoint (SELECT)
+  "8af75556-16c7-4e42-b55d-1cb48c8536c5": "694c2f33-a257-409f-a816-23bdff49c13c", // "Case Status" Custom Field in CaseManager (SELECT) becomes "Case Status" Custom Field in NotusPoint (SELECT)
+  "92ba1447-9a9a-4cc1-b347-51524094e5cd": null,                                   // "ADMIN to Update" Will not be transferred into NotusPoint as no match could be found.
+  "4982e078-b182-459c-9c06-9059c3cc7ec7": null,                                   // "Department" Will not be transferred into NotusPoint as no match could be found.
+  "4d62b424-e27c-419c-9f98-544d9f32b78d": null,                                   // "Fund" Will not be transferred into NotusPoint as no match could be found.
+  "5b33eff4-c903-4f06-a229-aec179a00938": null,                                   // "Insurance Type" Will not be transferred into NotusPoint as no match could be found.
+  "a6a0ca3f-91a3-4686-892c-be0daac8d76b": null,                                   // ".......CONSULTANT TO UPDATE..............." Will not be transferred into NotusPoint as no match could be found.
+  "39363e8c-2c32-4c55-ae93-31be4de6f0d6": null,                                   // "Employment status at time of referral." Will not be transferred into NotusPoint as no match could be found.
+  "49033eda-84a3-41c7-ac9e-fd8903654a98": null,                                   // "Capacity at time of referral." Will not be transferred into NotusPoint as no match could be found.
+  "f07572d8-2712-40da-b897-0295b2f0e054": null,                                   // "Current Service" Will not be transferred into NotusPoint as no match could be found.
+  "7f21202b-5093-4fdf-9a99-d45d1b846619": null,                                   // "Progress Status / Future Strategies" Will not be transferred into NotusPoint as no match could be found.
+  "4ce4e0f5-b95b-443b-a68e-894b722bd46f": "c165afc8-0b62-4ef2-a14e-da04b6b6a065", // "Issues or Concerns" Custom Field in CaseManager (SHORT_TEXT) becomes "Issues/Concerns" Custom Field in NotusPoint (LONG_TEXT) (fuzzy match 88%)
+  "723bd52c-28df-4707-b272-e0730d080091": "ab80efa6-2984-4a46-be91-843a1a798001", // "Date of Update," Custom Field in CaseManager (DATE) becomes "Date of Update" Custom Field in NotusPoint (DATE) (fuzzy match 100%)
+  "dbd4b189-7265-471c-9483-9ac83d0c3f3a": null,                                   // "......CLOSURE.(Consultant to Update)............." Will not be transferred into NotusPoint as no match could be found.
+  "59299e73-83de-4051-91dd-00885f54e6be": null,                                   // "Work Capacity at time of closure" Will not be transferred into NotusPoint as no match could be found.
+  "c7b69734-1628-446d-8d29-98134b3107b0": null,                                   // "Claimant Status at time of closure" Will not be transferred into NotusPoint as no match could be found.
+  "c9825103-f40e-4f6b-8718-24aa86816261": null,                                   // "Employment Outcome" Will not be transferred into NotusPoint as no match could be found.
+  "c9546117-760a-47cd-88ce-ff1a9347179d": null,                                   // "Please also complete CLOSURE TAB for TAL" Will not be transferred into NotusPoint as no match could be found.
+  "8ec390d6-0e6b-492a-b0f6-b9aaa3e2dbd3": "e7ee516f-5aea-4365-b2e0-822379ad2614", // "VP Plan closing - AIR not required" Custom Field in CaseManager (SELECT) becomes "VP Plan closing - AIR not required" Custom Field in NotusPoint (SELECT)
+  "3981652a-aa3e-4657-86aa-b609a70984e3": "f7e415d9-898a-4366-9d10-8befba1730e8", // "VP AIR plan extension due date" Custom Field in CaseManager (DATE) becomes "VP AIR plan extension due date" Custom Field in NotusPoint (DATE)
+  "5dbe3345-e51d-4b7c-80f7-a7e4d24383b3": "2fe2ae00-d2c4-4e8e-8ecc-b6b243014766", // "VP AIR plan extension upload date" Custom Field in CaseManager (DATE) becomes "VP AIR plan extension upload date" Custom Field in NotusPoint (DATE)
+  "b59d7f2e-5b7c-44af-a50b-c4a11321a796": "f6975f16-976c-43e1-87ff-60d4453854f4", // "VP AIR plan extension reason" Custom Field in CaseManager (SHORT_TEXT) becomes "VP AIR plan extension reason" Custom Field in NotusPoint (SHORT_TEXT)
+  "94a662cc-6d5f-4471-beaa-c2c2b395d50f": "c45bcb48-aaa9-4540-b540-75953d758825", // "VP AIR notes" Custom Field in CaseManager (LONG_TEXT) becomes "VP AIR notes" Custom Field in NotusPoint (LONG_TEXT)
+  "86ca1ea1-d74a-4038-b93f-f2a650aea4bc": "85ed6f5d-bd0a-40a8-b038-e8bd628e0379", // "VP Assessment due date" Custom Field in CaseManager (DATE) becomes "VP Assessment due date" Custom Field in NotusPoint (DATE)
+  "89c4cc1c-9284-455c-a37a-fc797c31af36": "bbf8bcc7-5769-49cf-bf34-a92c16218b88", // "VP Assessment completed date" Custom Field in CaseManager (DATE) becomes "VP Assessment completed date" Custom Field in NotusPoint (DATE)
+  "9933bd5c-14ad-4e8e-ad7c-a25164740210": "ee5ca54b-47d3-4b56-9522-d22ce237c5ff", // "VP Assessment/plan due date" Custom Field in CaseManager (DATE) becomes "VP Assessment/plan due date" Custom Field in NotusPoint (DATE)
+  "ee89366a-a14d-4469-a583-08ca116f1a2d": "c376eaf4-827d-49b0-aede-6c7607afa68f", // "VP Assessment/plan upload date" Custom Field in CaseManager (DATE) becomes "VP Assessment/plan upload date" Custom Field in NotusPoint (DATE)
+  "81fe6d25-e210-4349-ae55-c812012b6cdb": "58710448-acf5-4828-bd9f-e38318365125", // "VP Assessment/plan extension reason" Custom Field in CaseManager (SELECT) becomes "VP Assessment/plan extension reason" Custom Field in NotusPoint (SELECT)
+  "ded89c0a-554e-4f49-9863-eda4f59c25af": "3b6459b2-f89f-4573-ac48-838ba19bd4c5", // "VP DVA consent to proceed date" Custom Field in CaseManager (DATE) becomes "VP DVA consent to proceed date" Custom Field in NotusPoint (DATE)
+  "0721ae47-8876-4a6a-a2e7-04aad092585e": "244d33a1-0a81-4d13-aefe-5d3c4b7821ea", // "VP PCN provided date" Custom Field in CaseManager (DATE) becomes "VP PCN provided date" Custom Field in NotusPoint (DATE)
+  "7236d78e-3fea-4864-b695-d524bf409195": "176fcca4-b6ac-4e18-b84f-1fa137fa0a18", // "VP PCN client refused" Custom Field in CaseManager (SELECT) becomes "VP PCN client refused" Custom Field in NotusPoint (SELECT)
+  "1608a94e-0548-48d8-a6f1-d4a6d55b5d9f": "33759b72-074b-47c0-96ad-f2c9a5714af0", // "VP Medical disclosure form signed" Custom Field in CaseManager (SELECT) becomes "VP Medical disclosure form signed" Custom Field in NotusPoint (SELECT)
+  "32608ef8-22ca-4cf8-a61e-58bbd0a95970": "51ab80a8-216c-4386-8cf7-40fa3bcac1d2", // "VP medical disclosure form client refused" Custom Field in CaseManager (SELECT) becomes "VP medical disclosure form client refused" Custom Field in NotusPoint (SELECT)
+  "87d8e8ea-bcd3-4dc2-b7c0-8d026c49bcf4": "2588fc39-0463-472b-b1ab-ce0512674b57", // "VP Referral acknowledged date" Custom Field in CaseManager (DATE) becomes "VP Referral acknowledged date" Custom Field in NotusPoint (DATE)
+  "3c6871c1-ae3d-4820-b0bf-00187698cba0": "d8d704e9-52bf-4548-bf58-699d331df4b3", // "VP Client contact date" Custom Field in CaseManager (DATE) becomes "VP Client contact date" Custom Field in NotusPoint (DATE)
+  "7294542f-e246-4043-a9e6-32303abf253b": "4df8c6ad-ba43-4717-a396-ebffd64d5508", // "VP Plan completion due date" Custom Field in CaseManager (DATE) becomes "VP Plan completion due date" Custom Field in NotusPoint (DATE)
+  "0c90927d-2404-41a2-947f-b12712f0c0e7": "ec3e35df-c9a3-4d22-9d7d-80a836751651", // "VP Plan completion actual date" Custom Field in CaseManager (DATE) becomes "VP Plan completion actual date" Custom Field in NotusPoint (DATE)
+  "7bcb8bda-5ba0-4e75-8d27-eebc1bc21b8a": "9f09d1c3-1d76-42ae-988c-e1f4dacc23aa", // "VP Plan extension granted" Custom Field in CaseManager (SELECT) becomes "VP Plan extension granted" Custom Field in NotusPoint (SELECT)
+  "43b94917-aae6-4607-80cc-602fa8311335": "46791082-3aac-4471-b5a9-039ee1bfcb59", // "VP Closure report upload date" Custom Field in CaseManager (DATE) becomes "VP Closure report upload date" Custom Field in NotusPoint (DATE)
+  "e548cf6e-0224-47be-a614-b6de07adcd93": "f271b47b-ada2-44f8-a801-4f4b82ac738c", // "VP PR 1 due date" Custom Field in CaseManager (DATE) becomes "VP PR 1 due date" Custom Field in NotusPoint (DATE)
+  "c5f3c629-3175-420d-8921-49e33fc44e4c": "fbfebae1-f875-480a-9ccd-c8634b81bcc0", // "VP PR 1 upload date" Custom Field in CaseManager (DATE) becomes "VP PR 1 upload date" Custom Field in NotusPoint (DATE)
+  "f46cf736-3818-4682-873b-220c27fbd7ae": "2cdd87af-6a57-4c32-8fd7-29cd9efbc39d", // "WCQLD Status" Custom Field in CaseManager (LONG_TEXT) becomes "WCQLD Status" Custom Field in NotusPoint (LONG_TEXT)
+  "59f8d4a3-bcc1-4c98-a77d-b6e327c46b3c": "2234a80b-c41b-4f60-8fe8-3bef13901f76", // "WCQLD Proposed Action" Custom Field in CaseManager (LONG_TEXT) becomes "WCQLD Proposed Action" Custom Field in NotusPoint (LONG_TEXT)
+  "9e5f63b6-80c0-4973-a186-95ec190ca7e7": "8bf53388-1bf8-4a5b-9b5b-181b235fff58", // "WCQLD Date of Update" Custom Field in CaseManager (DATE) becomes "WCQLD Date of Update" Custom Field in NotusPoint (DATE)
+  "caf6a3a3-27bd-40b5-ac1f-41ac7f6c4d9c": "421bed44-7c09-4cd9-9bb0-a5c090fb080f", // "WCQLD Issues/Concerns" Custom Field in CaseManager (SHORT_TEXT) becomes "WCQLD Issues/Concerns" Custom Field in NotusPoint (LONG_TEXT)
+  "901b4e28-d8b4-4018-a697-4adb76fba851": "4e5146b0-70cc-40bd-9e3a-7102284ac473", // "Closure Outcome." Custom Field in CaseManager (SELECT) becomes "Closure Outcome" Custom Field in NotusPoint (SELECT) (fuzzy match 100%)
+  "7c6334f3-d044-45f8-9a82-47ab86468979": "7b405ac0-4f90-4725-95ee-3ac24885c438", // "If No RTW - Reason" Custom Field in CaseManager (SELECT) becomes "If No RTW - Reason" Custom Field in NotusPoint (SELECT)
+  "c741e158-0796-4330-a774-ae0c55dea4c2": "d061bd26-0657-42fb-a907-bc4478e42285", // "Welfare event notification received" Custom Field in CaseManager (DATE) becomes "Welfare event notification received" Custom Field in NotusPoint (SHORT_TEXT)
+  "62fb885e-4840-4673-b395-4788aa9510b2": "3a70dc5f-05b1-434f-9f63-e0f4bd881ab5", // "Welfare event notified to DVA by phone" Custom Field in CaseManager (DATE) becomes "Welfare event notified to DVA by phone" Custom Field in NotusPoint (SHORT_TEXT)
+  "746e166b-81a3-4ead-84b0-f5df5ba63c22": "76598670-9063-4e63-91bb-2ec12a33d14a", // "Welfare event report provided to DVA" Custom Field in CaseManager (DATE) becomes "Welfare event report provided to DVA" Custom Field in NotusPoint (SHORT_TEXT)
+  "d5435e79-26bf-4590-912f-5f1173758ff0": "a47f135f-8000-4531-8948-6a11b3d8d31c", // "Welfare events notes" Custom Field in CaseManager (LONG_TEXT) becomes "Welfare events notes" Custom Field in NotusPoint (LONG_TEXT)
 };
+
+// NotusPoint option IDs and labels, keyed by Case Manager custom field ID.
+const customFieldOptionsByCaseManagerId = {
+  "f2d5fa6a-b545-42ff-b0f2-9ac7beba6f54": [
+    {
+      "value": "gsc",
+      "label": "GSC"
+    },
+    {
+      "value": "ip",
+      "label": "IP"
+    },
+    {
+      "value": "tpd",
+      "label": "TPD"
+    }
+  ],
+  "683222f7-53d9-45f9-8c59-6ac0a48fbbfe": [
+    {
+      "value": "email-update-only",
+      "label": "Email Update Only"
+    },
+    {
+      "value": "no",
+      "label": "No"
+    },
+    {
+      "value": "yes",
+      "label": "Yes"
+    }
+  ],
+  "2605d8cc-8229-42d1-a00c-27b18e1a1569": [
+    {
+      "value": "closed",
+      "label": "Closed"
+    },
+    {
+      "value": "on-hold",
+      "label": "On Hold"
+    },
+    {
+      "value": "open",
+      "label": "Open"
+    }
+  ],
+  "58676ac7-b10a-42f5-bd4b-17616300a008": [
+    {
+      "value": "business-support",
+      "label": "Business support"
+    },
+    {
+      "value": "job-attached-rtw-support",
+      "label": "Job attached RTW support"
+    },
+    {
+      "value": "job-unattached-rtw-support-job-seeking",
+      "label": "Job unattached RTW support (job-seeking)"
+    },
+    {
+      "value": "pre-vocational-capacity-building",
+      "label": "Pre-vocational capacity building"
+    },
+    {
+      "value": "single-assessment-only",
+      "label": "Single assessment only"
+    },
+    {
+      "value": "tpd-single-service",
+      "label": "TPD Single Service"
+    }
+  ],
+  "2481bc13-6253-4fb9-9c11-e83d9f3f86b9": [
+    {
+      "value": "adl-assessment",
+      "label": "ADL Assessment"
+    },
+    {
+      "value": "business-mentoring",
+      "label": "Business mentoring"
+    },
+    {
+      "value": "business-viability-assessment",
+      "label": "Business Viability Assessment"
+    },
+    {
+      "value": "employability-assessment",
+      "label": "Employability Assessment"
+    },
+    {
+      "value": "ergonomic-assessment",
+      "label": "Ergonomic Assessment"
+    },
+    {
+      "value": "exercise-physiology--rtw-support",
+      "label": "Exercise physiology – RTW support"
+    },
+    {
+      "value": "exercise-physiology--wellbeing-service",
+      "label": "Exercise physiology – Wellbeing service"
+    },
+    {
+      "value": "exercise-physiology--work-readiness",
+      "label": "Exercise physiology – Work readiness"
+    },
+    {
+      "value": "functional-capacity-evaluation",
+      "label": "Functional Capacity Evaluation"
+    },
+    {
+      "value": "independent-job-seeker-training-program",
+      "label": "Independent job-seeker training program"
+    },
+    {
+      "value": "initial-needs-assessment",
+      "label": "Initial Needs Assessment"
+    },
+    {
+      "value": "job-seeking-support",
+      "label": "Job-seeking support"
+    },
+    {
+      "value": "pre-disability-employment-rtw-support",
+      "label": "Pre-disability employment RTW support"
+    },
+    {
+      "value": "self-employment-rtw-assistance",
+      "label": "Self-employment RTW Assistance"
+    },
+    {
+      "value": "task-analysis",
+      "label": "Task Analysis"
+    },
+    {
+      "value": "task-analysis-ipgsc",
+      "label": "Task Analysis (IP/GSC)"
+    },
+    {
+      "value": "transferrable-skills-assessment",
+      "label": "Transferrable Skills Assessment"
+    },
+    {
+      "value": "transferrable-skills-assessment-ipgsc",
+      "label": "Transferrable Skills Assessment (IP/GSC)"
+    },
+    {
+      "value": "vocational-assessment",
+      "label": "Vocational Assessment"
+    },
+    {
+      "value": "vocational-counselling",
+      "label": "Vocational counselling"
+    },
+    {
+      "value": "wellbeing-service--functional-upgrading-service",
+      "label": "Wellbeing service – Functional upgrading service"
+    },
+    {
+      "value": "workplace-assessment",
+      "label": "Workplace Assessment"
+    }
+  ],
+  "8d46a3d0-e6d9-4028-9c92-a0e45370d004": [
+    {
+      "value": "alternate-occupation--alternative-employer--full-rtw",
+      "label": "Alternate occupation / Alternative employer / Full RTW"
+    },
+    {
+      "value": "alternate-occupation--alternative-employer--partial-rtw",
+      "label": "Alternate occupation / Alternative employer / Partial RTW"
+    },
+    {
+      "value": "alternate-occupation--pre-dis-employer--full-rtw",
+      "label": "Alternate occupation / Pre-dis employer / Full RTW"
+    },
+    {
+      "value": "alternate-occupation--pre-dis-employer--partial-rtw",
+      "label": "Alternate occupation / Pre-dis employer / Partial RTW"
+    },
+    {
+      "value": "appropriate-completion-of-adl-assessment",
+      "label": "Appropriate completion of ADL Assessment"
+    },
+    {
+      "value": "appropriate-completion-of-business-viability-assessment",
+      "label": "Appropriate completion of Business Viability Assessment"
+    },
+    {
+      "value": "appropriate-completion-of-employability-assessment",
+      "label": "Appropriate completion of Employability Assessment"
+    },
+    {
+      "value": "appropriate-completion-of-ergonomic-assessment",
+      "label": "Appropriate completion of Ergonomic Assessment"
+    },
+    {
+      "value": "appropriate-completion-of-functional-capacity-evaluatio",
+      "label": "Appropriate completion of Functional Capacity Evaluatio"
+    },
+    {
+      "value": "appropriate-completion-of-initial-needs-assessment",
+      "label": "Appropriate completion of Initial Needs Assessment"
+    },
+    {
+      "value": "appropriate-completion-of-task-analysis",
+      "label": "Appropriate completion of Task Analysis"
+    },
+    {
+      "value": "appropriate-completion-of-transferrable-skills-assessment",
+      "label": "Appropriate completion of Transferrable Skills Assessment"
+    },
+    {
+      "value": "appropriate-completion-of-vocational-assessment",
+      "label": "Appropriate completion of Vocational Assessment"
+    },
+    {
+      "value": "appropriate-completion-of-workplace-assessment",
+      "label": "Appropriate completion of Workplace Assessment"
+    },
+    {
+      "value": "customer-demonstrates-ability-to-developgrow-business",
+      "label": "Customer demonstrates ability to develop/grow business"
+    },
+    {
+      "value": "customer-demonstrates-ability-to-independently-job-seek",
+      "label": "Customer demonstrates ability to independently job-seek"
+    },
+    {
+      "value": "customer-demonstrates-improved-functional-capacity-for-daily-activities-andor-work",
+      "label": "Customer demonstrates improved functional capacity for daily activities and/or work"
+    },
+    {
+      "value": "customer-demonstrates-improved-wellbeing-and-functional-capacity-for-daily-activities-andor-work",
+      "label": "Customer demonstrates improved wellbeing and functional capacity for daily activities and/or work"
+    },
+    {
+      "value": "customer-demonstrates-physical-capacity-for-performing-full-pre-disability-role",
+      "label": "Customer demonstrates physical capacity for performing full pre-disability role"
+    },
+    {
+      "value": "customer-returned-to-self-employment-capacity-within-a-new-business",
+      "label": "Customer returned to self-employment capacity within a new business"
+    },
+    {
+      "value": "customer-returned-to-self-employment-capacity-within-existing-business",
+      "label": "Customer returned to self-employment capacity within existing business"
+    },
+    {
+      "value": "identification-of-medically-approved-vocational-options",
+      "label": "Identification of medically approved vocational options"
+    },
+    {
+      "value": "pre-dis-occupation--alternative-employer--full-rtw",
+      "label": "Pre-dis occupation / Alternative employer / Full RTW"
+    },
+    {
+      "value": "pre-dis-occupation--alternative-employer--partial-rtw",
+      "label": "Pre-dis occupation / Alternative employer / Partial RTW"
+    },
+    {
+      "value": "pre-dis-occupation--pre-dis-employer--full-rtw",
+      "label": "Pre-dis occupation / Pre-dis employer / Full RTW"
+    },
+    {
+      "value": "pre-dis-occupation--pre-dis-employer--partial-rtw",
+      "label": "Pre-dis occupation / Pre-dis employer / Partial RTW"
+    }
+  ],
+  "29e958fe-c3d8-460e-ae2f-70dd199d631d": [
+    {
+      "value": "10-alternative-employer--full-hrs--pre-disability-duties",
+      "label": "10.    Alternative employer / Full hrs / Pre-disability duties"
+    },
+    {
+      "value": "1-customer-unfit-for-work-no-business-development-skills-strategies-and-plan",
+      "label": "1.     Customer unfit for work; No business development skills, strategies and plan"
+    },
+    {
+      "value": "1-exercise-program--little-no-change-in-functional-capacity",
+      "label": "1.     Exercise program – little /no change in functional capacity"
+    },
+    {
+      "value": "1-no-rtw--medical-barriers",
+      "label": "1.     No RTW – medical barriers"
+    },
+    {
+      "value": "1-no-rtw--other-barriers",
+      "label": "1.     No RTW – other barriers"
+    },
+    {
+      "value": "1-no-suitable-vocational-options-for-rtw-identified",
+      "label": "1.     No suitable vocational options for RTW identified"
+    },
+    {
+      "value": "1-customer-has-no-job-seeking-skills",
+      "label": "1.      Customer has no job-seeking skills"
+    },
+    {
+      "value": "1-assessment-referred-not-commenced",
+      "label": "1.       Assessment referred (not commenced)"
+    },
+    {
+      "value": "1-business-is-operating-customer-not-working-no-business-development-skills-strategies-and-plan",
+      "label": "1.       Business is operating; Customer not working; No business development skills, strategies and plan"
+    },
+    {
+      "value": "1-business-not-operating-customer-not-working-customer-demonstrating-activities-towards-business-development",
+      "label": "1.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+    },
+    {
+      "value": "1-exercise-program--limited-functional-capacity",
+      "label": "1.       Exercise program – limited functional capacity"
+    },
+    {
+      "value": "1-wellbeing-services--limited-functional-capacity",
+      "label": "1.       Wellbeing services – limited functional capacity"
+    },
+    {
+      "value": "1-wellbeing-services--little-no-change-in-wellbeing",
+      "label": "1.       Wellbeing services – little /no change in wellbeing"
+    },
+    {
+      "value": "2-customer-partially-demonstrating-skills-and-resources-to-developgrow-business",
+      "label": "2.     Customer partially demonstrating skills and resources to develop/grow business"
+    },
+    {
+      "value": "2-identification-of-vocational-options--not-medically-approved",
+      "label": "2.     Identification of vocational options – not medically approved"
+    },
+    {
+      "value": "2-no-rtw--medical-approval-for-rtw-or-of-rtw-plan",
+      "label": "2.     No RTW – Medical approval for RTW or of RTW Plan"
+    },
+    {
+      "value": "2-customer-partially-demonstrating-skills-and-resources-for-independent-job-seeking",
+      "label": "2.      Customer partially demonstrating skills and resources for independent job-seeking"
+    },
+    {
+      "value": "2-exercise-program--customer-demonstrates-capacity-for-25-of-pre-disability-duties",
+      "label": "2.      Exercise program – customer demonstrates capacity for 25% of pre-disability duties"
+    },
+    {
+      "value": "2-exercise-program--increased-functional-abilities-but-no-rtw-capacity",
+      "label": "2.      Exercise program – increased functional abilities but no RTW capacity"
+    },
+    {
+      "value": "2-no-rtw--medical-approval-for-rtw-or-of-rtw-plan",
+      "label": "2.      No RTW – Medical approval for RTW or of RTW Plan"
+    },
+    {
+      "value": "2-assessment-in-progress",
+      "label": "2.       Assessment in progress"
+    },
+    {
+      "value": "2-business-is-operating-customer-not-working-customer-demonstrating-activities-towards-business-development",
+      "label": "2.       Business is operating; Customer not working; Customer demonstrating activities towards business development"
+    },
+    {
+      "value": "2-business-not-operating-customer-not-working-customer-demonstrating-activities-towards-business-development",
+      "label": "2.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+    },
+    {
+      "value": "2-no-rtw--medical-approval-for-rtw-or-of-rtw-plan",
+      "label": "2.       No RTW – Medical approval for RTW or of RTW Plan"
+    },
+    {
+      "value": "2-wellbeing-service--demonstrated-improvement-in-wellbeing-but-no-rtw-capacity",
+      "label": "2.       Wellbeing service – demonstrated improvement in wellbeing but no RTW capacity"
+    },
+    {
+      "value": "2-customer-working-reduced-hours-business-operating-at-reduced-revenue",
+      "label": "2.        Customer working reduced hours; Business operating at reduced revenue"
+    },
+    {
+      "value": "3-customer-demonstrating-ability-to-develop-skills-and-resources-to-developgrow-business",
+      "label": "3.     Customer demonstrating ability to develop skills and resources to develop/grow business"
+    },
+    {
+      "value": "3-customer-demonstrating-ability-to-independently-job-seek",
+      "label": "3.     Customer demonstrating ability to independently job-seek"
+    },
+    {
+      "value": "3-customer-participating-in-approved-appropriate-external-re-training",
+      "label": "3.     Customer participating in approved appropriate external re-training"
+    },
+    {
+      "value": "3-identification-of-vocational-options--medically-approved-to-progress-to-job-seeking",
+      "label": "3.     Identification of vocational options – medically approved (to progress to job-seeking)"
+    },
+    {
+      "value": "3-pre-dis-employer--partial-hrs--modified-or-alternative-duties",
+      "label": "3.     Pre-dis employer / Partial hrs / Modified or alternative duties"
+    },
+    {
+      "value": "3-exercise-program--can-participate-in-rtw",
+      "label": "3.      Exercise program – can participate in RTW"
+    },
+    {
+      "value": "3-exercise-program--customer-demonstrates-capacity-50-of-pre-disability-duties",
+      "label": "3.      Exercise program – customer demonstrates capacity 50% of pre-disability duties"
+    },
+    {
+      "value": "3-pre-dis-employer--partial-hrs--modified-or-alternative-duties",
+      "label": "3.      Pre-dis employer / Partial hrs / Modified or alternative duties"
+    },
+    {
+      "value": "3-assessment-completed",
+      "label": "3.       Assessment completed"
+    },
+    {
+      "value": "3-customer-working-reduced-hours-business-operating-at-reduced-revenue",
+      "label": "3.       Customer working reduced hours; Business operating at reduced revenue"
+    },
+    {
+      "value": "3-supplementaryamendment-assessment-completed",
+      "label": "3.       Supplementary/amendment assessment completed"
+    },
+    {
+      "value": "3-wellbeing-service--can-participate-in-rtw",
+      "label": "3.       Wellbeing service – can participate in RTW"
+    },
+    {
+      "value": "4-pre-dis-employer--full-hrs--modified-or-alternative-duties",
+      "label": "4.     Pre-dis employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "4-pre-dis-employer--partial-hrs--full-duties",
+      "label": "4.     Pre-dis employer / Partial hrs / Full duties"
+    },
+    {
+      "value": "4-exercise-program--customer-demonstrates-capacity-75-of-pre-disability-duties",
+      "label": "4.      Exercise program – customer demonstrates capacity 75% of pre-disability duties"
+    },
+    {
+      "value": "4-customer-partially-demonstrating-skills-and-resources-for-independent-job-seeking",
+      "label": "4.       Customer partially demonstrating skills and resources for independent job-seeking"
+    },
+    {
+      "value": "4-customer-working-full-hours-business-operating-at-reduced-revenue",
+      "label": "4.       Customer working full hours; Business operating at reduced revenue"
+    },
+    {
+      "value": "4-customer-working-reduced-hours-business-operating-with-customer-at-pre-dis-income",
+      "label": "4.        Customer working reduced hours; Business operating with customer at pre-dis income"
+    },
+    {
+      "value": "5-customer-demonstrating-ability-to-independently-job-seek",
+      "label": "5.     Customer demonstrating ability to independently job-seek"
+    },
+    {
+      "value": "5-pre-dis-employer--full-hrs--modified-or-alternative-duties",
+      "label": "5.     Pre-dis employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "5-exercise-program--customer-demonstrates-full-capacity-for-pre-disability-duties",
+      "label": "5.      Exercise program – customer demonstrates full capacity for pre-disability duties"
+    },
+    {
+      "value": "5-pre-dis-employer--full-hrs--modified-or-alternative-duties",
+      "label": "5.      Pre-dis employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "5-customer-working-full-hours-business-operating-with-customer-at-pre-dis-income",
+      "label": "5.        Customer working full hours; Business operating with customer at pre-dis income"
+    },
+    {
+      "value": "6-customer-participating-in-work-trial",
+      "label": "6.     Customer participating in work trial"
+    },
+    {
+      "value": "6-pre-dis-employer--full-hrs--full-duties",
+      "label": "6.     Pre-dis employer / Full hrs / Full duties"
+    },
+    {
+      "value": "6-customer-participating-in-work-trial",
+      "label": "6.       Customer participating in work trial"
+    },
+    {
+      "value": "7-alternative-employer--partial-hrs--modified-or-alternative-duties",
+      "label": "7.       Alternative employer / Partial hrs / Modified or alternative duties"
+    },
+    {
+      "value": "8-alternative-employer--full-hrs--modified-or-alternative-duties",
+      "label": "8.     Alternative employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "8-alternative-employer--partial-hrs--pre-disability-duties",
+      "label": "8.       Alternative employer / Partial hrs / Pre-disability duties"
+    },
+    {
+      "value": "9-alternative-employer--full-hrs--modified-or-alternative-duties",
+      "label": "9.       Alternative employer / Full hrs / Modified or alternative duties"
+    }
+  ],
+  "7e84e642-1096-4130-b843-1860d688db79": [
+    {
+      "value": "10-alternative-employer--full-hrs--pre-disability-duties",
+      "label": "10.    Alternative employer / Full hrs / Pre-disability duties"
+    },
+    {
+      "value": "1-customer-unfit-for-work-no-business-development-skills-strategies-and-plan",
+      "label": "1.     Customer unfit for work; No business development skills, strategies and plan"
+    },
+    {
+      "value": "1-exercise-program--little-no-change-in-functional-capacity",
+      "label": "1.     Exercise program – little /no change in functional capacity"
+    },
+    {
+      "value": "1-no-rtw--medical-barriers",
+      "label": "1.     No RTW – medical barriers"
+    },
+    {
+      "value": "1-no-rtw--other-barriers",
+      "label": "1.     No RTW – other barriers"
+    },
+    {
+      "value": "1-no-suitable-vocational-options-for-rtw-identified",
+      "label": "1.     No suitable vocational options for RTW identified"
+    },
+    {
+      "value": "1-customer-has-no-job-seeking-skills",
+      "label": "1.      Customer has no job-seeking skills"
+    },
+    {
+      "value": "1-assessment-referred-not-commenced",
+      "label": "1.       Assessment referred (not commenced)"
+    },
+    {
+      "value": "1-business-is-operating-customer-not-working-no-business-development-skills-strategies-and-plan",
+      "label": "1.       Business is operating; Customer not working; No business development skills, strategies and plan"
+    },
+    {
+      "value": "1-business-not-operating-customer-not-working-customer-demonstrating-activities-towards-business-development",
+      "label": "1.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+    },
+    {
+      "value": "1-exercise-program--limited-functional-capacity",
+      "label": "1.       Exercise program – limited functional capacity"
+    },
+    {
+      "value": "1-wellbeing-services--limited-functional-capacity",
+      "label": "1.       Wellbeing services – limited functional capacity"
+    },
+    {
+      "value": "1-wellbeing-services--little-no-change-in-wellbeing",
+      "label": "1.       Wellbeing services – little /no change in wellbeing"
+    },
+    {
+      "value": "2-customer-partially-demonstrating-skills-and-resources-to-developgrow-business",
+      "label": "2.     Customer partially demonstrating skills and resources to develop/grow business"
+    },
+    {
+      "value": "2-identification-of-vocational-options--not-medically-approved",
+      "label": "2.     Identification of vocational options – not medically approved"
+    },
+    {
+      "value": "2-no-rtw--medical-approval-for-rtw-or-of-rtw-plan",
+      "label": "2.     No RTW – Medical approval for RTW or of RTW Plan"
+    },
+    {
+      "value": "2-customer-partially-demonstrating-skills-and-resources-for-independent-job-seeking",
+      "label": "2.      Customer partially demonstrating skills and resources for independent job-seeking"
+    },
+    {
+      "value": "2-exercise-program--customer-demonstrates-capacity-for-25-of-pre-disability-duties",
+      "label": "2.      Exercise program – customer demonstrates capacity for 25% of pre-disability duties"
+    },
+    {
+      "value": "2-exercise-program--increased-functional-abilities-but-no-rtw-capacity",
+      "label": "2.      Exercise program – increased functional abilities but no RTW capacity"
+    },
+    {
+      "value": "2-no-rtw--medical-approval-for-rtw-or-of-rtw-plan",
+      "label": "2.      No RTW – Medical approval for RTW or of RTW Plan"
+    },
+    {
+      "value": "2-assessment-in-progress",
+      "label": "2.       Assessment in progress"
+    },
+    {
+      "value": "2-business-is-operating-customer-not-working-customer-demonstrating-activities-towards-business-development",
+      "label": "2.       Business is operating; Customer not working; Customer demonstrating activities towards business development"
+    },
+    {
+      "value": "2-business-not-operating-customer-not-working-customer-demonstrating-activities-towards-business-development",
+      "label": "2.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+    },
+    {
+      "value": "2-no-rtw--medical-approval-for-rtw-or-of-rtw-plan",
+      "label": "2.       No RTW – Medical approval for RTW or of RTW Plan"
+    },
+    {
+      "value": "2-wellbeing-service--demonstrated-improvement-in-wellbeing-but-no-rtw-capacity",
+      "label": "2.       Wellbeing service – demonstrated improvement in wellbeing but no RTW capacity"
+    },
+    {
+      "value": "2-customer-working-reduced-hours-business-operating-at-reduced-revenue",
+      "label": "2.        Customer working reduced hours; Business operating at reduced revenue"
+    },
+    {
+      "value": "3-customer-demonstrating-ability-to-develop-skills-and-resources-to-developgrow-business",
+      "label": "3.     Customer demonstrating ability to develop skills and resources to develop/grow business"
+    },
+    {
+      "value": "3-customer-demonstrating-ability-to-independently-job-seek",
+      "label": "3.     Customer demonstrating ability to independently job-seek"
+    },
+    {
+      "value": "3-customer-participating-in-approved-appropriate-external-re-training",
+      "label": "3.     Customer participating in approved appropriate external re-training"
+    },
+    {
+      "value": "3-identification-of-vocational-options--medically-approved-to-progress-to-job-seeking",
+      "label": "3.     Identification of vocational options – medically approved (to progress to job-seeking)"
+    },
+    {
+      "value": "3-pre-dis-employer--partial-hrs--modified-or-alternative-duties",
+      "label": "3.     Pre-dis employer / Partial hrs / Modified or alternative duties"
+    },
+    {
+      "value": "3-exercise-program--can-participate-in-rtw",
+      "label": "3.      Exercise program – can participate in RTW"
+    },
+    {
+      "value": "3-exercise-program--customer-demonstrates-capacity-50-of-pre-disability-duties",
+      "label": "3.      Exercise program – customer demonstrates capacity 50% of pre-disability duties"
+    },
+    {
+      "value": "3-pre-dis-employer--partial-hrs--modified-or-alternative-duties",
+      "label": "3.      Pre-dis employer / Partial hrs / Modified or alternative duties"
+    },
+    {
+      "value": "3-assessment-completed",
+      "label": "3.       Assessment completed"
+    },
+    {
+      "value": "3-customer-working-reduced-hours-business-operating-at-reduced-revenue",
+      "label": "3.       Customer working reduced hours; Business operating at reduced revenue"
+    },
+    {
+      "value": "3-supplementaryamendment-assessment-completed",
+      "label": "3.       Supplementary/amendment assessment completed"
+    },
+    {
+      "value": "3-wellbeing-service--can-participate-in-rtw",
+      "label": "3.       Wellbeing service – can participate in RTW"
+    },
+    {
+      "value": "4-pre-dis-employer--full-hrs--modified-or-alternative-duties",
+      "label": "4.     Pre-dis employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "4-pre-dis-employer--partial-hrs--full-duties",
+      "label": "4.     Pre-dis employer / Partial hrs / Full duties"
+    },
+    {
+      "value": "4-exercise-program--customer-demonstrates-capacity-75-of-pre-disability-duties",
+      "label": "4.      Exercise program – customer demonstrates capacity 75% of pre-disability duties"
+    },
+    {
+      "value": "4-customer-partially-demonstrating-skills-and-resources-for-independent-job-seeking",
+      "label": "4.       Customer partially demonstrating skills and resources for independent job-seeking"
+    },
+    {
+      "value": "4-customer-working-full-hours-business-operating-at-reduced-revenue",
+      "label": "4.       Customer working full hours; Business operating at reduced revenue"
+    },
+    {
+      "value": "4-customer-working-reduced-hours-business-operating-with-customer-at-pre-dis-income",
+      "label": "4.        Customer working reduced hours; Business operating with customer at pre-dis income"
+    },
+    {
+      "value": "5-customer-demonstrating-ability-to-independently-job-seek",
+      "label": "5.     Customer demonstrating ability to independently job-seek"
+    },
+    {
+      "value": "5-pre-dis-employer--full-hrs--modified-or-alternative-duties",
+      "label": "5.     Pre-dis employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "5-exercise-program--customer-demonstrates-full-capacity-for-pre-disability-duties",
+      "label": "5.      Exercise program – customer demonstrates full capacity for pre-disability duties"
+    },
+    {
+      "value": "5-pre-dis-employer--full-hrs--modified-or-alternative-duties",
+      "label": "5.      Pre-dis employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "5-customer-working-full-hours-business-operating-with-customer-at-pre-dis-income",
+      "label": "5.        Customer working full hours; Business operating with customer at pre-dis income"
+    },
+    {
+      "value": "6-customer-participating-in-work-trial",
+      "label": "6.     Customer participating in work trial"
+    },
+    {
+      "value": "6-pre-dis-employer--full-hrs--full-duties",
+      "label": "6.     Pre-dis employer / Full hrs / Full duties"
+    },
+    {
+      "value": "6-customer-participating-in-work-trial",
+      "label": "6.       Customer participating in work trial"
+    },
+    {
+      "value": "7-alternative-employer--partial-hrs--modified-or-alternative-duties",
+      "label": "7.       Alternative employer / Partial hrs / Modified or alternative duties"
+    },
+    {
+      "value": "8-alternative-employer--full-hrs--modified-or-alternative-duties",
+      "label": "8.     Alternative employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "8-alternative-employer--partial-hrs--pre-disability-duties",
+      "label": "8.       Alternative employer / Partial hrs / Pre-disability duties"
+    },
+    {
+      "value": "9-alternative-employer--full-hrs--modified-or-alternative-duties",
+      "label": "9.       Alternative employer / Full hrs / Modified or alternative duties"
+    }
+  ],
+  "15bbfe83-b38c-422d-b803-3d76c6c83478": [
+    {
+      "value": "10-alternative-employer--full-hrs--pre-disability-duties",
+      "label": "10.    Alternative employer / Full hrs / Pre-disability duties"
+    },
+    {
+      "value": "1-customer-unfit-for-work-no-business-development-skills-strategies-and-plan",
+      "label": "1.     Customer unfit for work; No business development skills, strategies and plan"
+    },
+    {
+      "value": "1-exercise-program--little-no-change-in-functional-capacity",
+      "label": "1.     Exercise program – little /no change in functional capacity"
+    },
+    {
+      "value": "1-no-rtw--medical-barriers",
+      "label": "1.     No RTW – medical barriers"
+    },
+    {
+      "value": "1-no-rtw--other-barriers",
+      "label": "1.     No RTW – other barriers"
+    },
+    {
+      "value": "1-no-suitable-vocational-options-for-rtw-identified",
+      "label": "1.     No suitable vocational options for RTW identified"
+    },
+    {
+      "value": "1-customer-has-no-job-seeking-skills",
+      "label": "1.      Customer has no job-seeking skills"
+    },
+    {
+      "value": "1-assessment-referred-not-commenced",
+      "label": "1.       Assessment referred (not commenced)"
+    },
+    {
+      "value": "1-business-is-operating-customer-not-working-no-business-development-skills-strategies-and-plan",
+      "label": "1.       Business is operating; Customer not working; No business development skills, strategies and plan"
+    },
+    {
+      "value": "1-business-not-operating-customer-not-working-customer-demonstrating-activities-towards-business-development",
+      "label": "1.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+    },
+    {
+      "value": "1-exercise-program--limited-functional-capacity",
+      "label": "1.       Exercise program – limited functional capacity"
+    },
+    {
+      "value": "1-wellbeing-services--limited-functional-capacity",
+      "label": "1.       Wellbeing services – limited functional capacity"
+    },
+    {
+      "value": "1-wellbeing-services--little-no-change-in-wellbeing",
+      "label": "1.       Wellbeing services – little /no change in wellbeing"
+    },
+    {
+      "value": "2-customer-partially-demonstrating-skills-and-resources-to-developgrow-business",
+      "label": "2.     Customer partially demonstrating skills and resources to develop/grow business"
+    },
+    {
+      "value": "2-identification-of-vocational-options--not-medically-approved",
+      "label": "2.     Identification of vocational options – not medically approved"
+    },
+    {
+      "value": "2-no-rtw--medical-approval-for-rtw-or-of-rtw-plan",
+      "label": "2.     No RTW – Medical approval for RTW or of RTW Plan"
+    },
+    {
+      "value": "2-customer-partially-demonstrating-skills-and-resources-for-independent-job-seeking",
+      "label": "2.      Customer partially demonstrating skills and resources for independent job-seeking"
+    },
+    {
+      "value": "2-exercise-program--customer-demonstrates-capacity-for-25-of-pre-disability-duties",
+      "label": "2.      Exercise program – customer demonstrates capacity for 25% of pre-disability duties"
+    },
+    {
+      "value": "2-exercise-program--increased-functional-abilities-but-no-rtw-capacity",
+      "label": "2.      Exercise program – increased functional abilities but no RTW capacity"
+    },
+    {
+      "value": "2-no-rtw--medical-approval-for-rtw-or-of-rtw-plan",
+      "label": "2.      No RTW – Medical approval for RTW or of RTW Plan"
+    },
+    {
+      "value": "2-assessment-in-progress",
+      "label": "2.       Assessment in progress"
+    },
+    {
+      "value": "2-business-is-operating-customer-not-working-customer-demonstrating-activities-towards-business-development",
+      "label": "2.       Business is operating; Customer not working; Customer demonstrating activities towards business development"
+    },
+    {
+      "value": "2-business-not-operating-customer-not-working-customer-demonstrating-activities-towards-business-development",
+      "label": "2.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+    },
+    {
+      "value": "2-no-rtw--medical-approval-for-rtw-or-of-rtw-plan",
+      "label": "2.       No RTW – Medical approval for RTW or of RTW Plan"
+    },
+    {
+      "value": "2-wellbeing-service--demonstrated-improvement-in-wellbeing-but-no-rtw-capacity",
+      "label": "2.       Wellbeing service – demonstrated improvement in wellbeing but no RTW capacity"
+    },
+    {
+      "value": "2-customer-working-reduced-hours-business-operating-at-reduced-revenue",
+      "label": "2.        Customer working reduced hours; Business operating at reduced revenue"
+    },
+    {
+      "value": "3-customer-demonstrating-ability-to-develop-skills-and-resources-to-developgrow-business",
+      "label": "3.     Customer demonstrating ability to develop skills and resources to develop/grow business"
+    },
+    {
+      "value": "3-customer-demonstrating-ability-to-independently-job-seek",
+      "label": "3.     Customer demonstrating ability to independently job-seek"
+    },
+    {
+      "value": "3-customer-participating-in-approved-appropriate-external-re-training",
+      "label": "3.     Customer participating in approved appropriate external re-training"
+    },
+    {
+      "value": "3-identification-of-vocational-options--medically-approved-to-progress-to-job-seeking",
+      "label": "3.     Identification of vocational options – medically approved (to progress to job-seeking)"
+    },
+    {
+      "value": "3-pre-dis-employer--partial-hrs--modified-or-alternative-duties",
+      "label": "3.     Pre-dis employer / Partial hrs / Modified or alternative duties"
+    },
+    {
+      "value": "3-exercise-program--can-participate-in-rtw",
+      "label": "3.      Exercise program – can participate in RTW"
+    },
+    {
+      "value": "3-exercise-program--customer-demonstrates-capacity-50-of-pre-disability-duties",
+      "label": "3.      Exercise program – customer demonstrates capacity 50% of pre-disability duties"
+    },
+    {
+      "value": "3-pre-dis-employer--partial-hrs--modified-or-alternative-duties",
+      "label": "3.      Pre-dis employer / Partial hrs / Modified or alternative duties"
+    },
+    {
+      "value": "3-assessment-completed",
+      "label": "3.       Assessment completed"
+    },
+    {
+      "value": "3-customer-working-reduced-hours-business-operating-at-reduced-revenue",
+      "label": "3.       Customer working reduced hours; Business operating at reduced revenue"
+    },
+    {
+      "value": "3-supplementaryamendment-assessment-completed",
+      "label": "3.       Supplementary/amendment assessment completed"
+    },
+    {
+      "value": "3-wellbeing-service--can-participate-in-rtw",
+      "label": "3.       Wellbeing service – can participate in RTW"
+    },
+    {
+      "value": "4-pre-dis-employer--full-hrs--modified-or-alternative-duties",
+      "label": "4.     Pre-dis employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "4-pre-dis-employer--partial-hrs--full-duties",
+      "label": "4.     Pre-dis employer / Partial hrs / Full duties"
+    },
+    {
+      "value": "4-exercise-program--customer-demonstrates-capacity-75-of-pre-disability-duties",
+      "label": "4.      Exercise program – customer demonstrates capacity 75% of pre-disability duties"
+    },
+    {
+      "value": "4-customer-partially-demonstrating-skills-and-resources-for-independent-job-seeking",
+      "label": "4.       Customer partially demonstrating skills and resources for independent job-seeking"
+    },
+    {
+      "value": "4-customer-working-full-hours-business-operating-at-reduced-revenue",
+      "label": "4.       Customer working full hours; Business operating at reduced revenue"
+    },
+    {
+      "value": "4-customer-working-reduced-hours-business-operating-with-customer-at-pre-dis-income",
+      "label": "4.        Customer working reduced hours; Business operating with customer at pre-dis income"
+    },
+    {
+      "value": "5-customer-demonstrating-ability-to-independently-job-seek",
+      "label": "5.     Customer demonstrating ability to independently job-seek"
+    },
+    {
+      "value": "5-pre-dis-employer--full-hrs--modified-or-alternative-duties",
+      "label": "5.     Pre-dis employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "5-exercise-program--customer-demonstrates-full-capacity-for-pre-disability-duties",
+      "label": "5.      Exercise program – customer demonstrates full capacity for pre-disability duties"
+    },
+    {
+      "value": "5-pre-dis-employer--full-hrs--modified-or-alternative-duties",
+      "label": "5.      Pre-dis employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "5-customer-working-full-hours-business-operating-with-customer-at-pre-dis-income",
+      "label": "5.        Customer working full hours; Business operating with customer at pre-dis income"
+    },
+    {
+      "value": "6-customer-participating-in-work-trial",
+      "label": "6.     Customer participating in work trial"
+    },
+    {
+      "value": "6-pre-dis-employer--full-hrs--full-duties",
+      "label": "6.     Pre-dis employer / Full hrs / Full duties"
+    },
+    {
+      "value": "6-customer-participating-in-work-trial",
+      "label": "6.       Customer participating in work trial"
+    },
+    {
+      "value": "7-alternative-employer--partial-hrs--modified-or-alternative-duties",
+      "label": "7.       Alternative employer / Partial hrs / Modified or alternative duties"
+    },
+    {
+      "value": "8-alternative-employer--full-hrs--modified-or-alternative-duties",
+      "label": "8.     Alternative employer / Full hrs / Modified or alternative duties"
+    },
+    {
+      "value": "8-alternative-employer--partial-hrs--pre-disability-duties",
+      "label": "8.       Alternative employer / Partial hrs / Pre-disability duties"
+    },
+    {
+      "value": "9-alternative-employer--full-hrs--modified-or-alternative-duties",
+      "label": "9.       Alternative employer / Full hrs / Modified or alternative duties"
+    }
+  ],
+  "4b0bfbd3-a54a-4a4a-9251-9c25779890b4": [
+    {
+      "value": "email-summary",
+      "label": "Email Summary"
+    },
+    {
+      "value": "file-closed-prior-to-asx-or-report",
+      "label": "File Closed Prior to Asx or Report"
+    },
+    {
+      "value": "no-update-required",
+      "label": "No Update Required"
+    },
+    {
+      "value": "phone-update-only",
+      "label": "Phone Update Only"
+    },
+    {
+      "value": "report",
+      "label": "Report"
+    },
+    {
+      "value": "suitable-duties-plan",
+      "label": "Suitable Duties Plan"
+    }
+  ],
+  "3561f8bd-ffd6-46a1-95e7-5484f257a3a7": [
+    {
+      "value": "assessment-completed",
+      "label": "Assessment completed"
+    },
+    {
+      "value": "assessment-not-completed",
+      "label": "Assessment not completed"
+    },
+    {
+      "value": "did-not-complete",
+      "label": "Did not complete"
+    },
+    {
+      "value": "did-not-proceed",
+      "label": "Did not proceed"
+    },
+    {
+      "value": "not-working-full-capacity",
+      "label": "Not Working Full Capacity"
+    },
+    {
+      "value": "not-working-no-capacity",
+      "label": "Not Working No Capacity"
+    },
+    {
+      "value": "not-working-partial-capacity",
+      "label": "Not Working Partial Capacity"
+    },
+    {
+      "value": "program-provided",
+      "label": "Program Provided"
+    },
+    {
+      "value": "volunteeringstudying",
+      "label": "Volunteering/Studying"
+    },
+    {
+      "value": "working-alternate-duties-full-hours",
+      "label": "Working Alternate Duties Full Hours"
+    },
+    {
+      "value": "working-alternate-duties-reduced-hours",
+      "label": "Working Alternate Duties Reduced Hours"
+    },
+    {
+      "value": "working-same-duties-full-hours",
+      "label": "Working Same Duties Full Hours"
+    },
+    {
+      "value": "working-same-duties-reduced-hours",
+      "label": "Working Same Duties Reduced Hours"
+    }
+  ],
+  "9668e544-00e0-4b3c-bec2-e6e615bf361c": [
+    {
+      "value": "no",
+      "label": "No"
+    },
+    {
+      "value": "yes",
+      "label": "Yes"
+    }
+  ],
+  "d48b17c1-a632-4944-9434-299812315256": [
+    {
+      "value": "no",
+      "label": "No"
+    },
+    {
+      "value": "yes---no-options-identified",
+      "label": "Yes - no options identified"
+    },
+    {
+      "value": "yes---options-identified",
+      "label": "Yes - options identified"
+    }
+  ],
+  "8b9a82c2-4658-4fec-bfd3-8184d6adc94e": [
+    {
+      "value": "dissatisfied",
+      "label": "Dissatisfied"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    },
+    {
+      "value": "neutral",
+      "label": "Neutral"
+    },
+    {
+      "value": "satisfied",
+      "label": "Satisfied"
+    },
+    {
+      "value": "very-dissatisfied",
+      "label": "Very Dissatisfied"
+    },
+    {
+      "value": "very-satisfied",
+      "label": "Very Satisfied"
+    }
+  ],
+  "6cb1c118-ff39-459d-be52-ba14ffbe1455": [
+    {
+      "value": "0",
+      "label": "0"
+    },
+    {
+      "value": "1",
+      "label": "1"
+    },
+    {
+      "value": "10",
+      "label": "10"
+    },
+    {
+      "value": "2",
+      "label": "2"
+    },
+    {
+      "value": "3",
+      "label": "3"
+    },
+    {
+      "value": "4",
+      "label": "4"
+    },
+    {
+      "value": "5",
+      "label": "5"
+    },
+    {
+      "value": "6",
+      "label": "6"
+    },
+    {
+      "value": "7",
+      "label": "7"
+    },
+    {
+      "value": "8",
+      "label": "8"
+    },
+    {
+      "value": "9",
+      "label": "9"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    }
+  ],
+  "17562bc2-5333-459f-9934-f7f1849b0da2": [
+    {
+      "value": "0-6-detractors",
+      "label": "0-6 (Detractors)"
+    },
+    {
+      "value": "7-8-passives",
+      "label": "7-8 (Passives)"
+    },
+    {
+      "value": "9-10-promoters",
+      "label": "9-10 (Promoters)"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    }
+  ],
+  "31c251c2-c69b-41d6-a2f6-8fde06a53f71": [
+    {
+      "value": "no",
+      "label": "No"
+    },
+    {
+      "value": "yes",
+      "label": "Yes"
+    }
+  ],
+  "c63fd704-5485-47f6-91e4-6a96304d57b7": [
+    {
+      "value": "yes",
+      "label": "Yes"
+    }
+  ],
+  "08b9a6f6-e4c0-4d27-9739-db72364a7c5b": [
+    {
+      "value": "client-availability",
+      "label": "Client availability"
+    },
+    {
+      "value": "client-commitments",
+      "label": "Client commitments"
+    },
+    {
+      "value": "client-contact",
+      "label": "Client contact"
+    },
+    {
+      "value": "client-hospitalisationillness",
+      "label": "Client hospitalisation/illness"
+    }
+  ],
+  "42299b4d-c7af-42fd-a30d-d5df4ae77b2f": [
+    {
+      "value": "assessment-only",
+      "label": "Assessment Only"
+    },
+    {
+      "value": "case-transferred",
+      "label": "Case transferred"
+    },
+    {
+      "value": "claimant-resigned",
+      "label": "Claimant resigned"
+    },
+    {
+      "value": "claimant-withdrew",
+      "label": "Claimant withdrew"
+    },
+    {
+      "value": "claim-declined",
+      "label": "Claim Declined"
+    },
+    {
+      "value": "did-not-proceed",
+      "label": "Did not proceed"
+    },
+    {
+      "value": "further-vocational-assistance-required",
+      "label": "Further Vocational Assistance Required"
+    },
+    {
+      "value": "independent-job-seeker",
+      "label": "Independent Job Seeker"
+    },
+    {
+      "value": "mgd-only",
+      "label": "MGD ONLY"
+    },
+    {
+      "value": "no-change-to-rthrtw-outcome",
+      "label": "No change to RTH/RTW outcome"
+    },
+    {
+      "value": "no-return-to-work",
+      "label": "No Return to Work"
+    },
+    {
+      "value": "no-rtw---no-capacity",
+      "label": "No RTW - No capacity"
+    },
+    {
+      "value": "no-rtw---partial-capacity",
+      "label": "No RTW - Partial capacity"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "rth---community-integration",
+      "label": "RTH - Community integration"
+    },
+    {
+      "value": "rth---improved-functional-capacity",
+      "label": "RTH - Improved functional capacity"
+    },
+    {
+      "value": "rth---job-seeking-independently",
+      "label": "RTH - Job Seeking Independently"
+    },
+    {
+      "value": "rth---participating-in-retraining",
+      "label": "RTH - Participating in retraining"
+    },
+    {
+      "value": "rth---participating-in-volunteering",
+      "label": "RTH - Participating in volunteering"
+    },
+    {
+      "value": "rth---work-readiness---engaged-in-workplace-rehab",
+      "label": "RTH - Work Readiness - engaged in workplace rehab"
+    },
+    {
+      "value": "rtw---host-placement",
+      "label": "RTW - Host Placement"
+    },
+    {
+      "value": "rtw---new-employer",
+      "label": "RTW - New Employer"
+    },
+    {
+      "value": "rtw---new-employer-full-hours",
+      "label": "RTW - New employer full hours"
+    },
+    {
+      "value": "rtw---new-employer-partial-hours",
+      "label": "RTW - New employer partial hours"
+    },
+    {
+      "value": "rtw---same-employer-alternative-duties",
+      "label": "RTW - Same Employer (Alternative Duties)"
+    },
+    {
+      "value": "rtw---same-employer-full-hours",
+      "label": "RTW - Same employer full hours"
+    },
+    {
+      "value": "rtw---same-employer-original-duties",
+      "label": "RTW - Same Employer (Original Duties)"
+    },
+    {
+      "value": "rtw---same-employer-partial-hours",
+      "label": "RTW - Same employer partial hours"
+    },
+    {
+      "value": "self-employed",
+      "label": "Self-Employed"
+    },
+    {
+      "value": "single-service---assessment-complete",
+      "label": "Single service - Assessment complete"
+    },
+    {
+      "value": "studying--retraining",
+      "label": "Studying / Retraining"
+    },
+    {
+      "value": "volunteering",
+      "label": "Volunteering"
+    }
+  ],
+  "31052097-21bf-4445-8f30-43c897ab2b86": [
+    {
+      "value": "no",
+      "label": "No"
+    },
+    {
+      "value": "yes",
+      "label": "Yes"
+    }
+  ],
+  "c94818ad-2d99-4ddc-b1bb-75f41dfbf35a": [
+    {
+      "value": "no",
+      "label": "No"
+    },
+    {
+      "value": "yes",
+      "label": "Yes"
+    }
+  ],
+  "b9875e7a-914c-4514-b0e1-e55cbf9ea2fb": [
+    {
+      "value": "assessment-completed",
+      "label": "Assessment completed"
+    },
+    {
+      "value": "assessment-not-completed",
+      "label": "Assessment not completed"
+    }
+  ],
+  "5372b3ee-3882-4e67-862f-f2aff271924c": [
+    {
+      "value": "not-ready-for-return-to-work-or-wellbeing-support",
+      "label": "Not ready for return to work or wellbeing support"
+    },
+    {
+      "value": "recommended-to-an-occupational-rehabilitation-program",
+      "label": "Recommended to an occupational rehabilitation program"
+    },
+    {
+      "value": "recommended-to-a-wellbeing-support-program",
+      "label": "Recommended to a wellbeing support program"
+    }
+  ],
+  "661c171e-4c0e-436a-8057-3a1e1744b8fe": [
+    {
+      "value": "occupational-rehab-referral",
+      "label": "Occupational Rehab Referral"
+    },
+    {
+      "value": "wellbeing-referral",
+      "label": "Wellbeing Referral"
+    }
+  ],
+  "f1bf1229-ac72-4684-bc2d-d34e838dcb3a": [
+    {
+      "value": "refused",
+      "label": "Refused"
+    }
+  ],
+  "6393ac14-c276-4b45-b80a-7cee43fdc664": [
+    {
+      "value": "no",
+      "label": "No"
+    },
+    {
+      "value": "yes",
+      "label": "Yes"
+    }
+  ],
+  "a83aa059-a20d-495c-a6aa-a47a2ccffba5": [
+    {
+      "value": "refused",
+      "label": "Refused"
+    }
+  ],
+  "21459d95-d3a2-4d25-bcfa-280c6b3e0d4f": [
+    {
+      "value": "assessment-only",
+      "label": "Assessment only"
+    },
+    {
+      "value": "did-not-proceed",
+      "label": "Did not proceed"
+    },
+    {
+      "value": "full-capacity",
+      "label": "Full capacity"
+    },
+    {
+      "value": "some-capacity-for-work---increase-in-capacity",
+      "label": "Some capacity for work - increase in capacity"
+    },
+    {
+      "value": "some-capacity-for-work---reduced-hours-or-restrictions",
+      "label": "Some capacity for work - reduced hours or restrictions"
+    },
+    {
+      "value": "unfit-for-work",
+      "label": "Unfit for work"
+    }
+  ],
+  "7d5974e6-020e-41ad-a568-175134f97278": [
+    {
+      "value": "assessment-only",
+      "label": "Assessment only"
+    },
+    {
+      "value": "not-working-full-capacity",
+      "label": "Not working full capacity"
+    },
+    {
+      "value": "not-working-no-capacity",
+      "label": "Not working no capacity"
+    },
+    {
+      "value": "not-working-partial-capacity",
+      "label": "Not working partial capacity"
+    },
+    {
+      "value": "program-provided",
+      "label": "Program provided"
+    },
+    {
+      "value": "volunteeringstudying",
+      "label": "Volunteering/studying"
+    },
+    {
+      "value": "working-alternate-duties-full-hours",
+      "label": "Working alternate duties full hours"
+    },
+    {
+      "value": "working-alternate-duties-reduced-hours",
+      "label": "Working alternate duties reduced hours"
+    },
+    {
+      "value": "working-same-duties-full-hours",
+      "label": "Working same duties full hours"
+    },
+    {
+      "value": "working-same-duties-partial-hours",
+      "label": "Working same duties partial hours"
+    }
+  ],
+  "7e4443a5-5b61-406b-bb0b-44f789648292": [
+    {
+      "value": "no",
+      "label": "No"
+    },
+    {
+      "value": "yes",
+      "label": "Yes"
+    }
+  ],
+  "0ceaa9fe-4598-409f-9cf6-9a60288d0917": [
+    {
+      "value": "off-portal",
+      "label": "Off Portal"
+    },
+    {
+      "value": "portal",
+      "label": "Portal"
+    }
+  ],
+  "51a68359-a6d7-45fe-9d12-0be4f9017690": [
+    {
+      "value": "abs-australian-bureau-of-statistics",
+      "label": "ABS Australian Bureau of Statistics"
+    },
+    {
+      "value": "accc-australian-competition--consumer-commission",
+      "label": "ACCC Australian Competition & Consumer Commission"
+    },
+    {
+      "value": "acic-australian-criminal-intelligence-commission",
+      "label": "ACIC Australian Criminal Intelligence Commission"
+    },
+    {
+      "value": "acqsc-aged-care-quality-and-safety-commission",
+      "label": "ACQSC Aged Care Quality and Safety Commission"
+    },
+    {
+      "value": "adha-australian-digital-health-agency",
+      "label": "ADHA Australian Digital Health Agency"
+    },
+    {
+      "value": "afma-australian-fisheries-management-authority",
+      "label": "AFMA Australian Fisheries Management Authority"
+    },
+    {
+      "value": "afp-australian-federal-police",
+      "label": "AFP Australian Federal Police"
+    },
+    {
+      "value": "anao-australian-national-audit-office",
+      "label": "ANAO Australian National Audit Office"
+    },
+    {
+      "value": "anmm-australian-national-maritime-museum",
+      "label": "ANMM Australian National Maritime Museum"
+    },
+    {
+      "value": "arpnsa-australian-radiation-protection--nuclear-safety-agency",
+      "label": "ARPNSA Australian Radiation Protection & Nuclear Safety Agency"
+    },
+    {
+      "value": "asic-australian-securities--investment-commission",
+      "label": "ASIC Australian Securities & Investment Commission"
+    },
+    {
+      "value": "ato-australian-taxation-office",
+      "label": "ATO Australian Taxation Office"
+    },
+    {
+      "value": "atsb-australian-transport-safety-bureau",
+      "label": "ATSB Australian Transport Safety Bureau"
+    },
+    {
+      "value": "aust-austrade",
+      "label": "AUST Austrade"
+    },
+    {
+      "value": "casa-civil-aviation-safety-authority",
+      "label": "CASA Civil Aviation Safety Authority"
+    },
+    {
+      "value": "cca-climate-change-authority",
+      "label": "CCA Climate Change Authority"
+    },
+    {
+      "value": "comcare-comcare",
+      "label": "COMCARE Comcare"
+    },
+    {
+      "value": "csiro-csiro",
+      "label": "CSIRO CSIRO"
+    },
+    {
+      "value": "daff-department-of-agriculture-fisheries-and-forestry",
+      "label": "DAFF Department of Agriculture, Fisheries and Forestry"
+    },
+    {
+      "value": "dcceewr-department-of-climate-change-energy-the-environment-and-water",
+      "label": "DCCEEWR Department of Climate Change, Energy, the Environment and Water"
+    },
+    {
+      "value": "dewr-department-of-employment-and-workplace-relations",
+      "label": "DEWR Department of Employment and Workplace Relations"
+    },
+    {
+      "value": "dfat-department-of-foreign-affairs-and-trade",
+      "label": "DFAT Department of Foreign Affairs and Trade"
+    },
+    {
+      "value": "dod-department-of-defence",
+      "label": "DoD Department of Defence"
+    },
+    {
+      "value": "dpmc-department-of-the-prime-minister-and-cabinet",
+      "label": "DPMC Department of the Prime Minister and Cabinet"
+    },
+    {
+      "value": "dps-department-of-parliamentary-services",
+      "label": "DPS Department of Parliamentary Services"
+    },
+    {
+      "value": "dss-department-of-social-services",
+      "label": "DSS Department of Social Services"
+    },
+    {
+      "value": "dva-department-of-veterans-affairs",
+      "label": "DVA Department of Veterans' Affairs"
+    },
+    {
+      "value": "edu-department-of-education",
+      "label": "EDU Department of Education"
+    },
+    {
+      "value": "gg-office-of-the-official-secretary-to-the-governor-general",
+      "label": "GG Office of the Official Secretary to the Governor-General"
+    },
+    {
+      "value": "health-department-of-health",
+      "label": "HEALTH Department of Health"
+    },
+    {
+      "value": "hom-department-of-home-affairs",
+      "label": "HOM Department of Home Affairs"
+    },
+    {
+      "value": "ipa-ip-australia",
+      "label": "IPA IP Australia"
+    },
+    {
+      "value": "naa-national-archives-of-australia",
+      "label": "NAA National Archives of Australia"
+    },
+    {
+      "value": "ndia-national-disability-insurance-agency",
+      "label": "NDIA National Disability Insurance Agency"
+    },
+    {
+      "value": "ndis-ndis-quality--safeguard-commission",
+      "label": "NDIS NDIS Quality & Safeguard Commission"
+    },
+    {
+      "value": "niaa-national-indigenous-australians-agency",
+      "label": "NIAA National Indigenous Australians Agency"
+    },
+    {
+      "value": "nla-national-library-of-australia",
+      "label": "NLA National Library of Australia"
+    },
+    {
+      "value": "oni-office-of-national-intelligence",
+      "label": "ONI Office of National Intelligence"
+    },
+    {
+      "value": "pc-productivity-commission",
+      "label": "PC Productivity Commission"
+    },
+    {
+      "value": "psr-professional-services-review",
+      "label": "PSR Professional Services Review"
+    },
+    {
+      "value": "sa-services-australia",
+      "label": "SA Services Australia"
+    },
+    {
+      "value": "swa-safe-work-australia",
+      "label": "SWA Safe Work Australia"
+    },
+    {
+      "value": "tt-treasury",
+      "label": "TT Treasury"
+    }
+  ],
+  "37cb7a00-f6c7-46cc-8c60-51e62f3ba170": [
+    {
+      "value": "act",
+      "label": "ACT"
+    },
+    {
+      "value": "nsw-metro",
+      "label": "NSW Metro"
+    },
+    {
+      "value": "nsw-mid-north",
+      "label": "NSW Mid North"
+    },
+    {
+      "value": "nsw-north",
+      "label": "NSW North"
+    },
+    {
+      "value": "nsw-north-west",
+      "label": "NSW North West"
+    },
+    {
+      "value": "nsw-south",
+      "label": "NSW South"
+    },
+    {
+      "value": "nsw-south-west",
+      "label": "NSW South West"
+    },
+    {
+      "value": "nsw-west",
+      "label": "NSW West"
+    },
+    {
+      "value": "nt-central",
+      "label": "NT Central"
+    },
+    {
+      "value": "nt-metro",
+      "label": "NT Metro"
+    },
+    {
+      "value": "qld-central",
+      "label": "QLD Central"
+    },
+    {
+      "value": "qld-far-north",
+      "label": "QLD Far North"
+    },
+    {
+      "value": "qld-north",
+      "label": "QLD North"
+    },
+    {
+      "value": "qld-south-east",
+      "label": "QLD South East"
+    },
+    {
+      "value": "qld-sunshine-coast",
+      "label": "QLD Sunshine Coast"
+    },
+    {
+      "value": "qld-west",
+      "label": "QLD West"
+    },
+    {
+      "value": "sa-metro",
+      "label": "SA Metro"
+    },
+    {
+      "value": "sa-north",
+      "label": "SA North"
+    },
+    {
+      "value": "sa-south-east",
+      "label": "SA South East"
+    },
+    {
+      "value": "tas-metro",
+      "label": "TAS Metro"
+    },
+    {
+      "value": "tas-regional",
+      "label": "TAS Regional"
+    },
+    {
+      "value": "vic-east",
+      "label": "VIC East"
+    },
+    {
+      "value": "vic-metro",
+      "label": "VIC Metro"
+    },
+    {
+      "value": "vic-north",
+      "label": "VIC North"
+    },
+    {
+      "value": "vic-north-west",
+      "label": "VIC North West"
+    },
+    {
+      "value": "vic-west",
+      "label": "VIC West"
+    },
+    {
+      "value": "wa-metro",
+      "label": "WA Metro"
+    },
+    {
+      "value": "wa-south",
+      "label": "WA South"
+    },
+    {
+      "value": "wa-south-west",
+      "label": "WA South West"
+    }
+  ],
+  "022f07b7-9854-4ada-8117-093e44b437c1": [
+    {
+      "value": "agency",
+      "label": "Agency"
+    },
+    {
+      "value": "employee",
+      "label": "Employee"
+    },
+    {
+      "value": "information-delay",
+      "label": "Information Delay"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "provider",
+      "label": "Provider"
+    }
+  ],
+  "871d9da9-3011-4dec-af39-89a9a8d3c76f": [
+    {
+      "value": "agency",
+      "label": "Agency"
+    },
+    {
+      "value": "employee",
+      "label": "Employee"
+    },
+    {
+      "value": "information-delay",
+      "label": "Information Delay"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "provider",
+      "label": "Provider"
+    }
+  ],
+  "48fec116-0408-4a24-94c4-6c56e430cd86": [
+    {
+      "value": "agency",
+      "label": "Agency"
+    },
+    {
+      "value": "employee",
+      "label": "Employee"
+    },
+    {
+      "value": "information-delay",
+      "label": "Information Delay"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "provider",
+      "label": "Provider"
+    }
+  ],
+  "3d6f6b86-a935-4761-9d1e-d9532fb6d5d5": [
+    {
+      "value": "off-portal",
+      "label": "Off Portal"
+    },
+    {
+      "value": "portal",
+      "label": "Portal"
+    }
+  ],
+  "cd3354e5-a4a6-448d-b3a4-571bc6d4d037": [
+    {
+      "value": "abs-australian-bureau-of-statistics",
+      "label": "ABS Australian Bureau of Statistics"
+    },
+    {
+      "value": "accc-australian-competition--consumer-commission",
+      "label": "ACCC Australian Competition & Consumer Commission"
+    },
+    {
+      "value": "acic-australian-criminal-intelligence-commission",
+      "label": "ACIC Australian Criminal Intelligence Commission"
+    },
+    {
+      "value": "acqsc-aged-care-quality-and-safety-commission",
+      "label": "ACQSC Aged Care Quality and Safety Commission"
+    },
+    {
+      "value": "adha-australian-digital-health-agency",
+      "label": "ADHA Australian Digital Health Agency"
+    },
+    {
+      "value": "afma-australian-fisheries-management-authority",
+      "label": "AFMA Australian Fisheries Management Authority"
+    },
+    {
+      "value": "afp-australian-federal-police",
+      "label": "AFP Australian Federal Police"
+    },
+    {
+      "value": "anao-australian-national-audit-office",
+      "label": "ANAO Australian National Audit Office"
+    },
+    {
+      "value": "anmm-australian-national-maritime-museum",
+      "label": "ANMM Australian National Maritime Museum"
+    },
+    {
+      "value": "arpnsa-australian-radiation-protection--nuclear-safety-agency",
+      "label": "ARPNSA Australian Radiation Protection & Nuclear Safety Agency"
+    },
+    {
+      "value": "asic-australian-securities--investment-commission",
+      "label": "ASIC Australian Securities & Investment Commission"
+    },
+    {
+      "value": "ato-australian-taxation-office",
+      "label": "ATO Australian Taxation Office"
+    },
+    {
+      "value": "atsb-australian-transport-safety-bureau",
+      "label": "ATSB Australian Transport Safety Bureau"
+    },
+    {
+      "value": "aust-austrade",
+      "label": "AUST Austrade"
+    },
+    {
+      "value": "casa-civil-aviation-safety-authority",
+      "label": "CASA Civil Aviation Safety Authority"
+    },
+    {
+      "value": "cca-climate-change-authority",
+      "label": "CCA Climate Change Authority"
+    },
+    {
+      "value": "comcare-comcare",
+      "label": "COMCARE Comcare"
+    },
+    {
+      "value": "csiro-csiro",
+      "label": "CSIRO CSIRO"
+    },
+    {
+      "value": "daff-department-of-agriculture-fisheries-and-forestry",
+      "label": "DAFF Department of Agriculture, Fisheries and Forestry"
+    },
+    {
+      "value": "dcceewr-department-of-climate-change-energy-the-environment-and-water",
+      "label": "DCCEEWR Department of Climate Change, Energy, the Environment and Water"
+    },
+    {
+      "value": "dewr-department-of-employment-and-workplace-relations",
+      "label": "DEWR Department of Employment and Workplace Relations"
+    },
+    {
+      "value": "dfat-department-of-foreign-affairs-and-trade",
+      "label": "DFAT Department of Foreign Affairs and Trade"
+    },
+    {
+      "value": "dod-department-of-defence",
+      "label": "DoD Department of Defence"
+    },
+    {
+      "value": "dpmc-department-of-the-prime-minister-and-cabinet",
+      "label": "DPMC Department of the Prime Minister and Cabinet"
+    },
+    {
+      "value": "dps-department-of-parliamentary-services",
+      "label": "DPS Department of Parliamentary Services"
+    },
+    {
+      "value": "dss-department-of-social-services",
+      "label": "DSS Department of Social Services"
+    },
+    {
+      "value": "dva-department-of-veterans-affairs",
+      "label": "DVA Department of Veterans' Affairs"
+    },
+    {
+      "value": "edu-department-of-education",
+      "label": "EDU Department of Education"
+    },
+    {
+      "value": "gg-office-of-the-official-secretary-to-the-governor-general",
+      "label": "GG Office of the Official Secretary to the Governor-General"
+    },
+    {
+      "value": "health-department-of-health",
+      "label": "HEALTH Department of Health"
+    },
+    {
+      "value": "hom-department-of-home-affairs",
+      "label": "HOM Department of Home Affairs"
+    },
+    {
+      "value": "ipa-ip-australia",
+      "label": "IPA IP Australia"
+    },
+    {
+      "value": "naa-national-archives-of-australia",
+      "label": "NAA National Archives of Australia"
+    },
+    {
+      "value": "ndia-national-disability-insurance-agency",
+      "label": "NDIA National Disability Insurance Agency"
+    },
+    {
+      "value": "ndis-ndis-quality--safeguard-commission",
+      "label": "NDIS NDIS Quality & Safeguard Commission"
+    },
+    {
+      "value": "niaa-national-indigenous-australians-agency",
+      "label": "NIAA National Indigenous Australians Agency"
+    },
+    {
+      "value": "nla-national-library-of-australia",
+      "label": "NLA National Library of Australia"
+    },
+    {
+      "value": "oni-office-of-national-intelligence",
+      "label": "ONI Office of National Intelligence"
+    },
+    {
+      "value": "pc-productivity-commission",
+      "label": "PC Productivity Commission"
+    },
+    {
+      "value": "psr-professional-services-review",
+      "label": "PSR Professional Services Review"
+    },
+    {
+      "value": "sa-services-australia",
+      "label": "SA Services Australia"
+    },
+    {
+      "value": "swa-safe-work-australia",
+      "label": "SWA Safe Work Australia"
+    },
+    {
+      "value": "tt-treasury",
+      "label": "TT Treasury"
+    }
+  ],
+  "ed44fae2-999b-4505-95a9-de3e3ac4327a": [
+    {
+      "value": "act",
+      "label": "ACT"
+    },
+    {
+      "value": "nsw-metro",
+      "label": "NSW Metro"
+    },
+    {
+      "value": "nsw-mid-north",
+      "label": "NSW Mid North"
+    },
+    {
+      "value": "nsw-north",
+      "label": "NSW North"
+    },
+    {
+      "value": "nsw-north-west",
+      "label": "NSW North West"
+    },
+    {
+      "value": "nsw-south",
+      "label": "NSW South"
+    },
+    {
+      "value": "nsw-south-west",
+      "label": "NSW South West"
+    },
+    {
+      "value": "nsw-west",
+      "label": "NSW West"
+    },
+    {
+      "value": "nt-central",
+      "label": "NT Central"
+    },
+    {
+      "value": "nt-metro",
+      "label": "NT Metro"
+    },
+    {
+      "value": "qld-central",
+      "label": "QLD Central"
+    },
+    {
+      "value": "qld-far-north",
+      "label": "QLD Far North"
+    },
+    {
+      "value": "qld-north",
+      "label": "QLD North"
+    },
+    {
+      "value": "qld-south-east",
+      "label": "QLD South East"
+    },
+    {
+      "value": "qld-sunshine-coast",
+      "label": "QLD Sunshine Coast"
+    },
+    {
+      "value": "qld-west",
+      "label": "QLD West"
+    },
+    {
+      "value": "sa-metro",
+      "label": "SA Metro"
+    },
+    {
+      "value": "sa-north",
+      "label": "SA North"
+    },
+    {
+      "value": "sa-south-east",
+      "label": "SA South East"
+    },
+    {
+      "value": "tas-metro",
+      "label": "TAS Metro"
+    },
+    {
+      "value": "tas-regional",
+      "label": "TAS Regional"
+    },
+    {
+      "value": "vic-east",
+      "label": "VIC East"
+    },
+    {
+      "value": "vic-metro",
+      "label": "VIC Metro"
+    },
+    {
+      "value": "vic-north",
+      "label": "VIC North"
+    },
+    {
+      "value": "vic-north-west",
+      "label": "VIC North West"
+    },
+    {
+      "value": "vic-west",
+      "label": "VIC West"
+    },
+    {
+      "value": "wa-metro",
+      "label": "WA Metro"
+    },
+    {
+      "value": "wa-south",
+      "label": "WA South"
+    },
+    {
+      "value": "wa-south-west",
+      "label": "WA South West"
+    }
+  ],
+  "91144622-2584-498b-bdf3-c1fdafa9f6c1": [
+    {
+      "value": "agency",
+      "label": "Agency"
+    },
+    {
+      "value": "employee",
+      "label": "Employee"
+    },
+    {
+      "value": "information-delay",
+      "label": "Information Delay"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "provider",
+      "label": "Provider"
+    }
+  ],
+  "1ad3ec4c-ed6d-4325-8512-562bce24bab7": [
+    {
+      "value": "agency",
+      "label": "Agency"
+    },
+    {
+      "value": "employee",
+      "label": "Employee"
+    },
+    {
+      "value": "information-delay",
+      "label": "Information Delay"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "provider",
+      "label": "Provider"
+    }
+  ],
+  "4a0949ae-dd10-46dc-a180-8726e3242ccc": [
+    {
+      "value": "agency",
+      "label": "Agency"
+    },
+    {
+      "value": "employee",
+      "label": "Employee"
+    },
+    {
+      "value": "information-delay",
+      "label": "Information Delay"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "provider",
+      "label": "Provider"
+    }
+  ],
+  "0acca878-6809-4fb8-bc95-e35a7cfb4585": [
+    {
+      "value": "01---working-with-no-income-maintenance---unknown-employer",
+      "label": "01 - Working with no income maintenance - unknown employer"
+    },
+    {
+      "value": "02---working-with-no-income-maintenance---pre-injury-employer",
+      "label": "02 - Working with no income maintenance - pre-injury employer"
+    },
+    {
+      "value": "03---working-with-no-income-maintenance---different-employer",
+      "label": "03 - Working with no income maintenance - different employer"
+    },
+    {
+      "value": "04---working-with-income-maintenance---unknown-employer",
+      "label": "04 - Working with income maintenance - unknown employer"
+    },
+    {
+      "value": "05---working-with-income-maintenance---pre-injury-employer",
+      "label": "05 - Working with income maintenance - pre-injury employer"
+    },
+    {
+      "value": "06---working-with-income-maintenance---different-employer",
+      "label": "06 - Working with income maintenance - different employer"
+    },
+    {
+      "value": "07---working---capacity-unknown",
+      "label": "07 - Working - capacity unknown"
+    },
+    {
+      "value": "08---not-working-with-no-income-maintenance",
+      "label": "08 - Not working with no income maintenance"
+    },
+    {
+      "value": "09---not-working-with-income-maintenance",
+      "label": "09 - Not working with income maintenance"
+    },
+    {
+      "value": "10---deceased",
+      "label": "10 - Deceased"
+    },
+    {
+      "value": "11---unknown",
+      "label": "11 - Unknown"
+    }
+  ],
+  "cf5a9e76-aa4c-496a-970d-e881cf46b51e": [
+    {
+      "value": "off-portal",
+      "label": "Off Portal"
+    },
+    {
+      "value": "portal",
+      "label": "Portal"
+    }
+  ],
+  "0d1809dd-6f63-4682-ab68-0798f26b5f87": [
+    {
+      "value": "abs-australian-bureau-of-statistics",
+      "label": "ABS Australian Bureau of Statistics"
+    },
+    {
+      "value": "accc-australian-competition--consumer-commission",
+      "label": "ACCC Australian Competition & Consumer Commission"
+    },
+    {
+      "value": "acic-australian-criminal-intelligence-commission",
+      "label": "ACIC Australian Criminal Intelligence Commission"
+    },
+    {
+      "value": "acqsc-aged-care-quality-and-safety-commission",
+      "label": "ACQSC Aged Care Quality and Safety Commission"
+    },
+    {
+      "value": "adha-australian-digital-health-agency",
+      "label": "ADHA Australian Digital Health Agency"
+    },
+    {
+      "value": "afma-australian-fisheries-management-authority",
+      "label": "AFMA Australian Fisheries Management Authority"
+    },
+    {
+      "value": "afp-australian-federal-police",
+      "label": "AFP Australian Federal Police"
+    },
+    {
+      "value": "anao-australian-national-audit-office",
+      "label": "ANAO Australian National Audit Office"
+    },
+    {
+      "value": "anmm-australian-national-maritime-museum",
+      "label": "ANMM Australian National Maritime Museum"
+    },
+    {
+      "value": "arpnsa-australian-radiation-protection--nuclear-safety-agency",
+      "label": "ARPNSA Australian Radiation Protection & Nuclear Safety Agency"
+    },
+    {
+      "value": "asic-australian-securities--investment-commission",
+      "label": "ASIC Australian Securities & Investment Commission"
+    },
+    {
+      "value": "ato-australian-taxation-office",
+      "label": "ATO Australian Taxation Office"
+    },
+    {
+      "value": "atsb-australian-transport-safety-bureau",
+      "label": "ATSB Australian Transport Safety Bureau"
+    },
+    {
+      "value": "aust-austrade",
+      "label": "AUST Austrade"
+    },
+    {
+      "value": "casa-civil-aviation-safety-authority",
+      "label": "CASA Civil Aviation Safety Authority"
+    },
+    {
+      "value": "cca-climate-change-authority",
+      "label": "CCA Climate Change Authority"
+    },
+    {
+      "value": "comcare-comcare",
+      "label": "COMCARE Comcare"
+    },
+    {
+      "value": "csiro-csiro",
+      "label": "CSIRO CSIRO"
+    },
+    {
+      "value": "daff-department-of-agriculture-fisheries-and-forestry",
+      "label": "DAFF Department of Agriculture, Fisheries and Forestry"
+    },
+    {
+      "value": "dcceewr-department-of-climate-change-energy-the-environment-and-water",
+      "label": "DCCEEWR Department of Climate Change, Energy, the Environment and Water"
+    },
+    {
+      "value": "dewr-department-of-employment-and-workplace-relations",
+      "label": "DEWR Department of Employment and Workplace Relations"
+    },
+    {
+      "value": "dfat-department-of-foreign-affairs-and-trade",
+      "label": "DFAT Department of Foreign Affairs and Trade"
+    },
+    {
+      "value": "dod-department-of-defence",
+      "label": "DoD Department of Defence"
+    },
+    {
+      "value": "dpmc-department-of-the-prime-minister-and-cabinet",
+      "label": "DPMC Department of the Prime Minister and Cabinet"
+    },
+    {
+      "value": "dps-department-of-parliamentary-services",
+      "label": "DPS Department of Parliamentary Services"
+    },
+    {
+      "value": "dss-department-of-social-services",
+      "label": "DSS Department of Social Services"
+    },
+    {
+      "value": "dva-department-of-veterans-affairs",
+      "label": "DVA Department of Veterans' Affairs"
+    },
+    {
+      "value": "edu-department-of-education",
+      "label": "EDU Department of Education"
+    },
+    {
+      "value": "gg-office-of-the-official-secretary-to-the-governor-general",
+      "label": "GG Office of the Official Secretary to the Governor-General"
+    },
+    {
+      "value": "health-department-of-health",
+      "label": "HEALTH Department of Health"
+    },
+    {
+      "value": "hom-department-of-home-affairs",
+      "label": "HOM Department of Home Affairs"
+    },
+    {
+      "value": "ipa-ip-australia",
+      "label": "IPA IP Australia"
+    },
+    {
+      "value": "naa-national-archives-of-australia",
+      "label": "NAA National Archives of Australia"
+    },
+    {
+      "value": "ndia-national-disability-insurance-agency",
+      "label": "NDIA National Disability Insurance Agency"
+    },
+    {
+      "value": "ndis-ndis-quality--safeguard-commission",
+      "label": "NDIS NDIS Quality & Safeguard Commission"
+    },
+    {
+      "value": "niaa-national-indigenous-australians-agency",
+      "label": "NIAA National Indigenous Australians Agency"
+    },
+    {
+      "value": "nla-national-library-of-australia",
+      "label": "NLA National Library of Australia"
+    },
+    {
+      "value": "oni-office-of-national-intelligence",
+      "label": "ONI Office of National Intelligence"
+    },
+    {
+      "value": "pc-productivity-commission",
+      "label": "PC Productivity Commission"
+    },
+    {
+      "value": "psr-professional-services-review",
+      "label": "PSR Professional Services Review"
+    },
+    {
+      "value": "sa-services-australia",
+      "label": "SA Services Australia"
+    },
+    {
+      "value": "swa-safe-work-australia",
+      "label": "SWA Safe Work Australia"
+    },
+    {
+      "value": "tt-treasury",
+      "label": "TT Treasury"
+    }
+  ],
+  "90e00aa5-ebe1-47be-90c4-29a23977f8b6": [
+    {
+      "value": "act",
+      "label": "ACT"
+    },
+    {
+      "value": "nsw-metro",
+      "label": "NSW Metro"
+    },
+    {
+      "value": "nsw-mid-north",
+      "label": "NSW Mid North"
+    },
+    {
+      "value": "nsw-north",
+      "label": "NSW North"
+    },
+    {
+      "value": "nsw-north-west",
+      "label": "NSW North West"
+    },
+    {
+      "value": "nsw-south",
+      "label": "NSW South"
+    },
+    {
+      "value": "nsw-south-west",
+      "label": "NSW South West"
+    },
+    {
+      "value": "nsw-west",
+      "label": "NSW West"
+    },
+    {
+      "value": "nt-central",
+      "label": "NT Central"
+    },
+    {
+      "value": "nt-metro",
+      "label": "NT Metro"
+    },
+    {
+      "value": "qld-central",
+      "label": "QLD Central"
+    },
+    {
+      "value": "qld-far-north",
+      "label": "QLD Far North"
+    },
+    {
+      "value": "qld-north",
+      "label": "QLD North"
+    },
+    {
+      "value": "qld-south-east",
+      "label": "QLD South East"
+    },
+    {
+      "value": "qld-sunshine-coast",
+      "label": "QLD Sunshine Coast"
+    },
+    {
+      "value": "qld-west",
+      "label": "QLD West"
+    },
+    {
+      "value": "sa-metro",
+      "label": "SA Metro"
+    },
+    {
+      "value": "sa-north",
+      "label": "SA North"
+    },
+    {
+      "value": "sa-south-east",
+      "label": "SA South East"
+    },
+    {
+      "value": "tas-metro",
+      "label": "TAS Metro"
+    },
+    {
+      "value": "tas-regional",
+      "label": "TAS Regional"
+    },
+    {
+      "value": "vic-east",
+      "label": "VIC East"
+    },
+    {
+      "value": "vic-metro",
+      "label": "VIC Metro"
+    },
+    {
+      "value": "vic-north",
+      "label": "VIC North"
+    },
+    {
+      "value": "vic-north-west",
+      "label": "VIC North West"
+    },
+    {
+      "value": "vic-west",
+      "label": "VIC West"
+    },
+    {
+      "value": "wa-metro",
+      "label": "WA Metro"
+    },
+    {
+      "value": "wa-south",
+      "label": "WA South"
+    },
+    {
+      "value": "wa-south-west",
+      "label": "WA South West"
+    }
+  ],
+  "fd210e22-923d-4176-a9b4-c6d5b135c269": [
+    {
+      "value": "agency",
+      "label": "Agency"
+    },
+    {
+      "value": "employee",
+      "label": "Employee"
+    },
+    {
+      "value": "information-delay",
+      "label": "Information Delay"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "provider",
+      "label": "Provider"
+    }
+  ],
+  "764ffe6d-62a6-4f04-90dd-993ee8a7ff4b": [
+    {
+      "value": "agency",
+      "label": "Agency"
+    },
+    {
+      "value": "employee",
+      "label": "Employee"
+    },
+    {
+      "value": "information-delay",
+      "label": "Information Delay"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "provider",
+      "label": "Provider"
+    }
+  ],
+  "76b54f37-2462-429e-a21c-c7f85b3583a0": [
+    {
+      "value": "agency",
+      "label": "Agency"
+    },
+    {
+      "value": "employee",
+      "label": "Employee"
+    },
+    {
+      "value": "information-delay",
+      "label": "Information Delay"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "provider",
+      "label": "Provider"
+    }
+  ],
+  "0b228c5d-cfc0-4d18-bed3-6d92cd8bba96": [
+    {
+      "value": "yes",
+      "label": "Yes"
+    }
+  ],
+  "2f7e31f7-7ec7-4ff3-8de8-f3457f5c1767": [
+    {
+      "value": "assessment-only-no-ongoing-service",
+      "label": "Assessment Only (no ongoing service)"
+    },
+    {
+      "value": "assessment-only-no-ongoing-service",
+      "label": "Assessment Only (No ongoing service)"
+    },
+    {
+      "value": "cancelled",
+      "label": "Cancelled"
+    },
+    {
+      "value": "claimant-withdrew",
+      "label": "Claimant Withdrew"
+    },
+    {
+      "value": "claim-declined",
+      "label": "Claim Declined"
+    },
+    {
+      "value": "did-not-proceed",
+      "label": "Did not Proceed"
+    },
+    {
+      "value": "full-capacity",
+      "label": "Full Capacity"
+    },
+    {
+      "value": "independently-job-seeking",
+      "label": "Independently Job Seeking"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "rtw---host-employer",
+      "label": "RTW - Host Employer"
+    },
+    {
+      "value": "rtw---new-employer",
+      "label": "RTW - New Employer"
+    },
+    {
+      "value": "rtw---no",
+      "label": "RTW - No"
+    },
+    {
+      "value": "rtw---same-employer",
+      "label": "RTW - Same Employer"
+    },
+    {
+      "value": "some-capacity-for-work---increase-in-capacity",
+      "label": "Some Capacity for Work - Increase in capacity"
+    },
+    {
+      "value": "some-capacity-for-work---increase-in-capacity",
+      "label": "Some Capacity for Work - Increase in Capacity"
+    },
+    {
+      "value": "some-capacity-for-work---reduced-hours-or-restrictions",
+      "label": "Some capacity for work - Reduced hours or restrictions"
+    },
+    {
+      "value": "some-capacity-for-work---reduced-hours-or-restrictions",
+      "label": "Some Capacity for Work - Reduced hours or restrictions"
+    },
+    {
+      "value": "studying--retraining",
+      "label": "Studying / Retraining"
+    },
+    {
+      "value": "unfit-for-work",
+      "label": "Unfit for Work"
+    },
+    {
+      "value": "unfit-for-work",
+      "label": "Unfit For Work"
+    },
+    {
+      "value": "volunteering",
+      "label": "Volunteering"
+    }
+  ],
+  "7ec598fb-ce34-4249-bffb-e1fdfd5e3c27": [
+    {
+      "value": "assessment-only",
+      "label": "Assessment Only"
+    },
+    {
+      "value": "did-not-complete",
+      "label": "Did not complete"
+    },
+    {
+      "value": "did-not-proceed",
+      "label": "Did not proceed"
+    },
+    {
+      "value": "not-working-capacity-upgrade",
+      "label": "Not working, capacity upgrade"
+    },
+    {
+      "value": "not-working-independently-job-seeking",
+      "label": "Not working, independently job seeking"
+    },
+    {
+      "value": "not-working-no-improvement",
+      "label": "Not working, no improvement"
+    },
+    {
+      "value": "studying",
+      "label": "Studying"
+    },
+    {
+      "value": "volunteering",
+      "label": "Volunteering"
+    },
+    {
+      "value": "working-alternative-duties-full-hours",
+      "label": "Working alternative duties full hours"
+    },
+    {
+      "value": "working-alternative-duties-reduced-hours",
+      "label": "Working alternative duties reduced hours"
+    },
+    {
+      "value": "working-same-duties-full-hours",
+      "label": "Working same duties full hours"
+    },
+    {
+      "value": "working-same-duties-reduced-hours",
+      "label": "Working same duties reduced hours"
+    }
+  ],
+  "c94d9cb2-500d-4b43-a5a6-adacfbcd8149": [
+    {
+      "value": "dass",
+      "label": "DASS"
+    },
+    {
+      "value": "mfis",
+      "label": "MFIS"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    },
+    {
+      "value": "pseq",
+      "label": "PSEQ"
+    },
+    {
+      "value": "psfs",
+      "label": "PSFS"
+    },
+    {
+      "value": "sf-36",
+      "label": "SF-36"
+    },
+    {
+      "value": "vas",
+      "label": "VAS"
+    }
+  ],
+  "bf2f4fd7-9a68-4718-a394-f012a2f14916": [
+    {
+      "value": "0",
+      "label": "0"
+    },
+    {
+      "value": "1",
+      "label": "1"
+    },
+    {
+      "value": "10",
+      "label": "10"
+    },
+    {
+      "value": "2",
+      "label": "2"
+    },
+    {
+      "value": "3",
+      "label": "3"
+    },
+    {
+      "value": "4",
+      "label": "4"
+    },
+    {
+      "value": "5",
+      "label": "5"
+    },
+    {
+      "value": "6",
+      "label": "6"
+    },
+    {
+      "value": "7",
+      "label": "7"
+    },
+    {
+      "value": "8",
+      "label": "8"
+    },
+    {
+      "value": "9",
+      "label": "9"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    }
+  ],
+  "dde29b96-b8c5-44dd-8870-b4cba719c877": [
+    {
+      "value": "0",
+      "label": "0"
+    },
+    {
+      "value": "1",
+      "label": "1"
+    },
+    {
+      "value": "10",
+      "label": "10"
+    },
+    {
+      "value": "2",
+      "label": "2"
+    },
+    {
+      "value": "3",
+      "label": "3"
+    },
+    {
+      "value": "4",
+      "label": "4"
+    },
+    {
+      "value": "5",
+      "label": "5"
+    },
+    {
+      "value": "6",
+      "label": "6"
+    },
+    {
+      "value": "7",
+      "label": "7"
+    },
+    {
+      "value": "8",
+      "label": "8"
+    },
+    {
+      "value": "9",
+      "label": "9"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    }
+  ],
+  "0b1b5d5b-7486-41d7-9926-7c7b34523262": [
+    {
+      "value": "extremely-severe-28",
+      "label": "Extremely Severe 28+"
+    },
+    {
+      "value": "mild-10-13",
+      "label": "Mild 10-13"
+    },
+    {
+      "value": "moderate-14-20",
+      "label": "Moderate 14-20"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    },
+    {
+      "value": "normal-0-9",
+      "label": "Normal 0-9"
+    },
+    {
+      "value": "severe-21-27",
+      "label": "Severe 21-27"
+    }
+  ],
+  "5cd95fe6-6281-4063-9b52-c9ede7d638f6": [
+    {
+      "value": "extremely-severe-20",
+      "label": "Extremely Severe 20+"
+    },
+    {
+      "value": "mild-8-9",
+      "label": "Mild 8-9"
+    },
+    {
+      "value": "moderate-10-14",
+      "label": "Moderate 10-14"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    },
+    {
+      "value": "normal-0-7",
+      "label": "Normal 0-7"
+    },
+    {
+      "value": "severe-15-19",
+      "label": "Severe 15-19"
+    }
+  ],
+  "c7413058-d389-4d3c-979c-8aa2a0c8320f": [
+    {
+      "value": "extremely-severe-34",
+      "label": "Extremely Severe 34+"
+    },
+    {
+      "value": "mild-15-18",
+      "label": "Mild 15-18"
+    },
+    {
+      "value": "moderate-19-25",
+      "label": "Moderate 19-25"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    },
+    {
+      "value": "normal-0-14",
+      "label": "Normal 0-14"
+    },
+    {
+      "value": "severe-26-33",
+      "label": "Severe 26-33"
+    }
+  ],
+  "fba05540-e971-496d-8319-ea1b423dff3a": [
+    {
+      "value": "extremely-severe-28",
+      "label": "Extremely Severe 28+"
+    },
+    {
+      "value": "mild-10-13",
+      "label": "Mild 10-13"
+    },
+    {
+      "value": "moderate-14-20",
+      "label": "Moderate 14-20"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    },
+    {
+      "value": "normal-0-9",
+      "label": "Normal 0-9"
+    },
+    {
+      "value": "severe-21-27",
+      "label": "Severe 21-27"
+    }
+  ],
+  "78a4b119-376a-4017-b373-748a3e659018": [
+    {
+      "value": "extremely-severe-20",
+      "label": "Extremely Severe 20+"
+    },
+    {
+      "value": "mild-8-9",
+      "label": "Mild 8-9"
+    },
+    {
+      "value": "moderate-10-14",
+      "label": "Moderate 10-14"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    },
+    {
+      "value": "normal-0-7",
+      "label": "Normal 0-7"
+    },
+    {
+      "value": "severe-15-19",
+      "label": "Severe 15-19"
+    }
+  ],
+  "9fa467db-8ad6-4060-afef-12ba66b5af41": [
+    {
+      "value": "extremely-severe-34",
+      "label": "Extremely Severe 34+"
+    },
+    {
+      "value": "mild-15-18",
+      "label": "Mild 15-18"
+    },
+    {
+      "value": "moderate-19-25",
+      "label": "Moderate 19-25"
+    },
+    {
+      "value": "na",
+      "label": "N/A"
+    },
+    {
+      "value": "normal-0-14",
+      "label": "Normal 0-14"
+    },
+    {
+      "value": "severe-26-33",
+      "label": "Severe 26-33"
+    }
+  ],
+  "8af75556-16c7-4e42-b55d-1cb48c8536c5": [
+    {
+      "value": "awaiting-plan-approval",
+      "label": "Awaiting Plan Approval"
+    },
+    {
+      "value": "in-assessment",
+      "label": "In Assessment"
+    },
+    {
+      "value": "medical-management",
+      "label": "Medical Management"
+    },
+    {
+      "value": "medical-managementpsychosocial",
+      "label": "Medical Management/Psychosocial"
+    },
+    {
+      "value": "medical-managementpsychosocialvocational",
+      "label": "Medical Management/Psychosocial/Vocational"
+    },
+    {
+      "value": "medical-managementvocational",
+      "label": "Medical Management/Vocational"
+    },
+    {
+      "value": "plan-closing",
+      "label": "Plan Closing"
+    },
+    {
+      "value": "psychosocial",
+      "label": "Psychosocial"
+    },
+    {
+      "value": "psychosocialvocational",
+      "label": "Psychosocial/Vocational"
+    },
+    {
+      "value": "vocational",
+      "label": "Vocational"
+    }
+  ],
+  "8ec390d6-0e6b-492a-b0f6-b9aaa3e2dbd3": [
+    {
+      "value": "not-required",
+      "label": "Not required"
+    }
+  ],
+  "81fe6d25-e210-4349-ae55-c812012b6cdb": [
+    {
+      "value": "client-availability",
+      "label": "Client availability"
+    },
+    {
+      "value": "client-commitments",
+      "label": "Client commitments"
+    },
+    {
+      "value": "client-contact",
+      "label": "Client contact"
+    },
+    {
+      "value": "client-hospitalisationillness",
+      "label": "Client hospitalisation/illness"
+    }
+  ],
+  "7236d78e-3fea-4864-b695-d524bf409195": [
+    {
+      "value": "refused",
+      "label": "Refused"
+    }
+  ],
+  "1608a94e-0548-48d8-a6f1-d4a6d55b5d9f": [
+    {
+      "value": "no",
+      "label": "No"
+    },
+    {
+      "value": "yes",
+      "label": "Yes"
+    }
+  ],
+  "32608ef8-22ca-4cf8-a61e-58bbd0a95970": [
+    {
+      "value": "refused",
+      "label": "Refused"
+    }
+  ],
+  "7bcb8bda-5ba0-4e75-8d27-eebc1bc21b8a": [
+    {
+      "value": "yes",
+      "label": "Yes"
+    }
+  ],
+  "901b4e28-d8b4-4018-a697-4adb76fba851": [
+    {
+      "value": "assessment-only",
+      "label": "Assessment Only"
+    },
+    {
+      "value": "case-transferred",
+      "label": "Case transferred"
+    },
+    {
+      "value": "claimant-resigned",
+      "label": "Claimant resigned"
+    },
+    {
+      "value": "claimant-withdrew",
+      "label": "Claimant withdrew"
+    },
+    {
+      "value": "claim-declined",
+      "label": "Claim Declined"
+    },
+    {
+      "value": "did-not-proceed",
+      "label": "Did not proceed"
+    },
+    {
+      "value": "further-vocational-assistance-required",
+      "label": "Further Vocational Assistance Required"
+    },
+    {
+      "value": "independent-job-seeker",
+      "label": "Independent Job Seeker"
+    },
+    {
+      "value": "mgd-only",
+      "label": "MGD ONLY"
+    },
+    {
+      "value": "no-change-to-rthrtw-outcome",
+      "label": "No change to RTH/RTW outcome"
+    },
+    {
+      "value": "no-return-to-work",
+      "label": "No Return to Work"
+    },
+    {
+      "value": "no-rtw---no-capacity",
+      "label": "No RTW - No capacity"
+    },
+    {
+      "value": "no-rtw---partial-capacity",
+      "label": "No RTW - Partial capacity"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "rth---community-integration",
+      "label": "RTH - Community integration"
+    },
+    {
+      "value": "rth---improved-functional-capacity",
+      "label": "RTH - Improved functional capacity"
+    },
+    {
+      "value": "rth---job-seeking-independently",
+      "label": "RTH - Job Seeking Independently"
+    },
+    {
+      "value": "rth---participating-in-retraining",
+      "label": "RTH - Participating in retraining"
+    },
+    {
+      "value": "rth---participating-in-volunteering",
+      "label": "RTH - Participating in volunteering"
+    },
+    {
+      "value": "rth---work-readiness---engaged-in-workplace-rehab",
+      "label": "RTH - Work Readiness - engaged in workplace rehab"
+    },
+    {
+      "value": "rtw---host-placement",
+      "label": "RTW - Host Placement"
+    },
+    {
+      "value": "rtw---new-employer",
+      "label": "RTW - New Employer"
+    },
+    {
+      "value": "rtw---new-employer-full-hours",
+      "label": "RTW - New employer full hours"
+    },
+    {
+      "value": "rtw---new-employer-partial-hours",
+      "label": "RTW - New employer partial hours"
+    },
+    {
+      "value": "rtw---same-employer-alternative-duties",
+      "label": "RTW - Same Employer (Alternative Duties)"
+    },
+    {
+      "value": "rtw---same-employer-full-hours",
+      "label": "RTW - Same employer full hours"
+    },
+    {
+      "value": "rtw---same-employer-original-duties",
+      "label": "RTW - Same Employer (Original Duties)"
+    },
+    {
+      "value": "rtw---same-employer-partial-hours",
+      "label": "RTW - Same employer partial hours"
+    },
+    {
+      "value": "self-employed",
+      "label": "Self-Employed"
+    },
+    {
+      "value": "single-service---assessment-complete",
+      "label": "Single service - Assessment complete"
+    },
+    {
+      "value": "studying--retraining",
+      "label": "Studying / Retraining"
+    },
+    {
+      "value": "volunteering",
+      "label": "Volunteering"
+    }
+  ],
+  "7c6334f3-d044-45f8-9a82-47ab86468979": [
+    {
+      "value": "claim-ceased",
+      "label": "Claim Ceased"
+    },
+    {
+      "value": "employer-unable-to-accommodate",
+      "label": "Employer Unable to Accommodate"
+    },
+    {
+      "value": "medically-unfit-for-work",
+      "label": "Medically Unfit for Work"
+    },
+    {
+      "value": "non-engagement",
+      "label": "Non-Engagement"
+    },
+    {
+      "value": "ongoing-treatment",
+      "label": "Ongoing Treatment"
+    },
+    {
+      "value": "other",
+      "label": "Other"
+    },
+    {
+      "value": "resigned-from-workforce",
+      "label": "Resigned from Workforce"
+    },
+    {
+      "value": "retired",
+      "label": "Retired"
+    },
+    {
+      "value": "services-ceased-by-insurer",
+      "label": "Services Ceased by Insurer"
+    }
+  ]
+};
+
+Object.defineProperty(customFieldMapping, 'OPTIONS_BY_CASE_MANAGER_FIELD_ID', {
+  value: customFieldOptionsByCaseManagerId,
+});
 
 module.exports = customFieldMapping;
 
 // Unmatched Case Manager custom fields:
+// - "Asx Date-" [1bec8062-3133-4898-b04a-a867d21f1730]
+// - "Further Rehab Recommended" [7412af17-195e-4120-aa93-d4fc0c8dfe9c]
+// - "ADMIN to Update" [92ba1447-9a9a-4cc1-b347-51524094e5cd]
+// - "Department" [4982e078-b182-459c-9c06-9059c3cc7ec7]
+// - "Fund" [4d62b424-e27c-419c-9f98-544d9f32b78d]
+// - "Insurance Type" [5b33eff4-c903-4f06-a229-aec179a00938]
+// - ".......CONSULTANT TO UPDATE..............." [a6a0ca3f-91a3-4686-892c-be0daac8d76b]
+// - "Employment status at time of referral." [39363e8c-2c32-4c55-ae93-31be4de6f0d6]
+// - "Capacity at time of referral." [49033eda-84a3-41c7-ac9e-fd8903654a98]
+// - "Current Service" [f07572d8-2712-40da-b897-0295b2f0e054]
+// - "Progress Status / Future Strategies" [7f21202b-5093-4fdf-9a99-d45d1b846619]
+// - "......CLOSURE.(Consultant to Update)............." [dbd4b189-7265-471c-9483-9ac83d0c3f3a]
+// - "Work Capacity at time of closure" [59299e73-83de-4051-91dd-00885f54e6be]
+// - "Claimant Status at time of closure" [c7b69734-1628-446d-8d29-98134b3107b0]
+// - "Employment Outcome" [c9825103-f40e-4f6b-8718-24aa86816261]
+// - "Please also complete CLOSURE TAB for TAL" [c9546117-760a-47cd-88ce-ff1a9347179d]
