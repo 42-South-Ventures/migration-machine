@@ -182,6 +182,12 @@ async function createClient({
       return body.data ?? [];
     },
 
+    getCustomFieldDefinition: (customFieldId) => postJson(
+      '/CustomFieldList/GetData',
+      '/CustomFieldList/GetData',
+      { component: 'customFields', ID: customFieldId },
+    ),
+
     getAllCustomFieldLookups: () => postJson(
       '/CustomField/GetAllLookups',
       '/CustomField/GetAllLookups',

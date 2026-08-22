@@ -483,46 +483,91 @@ const caseManagerFieldsById = {
   "f2d5fa6a-b545-42ff-b0f2-9ac7beba6f54": {
     "label": "Acenda Benefit Type.",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKey": "ccBenefit_Type_",
+    "options": [
+      {
+        "value": "2657",
+        "label": "GSC"
+      },
+      {
+        "value": "2658",
+        "label": "IP"
+      },
+      {
+        "value": "2660",
+        "label": "TPD"
+      }
+    ]
   },
   "683222f7-53d9-45f9-8c59-6ac0a48fbbfe": {
     "label": "Acenda Report / Email Update Required",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKey": "ccReport___Email_Update_Required",
+    "options": [
+      {
+        "value": "7005",
+        "label": "Yes"
+      },
+      {
+        "value": "7006",
+        "label": "No"
+      },
+      {
+        "value": "7007",
+        "label": "Email Update Only"
+      }
+    ]
   },
   "2605d8cc-8229-42d1-a00c-27b18e1a1569": {
     "label": "Acenda Rehab Status",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKey": "ccMLC_Rehab_Status",
+    "options": [
+      {
+        "value": "12680",
+        "label": "Open"
+      },
+      {
+        "value": "12681",
+        "label": "Closed"
+      },
+      {
+        "value": "12682",
+        "label": "On Hold"
+      }
+    ]
   },
   "58676ac7-b10a-42f5-bd4b-17616300a008": {
     "label": "Acenda support provision",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccSupport_Provision",
+    "valueKey": "ccMLC_support_provision",
     "options": [
       {
-        "value": "12181",
+        "value": "12683",
         "label": "Pre-vocational capacity building"
       },
       {
-        "value": "12182",
-        "label": "Job attached RTW support"
+        "value": "12684",
+        "label": "Job attached RTW support "
       },
       {
-        "value": "12183",
-        "label": "Job unattached RTW support (job seeking)"
+        "value": "12685",
+        "label": "Job unattached RTW support (job-seeking)"
       },
       {
-        "value": "12184",
+        "value": "12686",
         "label": "Business support"
       },
       {
-        "value": "12185",
-        "label": "Single assessment only"
+        "value": "12687",
+        "label": "Single assessment only "
       },
       {
-        "value": "12186",
+        "value": "12688",
         "label": "TPD Single Service"
       }
     ]
@@ -530,59 +575,913 @@ const caseManagerFieldsById = {
   "2481bc13-6253-4fb9-9c11-e83d9f3f86b9": {
     "label": "Acenda - service option",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKey": "ccMLC___service_option",
+    "options": [
+      {
+        "value": "13280",
+        "label": "Exercise physiology – Wellbeing service"
+      },
+      {
+        "value": "13281",
+        "label": "Exercise physiology – Work readiness"
+      },
+      {
+        "value": "13282",
+        "label": "Exercise physiology – RTW support "
+      },
+      {
+        "value": "13283",
+        "label": "Wellbeing service – Functional upgrading service "
+      },
+      {
+        "value": "13284",
+        "label": "Pre-disability employment RTW support "
+      },
+      {
+        "value": "13285",
+        "label": "Vocational counselling "
+      },
+      {
+        "value": "13286",
+        "label": "Independent job-seeker training program "
+      },
+      {
+        "value": "13287",
+        "label": "Job-seeking support "
+      },
+      {
+        "value": "13288",
+        "label": "Business mentoring"
+      },
+      {
+        "value": "13289",
+        "label": "Self-employment RTW Assistance"
+      },
+      {
+        "value": "13290",
+        "label": "Initial Needs Assessment  "
+      },
+      {
+        "value": "13291",
+        "label": "Workplace Assessment "
+      },
+      {
+        "value": "13292",
+        "label": "Ergonomic Assessment"
+      },
+      {
+        "value": "13293",
+        "label": "Vocational Assessment"
+      },
+      {
+        "value": "13294",
+        "label": "Task Analysis (IP/GSC)"
+      },
+      {
+        "value": "13295",
+        "label": "Transferrable Skills Assessment (IP/GSC)"
+      },
+      {
+        "value": "13296",
+        "label": "Business Viability Assessment"
+      },
+      {
+        "value": "13297",
+        "label": "Functional Capacity Evaluation"
+      },
+      {
+        "value": "13298",
+        "label": "Employability Assessment "
+      },
+      {
+        "value": "13299",
+        "label": "Transferrable Skills Assessment"
+      },
+      {
+        "value": "13300",
+        "label": "Task Analysis "
+      },
+      {
+        "value": "13301",
+        "label": "ADL Assessment"
+      }
+    ]
   },
   "8d46a3d0-e6d9-4028-9c92-a0e45370d004": {
     "label": "Acenda - service goal",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKey": "ccMLC___service_goal",
+    "options": [
+      {
+        "value": "13302",
+        "label": "Customer demonstrates improved functional capacity for daily activities and/or work"
+      },
+      {
+        "value": "13303",
+        "label": "Customer demonstrates physical capacity for performing full pre-disability role"
+      },
+      {
+        "value": "13304",
+        "label": "Pre-dis occupation / Pre-dis employer / Partial RTW"
+      },
+      {
+        "value": "13305",
+        "label": "Pre-dis occupation / Pre-dis employer / Full RTW"
+      },
+      {
+        "value": "13306",
+        "label": "Customer demonstrates improved wellbeing and functional capacity for daily activities and/or work"
+      },
+      {
+        "value": "13309",
+        "label": "Alternate occupation / Pre-dis employer / Full RTW"
+      },
+      {
+        "value": "13310",
+        "label": "Alternate occupation / Pre-dis employer / Partial RTW"
+      },
+      {
+        "value": "13311",
+        "label": "Identification of medically approved vocational options"
+      },
+      {
+        "value": "13312",
+        "label": "Customer demonstrates ability to independently job-seek"
+      },
+      {
+        "value": "13313",
+        "label": "Pre-dis occupation / Alternative employer / Full RTW"
+      },
+      {
+        "value": "13314",
+        "label": "Pre-dis occupation / Alternative employer / Partial RTW"
+      },
+      {
+        "value": "13315",
+        "label": "Alternate occupation / Alternative employer / Full RTW"
+      },
+      {
+        "value": "13316",
+        "label": "Alternate occupation / Alternative employer / Partial RTW"
+      },
+      {
+        "value": "13317",
+        "label": "Customer demonstrates ability to develop/grow business"
+      },
+      {
+        "value": "13318",
+        "label": "Customer returned to self-employment capacity within existing business"
+      },
+      {
+        "value": "13319",
+        "label": "Customer returned to self-employment capacity within a new business"
+      },
+      {
+        "value": "13320",
+        "label": "Appropriate completion of Initial Needs Assessment"
+      },
+      {
+        "value": "13321",
+        "label": "Appropriate completion of Workplace Assessment"
+      },
+      {
+        "value": "13322",
+        "label": "Appropriate completion of Ergonomic Assessment"
+      },
+      {
+        "value": "13323",
+        "label": "Appropriate completion of Vocational Assessment"
+      },
+      {
+        "value": "13324",
+        "label": "Appropriate completion of Task Analysis "
+      },
+      {
+        "value": "13325",
+        "label": "Appropriate completion of Transferrable Skills Assessment"
+      },
+      {
+        "value": "13326",
+        "label": "Appropriate completion of Business Viability Assessment"
+      },
+      {
+        "value": "13327",
+        "label": "Appropriate completion of Functional Capacity Evaluation"
+      },
+      {
+        "value": "13328",
+        "label": "Appropriate completion of Employability Assessment "
+      },
+      {
+        "value": "13331",
+        "label": "Appropriate completion of ADL Assessment "
+      }
+    ]
   },
   "29e958fe-c3d8-460e-ae2f-70dd199d631d": {
     "label": "Acenda - status at referral",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKey": "ccMLC___status_at_referral",
+    "options": [
+      {
+        "value": "13333",
+        "label": "1.     Customer unfit for work; No business development skills, strategies and plan"
+      },
+      {
+        "value": "13334",
+        "label": "1.     Exercise program – little /no change in functional capacity "
+      },
+      {
+        "value": "13335",
+        "label": "1.     No RTW – medical barriers"
+      },
+      {
+        "value": "13336",
+        "label": "1.     No RTW – other barriers"
+      },
+      {
+        "value": "13337",
+        "label": "1.     No suitable vocational options for RTW identified "
+      },
+      {
+        "value": "13338",
+        "label": "1.      Customer has no job-seeking skills"
+      },
+      {
+        "value": "13341",
+        "label": "1.       Assessment referred (not commenced)"
+      },
+      {
+        "value": "13342",
+        "label": "1.       Business is operating; Customer not working; No business development skills, strategies and plan"
+      },
+      {
+        "value": "13343",
+        "label": "1.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+      },
+      {
+        "value": "13345",
+        "label": "1.       Exercise program – limited functional capacity "
+      },
+      {
+        "value": "13347",
+        "label": "1.       Wellbeing services – limited functional capacity"
+      },
+      {
+        "value": "13348",
+        "label": "1.       Wellbeing services – little /no change in wellbeing"
+      },
+      {
+        "value": "13353",
+        "label": "10.    Alternative employer / Full hrs / Pre-disability duties"
+      },
+      {
+        "value": "13354",
+        "label": "2.     Customer partially demonstrating skills and resources to develop/grow business"
+      },
+      {
+        "value": "13355",
+        "label": "2.     Identification of vocational options – not medically approved"
+      },
+      {
+        "value": "13357",
+        "label": "2.     No RTW – Medical approval for RTW or of RTW Plan"
+      },
+      {
+        "value": "13359",
+        "label": "2.      Customer partially demonstrating skills and resources for independent job-seeking"
+      },
+      {
+        "value": "13360",
+        "label": "2.      Exercise program – customer demonstrates capacity for 25% of pre-disability duties  "
+      },
+      {
+        "value": "13361",
+        "label": "2.      Exercise program – increased functional abilities but no RTW capacity"
+      },
+      {
+        "value": "13362",
+        "label": "2.      No RTW – Medical approval for RTW or of RTW Plan"
+      },
+      {
+        "value": "13363",
+        "label": "2.       Assessment in progress"
+      },
+      {
+        "value": "13364",
+        "label": "2.       Business is operating; Customer not working; Customer demonstrating activities towards business development"
+      },
+      {
+        "value": "13365",
+        "label": "2.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+      },
+      {
+        "value": "13366",
+        "label": "2.       No RTW – Medical approval for RTW or of RTW Plan"
+      },
+      {
+        "value": "13367",
+        "label": "2.       Wellbeing service – demonstrated improvement in wellbeing but no RTW capacity"
+      },
+      {
+        "value": "13369",
+        "label": "2.        Customer working reduced hours; Business operating at reduced revenue"
+      },
+      {
+        "value": "13370",
+        "label": "3.     Customer demonstrating ability to develop skills and resources to develop/grow business"
+      },
+      {
+        "value": "13371",
+        "label": "3.     Customer demonstrating ability to independently job-seek"
+      },
+      {
+        "value": "13372",
+        "label": "3.     Customer participating in approved appropriate external re-training"
+      },
+      {
+        "value": "13373",
+        "label": "3.     Identification of vocational options – medically approved (to progress to job-seeking)"
+      },
+      {
+        "value": "13374",
+        "label": "3.     Pre-dis employer / Partial hrs / Modified or alternative duties "
+      },
+      {
+        "value": "13376",
+        "label": "3.      Exercise program – can participate in RTW"
+      },
+      {
+        "value": "13377",
+        "label": "3.      Exercise program – customer demonstrates capacity 50% of pre-disability duties "
+      },
+      {
+        "value": "13378",
+        "label": "3.      Pre-dis employer / Partial hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13379",
+        "label": "3.       Assessment completed"
+      },
+      {
+        "value": "13380",
+        "label": "3.       Customer working reduced hours; Business operating at reduced revenue"
+      },
+      {
+        "value": "13381",
+        "label": "3.       Supplementary/amendment assessment completed"
+      },
+      {
+        "value": "13382",
+        "label": "3.       Wellbeing service – can participate in RTW"
+      },
+      {
+        "value": "13385",
+        "label": "4.     Pre-dis employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13386",
+        "label": "4.     Pre-dis employer / Partial hrs / Full duties"
+      },
+      {
+        "value": "13387",
+        "label": "4.      Exercise program – customer demonstrates capacity 75% of pre-disability duties "
+      },
+      {
+        "value": "13389",
+        "label": "4.       Customer partially demonstrating skills and resources for independent job-seeking"
+      },
+      {
+        "value": "13390",
+        "label": "4.       Customer working full hours; Business operating at reduced revenue"
+      },
+      {
+        "value": "13391",
+        "label": "4.        Customer working reduced hours; Business operating with customer at pre-dis income"
+      },
+      {
+        "value": "13392",
+        "label": "5.     Customer demonstrating ability to independently job-seek"
+      },
+      {
+        "value": "13393",
+        "label": "5.     Pre-dis employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13394",
+        "label": "5.      Exercise program – customer demonstrates full capacity for pre-disability duties "
+      },
+      {
+        "value": "13395",
+        "label": "5.      Pre-dis employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13397",
+        "label": "5.        Customer working full hours; Business operating with customer at pre-dis income"
+      },
+      {
+        "value": "13398",
+        "label": "6.     Customer participating in work trial"
+      },
+      {
+        "value": "13399",
+        "label": "6.     Pre-dis employer / Full hrs / Full duties"
+      },
+      {
+        "value": "13401",
+        "label": "6.       Customer participating in work trial"
+      },
+      {
+        "value": "13404",
+        "label": "7.       Alternative employer / Partial hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13405",
+        "label": "8.     Alternative employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13407",
+        "label": "8.       Alternative employer / Partial hrs / Pre-disability duties"
+      },
+      {
+        "value": "13408",
+        "label": "9.       Alternative employer / Full hrs / Modified or alternative duties"
+      }
+    ]
   },
   "7e84e642-1096-4130-b843-1860d688db79": {
     "label": "Acenda - status at reporting",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKey": "ccMLC___status_at_reporting",
+    "options": [
+      {
+        "value": "13465",
+        "label": "1.     Customer unfit for work; No business development skills, strategies and plan"
+      },
+      {
+        "value": "13466",
+        "label": "1.     Exercise program – little /no change in functional capacity "
+      },
+      {
+        "value": "13467",
+        "label": "1.     No RTW – medical barriers"
+      },
+      {
+        "value": "13468",
+        "label": "1.     No RTW – other barriers"
+      },
+      {
+        "value": "13469",
+        "label": "1.     No suitable vocational options for RTW identified "
+      },
+      {
+        "value": "13470",
+        "label": "1.      Customer has no job-seeking skills"
+      },
+      {
+        "value": "13471",
+        "label": "1.       Assessment referred (not commenced)"
+      },
+      {
+        "value": "13472",
+        "label": "1.       Business is operating; Customer not working; No business development skills, strategies and plan"
+      },
+      {
+        "value": "13473",
+        "label": "1.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+      },
+      {
+        "value": "13474",
+        "label": "1.       Exercise program – limited functional capacity "
+      },
+      {
+        "value": "13475",
+        "label": "1.       Wellbeing services – limited functional capacity"
+      },
+      {
+        "value": "13476",
+        "label": "1.       Wellbeing services – little /no change in wellbeing"
+      },
+      {
+        "value": "13477",
+        "label": "10.    Alternative employer / Full hrs / Pre-disability duties"
+      },
+      {
+        "value": "13478",
+        "label": "2.     Customer partially demonstrating skills and resources to develop/grow business"
+      },
+      {
+        "value": "13479",
+        "label": "2.     Identification of vocational options – not medically approved"
+      },
+      {
+        "value": "13480",
+        "label": "2.     No RTW – Medical approval for RTW or of RTW Plan"
+      },
+      {
+        "value": "13481",
+        "label": "2.      Customer partially demonstrating skills and resources for independent job-seeking"
+      },
+      {
+        "value": "13482",
+        "label": "2.      Exercise program – customer demonstrates capacity for 25% of pre-disability duties  "
+      },
+      {
+        "value": "13483",
+        "label": "2.      Exercise program – increased functional abilities but no RTW capacity"
+      },
+      {
+        "value": "13484",
+        "label": "2.      No RTW – Medical approval for RTW or of RTW Plan"
+      },
+      {
+        "value": "13485",
+        "label": "2.       Assessment in progress"
+      },
+      {
+        "value": "13486",
+        "label": "2.       Business is operating; Customer not working; Customer demonstrating activities towards business development"
+      },
+      {
+        "value": "13487",
+        "label": "2.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+      },
+      {
+        "value": "13488",
+        "label": "2.       No RTW – Medical approval for RTW or of RTW Plan"
+      },
+      {
+        "value": "13489",
+        "label": "2.       Wellbeing service – demonstrated improvement in wellbeing but no RTW capacity"
+      },
+      {
+        "value": "13490",
+        "label": "2.        Customer working reduced hours; Business operating at reduced revenue"
+      },
+      {
+        "value": "13491",
+        "label": "3.     Customer demonstrating ability to develop skills and resources to develop/grow business"
+      },
+      {
+        "value": "13492",
+        "label": "3.     Customer demonstrating ability to independently job-seek"
+      },
+      {
+        "value": "13493",
+        "label": "3.     Customer participating in approved appropriate external re-training"
+      },
+      {
+        "value": "13494",
+        "label": "3.     Identification of vocational options – medically approved (to progress to job-seeking)"
+      },
+      {
+        "value": "13495",
+        "label": "3.     Pre-dis employer / Partial hrs / Modified or alternative duties "
+      },
+      {
+        "value": "13496",
+        "label": "3.      Exercise program – can participate in RTW"
+      },
+      {
+        "value": "13497",
+        "label": "3.      Exercise program – customer demonstrates capacity 50% of pre-disability duties "
+      },
+      {
+        "value": "13498",
+        "label": "3.      Pre-dis employer / Partial hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13499",
+        "label": "3.       Assessment completed"
+      },
+      {
+        "value": "13500",
+        "label": "3.       Customer working reduced hours; Business operating at reduced revenue"
+      },
+      {
+        "value": "13501",
+        "label": "3.       Supplementary/amendment assessment completed"
+      },
+      {
+        "value": "13502",
+        "label": "3.       Wellbeing service – can participate in RTW"
+      },
+      {
+        "value": "13503",
+        "label": "4.     Pre-dis employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13504",
+        "label": "4.     Pre-dis employer / Partial hrs / Full duties"
+      },
+      {
+        "value": "13505",
+        "label": "4.      Exercise program – customer demonstrates capacity 75% of pre-disability duties "
+      },
+      {
+        "value": "13506",
+        "label": "4.       Customer partially demonstrating skills and resources for independent job-seeking"
+      },
+      {
+        "value": "13507",
+        "label": "4.       Customer working full hours; Business operating at reduced revenue"
+      },
+      {
+        "value": "13508",
+        "label": "4.        Customer working reduced hours; Business operating with customer at pre-dis income"
+      },
+      {
+        "value": "13509",
+        "label": "5.     Customer demonstrating ability to independently job-seek"
+      },
+      {
+        "value": "13510",
+        "label": "5.     Pre-dis employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13511",
+        "label": "5.      Exercise program – customer demonstrates full capacity for pre-disability duties "
+      },
+      {
+        "value": "13512",
+        "label": "5.      Pre-dis employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13513",
+        "label": "5.        Customer working full hours; Business operating with customer at pre-dis income"
+      },
+      {
+        "value": "13514",
+        "label": "6.     Customer participating in work trial"
+      },
+      {
+        "value": "13515",
+        "label": "6.     Pre-dis employer / Full hrs / Full duties"
+      },
+      {
+        "value": "13516",
+        "label": "6.       Customer participating in work trial"
+      },
+      {
+        "value": "13517",
+        "label": "7.       Alternative employer / Partial hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13518",
+        "label": "8.     Alternative employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13519",
+        "label": "8.       Alternative employer / Partial hrs / Pre-disability duties"
+      },
+      {
+        "value": "13520",
+        "label": "9.       Alternative employer / Full hrs / Modified or alternative duties"
+      }
+    ]
   },
   "15bbfe83-b38c-422d-b803-3d76c6c83478": {
     "label": "Acenda - status at closure",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccClosure_Status",
+    "valueKey": "ccMLC___status_at_closure",
     "options": [
       {
-        "value": "2845",
-        "label": "Unfit For Work"
+        "value": "13409",
+        "label": "1.     Customer unfit for work; No business development skills, strategies and plan"
       },
       {
-        "value": "2851",
-        "label": "Assessment Only (No ongoing service)"
+        "value": "13410",
+        "label": "1.     Exercise program – little /no change in functional capacity "
       },
       {
-        "value": "12769",
-        "label": "Did not Proceed"
+        "value": "13411",
+        "label": "1.     No RTW – medical barriers"
       },
       {
-        "value": "12770",
-        "label": "Full Capacity"
+        "value": "13412",
+        "label": "1.     No RTW – other barriers"
       },
       {
-        "value": "12771",
-        "label": "Some Capacity For Work - Increase in capacity"
+        "value": "13413",
+        "label": "1.     No suitable vocational options for RTW identified "
       },
       {
-        "value": "12772",
-        "label": "Some capacity for work - Reduced hours or restrictions"
+        "value": "13414",
+        "label": "1.      Customer has no job-seeking skills"
+      },
+      {
+        "value": "13415",
+        "label": "1.       Assessment referred (not commenced)"
+      },
+      {
+        "value": "13416",
+        "label": "1.       Business is operating; Customer not working; No business development skills, strategies and plan"
+      },
+      {
+        "value": "13417",
+        "label": "1.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+      },
+      {
+        "value": "13418",
+        "label": "1.       Exercise program – limited functional capacity "
+      },
+      {
+        "value": "13419",
+        "label": "1.       Wellbeing services – limited functional capacity"
+      },
+      {
+        "value": "13420",
+        "label": "1.       Wellbeing services – little /no change in wellbeing"
+      },
+      {
+        "value": "13421",
+        "label": "10.    Alternative employer / Full hrs / Pre-disability duties"
+      },
+      {
+        "value": "13422",
+        "label": "2.     Customer partially demonstrating skills and resources to develop/grow business"
+      },
+      {
+        "value": "13423",
+        "label": "2.     Identification of vocational options – not medically approved"
+      },
+      {
+        "value": "13424",
+        "label": "2.     No RTW – Medical approval for RTW or of RTW Plan"
+      },
+      {
+        "value": "13425",
+        "label": "2.      Customer partially demonstrating skills and resources for independent job-seeking"
+      },
+      {
+        "value": "13426",
+        "label": "2.      Exercise program – customer demonstrates capacity for 25% of pre-disability duties  "
+      },
+      {
+        "value": "13427",
+        "label": "2.      Exercise program – increased functional abilities but no RTW capacity"
+      },
+      {
+        "value": "13428",
+        "label": "2.      No RTW – Medical approval for RTW or of RTW Plan"
+      },
+      {
+        "value": "13429",
+        "label": "2.       Assessment in progress"
+      },
+      {
+        "value": "13430",
+        "label": "2.       Business is operating; Customer not working; Customer demonstrating activities towards business development"
+      },
+      {
+        "value": "13431",
+        "label": "2.       Business not operating; Customer not working; Customer demonstrating activities towards business development"
+      },
+      {
+        "value": "13432",
+        "label": "2.       No RTW – Medical approval for RTW or of RTW Plan"
+      },
+      {
+        "value": "13433",
+        "label": "2.       Wellbeing service – demonstrated improvement in wellbeing but no RTW capacity"
+      },
+      {
+        "value": "13434",
+        "label": "2.        Customer working reduced hours; Business operating at reduced revenue"
+      },
+      {
+        "value": "13435",
+        "label": "3.     Customer demonstrating ability to develop skills and resources to develop/grow business"
+      },
+      {
+        "value": "13436",
+        "label": "3.     Customer demonstrating ability to independently job-seek"
+      },
+      {
+        "value": "13437",
+        "label": "3.     Customer participating in approved appropriate external re-training"
+      },
+      {
+        "value": "13438",
+        "label": "3.     Identification of vocational options – medically approved (to progress to job-seeking)"
+      },
+      {
+        "value": "13439",
+        "label": "3.     Pre-dis employer / Partial hrs / Modified or alternative duties "
+      },
+      {
+        "value": "13440",
+        "label": "3.      Exercise program – can participate in RTW"
+      },
+      {
+        "value": "13441",
+        "label": "3.      Exercise program – customer demonstrates capacity 50% of pre-disability duties "
+      },
+      {
+        "value": "13442",
+        "label": "3.      Pre-dis employer / Partial hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13443",
+        "label": "3.       Assessment completed"
+      },
+      {
+        "value": "13444",
+        "label": "3.       Customer working reduced hours; Business operating at reduced revenue"
+      },
+      {
+        "value": "13445",
+        "label": "3.       Supplementary/amendment assessment completed"
+      },
+      {
+        "value": "13446",
+        "label": "3.       Wellbeing service – can participate in RTW"
+      },
+      {
+        "value": "13447",
+        "label": "4.     Pre-dis employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13448",
+        "label": "4.     Pre-dis employer / Partial hrs / Full duties"
+      },
+      {
+        "value": "13449",
+        "label": "4.      Exercise program – customer demonstrates capacity 75% of pre-disability duties "
+      },
+      {
+        "value": "13450",
+        "label": "4.       Customer partially demonstrating skills and resources for independent job-seeking"
+      },
+      {
+        "value": "13451",
+        "label": "4.       Customer working full hours; Business operating at reduced revenue"
+      },
+      {
+        "value": "13452",
+        "label": "4.        Customer working reduced hours; Business operating with customer at pre-dis income"
+      },
+      {
+        "value": "13453",
+        "label": "5.     Customer demonstrating ability to independently job-seek"
+      },
+      {
+        "value": "13454",
+        "label": "5.     Pre-dis employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13455",
+        "label": "5.      Exercise program – customer demonstrates full capacity for pre-disability duties "
+      },
+      {
+        "value": "13456",
+        "label": "5.      Pre-dis employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13457",
+        "label": "5.        Customer working full hours; Business operating with customer at pre-dis income"
+      },
+      {
+        "value": "13458",
+        "label": "6.     Customer participating in work trial"
+      },
+      {
+        "value": "13459",
+        "label": "6.     Pre-dis employer / Full hrs / Full duties"
+      },
+      {
+        "value": "13460",
+        "label": "6.       Customer participating in work trial"
+      },
+      {
+        "value": "13461",
+        "label": "7.       Alternative employer / Partial hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13462",
+        "label": "8.     Alternative employer / Full hrs / Modified or alternative duties"
+      },
+      {
+        "value": "13463",
+        "label": "8.       Alternative employer / Partial hrs / Pre-disability duties"
+      },
+      {
+        "value": "13464",
+        "label": "9.       Alternative employer / Full hrs / Modified or alternative duties"
       }
     ]
   },
   "1bec8062-3133-4898-b04a-a867d21f1730": {
     "label": "Asx Date-",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccReferred_Date_",
+    "options": []
   },
   "4b0bfbd3-a54a-4a4a-9251-9c25779890b4": {
     "label": "Insurer Update Request",
@@ -619,32 +1518,44 @@ const caseManagerFieldsById = {
   "d9e4e33f-72a3-4705-b1c9-bb85c4226887": {
     "label": "Report / Initial Summary Submitted",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccReport___Email_Summary_Submitted",
+    "options": []
   },
   "200c9983-9de0-4e29-916c-d15f03a76143": {
     "label": "if >20 Days Delay on Report - Reason",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "cc_20_Days_Delay_Reason",
+    "options": []
   },
   "c67cad1e-8564-4371-9ceb-5d147656ca71": {
     "label": "MedEbridge - Date Consent Form Uploaded",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccMedEbridge___Date_Consent_Form_Uploaded",
+    "options": []
   },
   "ef162754-938b-4b8f-ad5b-2973779f972a": {
     "label": "AIA Status",
     "type": "LONG_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccAIA_Status",
+    "options": []
   },
   "ee44020b-026a-4f10-a42d-f241f27a2cb4": {
     "label": "AIA Proposed Action",
     "type": "LONG_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccAIA_Proposed_Action",
+    "options": []
   },
   "d8e9cfd9-fa94-4f93-ba5b-6899be1a917f": {
     "label": "AIA Date of Update",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccAIA_Date_of_Update",
+    "options": []
   },
   "3561f8bd-ffd6-46a1-95e7-5484f257a3a7": {
     "label": "AIA Outcome Status at the time of completion",
@@ -709,7 +1620,9 @@ const caseManagerFieldsById = {
   "45d4ba64-c3a3-4811-b7dd-7c81d4769dbc": {
     "label": "AIA Issues/concerns",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccAIA_Issues_concerns",
+    "options": []
   },
   "9668e544-00e0-4b3c-bec2-e6e615bf361c": {
     "label": "AIA Further Rehab Recommended",
@@ -731,10 +1644,7 @@ const caseManagerFieldsById = {
     "label": "Employability Assessment Completed",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKeys": [
-      "ccEmployability_Assessment_Completed",
-      "ccEmployability_Assessment_Completed_"
-    ],
+    "valueKey": "ccEmployability_Assessment_Completed",
     "options": [
       {
         "value": "13914",
@@ -747,18 +1657,6 @@ const caseManagerFieldsById = {
       {
         "value": "13916",
         "label": "Yes - options identified"
-      },
-      {
-        "value": "13694",
-        "label": "Yes - options identified"
-      },
-      {
-        "value": "13695",
-        "label": "Yes - no options identified"
-      },
-      {
-        "value": "13696",
-        "label": "No"
       }
     ]
   },
@@ -854,23 +1752,23 @@ const caseManagerFieldsById = {
     "label": "NPS Outcome",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccNPS_Outcome",
+    "valueKey": "ccNPS_Outcome_1",
     "options": [
       {
-        "value": "13776",
-        "label": "N/A"
-      },
-      {
-        "value": "13777",
+        "value": "13941",
         "label": "0-6 (Detractors)"
       },
       {
-        "value": "13778",
+        "value": "13942",
         "label": "7-8 (Passives)"
       },
       {
-        "value": "13779",
+        "value": "13943",
         "label": "9-10 (Promoters)"
+      },
+      {
+        "value": "13944",
+        "label": "N/A"
       }
     ]
   },
@@ -878,14 +1776,14 @@ const caseManagerFieldsById = {
     "label": "Met QA Requirements",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccMet_QA_Requirements",
+    "valueKey": "ccMet_QA_Requirements_1",
     "options": [
       {
-        "value": "13762",
+        "value": "13921",
         "label": "Yes"
       },
       {
-        "value": "13763",
+        "value": "13922",
         "label": "No"
       }
     ]
@@ -893,52 +1791,72 @@ const caseManagerFieldsById = {
   "162ea8d0-a776-429d-976c-88c50b7f4229": {
     "label": "QA Not Met Reason",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccQA_Not_Met_Reason_1",
+    "options": []
   },
   "c63fd704-5485-47f6-91e4-6a96304d57b7": {
     "label": "Plan closing - AIR not required",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccPlan_closing___AIR_not_required",
+    "options": []
   },
   "f120d0f7-a433-4e06-9e47-4115083c06a1": {
     "label": "AIR plan extension due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccAIR_plan_extension_due_date",
+    "options": []
   },
   "93f6fedb-99b6-42c5-8f58-c545237fdd33": {
     "label": "AIR plan extension upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccAIR_plan_extension_upload_date",
+    "options": []
   },
   "36248f6b-eaef-49ea-8ed6-f7869087461b": {
     "label": "AIR plan extension reason",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccAIR_plan_extension_reason",
+    "options": []
   },
   "6d0038a7-c7e1-447d-87a2-53cded02595d": {
     "label": "AIR notes",
     "type": "LONG_TEXT",
-    "sourceType": "Memo"
+    "sourceType": "Memo",
+    "valueKey": "ccAIR_notes",
+    "options": []
   },
   "8cbf9695-0373-4ceb-9f8c-440fdbbcd7cb": {
     "label": "Assessment due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccAssessment_due_date",
+    "options": []
   },
   "dcdc2cbc-f39d-4209-99c5-6de0d283a9f8": {
     "label": "Assessment completed date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccAssessment_completed_date",
+    "options": []
   },
   "1eb741c2-e390-4192-ac5c-3e677744213b": {
     "label": "Assessment/plan due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccAssessment_Plan_due_date",
+    "options": []
   },
   "cfc479c5-6640-484a-a138-135312438b09": {
     "label": "Assessment/plan upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccAssessment_plan_upload_date",
+    "options": []
   },
   "08b9a6f6-e4c0-4d27-9739-db72364a7c5b": {
     "label": "Assessment/plan extension reason",
@@ -967,124 +1885,30 @@ const caseManagerFieldsById = {
   "0c062d08-b59a-4124-ab66-77256016b56a": {
     "label": "DVA consent to proceed date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccDVA_consent_to_proceed_date",
+    "options": []
   },
   "f5bb28e3-9a4f-4b03-ab2d-68aa2a232c23": {
     "label": "Ongoing File Audit Completion Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccOngoing_File_Audit_Completion_Date",
+    "options": []
   },
   "a3e6a7d4-3ff6-49d5-94df-c035092e7695": {
     "label": "Ongoing File Audit Corrective Actions/Feedback",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccOngoing_File_Audit_Corrective_Actions_Feedback",
+    "options": []
   },
   "42299b4d-c7af-42fd-a30d-d5df4ae77b2f": {
     "label": "Closure Outcome",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKeys": [
-      "ccClosure___Outcome",
-      "ccClosure_Outcome",
-      "ccClosure_Outcome_"
-    ],
+    "valueKey": "ccClosure_Outcome_",
     "options": [
-      {
-        "value": "436",
-        "label": "New employer / Partial RTW"
-      },
-      {
-        "value": "437",
-        "label": "New employer / Full RTW"
-      },
-      {
-        "value": "438",
-        "label": "Pre-dis employer / Partial RTW"
-      },
-      {
-        "value": "439",
-        "label": "Pre-dis employer / Full RTW"
-      },
-      {
-        "value": "440",
-        "label": "No RTW - medical barriers"
-      },
-      {
-        "value": "441",
-        "label": "No RTW - psychosocial barriers"
-      },
-      {
-        "value": "442",
-        "label": "No RTW - work ready"
-      },
-      {
-        "value": "443",
-        "label": "No RTW - independently job seeking"
-      },
-      {
-        "value": "444",
-        "label": "Did not proceed past IA - Insured not interested"
-      },
-      {
-        "value": "445",
-        "label": "Did not proceed past IA - Insured not ready"
-      },
-      {
-        "value": "446",
-        "label": "One-off Assessment Only"
-      },
-      {
-        "value": "447",
-        "label": "Exercise program completed - increased capacity for work"
-      },
-      {
-        "value": "448",
-        "label": "Exercise program completed - little/no change in capacity for work"
-      },
-      {
-        "value": "449",
-        "label": "Wellbeing service - can transition to RTW"
-      },
-      {
-        "value": "450",
-        "label": "Wellbeing service - RTW services not suitable"
-      },
-      {
-        "value": "451",
-        "label": "TPD single service provided"
-      },
-      {
-        "value": "13829",
-        "label": "RTW - Same Employer (Original Duties)"
-      },
-      {
-        "value": "13830",
-        "label": "RTW - Same Employer (Alternative Duties)"
-      },
-      {
-        "value": "13831",
-        "label": "RTW - New Employer"
-      },
-      {
-        "value": "13832",
-        "label": "Self-Employed"
-      },
-      {
-        "value": "13833",
-        "label": "Independent Job Seeker"
-      },
-      {
-        "value": "13834",
-        "label": "Further Vocational Assistance Required"
-      },
-      {
-        "value": "13835",
-        "label": "No Return to Work"
-      },
-      {
-        "value": "13988",
-        "label": "Assessment Only"
-      },
       {
         "value": "12519",
         "label": "Single service - Assessment complete"
@@ -1158,32 +1982,44 @@ const caseManagerFieldsById = {
   "77b63a72-4b7a-4fa1-8c37-4a832d20855d": {
     "label": "Client Contact Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccClient_Contact_Due_Date",
+    "options": []
   },
   "c5fbbf31-9ad6-47bc-aeea-5384b0a629dc": {
     "label": "Client Contact - Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccClient_Contact___Date",
+    "options": []
   },
   "5c69a0da-3382-48a8-b642-1faf0290d575": {
     "label": "ADL Assessment Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccADL_Assessment_Due_Date",
+    "options": []
   },
   "4ce008ab-f6af-41b3-9ff4-5449d64c324b": {
     "label": "ADL Assessment Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccADL_Assessment_Date",
+    "options": []
   },
   "cac8183f-40f8-406f-9c78-68ce81e565da": {
     "label": "ADL Assessment Report Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccADL_Assessment_Report_Due_Date",
+    "options": []
   },
   "43028c35-db12-4763-b2a8-f1d7e76baab8": {
     "label": "ADL Assessment Report Upload Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccADL_Assessment_Report_Upload_Date",
+    "options": []
   },
   "31052097-21bf-4445-8f30-43c897ab2b86": {
     "label": "Employer Contacted",
@@ -1220,7 +2056,9 @@ const caseManagerFieldsById = {
   "c7265fb1-6e2d-4c4b-8fdf-b2efb9fe14fe": {
     "label": "Verbatim Feedback",
     "type": "LONG_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccVerbatim_Feedback",
+    "options": []
   },
   "b9875e7a-914c-4514-b0e1-e55cbf9ea2fb": {
     "label": "Assessment Status at time of completion",
@@ -1277,47 +2115,65 @@ const caseManagerFieldsById = {
   "47f56f20-daf6-4eea-b535-6106dee4131e": {
     "label": "PCN provided date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPCN_signed_date",
+    "options": []
   },
   "f1bf1229-ac72-4684-bc2d-d34e838dcb3a": {
     "label": "PCN client refused",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccPCN_client_refused",
+    "options": []
   },
   "6393ac14-c276-4b45-b80a-7cee43fdc664": {
     "label": "Medical disclosure form signed",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccMedical_disclosure_form_signed",
+    "options": []
   },
   "a83aa059-a20d-495c-a6aa-a47a2ccffba5": {
     "label": "Medical disclosure client refused",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccMedical_disclosure_client_refused",
+    "options": []
   },
   "720e0fe4-6db4-407d-84f0-1a0cef2ad7c7": {
     "label": "Referral acknowledged date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccReferral_acknowledged_date",
+    "options": []
   },
   "f7870f12-86a4-4da9-92ce-f0d15d6b1eda": {
     "label": "Client contact date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccClient_contact_date",
+    "options": []
   },
   "b0f0260e-b5ee-4a62-878e-0aa3e37e670c": {
     "label": "Metlife Status",
     "type": "LONG_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccMetlife_Status",
+    "options": []
   },
   "746e852d-5e87-4297-86bf-e058c156e240": {
     "label": "Metlife Proposed Action",
     "type": "LONG_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccMetlife_Proposed_Action",
+    "options": []
   },
   "1ff32a39-0f6a-4bf2-a579-22f6c87fd5de": {
     "label": "Metlife Date of Update",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccUpdated___date",
+    "options": []
   },
   "21459d95-d3a2-4d25-bcfa-280c6b3e0d4f": {
     "label": "Metlife Outcome capacity at time of completion",
@@ -1402,7 +2258,9 @@ const caseManagerFieldsById = {
   "c43f1cc1-9281-48bd-8ec7-e7cf803f2abf": {
     "label": "Metlife Issues/Concerns",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccMetlife_Issues_Concerns",
+    "options": []
   },
   "7e4443a5-5b61-406b-bb0b-44f789648292": {
     "label": "Metlife Further Rehab Recommended",
@@ -1743,37 +2601,51 @@ const caseManagerFieldsById = {
   "3dc63933-1707-426d-8664-65947690119c": {
     "label": "ORAMS Ax Accepted Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_Ax_Accepted_Date",
+    "options": []
   },
   "b9ab977d-89bb-4727-ac31-e3c6b216212a": {
     "label": "ORAMS Ax Assessment Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_Ax_Assessment_Due_Date",
+    "options": []
   },
   "ca6c9aeb-3114-463a-a890-74d70380bacc": {
     "label": "ORAMS Ax Assessment Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_Ax_Assessment_Date",
+    "options": []
   },
   "eaa3e827-fac8-4438-9cb3-7fa9d14e2389": {
     "label": "ORAMS Ax Preliminary Findings Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_Ax_Preliminary_Findings_Due_Date",
+    "options": []
   },
   "976df2d5-9d83-480f-84d5-1c9ed872926c": {
     "label": "ORAMS Ax Preliminary Findings Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_Ax_Preliminary_Findings_Date",
+    "options": []
   },
   "95af407e-dfad-4dc3-80aa-4c1b7f42c525": {
     "label": "ORAMS Ax Assessment Report Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_Ax_Assessment_Report_Due_Date",
+    "options": []
   },
   "9a1d1278-e943-4d06-889c-6c3b9b09ff52": {
     "label": "ORAMS Ax Assessment Report Submitted Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_Ax_Assessment_Report_Submitted_Date",
+    "options": []
   },
   "022f07b7-9854-4ada-8117-093e44b437c1": {
     "label": "ORAMS Ax Referral Acceptance Exception Reason",
@@ -1806,7 +2678,9 @@ const caseManagerFieldsById = {
   "62c09f72-ebdc-4b07-89ef-4bfb0214c995": {
     "label": "ORAMS Ax Referral Acceptance Exception Comment",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccORAMS_Ax_Referral_Acceptance_Exception_Comment",
+    "options": []
   },
   "871d9da9-3011-4dec-af39-89a9a8d3c76f": {
     "label": "ORAMS Ax Assessment Completed Exception Reason",
@@ -1839,7 +2713,9 @@ const caseManagerFieldsById = {
   "24358e08-5e56-40ce-a5c0-505a9d0fa4be": {
     "label": "ORAMS Ax Assessment Completed Exception Comment",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccORAMS_Ax_Assessment_Completed_Exception_Comment",
+    "options": []
   },
   "48fec116-0408-4a24-94c4-6c56e430cd86": {
     "label": "ORAMS Ax Report Completed Exception Reason",
@@ -1872,7 +2748,9 @@ const caseManagerFieldsById = {
   "b0973f78-4eae-4323-bd09-5241bed006c0": {
     "label": "ORAMS Ax Report Completed Exception Comment",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccORAMS_Ax_Report_Completed_Exception_Comment",
+    "options": []
   },
   "3d6f6b86-a935-4761-9d1e-d9532fb6d5d5": {
     "label": "ORAMS - Referral Method",
@@ -1894,111 +2772,8 @@ const caseManagerFieldsById = {
     "label": "ORAMS - Agency",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKeys": [
-      "ccORAMS_Agency",
-      "ccORAMS___Agency"
-    ],
+    "valueKey": "ccORAMS___Agency",
     "options": [
-      {
-        "value": "12818",
-        "label": "ATO"
-      },
-      {
-        "value": "12819",
-        "label": "ATC"
-      },
-      {
-        "value": "12820",
-        "label": "CASA"
-      },
-      {
-        "value": "12821",
-        "label": "Comcare"
-      },
-      {
-        "value": "12822",
-        "label": "CSIROD"
-      },
-      {
-        "value": "12823",
-        "label": "AWR"
-      },
-      {
-        "value": "12824",
-        "label": "AWR"
-      },
-      {
-        "value": "12825",
-        "label": "DOF"
-      },
-      {
-        "value": "12826",
-        "label": "DOE"
-      },
-      {
-        "value": "12827",
-        "label": "DEE"
-      },
-      {
-        "value": "12828",
-        "label": "DFAT"
-      },
-      {
-        "value": "12829",
-        "label": "DoH"
-      },
-      {
-        "value": "12830",
-        "label": "DHS"
-      },
-      {
-        "value": "12831",
-        "label": "DIM"
-      },
-      {
-        "value": "12832",
-        "label": "DSS"
-      },
-      {
-        "value": "12833",
-        "label": "CDPP"
-      },
-      {
-        "value": "12834",
-        "label": "DVA"
-      },
-      {
-        "value": "12835",
-        "label": "CDPP"
-      },
-      {
-        "value": "12836",
-        "label": "PMC"
-      },
-      {
-        "value": "12837",
-        "label": "IPA"
-      },
-      {
-        "value": "12838",
-        "label": "NAA"
-      },
-      {
-        "value": "12839",
-        "label": "NLA"
-      },
-      {
-        "value": "12840",
-        "label": "ONA"
-      },
-      {
-        "value": "12861",
-        "label": "SA"
-      },
-      {
-        "value": "12862",
-        "label": "DOD"
-      },
       {
         "value": "13128",
         "label": "ABS"
@@ -2177,107 +2952,8 @@ const caseManagerFieldsById = {
     "label": "ORAMS - Region",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKeys": [
-      "ccORAMS_Region",
-      "ccORAMS___Region"
-    ],
+    "valueKey": "ccORAMS___Region",
     "options": [
-      {
-        "value": "12794",
-        "label": "NSW Metro"
-      },
-      {
-        "value": "12795",
-        "label": "ACT"
-      },
-      {
-        "value": "12796",
-        "label": "NSW Mid North"
-      },
-      {
-        "value": "12797",
-        "label": "NSW North"
-      },
-      {
-        "value": "12798",
-        "label": "NSW North West"
-      },
-      {
-        "value": "12799",
-        "label": "NSW South"
-      },
-      {
-        "value": "12800",
-        "label": "NSW South West"
-      },
-      {
-        "value": "12801",
-        "label": "NSW West"
-      },
-      {
-        "value": "12802",
-        "label": "NT Metro"
-      },
-      {
-        "value": "12803",
-        "label": "QLD Central"
-      },
-      {
-        "value": "12804",
-        "label": "QLD Far North"
-      },
-      {
-        "value": "12805",
-        "label": "QLD North"
-      },
-      {
-        "value": "12806",
-        "label": "QLD South East"
-      },
-      {
-        "value": "12807",
-        "label": "QLD Sunshine Coast"
-      },
-      {
-        "value": "12808",
-        "label": "QLD West"
-      },
-      {
-        "value": "12809",
-        "label": "SA Metro"
-      },
-      {
-        "value": "12810",
-        "label": "SA North"
-      },
-      {
-        "value": "12811",
-        "label": "TAS Metro"
-      },
-      {
-        "value": "12812",
-        "label": "TAS Regional"
-      },
-      {
-        "value": "12813",
-        "label": "VIC East"
-      },
-      {
-        "value": "12814",
-        "label": "VIC Metro"
-      },
-      {
-        "value": "12815",
-        "label": "VIC North"
-      },
-      {
-        "value": "12816",
-        "label": "VIC West"
-      },
-      {
-        "value": "12817",
-        "label": "WA Metro"
-      },
       {
         "value": "12973",
         "label": "ACT"
@@ -2399,57 +3075,79 @@ const caseManagerFieldsById = {
   "61fbf844-65d7-4743-b031-5a417350c97e": {
     "label": "ORAMS - Accepted Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS___Accepted_Date",
+    "options": []
   },
   "b68134e4-6e41-4904-a3e7-7ed35170f066": {
     "label": "ORAMS - Draft Program Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS___Draft_Program_Due_Date",
+    "options": []
   },
   "2dc2aa01-7ac0-40d2-be56-745c272343ad": {
     "label": "ORAMS - Draft Program Submitted Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS___Draft_Program_Submitted_Date",
+    "options": []
   },
   "96906dee-da24-42da-aaae-220ab0bfc938": {
     "label": "ORAMS - Program Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS___Program_Due_Date",
+    "options": []
   },
   "4cd0f8e2-65a2-4e8c-b04e-7b9d722ed53b": {
     "label": "ORAMS - Program Submitted Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS___Program_Submitted_Date",
+    "options": []
   },
   "d6ab72c0-17bc-4dcd-a33e-1e652ef63ec2": {
     "label": "ORAMS - Program Expiry Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS___Program_Expiry_Date",
+    "options": []
   },
   "4be0ae15-cbe2-4e82-a850-28bdcc002c58": {
     "label": "ORAMS - Program Alteration Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS___Program_Alteration_Due_Date",
+    "options": []
   },
   "f717a90d-aadf-48d7-aa48-4d29381a3933": {
     "label": "ORAMS - Program Alteration Submitted Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS___Program_Alteration_Submitted_Date",
+    "options": []
   },
   "34a99a66-e01e-443a-9b04-ea70663329a2": {
     "label": "ORAMS - Service Cessation Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS___Service_Cessation_Date",
+    "options": []
   },
   "2a18d289-3485-45b6-9d62-37eb8b95beb9": {
     "label": "ORAMS - Cessation Report Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS___Cessation_Report_Due_Date",
+    "options": []
   },
   "f928296d-fb46-40bd-8871-42aec37dafc7": {
     "label": "ORAMS - Cessation Report Submitted Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS___Cessation_Report_Submitted_Date",
+    "options": []
   },
   "91144622-2584-498b-bdf3-c1fdafa9f6c1": {
     "label": "ORAMS - Referral Acceptance Exception Reason",
@@ -2482,7 +3180,9 @@ const caseManagerFieldsById = {
   "fa02ad8f-4749-40b7-8ff2-e220d7cfa87c": {
     "label": "ORAMS - Referral Acceptance Exception Comment",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccORAMS___Referral_Acceptance_Exception_Comment",
+    "options": []
   },
   "1ad3ec4c-ed6d-4325-8512-562bce24bab7": {
     "label": "ORAMS - Program Completed Exception Reason",
@@ -2515,7 +3215,9 @@ const caseManagerFieldsById = {
   "d6319d39-facc-47c6-8f98-7d69ce5f6be7": {
     "label": "ORAMS - Program Completed Exception Comment",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccORAMS___Program_Completed_Exception_Comment",
+    "options": []
   },
   "4a0949ae-dd10-46dc-a180-8726e3242ccc": {
     "label": "ORAMS - Cessation Report Completed Exception Reason",
@@ -2548,7 +3250,9 @@ const caseManagerFieldsById = {
   "cbd30b2b-cbe4-4215-8a37-4e187d706db0": {
     "label": "ORAMS - Cessation Report Completed Exception Comment",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccORAMS___Cessation_Report_Completed_Exception_Comment",
+    "options": []
   },
   "0acca878-6809-4fb8-bc95-e35a7cfb4585": {
     "label": "ORAMS - RTW Outcome",
@@ -2925,37 +3629,51 @@ const caseManagerFieldsById = {
   "29e31196-2804-42d5-82d9-6efc04a98678": {
     "label": "ORAMS SS Accepted Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_SS_Accepted_Date",
+    "options": []
   },
   "ddd8b5c0-82a8-4809-889e-ebebb673097c": {
     "label": "ORAMS SS Assessment Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_SS_Assessment_Due_Date",
+    "options": []
   },
   "28fee365-2676-4291-89a5-7d0a8c4e0324": {
     "label": "ORAMS SS Assessment Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_SS_Assessment_Date",
+    "options": []
   },
   "4b06dfaf-3fcb-43cf-aefa-0d959d3a84f6": {
     "label": "ORAMS SS Preliminary Findings Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_SS_Preliminary_Findings_Due_Date",
+    "options": []
   },
   "0b6e9d17-03d2-4148-a002-f2e209c83cd0": {
     "label": "ORAMS SS Preliminary Findings Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_SS_Preliminary_Findings_Date",
+    "options": []
   },
   "d949debf-6e06-45df-9130-60171e4eab01": {
     "label": "ORAMS SS Report Due Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_SS_Report_Due_Date",
+    "options": []
   },
   "63c1d516-367c-4063-99ce-bcffc34a83d5": {
     "label": "ORAMS SS Report Submitted Date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccORAMS_SS_Report_Submitted_Date",
+    "options": []
   },
   "fd210e22-923d-4176-a9b4-c6d5b135c269": {
     "label": "ORAMS SS Referral Acceptance Exception Reason",
@@ -2988,7 +3706,9 @@ const caseManagerFieldsById = {
   "69104ccd-5cc8-4514-b7b6-b988f78d061e": {
     "label": "ORAMS SS Referral Acceptance Exception Comment",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccORAMS_SS_Referral_Acceptance_Exception_Comment",
+    "options": []
   },
   "764ffe6d-62a6-4f04-90dd-993ee8a7ff4b": {
     "label": "ORAMS SS Assessment Completed Exception Reason",
@@ -3021,7 +3741,9 @@ const caseManagerFieldsById = {
   "15ea3b1f-f290-489e-9304-6fc9f84d951d": {
     "label": "ORAMS SS Assessment Completed Exception Comment",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccORAMS_SS_Assessment_Completed_Exception_Comment",
+    "options": []
   },
   "76b54f37-2462-429e-a21c-c7f85b3583a0": {
     "label": "ORAMS SS Report Completed Exception Reason",
@@ -3054,297 +3776,403 @@ const caseManagerFieldsById = {
   "59a9d119-8d4e-47bc-b414-f15b4cb2d87b": {
     "label": "ORAMS SS Report Completed Exception Comment",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccORAMS_SS_Report_Completed_Exception_Comment",
+    "options": []
   },
   "87becc33-2ccb-4d4f-ab35-dcdc6135af32": {
     "label": "Plan completion due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPlan_completion_due_date",
+    "options": []
   },
   "faf1ee3c-f3d3-4d0c-b9cb-01d1b348df92": {
     "label": "Plan completion actual date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPlan_completion_actual_date",
+    "options": []
   },
   "0b228c5d-cfc0-4d18-bed3-6d92cd8bba96": {
     "label": "Plan extension granted",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccPlan_extension_granted",
+    "options": []
   },
   "e9be40b5-400a-47c9-ba50-20ffa14a6886": {
     "label": "Closure report upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccClosure_report_upload_date",
+    "options": []
   },
   "6c4de319-d922-4b26-a5fd-e8fcb45c44dc": {
     "label": "PR 1 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_1_due_date",
+    "options": []
   },
   "ebefb454-1986-43dd-b5f8-af9e81efa373": {
     "label": "PR 1 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_1_upload_date",
+    "options": []
   },
   "6e791b41-7235-4722-9c6e-a9bb02818a18": {
     "label": "PR 2 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_2_due_date",
+    "options": []
   },
   "ea1022f9-7bfc-45c7-b47e-212071f5586d": {
     "label": "PR 2 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_2_upload_date",
+    "options": []
   },
   "2d17af61-cccb-4d25-b8d5-b563979b2bdb": {
     "label": "PR 3 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_3_due_date",
+    "options": []
   },
   "7f30bebe-d601-4b46-86db-d49d31e60d49": {
     "label": "PR 3 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_3_upload_date",
+    "options": []
   },
   "e5368ce5-e6fd-4cab-b5c5-d6a01a51eaee": {
     "label": "PR 4 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_4_due_date",
+    "options": []
   },
   "bfddd2ee-a262-47bf-b2d0-f17e88c290ca": {
     "label": "PR 4 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_4_upload_date",
+    "options": []
   },
   "facdce8e-a2f1-4422-9896-07b3b7c2374c": {
     "label": "PR 5 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_5_due_date",
+    "options": []
   },
   "4fba8f58-8f37-4d36-98e6-5f4709318922": {
     "label": "PR 5 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_5_upload_date",
+    "options": []
   },
   "bb2b0a7d-4854-4ff1-9e92-a8d2f120f344": {
     "label": "PR 6 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_6_due_date",
+    "options": []
   },
   "0a4c21e4-3fd0-410e-a1ab-b59413ded5b0": {
     "label": "PR 6 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_6_upload_date",
+    "options": []
   },
   "58e2b0c1-b774-4b84-8d5d-b5177b6f3f6c": {
     "label": "PR 7 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_7_due_date",
+    "options": []
   },
   "296a1df2-223a-46a2-bc15-b3cfdab13a50": {
     "label": "PR 7 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_7_upload_date",
+    "options": []
   },
   "291db64e-45a7-487b-b05f-6842445dc492": {
     "label": "PR 8 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_8_due_date",
+    "options": []
   },
   "b31a678d-4845-4769-8434-494b4f192129": {
     "label": "PR 8 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_8_upload_date",
+    "options": []
   },
   "0c19e9bd-3b36-466c-8abc-199e064cd271": {
     "label": "PR 9 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_9_due_date",
+    "options": []
   },
   "0058b1de-e47b-4333-a70d-618fc5f75f57": {
     "label": "PR 9 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_9_upload_date",
+    "options": []
   },
   "85cf3010-a91e-4dbc-8006-a4cdf9584e60": {
     "label": "PR 10 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_10_due_date",
+    "options": []
   },
   "a4323061-cf16-47b9-a4d8-10eacecb7c36": {
     "label": "PR 10 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_10_upload_date",
+    "options": []
   },
   "6d9ccfb4-ab3a-4880-8112-6d324e0192d5": {
     "label": "PR 11 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_11_due_date",
+    "options": []
   },
   "46df2548-c492-4bde-985f-a1d00270aaf5": {
     "label": "PR 11 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_11_upload_date",
+    "options": []
   },
   "969bf3a0-79d4-4e35-9ecf-b69a08ed7cf1": {
     "label": "PR 12 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_12_due_date",
+    "options": []
   },
   "c41c5863-6250-4556-8db5-199178e466a1": {
     "label": "PR 12 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_12_upload_date",
+    "options": []
   },
   "c653a8ba-561a-428b-a2f1-c606b64121f2": {
     "label": "PR 13 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_13_due_date",
+    "options": []
   },
   "5dd56e51-e252-488e-a2ab-c150f13dc60f": {
     "label": "PR 13 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_13_upload_date",
+    "options": []
   },
   "56b0da44-69ad-4b85-aeed-e828ce709c3f": {
     "label": "PR 14 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_14_due_date",
+    "options": []
   },
   "34a5a778-571b-4a79-9ad9-365a08a7a4ee": {
     "label": "PR 14 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_14_upload_date",
+    "options": []
   },
   "0b65d4f0-54ac-4232-97ab-ac154cd640aa": {
     "label": "PR 15 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_15_due_date",
+    "options": []
   },
   "873965f3-f6b7-49fa-844a-4c1710c09868": {
     "label": "PR 15 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_15_upload_date",
+    "options": []
   },
   "c4807d65-932d-4681-998e-081dd1579ae1": {
     "label": "PR 16 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_16_due_date",
+    "options": []
   },
   "d57e3701-3f0d-4fb5-97e1-acf1211b1f01": {
     "label": "PR 16 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_16_upload_date",
+    "options": []
   },
   "c074252e-3905-44d5-bb26-52b6af53e515": {
     "label": "PR 17 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_17_due_date",
+    "options": []
   },
   "0843ca15-32d7-4e05-b601-ef18ed380347": {
     "label": "PR 17 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_17_upload_date",
+    "options": []
   },
   "bc054b2d-e25d-4690-889f-42f3a181ef9f": {
     "label": "PR 18 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_18_due_date",
+    "options": []
   },
   "15d9d6a2-37b6-459c-ba79-13d56e6568f1": {
     "label": "PR 18 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_18_upload_date",
+    "options": []
   },
   "4c8c1ba1-aa1b-480e-974b-e33ad0dbe31b": {
     "label": "PR 19 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_19_due_date",
+    "options": []
   },
   "25cd315f-44a7-49f6-88a7-daf283b9653e": {
     "label": "PR 19 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_19_upload_date",
+    "options": []
   },
   "c79f196a-2adf-451e-9083-d69c4b2eb54f": {
     "label": "PR 20 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_20_due_date",
+    "options": []
   },
   "ca23133c-a3c6-4a89-bb40-8a1b34f0b57e": {
     "label": "PR 20 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_20_upload_date",
+    "options": []
   },
   "e1487bee-a65e-4611-9ec7-e2c14732cdeb": {
     "label": "PR 21 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_21_due_date",
+    "options": []
   },
   "0e025bc5-7957-4a57-a941-5ff15a4a7e1b": {
     "label": "PR 21 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_21_upload_date",
+    "options": []
   },
   "9ab76dca-d4ab-43d4-9e48-7c4d97e9362b": {
     "label": "PR 22 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_22_due_date",
+    "options": []
   },
   "166ae180-ed7a-4da8-8122-0e93f2e2823c": {
     "label": "PR 22 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccPR_22_upload_date",
+    "options": []
   },
   "e4913065-f857-470b-8b5a-f243612b26a8": {
     "label": "Status",
     "type": "LONG_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccStatus",
+    "options": []
   },
   "3a5706ef-81c2-4214-8cd0-d9cdfd3809e8": {
     "label": "Proposed Action",
     "type": "LONG_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccProposedAction",
+    "options": []
   },
   "0a30857c-d0b6-44cc-b3a9-1e24f798345a": {
     "label": "Date of Update.",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccDateofUpdate_",
+    "options": []
   },
   "c55847a6-f829-4fc1-81b9-fe4d3b932184": {
     "label": "Issues/Concerns",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccIssues_Concerns",
+    "options": []
   },
   "2f7e31f7-7ec7-4ff3-8de8-f3457f5c1767": {
     "label": "Outcome Capacity at time of completion",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccMetlife_Outcome_capacity_at_time_of_completion",
+    "valueKey": "ccClosure_Status",
     "options": [
       {
-        "value": "13970",
-        "label": "Assessment only"
+        "value": "2845",
+        "label": "Unfit For Work"
       },
       {
-        "value": "13971",
-        "label": "Did not proceed"
+        "value": "2851",
+        "label": "Assessment Only (No ongoing service)"
       },
       {
-        "value": "13972",
-        "label": "Full capacity"
+        "value": "12769",
+        "label": "Did not Proceed"
       },
       {
-        "value": "13973",
-        "label": "Some capacity for work - increase in capacity"
+        "value": "12770",
+        "label": "Full Capacity"
       },
       {
-        "value": "13974",
-        "label": "Some capacity for work - reduced hours or restrictions"
+        "value": "12771",
+        "label": "Some Capacity For Work - Increase in capacity"
       },
       {
-        "value": "13975",
-        "label": "Unfit for work"
+        "value": "12772",
+        "label": "Some capacity for work - Reduced hours or restrictions"
       }
     ]
   },
@@ -3459,61 +4287,112 @@ const caseManagerFieldsById = {
   "bf2f4fd7-9a68-4718-a394-f012a2f14916": {
     "label": "Pre-Survey Assessment for Pain Scale",
     "type": "SELECT",
-    "sourceType": "List"
+    "sourceType": "List",
+    "valueKey": "ccPre_Survey_Assessment_for_Pain_Scale_2",
+    "options": [
+      {
+        "value": "13872",
+        "label": "0"
+      },
+      {
+        "value": "13873",
+        "label": "1"
+      },
+      {
+        "value": "13874",
+        "label": "2"
+      },
+      {
+        "value": "13875",
+        "label": "3"
+      },
+      {
+        "value": "13876",
+        "label": "4"
+      },
+      {
+        "value": "13877",
+        "label": "5"
+      },
+      {
+        "value": "13878",
+        "label": "6"
+      },
+      {
+        "value": "13879",
+        "label": "7"
+      },
+      {
+        "value": "13880",
+        "label": "8"
+      },
+      {
+        "value": "13881",
+        "label": "9"
+      },
+      {
+        "value": "13882",
+        "label": "10"
+      },
+      {
+        "value": "13883",
+        "label": "N/A"
+      }
+    ]
   },
   "dde29b96-b8c5-44dd-8870-b4cba719c877": {
     "label": "Post Survey Assessment for Pain Scale",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccPost_Survey_Assessment_for_Pain_Scale",
+    "valueKey": "ccPost_Survey_Assessment_for_Pain_Scale_1",
     "options": [
       {
-        "value": "13732",
-        "label": "N/A"
-      },
-      {
-        "value": "13733",
+        "value": "13884",
         "label": "0"
       },
       {
-        "value": "13734",
+        "value": "13885",
         "label": "1"
       },
       {
-        "value": "13735",
+        "value": "13886",
         "label": "2"
       },
       {
-        "value": "13736",
+        "value": "13887",
         "label": "3"
       },
       {
-        "value": "13737",
+        "value": "13888",
         "label": "4"
       },
       {
-        "value": "13738",
+        "value": "13889",
         "label": "5"
       },
       {
-        "value": "13739",
+        "value": "13890",
         "label": "6"
       },
       {
-        "value": "13740",
+        "value": "13891",
         "label": "7"
       },
       {
-        "value": "13741",
+        "value": "13892",
         "label": "8"
       },
       {
-        "value": "13742",
+        "value": "13893",
         "label": "9"
       },
       {
-        "value": "13743",
+        "value": "13894",
         "label": "10"
+      },
+      {
+        "value": "13895",
+        "label": "N/A"
       }
     ]
   },
@@ -3521,31 +4400,31 @@ const caseManagerFieldsById = {
     "label": "Pre Survey Assessment for DASS 21 - Depression",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccPre_Survey_Assessment_for_DASS_21___Depression",
+    "valueKey": "ccPre_Survey_Assessment_for_DASS_21___Depression_1",
     "options": [
       {
-        "value": "13711",
-        "label": "N/A"
+        "value": "13896",
+        "label": "Extremely Severe 28+"
       },
       {
-        "value": "13712",
-        "label": "Normal 0-9"
-      },
-      {
-        "value": "13713",
+        "value": "13897",
         "label": "Mild 10-13"
       },
       {
-        "value": "13714",
+        "value": "13898",
         "label": "Moderate 14-20"
       },
       {
-        "value": "13715",
-        "label": "Severe 21-27"
+        "value": "13899",
+        "label": "N/A"
       },
       {
-        "value": "13716",
-        "label": "Extremely Severe 28+"
+        "value": "13900",
+        "label": "Normal 0-9"
+      },
+      {
+        "value": "13901",
+        "label": "Severe 21-27"
       }
     ]
   },
@@ -3553,31 +4432,31 @@ const caseManagerFieldsById = {
     "label": "Pre Survey Assessment for DASS 21 - Anxiety",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccPre_Survey_Assessment_for_DASS_21___Anxiety",
+    "valueKey": "ccPre_Survey_Assessment_for_DASS_21___Anxiety_1",
     "options": [
       {
-        "value": "13717",
-        "label": "N/A"
+        "value": "13902",
+        "label": "Extremely Severe 20+"
       },
       {
-        "value": "13718",
-        "label": "Normal 0-7"
-      },
-      {
-        "value": "13719",
+        "value": "13903",
         "label": "Mild 8-9"
       },
       {
-        "value": "13720",
+        "value": "13904",
         "label": "Moderate 10-14"
       },
       {
-        "value": "13721",
-        "label": "Severe 15-19"
+        "value": "13905",
+        "label": "N/A"
       },
       {
-        "value": "13722",
-        "label": "Extremely Severe 20+"
+        "value": "13906",
+        "label": "Normal 0-7"
+      },
+      {
+        "value": "13907",
+        "label": "Severe 15-19"
       }
     ]
   },
@@ -3585,31 +4464,31 @@ const caseManagerFieldsById = {
     "label": "Pre Survey Assessment for DASS 21 - Stress",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccPre_Survey_Assessment_for_DASS_21___Stress",
+    "valueKey": "ccPre_Survey_Assessment_for_DASS_21___Stress_1",
     "options": [
       {
-        "value": "13723",
-        "label": "N/A"
+        "value": "13908",
+        "label": "Extremely Severe 34+"
       },
       {
-        "value": "13724",
-        "label": "Normal 0-14"
-      },
-      {
-        "value": "13725",
+        "value": "13909",
         "label": "Mild 15-18"
       },
       {
-        "value": "13726",
+        "value": "13910",
         "label": "Moderate 19-25"
       },
       {
-        "value": "13727",
-        "label": "Severe 26-33"
+        "value": "13911",
+        "label": "N/A"
       },
       {
-        "value": "13728",
-        "label": "Extremely Severe 34+"
+        "value": "13912",
+        "label": "Normal 0-14"
+      },
+      {
+        "value": "13913",
+        "label": "Severe 26-33"
       }
     ]
   },
@@ -3617,31 +4496,31 @@ const caseManagerFieldsById = {
     "label": "Post Survey Assessment for DASS 21 - Depression",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccPost_Survey_Assessment_for_DASS_21___Depression",
+    "valueKey": "ccPost_Survey_Assessment_for_DASS_21___Depression_1",
     "options": [
       {
-        "value": "13744",
-        "label": "N/A"
+        "value": "13945",
+        "label": "Extremely Severe 28+"
       },
       {
-        "value": "13745",
-        "label": "Normal 0-9"
-      },
-      {
-        "value": "13746",
+        "value": "13946",
         "label": "Mild 10-13"
       },
       {
-        "value": "13747",
+        "value": "13947",
         "label": "Moderate 14-20"
       },
       {
-        "value": "13748",
-        "label": "Severe 21-27"
+        "value": "13948",
+        "label": "N/A"
       },
       {
-        "value": "13749",
-        "label": "Extremely Severe 28+"
+        "value": "13949",
+        "label": "Normal 0-9"
+      },
+      {
+        "value": "13950",
+        "label": "Severe 21-27"
       }
     ]
   },
@@ -3649,31 +4528,31 @@ const caseManagerFieldsById = {
     "label": "Post Survey Assessment for DASS 21 - Anxiety",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccPost_Survey_Assessment_for_DASS_21___Anxiety",
+    "valueKey": "ccPost_Survey_Assessment_for_DASS_21___Anxiety_1",
     "options": [
       {
-        "value": "13750",
-        "label": "N/A"
+        "value": "13951",
+        "label": "Extremely Severe 20+"
       },
       {
-        "value": "13751",
-        "label": "Normal 0-7"
-      },
-      {
-        "value": "13752",
+        "value": "13952",
         "label": "Mild 8-9"
       },
       {
-        "value": "13753",
+        "value": "13953",
         "label": "Moderate 10-14"
       },
       {
-        "value": "13754",
-        "label": "Severe 15-19"
+        "value": "13954",
+        "label": "N/A"
       },
       {
-        "value": "13755",
-        "label": "Extremely Severe 20+"
+        "value": "13955",
+        "label": "Normal 0-7"
+      },
+      {
+        "value": "13956",
+        "label": "Severe 15-19"
       }
     ]
   },
@@ -3681,31 +4560,31 @@ const caseManagerFieldsById = {
     "label": "Post Survey Assessment for DASS 21 - Stress",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKey": "ccPost_Survey_Assessment_for_DASS_21___Stress",
+    "valueKey": "ccPost_Survey_Assessment_for_DASS_21___Stress_1",
     "options": [
       {
-        "value": "13756",
-        "label": "N/A"
+        "value": "13957",
+        "label": "Extremely Severe 34+"
       },
       {
-        "value": "13757",
-        "label": "Normal 0-14"
-      },
-      {
-        "value": "13758",
+        "value": "13958",
         "label": "Mild 15-18"
       },
       {
-        "value": "13759",
+        "value": "13959",
         "label": "Moderate 19-25"
       },
       {
-        "value": "13760",
-        "label": "Severe 26-33"
+        "value": "13960",
+        "label": "N/A"
       },
       {
-        "value": "13761",
-        "label": "Extremely Severe 34+"
+        "value": "13961",
+        "label": "Normal 0-14"
+      },
+      {
+        "value": "13962",
+        "label": "Severe 26-33"
       }
     ]
   },
@@ -3760,7 +4639,9 @@ const caseManagerFieldsById = {
   "92ba1447-9a9a-4cc1-b347-51524094e5cd": {
     "label": "ADMIN to Update",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccADMIN_to_Update",
+    "options": []
   },
   "4982e078-b182-459c-9c06-9059c3cc7ec7": {
     "label": "Department",
@@ -3938,61 +4819,8 @@ const caseManagerFieldsById = {
     "label": ".......CONSULTANT TO UPDATE...............",
     "type": "SELECT",
     "sourceType": "Boolean",
-    "valueKey": "ccOUTCOME_AT_CLOSURE__Consultant_to_update_",
-    "options": [
-      {
-        "value": "6990",
-        "label": "Assesment Only"
-      },
-      {
-        "value": "6991",
-        "label": "Claim Declined"
-      },
-      {
-        "value": "6992",
-        "label": "Independently Job Seeking"
-      },
-      {
-        "value": "6993",
-        "label": "Other"
-      },
-      {
-        "value": "6994",
-        "label": "RTW - Host Placement"
-      },
-      {
-        "value": "6995",
-        "label": "RTW - New Employer"
-      },
-      {
-        "value": "6996",
-        "label": "RTW - No"
-      },
-      {
-        "value": "6997",
-        "label": "RTW - Same Employer"
-      },
-      {
-        "value": "6998",
-        "label": "Studying / Retraining"
-      },
-      {
-        "value": "6999",
-        "label": "Unfit to Return to Work"
-      },
-      {
-        "value": "7000",
-        "label": "Volunteering"
-      },
-      {
-        "value": "7001",
-        "label": "Referral Cancelled"
-      },
-      {
-        "value": "12157",
-        "label": "Claimant Withdrew"
-      }
-    ]
+    "valueKey": "ccONGOING",
+    "options": []
   },
   "39363e8c-2c32-4c55-ae93-31be4de6f0d6": {
     "label": "Employment status at time of referral.",
@@ -4054,10 +4882,7 @@ const caseManagerFieldsById = {
     "label": "Current Service",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKeys": [
-      "ccCurrent_Service",
-      "ccCurrent_Service_"
-    ],
+    "valueKey": "ccCurrent_Service",
     "options": [
       {
         "value": "2819",
@@ -4154,167 +4979,36 @@ const caseManagerFieldsById = {
       {
         "value": "13604",
         "label": "Social Work Services"
-      },
-      {
-        "value": "4935",
-        "label": "Activities of Daily Living Assessment"
-      },
-      {
-        "value": "4936",
-        "label": "Business Coaching"
-      },
-      {
-        "value": "4937",
-        "label": "Case Management Services"
-      },
-      {
-        "value": "4938",
-        "label": "Employability Assessment"
-      },
-      {
-        "value": "4939",
-        "label": "Ergonomic Assessment"
-      },
-      {
-        "value": "4940",
-        "label": "Functional Capacity Evaluation"
-      },
-      {
-        "value": "4941",
-        "label": "Health Coaching"
-      },
-      {
-        "value": "4942",
-        "label": "Initial Needs Assessment (Physical & Psychological)"
-      },
-      {
-        "value": "4943",
-        "label": "Initial Needs Assessment (Physical)"
-      },
-      {
-        "value": "4944",
-        "label": "Initial Needs Assessment (Psychological)"
-      },
-      {
-        "value": "4945",
-        "label": "Job Seeking Services"
-      },
-      {
-        "value": "4946",
-        "label": "Job Task Analysis (Physical)"
-      },
-      {
-        "value": "4947",
-        "label": "Job Task Analysis (Psychological)"
-      },
-      {
-        "value": "4948",
-        "label": "Lbour Market Analysis"
-      },
-      {
-        "value": "4949",
-        "label": "Medical Case Conference"
-      },
-      {
-        "value": "4950",
-        "label": "RTW Services"
-      },
-      {
-        "value": "4951",
-        "label": "Trasnferable Skills Assessment"
-      },
-      {
-        "value": "4952",
-        "label": "Vocational Assessment"
-      },
-      {
-        "value": "4953",
-        "label": "Vocational Counselling"
-      },
-      {
-        "value": "4954",
-        "label": "Work Conditioning"
-      },
-      {
-        "value": "4955",
-        "label": "Workplace Assessment (WPA)"
       }
     ]
   },
   "7f21202b-5093-4fdf-9a99-d45d1b846619": {
     "label": "Progress Status / Future Strategies",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccProgress_Status__for_IP_",
+    "options": []
   },
   "4ce4e0f5-b95b-443b-a68e-894b722bd46f": {
     "label": "Issues or Concerns",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccIssues_Concers",
+    "options": []
   },
   "723bd52c-28df-4707-b272-e0730d080091": {
     "label": "Date of Update,",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccDate",
+    "options": []
   },
   "dbd4b189-7265-471c-9483-9ac83d0c3f3a": {
     "label": "......CLOSURE.(Consultant to Update).............",
     "type": "SELECT",
     "sourceType": "Boolean",
-    "valueKey": "ccOUTCOME_AT_CLOSURE__Consultant_to_update_",
-    "options": [
-      {
-        "value": "6990",
-        "label": "Assesment Only"
-      },
-      {
-        "value": "6991",
-        "label": "Claim Declined"
-      },
-      {
-        "value": "6992",
-        "label": "Independently Job Seeking"
-      },
-      {
-        "value": "6993",
-        "label": "Other"
-      },
-      {
-        "value": "6994",
-        "label": "RTW - Host Placement"
-      },
-      {
-        "value": "6995",
-        "label": "RTW - New Employer"
-      },
-      {
-        "value": "6996",
-        "label": "RTW - No"
-      },
-      {
-        "value": "6997",
-        "label": "RTW - Same Employer"
-      },
-      {
-        "value": "6998",
-        "label": "Studying / Retraining"
-      },
-      {
-        "value": "6999",
-        "label": "Unfit to Return to Work"
-      },
-      {
-        "value": "7000",
-        "label": "Volunteering"
-      },
-      {
-        "value": "7001",
-        "label": "Referral Cancelled"
-      },
-      {
-        "value": "12157",
-        "label": "Claimant Withdrew"
-      }
-    ]
+    "valueKey": "ccCLOSURE",
+    "options": []
   },
   "59299e73-83de-4051-91dd-00885f54e6be": {
     "label": "Work Capacity at time of closure",
@@ -4408,10 +5102,7 @@ const caseManagerFieldsById = {
     "label": "Employment Outcome",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKeys": [
-      "ccEmployment_Outcome",
-      "ccEmployment_Outcome_"
-    ],
+    "valueKey": "ccEmployment_Outcome",
     "options": [
       {
         "value": "12062",
@@ -4440,86 +5131,78 @@ const caseManagerFieldsById = {
       {
         "value": "12068",
         "label": "Other"
-      },
-      {
-        "value": "12069",
-        "label": "RTW - Same Employer"
-      },
-      {
-        "value": "12070",
-        "label": "RTW - New Employer"
-      },
-      {
-        "value": "12071",
-        "label": "Studying"
-      },
-      {
-        "value": "12072",
-        "label": "Assessment Only"
-      },
-      {
-        "value": "12073",
-        "label": "No RTW - Medical Barriers"
-      },
-      {
-        "value": "12074",
-        "label": "Request Cancelled"
-      },
-      {
-        "value": "12075",
-        "label": "Job Seeking"
       }
     ]
   },
   "c9546117-760a-47cd-88ce-ff1a9347179d": {
     "label": "Please also complete CLOSURE TAB for TAL",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccPlease_also_complete_CLOSURE_TAB_for_TAL",
+    "options": []
   },
   "8ec390d6-0e6b-492a-b0f6-b9aaa3e2dbd3": {
     "label": "VP Plan closing - AIR not required",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccVP_Plan_closing___AIR_not_required",
+    "options": []
   },
   "3981652a-aa3e-4657-86aa-b609a70984e3": {
     "label": "VP AIR plan extension due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_AIR_plan_extension_due_date",
+    "options": []
   },
   "5dbe3345-e51d-4b7c-80f7-a7e4d24383b3": {
     "label": "VP AIR plan extension upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_AIR_plan_extension_upload_date",
+    "options": []
   },
   "b59d7f2e-5b7c-44af-a50b-c4a11321a796": {
     "label": "VP AIR plan extension reason",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccVP_AIR_plan_extension_reason",
+    "options": []
   },
   "94a662cc-6d5f-4471-beaa-c2c2b395d50f": {
     "label": "VP AIR notes",
     "type": "LONG_TEXT",
-    "sourceType": "Memo"
+    "sourceType": "Memo",
+    "valueKey": "ccVP_AIR_notes",
+    "options": []
   },
   "86ca1ea1-d74a-4038-b93f-f2a650aea4bc": {
     "label": "VP Assessment due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_Assessment_due_date",
+    "options": []
   },
   "89c4cc1c-9284-455c-a37a-fc797c31af36": {
     "label": "VP Assessment completed date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_Assessment_date",
+    "options": []
   },
   "9933bd5c-14ad-4e8e-ad7c-a25164740210": {
     "label": "VP Assessment/plan due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_Assessment_plan_due_date",
+    "options": []
   },
   "ee89366a-a14d-4469-a583-08ca116f1a2d": {
     "label": "VP Assessment/plan upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_Assessment_plan_upload_date",
+    "options": []
   },
   "81fe6d25-e210-4349-ae55-c812012b6cdb": {
     "label": "VP Assessment/plan extension reason",
@@ -4548,162 +5231,128 @@ const caseManagerFieldsById = {
   "ded89c0a-554e-4f49-9863-eda4f59c25af": {
     "label": "VP DVA consent to proceed date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_DVA_consent_to_proceed_date",
+    "options": []
   },
   "0721ae47-8876-4a6a-a2e7-04aad092585e": {
     "label": "VP PCN provided date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_PCN_signed_date",
+    "options": []
   },
   "7236d78e-3fea-4864-b695-d524bf409195": {
     "label": "VP PCN client refused",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccVP_PCN_client_refused",
+    "options": []
   },
   "1608a94e-0548-48d8-a6f1-d4a6d55b5d9f": {
     "label": "VP Medical disclosure form signed",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccVP_Medical_disclosure_form_signed",
+    "options": []
   },
   "32608ef8-22ca-4cf8-a61e-58bbd0a95970": {
     "label": "VP medical disclosure form client refused",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccVP_medical_disclosure_form_client_refused",
+    "options": []
   },
   "87d8e8ea-bcd3-4dc2-b7c0-8d026c49bcf4": {
     "label": "VP Referral acknowledged date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_Referral_acknowledged_date",
+    "options": []
   },
   "3c6871c1-ae3d-4820-b0bf-00187698cba0": {
     "label": "VP Client contact date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_Client_contact_date",
+    "options": []
   },
   "7294542f-e246-4043-a9e6-32303abf253b": {
     "label": "VP Plan completion due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_Plan_completion_due_date",
+    "options": []
   },
   "0c90927d-2404-41a2-947f-b12712f0c0e7": {
     "label": "VP Plan completion actual date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_Plan_completion_actual_date",
+    "options": []
   },
   "7bcb8bda-5ba0-4e75-8d27-eebc1bc21b8a": {
     "label": "VP Plan extension granted",
     "type": "SELECT",
-    "sourceType": "Boolean"
+    "sourceType": "Boolean",
+    "valueKey": "ccVP_Plan_extension_granted",
+    "options": []
   },
   "43b94917-aae6-4607-80cc-602fa8311335": {
     "label": "VP Closure report upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_Closure_report_upload_date",
+    "options": []
   },
   "e548cf6e-0224-47be-a614-b6de07adcd93": {
     "label": "VP PR 1 due date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_PR_1_due_date",
+    "options": []
   },
   "c5f3c629-3175-420d-8921-49e33fc44e4c": {
     "label": "VP PR 1 upload date",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccVP_PR_1_upload_date",
+    "options": []
   },
   "f46cf736-3818-4682-873b-220c27fbd7ae": {
     "label": "WCQLD Status",
     "type": "LONG_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccWCQLD_Status",
+    "options": []
   },
   "59f8d4a3-bcc1-4c98-a77d-b6e327c46b3c": {
     "label": "WCQLD Proposed Action",
     "type": "LONG_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccWCQLD_Proposed_Action",
+    "options": []
   },
   "9e5f63b6-80c0-4973-a186-95ec190ca7e7": {
     "label": "WCQLD Date of Update",
     "type": "DATE",
-    "sourceType": "Date"
+    "sourceType": "Date",
+    "valueKey": "ccWCQLD_Date_of_Update",
+    "options": []
   },
   "caf6a3a3-27bd-40b5-ac1f-41ac7f6c4d9c": {
     "label": "WCQLD Issues/Concerns",
     "type": "SHORT_TEXT",
-    "sourceType": "Text"
+    "sourceType": "Text",
+    "valueKey": "ccWCQLD_Issues_Concerns",
+    "options": []
   },
   "901b4e28-d8b4-4018-a697-4adb76fba851": {
     "label": "Closure Outcome.",
     "type": "SELECT",
     "sourceType": "List",
-    "valueKeys": [
-      "ccClosure___Outcome",
-      "ccClosure_Outcome",
-      "ccClosure_Outcome_"
-    ],
+    "valueKey": "ccClosure_Outcome",
     "options": [
-      {
-        "value": "436",
-        "label": "New employer / Partial RTW"
-      },
-      {
-        "value": "437",
-        "label": "New employer / Full RTW"
-      },
-      {
-        "value": "438",
-        "label": "Pre-dis employer / Partial RTW"
-      },
-      {
-        "value": "439",
-        "label": "Pre-dis employer / Full RTW"
-      },
-      {
-        "value": "440",
-        "label": "No RTW - medical barriers"
-      },
-      {
-        "value": "441",
-        "label": "No RTW - psychosocial barriers"
-      },
-      {
-        "value": "442",
-        "label": "No RTW - work ready"
-      },
-      {
-        "value": "443",
-        "label": "No RTW - independently job seeking"
-      },
-      {
-        "value": "444",
-        "label": "Did not proceed past IA - Insured not interested"
-      },
-      {
-        "value": "445",
-        "label": "Did not proceed past IA - Insured not ready"
-      },
-      {
-        "value": "446",
-        "label": "One-off Assessment Only"
-      },
-      {
-        "value": "447",
-        "label": "Exercise program completed - increased capacity for work"
-      },
-      {
-        "value": "448",
-        "label": "Exercise program completed - little/no change in capacity for work"
-      },
-      {
-        "value": "449",
-        "label": "Wellbeing service - can transition to RTW"
-      },
-      {
-        "value": "450",
-        "label": "Wellbeing service - RTW services not suitable"
-      },
-      {
-        "value": "451",
-        "label": "TPD single service provided"
-      },
       {
         "value": "13829",
         "label": "RTW - Same Employer (Original Duties)"
@@ -4735,74 +5384,6 @@ const caseManagerFieldsById = {
       {
         "value": "13988",
         "label": "Assessment Only"
-      },
-      {
-        "value": "12519",
-        "label": "Single service - Assessment complete"
-      },
-      {
-        "value": "12520",
-        "label": "Claim Declined"
-      },
-      {
-        "value": "12521",
-        "label": "RTH - Job Seeking Independently"
-      },
-      {
-        "value": "12524",
-        "label": "RTW - New employer full hours"
-      },
-      {
-        "value": "12525",
-        "label": "No RTW - No capacity"
-      },
-      {
-        "value": "12526",
-        "label": "RTW - Same employer partial hours"
-      },
-      {
-        "value": "13521",
-        "label": "Did not proceed"
-      },
-      {
-        "value": "13781",
-        "label": "No RTW - Partial capacity"
-      },
-      {
-        "value": "13782",
-        "label": "RTH - Participating in retraining"
-      },
-      {
-        "value": "13783",
-        "label": "RTH - Participating in volunteering"
-      },
-      {
-        "value": "13785",
-        "label": "RTW - New employer partial hours"
-      },
-      {
-        "value": "13786",
-        "label": "RTW - Same employer full hours"
-      },
-      {
-        "value": "13965",
-        "label": "RTH - Community integration"
-      },
-      {
-        "value": "13966",
-        "label": "RTH - Improved functional capacity"
-      },
-      {
-        "value": "13967",
-        "label": "No change to RTH/RTW outcome"
-      },
-      {
-        "value": "13968",
-        "label": "Claimant withdrew"
-      },
-      {
-        "value": "13969",
-        "label": "Claimant resigned"
       }
     ]
   },
@@ -4853,22 +5434,30 @@ const caseManagerFieldsById = {
   "c741e158-0796-4330-a774-ae0c55dea4c2": {
     "label": "Welfare event notification received",
     "type": "DATE",
-    "sourceType": "Date Time"
+    "sourceType": "Date Time",
+    "valueKey": "ccWelfare_event_notification_received",
+    "options": []
   },
   "62fb885e-4840-4673-b395-4788aa9510b2": {
     "label": "Welfare event notified to DVA by phone",
     "type": "DATE",
-    "sourceType": "Date Time"
+    "sourceType": "Date Time",
+    "valueKey": "ccWelfare_event_notified_to_DVA_by_phone",
+    "options": []
   },
   "746e166b-81a3-4ead-84b0-f5df5ba63c22": {
     "label": "Welfare event report provided to DVA",
     "type": "DATE",
-    "sourceType": "Date Time"
+    "sourceType": "Date Time",
+    "valueKey": "ccWelfare_event_report_provided_to_DVA",
+    "options": []
   },
   "d5435e79-26bf-4590-912f-5f1173758ff0": {
     "label": "Welfare events notes",
     "type": "LONG_TEXT",
-    "sourceType": "Memo"
+    "sourceType": "Memo",
+    "valueKey": "ccWelfare_events_notes",
+    "options": []
   }
 };
 
@@ -4890,6 +5479,10 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "tpd",
       "label": "TPD"
+    },
+    {
+      "value": "5e52fc32-42cc-42fe-9011-32c52cef9849",
+      "label": "Unknown"
     }
   ],
   "683222f7-53d9-45f9-8c59-6ac0a48fbbfe": [
@@ -4904,6 +5497,10 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "yes",
       "label": "Yes"
+    },
+    {
+      "value": "74da8302-b7dd-400d-8578-0599b01e5763",
+      "label": "Unknown"
     }
   ],
   "2605d8cc-8229-42d1-a00c-27b18e1a1569": [

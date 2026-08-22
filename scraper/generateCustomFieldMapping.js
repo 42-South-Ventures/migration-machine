@@ -32,15 +32,60 @@ function cmCustomFieldsToMatchingFields(customFields, lookupRows = []) {
         : /^cc/i.test(String(columnName).trim())
           ? String(columnName).trim()
           : `cc${String(columnName).trim()}`;
+      const referenceList = field.ReferenceList ?? field.referenceList;
+      const options = Array.isArray(referenceList)
+        ? referenceList
+          .filter((option) => option?.Active !== false && String(option?.ID) !== '0')
+          .map((option) => {
+            if (option?.ID == null || option?.Description == null) {
+              throw new TypeError(
+                `Case Manager custom field at index ${index} has an incomplete ReferenceList option`,
+              );
+            }
+            return { value: String(option.ID), label: String(option.Description) };
+          })
+        : undefined;
       return {
         id: String(field.ID),
         name: String(field.Label),
         type: normaliseCmType(field.DataTypeName, field.IsMultiline === true),
         sourceType: String(field.DataTypeName ?? ''),
         ...(valueKey ? { valueKey } : {}),
+        ...(options !== undefined ? { options } : {}),
       };
     });
-  return attachCaseManagerLookupOptions(fields, lookupRows);
+  const fieldsWithoutDefinitionOptions = fields.filter((field) => field.options === undefined);
+  if (!fieldsWithoutDefinitionOptions.length) return fields;
+
+  const withFallbackOptions = attachCaseManagerLookupOptions(fieldsWithoutDefinitionOptions, lookupRows);
+  const fallbackById = new Map(withFallbackOptions.map((field) => [field.id, field]));
+  return fields.map((field) => fallbackById.get(field.id) ?? field);
+}
+
+async function fetchCustomFieldDefinitions(client, customFields) {
+  if (!Array.isArray(customFields)) {
+    throw new TypeError('Case Manager custom field list did not return an array');
+  }
+  if (typeof client?.getCustomFieldDefinition !== 'function') {
+    throw new TypeError('Case Manager client must provide getCustomFieldDefinition');
+  }
+
+  return Promise.all(customFields
+    .filter((field) => field?.Active !== false)
+    .map(async (field, index) => {
+      if (!field?.ID) {
+        throw new TypeError(`Case Manager custom field at index ${index} must contain ID`);
+      }
+      const detail = await client.getCustomFieldDefinition(field.ID);
+      if (!detail || String(detail.ID) !== String(field.ID)) {
+        throw new Error(
+          `Case Manager custom field detail response did not match requested ID ${field.ID}`,
+        );
+      }
+      // _List supplies DataTypeName/IsMultiline while GetData supplies the
+      // authoritative ColumnName and field-specific ReferenceList.
+      return { ...field, ...detail };
+    }));
 }
 
 function unwrapImporterCustomFields(body) {
@@ -116,12 +161,12 @@ async function generateCustomFieldMapping({
 
   const client = await createCmClient({ username, password });
   try {
-    const [cmResponse, cmLookups, npFields] = await Promise.all([
+    const [cmResponse, npFields] = await Promise.all([
       client.getCustomFieldList(),
-      client.getAllCustomFieldLookups(),
       fetchImporterCustomFields({ url: importerUrl, apiKey }),
     ]);
-    const cmFields = cmCustomFieldsToMatchingFields(cmResponse, cmLookups);
+    const cmDefinitions = await fetchCustomFieldDefinitions(client, cmResponse);
+    const cmFields = cmCustomFieldsToMatchingFields(cmDefinitions);
     const result = buildCustomFieldMapping(cmFields, npFields);
     const writtenTo = writeCustomFieldMappingFile(result, outputFile);
     return { ...result, writtenTo, cmCount: cmFields.length, npCount: npFields.length };
@@ -155,6 +200,7 @@ if (require.main === module) {
 
 module.exports = {
   cmCustomFieldsToMatchingFields,
+  fetchCustomFieldDefinitions,
   unwrapImporterCustomFields,
   fetchImporterCustomFields,
   generateCustomFieldMapping,

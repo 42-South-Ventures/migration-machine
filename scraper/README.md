@@ -67,7 +67,8 @@ Launches a menu that drives the whole pipeline:
   map. Unmatched or duplicate names are assigned to the NotusPoint requirement
   named exactly `Unmatched Requirements` and called out in comments.
 - **🧩 Generate custom field mapping** — fetches active fields from Case
-  Manager's `/CustomFieldList/_List` and all NotusPoint fields from
+  Manager's `/CustomFieldList/_List`, then fetches each field's authoritative
+  `ColumnName` and `ReferenceList` from `/CustomFieldList/GetData`, and fetches all NotusPoint fields from
   `/api/importer/custom-fields/matching`, then writes `mappings/customFieldMapping.js`
   as a Case Manager field ID → NotusPoint field ID map. Matching is
   case/whitespace-insensitive and requires compatible field types; short and

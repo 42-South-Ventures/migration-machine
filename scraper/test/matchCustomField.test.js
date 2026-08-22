@@ -8,6 +8,7 @@ const {
 } = require('../utils/matchCustomField');
 const {
   cmCustomFieldsToMatchingFields,
+  fetchCustomFieldDefinitions,
   unwrapImporterCustomFields,
 } = require('../generateCustomFieldMapping');
 
@@ -89,6 +90,62 @@ test('normalises Case Manager response fields and excludes inactive fields', () 
     type: 'SELECT',
     sourceType: 'List',
   }]);
+});
+
+test('uses field detail ColumnName and ReferenceList as authoritative metadata', () => {
+  assert.deepEqual(cmCustomFieldsToMatchingFields([{
+    ID: '58676ac7-b10a-42f5-bd4b-17616300a008',
+    Label: 'Acenda support provision',
+    DataTypeName: 'List',
+    ColumnName: 'MLC_support_provision',
+    Active: true,
+    ReferenceList: [
+      { ID: 12683, Description: 'Pre-vocational capacity building', Active: true },
+      { ID: 12684, Description: 'Inactive option', Active: false },
+    ],
+  }]), [{
+    id: '58676ac7-b10a-42f5-bd4b-17616300a008',
+    name: 'Acenda support provision',
+    type: 'SELECT',
+    sourceType: 'List',
+    valueKey: 'ccMLC_support_provision',
+    options: [{ value: '12683', label: 'Pre-vocational capacity building' }],
+  }]);
+});
+
+test('fetches and validates detail for every active Case Manager field', async () => {
+  const requested = [];
+  const fields = await fetchCustomFieldDefinitions({
+    getCustomFieldDefinition: async (id) => {
+      requested.push(id);
+      return { ID: id, ColumnName: `column_${id}`, Label: `Detailed ${id}` };
+    },
+  }, [
+    { ID: 'one', Label: 'List one', DataTypeName: 'Text', Active: true },
+    { ID: 'inactive', Label: 'Inactive', DataTypeName: 'Text', Active: false },
+    { ID: 'two', Label: 'List two', DataTypeName: 'List', Active: true },
+  ]);
+
+  assert.deepEqual(requested.sort(), ['one', 'two']);
+  assert.deepEqual(fields, [
+    {
+      ID: 'one', Label: 'Detailed one', DataTypeName: 'Text', Active: true,
+      ColumnName: 'column_one',
+    },
+    {
+      ID: 'two', Label: 'Detailed two', DataTypeName: 'List', Active: true,
+      ColumnName: 'column_two',
+    },
+  ]);
+});
+
+test('rejects a custom-field detail response for the wrong ID', async () => {
+  await assert.rejects(
+    fetchCustomFieldDefinitions({
+      getCustomFieldDefinition: async () => ({ ID: 'wrong-id' }),
+    }, [{ ID: 'expected-id', Active: true }]),
+    /did not match requested ID expected-id/,
+  );
 });
 
 test('unwraps the NotusPoint matching DTO response', () => {
