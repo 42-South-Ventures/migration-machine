@@ -3,3 +3,5 @@ scraper/cases.json
 scraper/structuredData.json
 scraper/documents
 scraper/.DS_Store
+scraper/migrationState.json
+scaper/caseList.txt
