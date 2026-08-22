@@ -77,6 +77,22 @@ async function getCustomFieldList(context, token) {
   return body.data ?? [];
 }
 
+async function getAllCustomFieldLookups(context, token) {
+  const res = await context.request.post(`${BASE_URL}/CustomField/GetAllLookups`, {
+    headers: buildHeaders(token, 'application/json; charset=UTF-8'),
+    data: {},
+  });
+  return res.json();
+}
+
+async function getCaseCustomFields(context, token, caseId) {
+  const res = await context.request.post(`${BASE_URL}/CustomField/GetData`, {
+    headers: buildHeaders(token, 'application/json; charset=UTF-8'),
+    data: { ID: caseId },
+  });
+  return res.json();
+}
+
 async function getCaseEstimates(context, token, caseId) {
   const res = await context.request.post(`${BASE_URL}/CaseEstimate/_List`, {
     headers: buildHeaders(token, 'application/x-www-form-urlencoded; charset=UTF-8'),
@@ -128,14 +144,16 @@ async function getAllLookups(context, token) {
 }
 
 async function captureCase(context, token, caseId) {
-  const [caseData, contacts] = await Promise.all([
+  const [caseData, contacts, customFields] = await Promise.all([
     getCaseData(context, token, caseId),
     getCaseContacts(context, token, caseId),
+    getCaseCustomFields(context, token, caseId),
   ]);
 
   const endpoints = {
     '/Case/GetData': [caseData],
     '/CaseContact/_List': [contacts],
+    '/CustomField/GetData': [customFields],
   };
 
   const contactRows = Array.isArray(contacts?.data) ? contacts.data : [];
@@ -221,7 +239,8 @@ async function downloadDocumentAttachment(context, documentId, attachmentId) {
 
 module.exports = {
   login, getCaseData, getCaseContacts, getCaseContactData, getLookupList, getAllLookups,
-  getEmployeeList, getCustomFieldList, captureCase,
+  getEmployeeList, getCustomFieldList, getAllCustomFieldLookups,
+  getCaseCustomFields, captureCase,
   getCaseEstimates, getCaseEstimateData, getCaseCosts, getCaseCostData,
   getCaseDocuments, downloadDocumentFile, downloadDocumentAttachment, getCaseDocumentData,
   LOOKUP_TYPES,

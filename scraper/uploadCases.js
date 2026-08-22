@@ -8,6 +8,11 @@ const { resolveRequirementId } = require("./utils/matchRequirement");
 const { buildLookupMap, buildCustomer } = require("./lib/structured");
 const { createCustomerResolver } = require("./lib/importerCustomer");
 const { getNotusPointConfig } = require("./lib/notuspointConfig");
+const { toCostImportDtos } = require("./lib/costImport");
+const {
+  createCustomFieldOptionResolver,
+  buildNotusPointCustomFields,
+} = require("./lib/customFieldValues");
 
 const args = process.argv.slice(2);
 // --skip-files: upload cases and costs only; costs then import without file
@@ -27,12 +32,14 @@ const IMPORT_FILE_URL = notusPoint.fileUrl;
 const IMPORT_STAFF_URL = notusPoint.staffUrl;
 const IMPORT_COSTS_URL = notusPoint.costsUrl;
 const IMPORT_CUSTOMER_URL = notusPoint.customerUrl;
+const IMPORT_CUSTOM_FIELD_OPTIONS_URL = notusPoint.customFieldOptionsUrl;
 // Cases uploaded at once; each case's file POSTs additionally share the
 // global file limiter below, which is what actually bounds importer load.
 const CASE_CONCURRENCY = Number(process.env.UPLOAD_CASE_CONCURRENCY ?? 8);
 const FILE_CONCURRENCY = Number(process.env.UPLOAD_FILE_CONCURRENCY ?? 32);
 const IMPORTER_API_KEY = process.env.IMPORTER_API_KEY;
 const REQUIREMENT_MAPPING_FILE = path.join(__dirname, "mappings", "requirementMapping.js");
+const CUSTOM_FIELD_MAPPING_FILE = path.join(__dirname, "mappings", "customFieldMapping.js");
 
 if (!fs.existsSync(DATA_DIR) || !fs.existsSync(paths.sharedFile)) {
   console.error(`Export data not found (${DATA_DIR} / ${paths.sharedFile})`);
@@ -62,12 +69,32 @@ if (typeof requirementMapping.UNMATCHED_REQUIREMENT_ID !== "string") {
   process.exit(1);
 }
 
+if (!fs.existsSync(CUSTOM_FIELD_MAPPING_FILE)) {
+  console.error(`Custom-field mapping not found (${CUSTOM_FIELD_MAPPING_FILE})`);
+  console.error("Run the CLI option 'Generate custom field mapping' before uploading");
+  process.exit(1);
+}
+const customFieldMapping = require(CUSTOM_FIELD_MAPPING_FILE);
+if (!customFieldMapping?.CASE_MANAGER_FIELDS_BY_ID) {
+  console.error(`Custom-field mapping is outdated (${CUSTOM_FIELD_MAPPING_FILE})`);
+  console.error("Missing generated metadata: CASE_MANAGER_FIELDS_BY_ID");
+  console.error("Run 'Generate custom field mapping', or start 'Full migration (fresh)' to generate it automatically");
+  process.exit(1);
+}
+
 // Guard rejects unauthenticated/misconfigured requests with a bare 404, so
 // every importer request carries this header alongside its other headers.
 const AUTH_HEADERS = { "x-api-key": IMPORTER_API_KEY };
 const resolveCustomerId = createCustomerResolver({
   url: IMPORT_CUSTOMER_URL,
   apiKey: IMPORTER_API_KEY,
+});
+const resolveCustomFieldOption = createCustomFieldOptionResolver({
+  baseUrl: IMPORT_CUSTOM_FIELD_OPTIONS_URL,
+  apiKey: IMPORTER_API_KEY,
+  fieldMapping: customFieldMapping,
+  optionsByCaseManagerFieldId:
+    customFieldMapping.OPTIONS_BY_CASE_MANAGER_FIELD_ID ?? {},
 });
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -96,54 +123,12 @@ function toStaffImportDto(employee) {
   return dto;
 }
 
-// Costs import in a second pass (after the case and its files) so each cost
-// can link to the NotusPoint file created from its Case Manager document.
-// Costs unlinked in the source (or linked to a deleted estimate row) are
-// skipped and reported; costs whose document didn't upload just lose the file
-// link. employeeId is the Case Manager ID, resolved to the user the staff
-// import created.
-function toCostImportDtos(
+function toCaseImportDto(
   caseRecord,
-  resolvedUserIdByEmployeeId,
-  fileIdByDocumentId,
+  resolvedEmailByEmployeeId,
+  customerId,
+  customFields,
 ) {
-  const itemIds = new Set(
-    (caseRecord.billingTemplates ?? []).flatMap((t) =>
-      t.items.map((i) => i.id),
-    ),
-  );
-  const costs = [];
-  let skipped = 0;
-  let unmatchedDocuments = 0;
-
-  for (const cost of caseRecord.costs ?? []) {
-    if (!itemIds.has(cost.billingInstanceItemId)) {
-      skipped++;
-      continue;
-    }
-    const dto = {
-      status: cost.status,
-      quantity: cost.quantity,
-      rate: cost.rate,
-      total: cost.total,
-      billingInstanceItemId: cost.billingInstanceItemId,
-      date: cost.date,
-      createdAt: cost.createdAt,
-    };
-    const userId = resolvedUserIdByEmployeeId.get(cost.employeeId);
-    if (userId) dto.userId = userId;
-    if (cost.documentId) {
-      const fileId = fileIdByDocumentId.get(cost.documentId);
-      if (fileId) dto.fileId = fileId;
-      else unmatchedDocuments++;
-    }
-    costs.push(dto);
-  }
-
-  return { costs, skipped, unmatchedDocuments };
-}
-
-function toCaseImportDto(caseRecord, resolvedEmailByEmployeeId, customerId) {
   const address = caseRecord.clientAddress || {};
   const referrer = caseRecord.referrer || {};
 
@@ -237,6 +222,10 @@ function toCaseImportDto(caseRecord, resolvedEmailByEmployeeId, customerId) {
 
   if (caseRecord.billingTemplates?.length) {
     dto.billingTemplates = caseRecord.billingTemplates;
+  }
+
+  if (customFields && Object.keys(customFields).length) {
+    dto.customFields = customFields;
   }
 
   const assignedUserEmail = resolvedEmailByEmployeeId.get(
@@ -389,6 +378,7 @@ async function uploadCosts(caseId, costs) {
         const contactDetails = endpoints?.["/CaseContact/GetData"] ?? [];
         structured.customer = buildCustomer(contactList, contactDetails, lookup);
       }
+      structured.customFieldData = endpoints?.["/CustomField/GetData"]?.[0];
       cases.push(structured);
     }
     else noClient++;
@@ -568,10 +558,17 @@ async function uploadCosts(caseId, costs) {
     if (!caseDone) {
       try {
         const customerId = await resolveCustomerId(caseRecord.customer);
+        const customFields = await buildNotusPointCustomFields({
+          caseId,
+          raw: caseRecord.customFieldData,
+          mapping: customFieldMapping,
+          resolveOption: resolveCustomFieldOption,
+        });
         const dto = toCaseImportDto(
           caseRecord,
           resolvedEmailByEmployeeId,
           customerId,
+          customFields,
         );
         await uploadCase(dto);
         ledger.updateStage(caseId, "upload", { case: { status: "done" } });

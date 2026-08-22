@@ -71,8 +71,18 @@ function buildCustomFieldMapping(fieldsFromCM, fieldsFromNP) {
   const unsupported = [];
   const entries = [];
   const optionsByCaseManagerFieldId = {};
+  const labelsByCaseManagerFieldId = {};
+  const caseManagerFieldsById = {};
 
   for (const oldField of fieldsFromCM) {
+    labelsByCaseManagerFieldId[oldField.id] = oldField.name;
+    caseManagerFieldsById[oldField.id] = {
+      label: oldField.name,
+      type: oldField.type,
+      sourceType: oldField.sourceType,
+      ...(oldField.valueKey ? { valueKey: oldField.valueKey } : {}),
+      ...(Array.isArray(oldField.options) ? { options: oldField.options } : {}),
+    };
     if (!oldField.type || !NP_TYPES.has(oldField.type)) {
       unsupported.push(oldField);
       mapping[oldField.id] = null;
@@ -122,6 +132,8 @@ function buildCustomFieldMapping(fieldsFromCM, fieldsFromNP) {
 
   return {
     mapping,
+    labelsByCaseManagerFieldId,
+    caseManagerFieldsById,
     optionsByCaseManagerFieldId,
     entries,
     matches,
@@ -162,6 +174,20 @@ function renderMappingFile(result) {
 
   lines.push(
     '};',
+    '',
+    '// Original Case Manager labels, keyed by Case Manager custom field ID.',
+    `const customFieldLabelsByCaseManagerId = ${JSON.stringify(result.labelsByCaseManagerFieldId, null, 2)};`,
+    '',
+    "Object.defineProperty(customFieldMapping, 'LABELS_BY_CASE_MANAGER_FIELD_ID', {",
+    '  value: customFieldLabelsByCaseManagerId,',
+    '});',
+    '',
+    '// Case Manager field metadata used to extract and interpret case values.',
+    `const caseManagerFieldsById = ${JSON.stringify(result.caseManagerFieldsById, null, 2)};`,
+    '',
+    "Object.defineProperty(customFieldMapping, 'CASE_MANAGER_FIELDS_BY_ID', {",
+    '  value: caseManagerFieldsById,',
+    '});',
     '',
     '// NotusPoint option IDs and labels, keyed by Case Manager custom field ID.',
     `const customFieldOptionsByCaseManagerId = ${JSON.stringify(result.optionsByCaseManagerFieldId, null, 2)};`,

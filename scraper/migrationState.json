@@ -1,0 +1,78 @@
+{
+  "staff": {
+    "36dc9e74-5f96-4edc-9836-5e2692e3afa7": {
+      "email": "bronwyn.brown@workcom.com.au",
+      "userId": "74758dcb-17cb-449c-8066-e89ac878ebfc",
+      "at": "2026-08-22T03:32:32.774Z"
+    },
+    "37bbfad8-1a5a-4038-b087-72d461b4378f": {
+      "email": "haley.dearlove@workcom.com.au",
+      "userId": "360e074c-3515-4519-8687-bbc48b56bb15",
+      "at": "2026-08-22T03:32:33.116Z"
+    },
+    "7b41a989-a578-450e-9f11-f0600cd21a24": {
+      "email": "hanna.peebles@workcom.com.au",
+      "userId": "fc5373c7-7845-4620-ad68-a05c7b2f72de",
+      "at": "2026-08-22T03:32:33.629Z"
+    },
+    "d16c390f-4218-4d6f-93a4-d6f4bba96c11": {
+      "email": "leesa.tuffnell@workcom.com.au",
+      "userId": "7bf360fb-6704-4fed-b91f-0b0bc246e439",
+      "at": "2026-08-22T03:32:34.245Z"
+    },
+    "707364ed-f559-48c5-8ca0-5e9c6b8d8e5d": {
+      "email": "melissa.barnes-daysh@workcom.com.au",
+      "userId": "cd4ecffc-eaa1-4eea-8eba-ff231886f8dd",
+      "at": "2026-08-22T03:32:34.865Z"
+    },
+    "97087f3a-d01c-45bd-8d87-d6274d2ffba4": {
+      "email": "monica.soraru@workcom.com.au",
+      "userId": "aa57382d-2325-4e65-ace1-a1826ca2a6d2",
+      "at": "2026-08-22T03:32:35.389Z"
+    }
+  },
+  "cases": {
+    "17688": {
+      "export": {
+        "status": "done",
+        "hasClient": true,
+        "counts": {
+          "contacts": 2,
+          "billingTemplates": 1,
+          "billingItems": 1,
+          "costs": 4
+        },
+        "at": "2026-08-22T03:32:12.958Z"
+      },
+      "documents": {
+        "status": "done",
+        "expected": 35,
+        "downloaded": 35,
+        "reused": 0,
+        "placeholders": 0,
+        "failed": 0,
+        "at": "2026-08-22T03:32:32.019Z"
+      },
+      "upload": {
+        "case": {
+          "status": "done"
+        },
+        "at": "2026-08-22T03:32:42.417Z",
+        "files": {
+          "status": "done",
+          "expected": 35,
+          "uploaded": 35,
+          "failed": 0
+        },
+        "costs": {
+          "status": "done",
+          "expected": 4,
+          "imported": 4,
+          "skippedUnlinked": 0,
+          "missingFileLinks": 0
+        },
+        "purgedAt": "2026-08-22T03:32:42.417Z"
+      }
+    }
+  }
+}

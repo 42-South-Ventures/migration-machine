@@ -24,6 +24,8 @@ const MAIN = roots(DIR);
 const SINGLE_DIR = path.join(DIR, 'single');
 const LEGACY_FILES = ['cases.json', 'structuredData.json'].map((f) => path.join(DIR, f));
 const IMPORT_URL = getNotusPointConfig().caseUrl;
+const REQUIREMENT_MAPPING_FILE = path.join(DIR, 'mappings', 'requirementMapping.js');
+const CUSTOM_FIELD_MAPPING_FILE = path.join(DIR, 'mappings', 'customFieldMapping.js');
 
 // Wall-clock stamp appended to every log line (runs span days, so keep the date)
 function ts() {
@@ -35,7 +37,7 @@ function ts() {
 // Re-emits a child stream line by line with the timestamp appended (and a
 // tag prefixed when two stages interleave), so the stage scripts' own
 // progress output stays untouched at the source.
-function stampLines(src, dest, tag) {
+function stampLines(src, dest, tag, onLine) {
   const prefix = tag ? `${tag} ` : '';
   let buf = '';
   src.setEncoding('utf8');
@@ -43,24 +45,36 @@ function stampLines(src, dest, tag) {
     buf += chunk;
     const lines = buf.split('\n');
     buf = lines.pop();
-    for (const line of lines) dest.write(line.trim() ? `${prefix}${line} ${ts()}\n` : `${line}\n`);
+    for (const line of lines) {
+      if (line.trim()) onLine?.(line.trim());
+      dest.write(line.trim() ? `${prefix}${line} ${ts()}\n` : `${line}\n`);
+    }
   });
-  src.on('end', () => { if (buf) dest.write(`${prefix}${buf} ${ts()}\n`); });
+  src.on('end', () => {
+    if (buf) {
+      if (buf.trim()) onLine?.(buf.trim());
+      dest.write(`${prefix}${buf} ${ts()}\n`);
+    }
+  });
 }
 
 function run(script, args = [], env = {}, tag) {
   return new Promise((resolve, reject) => {
+    let lastErrorLine = '';
     const child = spawn(process.execPath, [path.join(DIR, script), ...args], {
       cwd: DIR,
       stdio: ['inherit', 'pipe', 'pipe'],
       env: { ...process.env, ...env },
     });
     stampLines(child.stdout, process.stdout, tag);
-    stampLines(child.stderr, process.stderr, tag);
+    stampLines(child.stderr, process.stderr, tag, (line) => { lastErrorLine = line; });
     child.on('error', reject);
     child.on('close', (code) => {
       if (code === 0) resolve();
-      else reject(new Error(`${script} exited with code ${code}`));
+      else {
+        const detail = lastErrorLine ? `: ${lastErrorLine.slice(0, 500)}` : '';
+        reject(new Error(`${script} failed (exit code ${code})${detail}`));
+      }
     });
   });
 }
@@ -87,6 +101,51 @@ async function step(title, script, args = [], env = {}, tag) {
     log.error(`${pc.red(`${title} — ${err.message} (after ${fmtDuration(Date.now() - started)})`)} ${ts()}`);
     return false;
   }
+}
+
+function mappingHasProperty(file, property) {
+  if (!fs.existsSync(file)) return false;
+  try {
+    delete require.cache[require.resolve(file)];
+    const mapping = require(file);
+    return mapping != null && Object.prototype.hasOwnProperty.call(mapping, property);
+  } catch {
+    return false;
+  }
+}
+
+// A fresh run always snapshots both mappings before any cases move. A resume
+// keeps that snapshot stable, but repairs a missing/legacy mapping
+// automatically instead of allowing uploadCases.js to fail much later.
+async function prepareMappings({ fresh }) {
+  const requirementCurrent = mappingHasProperty(
+    REQUIREMENT_MAPPING_FILE,
+    'UNMATCHED_REQUIREMENT_ID',
+  );
+  const customFieldCurrent = mappingHasProperty(
+    CUSTOM_FIELD_MAPPING_FILE,
+    'CASE_MANAGER_FIELDS_BY_ID',
+  );
+
+  if (fresh || !requirementCurrent) {
+    if (!(await step('Generate requirement mapping', 'generateRequirementMapping.js'))) {
+      log.error('Full migration stopped: requirement mapping could not be generated. Fix the error above, then retry.');
+      return false;
+    }
+  } else {
+    log.info('Using the existing requirement mapping for this resumed migration.');
+  }
+
+  if (fresh || !customFieldCurrent) {
+    if (!(await step('Generate custom field mapping', 'generateCustomFieldMapping.js'))) {
+      log.error('Full migration stopped: custom-field mapping could not be generated. Fix the error above, then retry.');
+      return false;
+    }
+  } else {
+    log.info('Using the existing custom-field mapping for this resumed migration.');
+  }
+
+  return true;
 }
 
 function countLines(file) {
@@ -236,6 +295,8 @@ async function runPipeline({ fresh }) {
     return;
   }
   log.info(`Uploading to ${IMPORT_URL} as documents complete. If the NotusPoint DB was cleared since the last upload, Ctrl+C and wipe the upload records first (menu → Wipe migration state).`);
+
+  if (!(await prepareMappings({ fresh }))) return;
 
   const exportOk = await step('Export case data', 'runAll.js');
   if (!exportOk) {

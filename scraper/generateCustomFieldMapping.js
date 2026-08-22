@@ -8,18 +8,19 @@ const {
   writeCustomFieldMappingFile,
 } = require('./utils/matchCustomField');
 const { getNotusPointConfig } = require('./lib/notuspointConfig');
+const { attachCaseManagerLookupOptions } = require('./lib/customFieldValues');
 
 const USERNAME = process.env.CM_USER || '';
 const PASSWORD = process.env.CM_PASS || '';
 const IMPORT_CUSTOM_FIELDS_URL = getNotusPointConfig().customFieldsUrl;
 const IMPORTER_API_KEY = process.env.IMPORTER_API_KEY || '';
 
-function cmCustomFieldsToMatchingFields(customFields) {
+function cmCustomFieldsToMatchingFields(customFields, lookupRows = []) {
   if (!Array.isArray(customFields)) {
     throw new TypeError('Case Manager custom field list did not return an array');
   }
 
-  return customFields
+  const fields = customFields
     .filter((field) => field?.Active !== false)
     .map((field, index) => {
       if (!field?.ID || !field?.Label) {
@@ -32,6 +33,7 @@ function cmCustomFieldsToMatchingFields(customFields) {
         sourceType: String(field.DataTypeName ?? ''),
       };
     });
+  return attachCaseManagerLookupOptions(fields, lookupRows);
 }
 
 function unwrapImporterCustomFields(body) {
@@ -107,11 +109,12 @@ async function generateCustomFieldMapping({
 
   const client = await createCmClient({ username, password });
   try {
-    const [cmResponse, npFields] = await Promise.all([
+    const [cmResponse, cmLookups, npFields] = await Promise.all([
       client.getCustomFieldList(),
+      client.getAllCustomFieldLookups(),
       fetchImporterCustomFields({ url: importerUrl, apiKey }),
     ]);
-    const cmFields = cmCustomFieldsToMatchingFields(cmResponse);
+    const cmFields = cmCustomFieldsToMatchingFields(cmResponse, cmLookups);
     const result = buildCustomFieldMapping(cmFields, npFields);
     const writtenTo = writeCustomFieldMappingFile(result, outputFile);
     return { ...result, writtenTo, cmCount: cmFields.length, npCount: npFields.length };

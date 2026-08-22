@@ -1,0 +1,3807 @@
+{
+  "fetchedAt": "2026-08-22T03:32:12.955Z",
+  "endpoints": {
+    "/Case/GetData": [
+      {
+        "CaseNumber": 17688,
+        "OfficeID": "a5043a66-5001-471e-94f8-8c16b8c86d22",
+        "AssignedToID": "d16c390f-4218-4d6f-93a4-d6f4bba96c11",
+        "TeamID": "0df848e8-244c-4fb5-afc1-e4c89d268e95",
+        "StatusID": "7e1e4bbf-dff1-4bfa-a1b5-6afe29cebda0",
+        "RequirementID": "ecab4059-835c-468f-ace8-aa5e40418ff2",
+        "ReferralTypeID": "6974d59a-cdfd-4b4a-98c5-d858e390f2b4",
+        "EmploymentStatusID": "00000000-0000-0000-0000-000000000000",
+        "CauseID": "00000000-0000-0000-0000-000000000000",
+        "ConditionID": "3cdcd690-ff92-44ef-959f-80b8e523d676",
+        "ConditionDate": "2022-08-15T00:00:00",
+        "DateOfReferral": "2026-01-09T00:00:00",
+        "DateOpened": "2026-01-09T00:00:00",
+        "DateClosed": "2026-01-19T00:00:00",
+        "OutcomeID": "406115ed-40ed-4ba8-9368-7142baf5fa1d",
+        "CaseCompleted": false,
+        "ClaimNo": "REH5478965",
+        "BillerCode": "R4832H5561",
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "CurrentEstimateID": "60c81241-eeba-4beb-afef-efd2312c2516",
+        "InvoiceGroupID": "48566e14-dd69-4af4-a03c-79e919e8dd23",
+        "InvoiceRequired": false,
+        "ArchivedOn": null,
+        "Archived": false,
+        "ErasedOn": null,
+        "Erased": false,
+        "EmployeeAccessSelectorList": [],
+        "IsNew": false,
+        "FlagID": "00000000-0000-0000-0000-000000000000",
+        "FlagNotes": "",
+        "FlagDetails": null,
+        "LimitAccess": false,
+        "ExternalSystemID": "",
+        "ImportSource": 0,
+        "ImportStatus": 0,
+        "ProviderType": "",
+        "ReferralResult": -1,
+        "ReferralResultMessage": "",
+        "CustomFields": {
+          "CaseNumber": 17688,
+          "Source": 1,
+          "DisplayOnCaseDetails": true,
+          "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+          "ROP": []
+        },
+        "LinkedCases": [],
+        "LastChanged": "AAAAAADsgic=",
+        "ROP": [
+          "CaseNumber",
+          "Erased",
+          "ImportSource"
+        ]
+      }
+    ],
+    "/CaseContact/_List": [
+      {
+        "id": 17688,
+        "data": [
+          {
+            "ID": "0a01c9eb-80da-4647-9f57-0ffd185e543f",
+            "CompanyName": "",
+            "ContactName": "Anderson, Barry John, Mr",
+            "RoleNames": "Client",
+            "Service": "",
+            "Phone": "",
+            "PrimaryRole": "e0b51510-641b-4e1e-93fa-ce44929d2a14",
+            "FirstName": "Barry John",
+            "LastName": "Anderson",
+            "Position": "",
+            "PostalCode": "4557",
+            "Suburb": "Mooloolaba",
+            "PrimaryRoleName": "Client",
+            "Email": "brrava@bigpond.com",
+            "ProviderNumber": ""
+          },
+          {
+            "ID": "b8153bb2-fda4-4e62-a0f2-73c2444240ed",
+            "CompanyName": "",
+            "ContactName": "QA DVA  Team, DVA",
+            "RoleNames": "QA",
+            "Service": "",
+            "Phone": "",
+            "PrimaryRole": "e84255e9-ee68-4de3-8d9b-433e46e93638",
+            "FirstName": "DVA",
+            "LastName": "QA DVA  Team",
+            "Position": "",
+            "PostalCode": "2765",
+            "Suburb": "Box Hill",
+            "PrimaryRoleName": "QA",
+            "Email": "dvaqa@workcom.com.au",
+            "ProviderNumber": ""
+          },
+          {
+            "ID": "322df4a9-34b3-40e3-9efe-5be13de6de84",
+            "CompanyName": "DVA - Department of Veterans' Affairs",
+            "ContactName": "62213033, Tanja",
+            "RoleNames": "Referrer",
+            "Service": "",
+            "Phone": "1800 838 372",
+            "PrimaryRole": "b86192fd-f030-4de4-93c4-76d9c2aac7bf",
+            "FirstName": "Tanja",
+            "LastName": "62213033",
+            "Position": "Household Services Officer",
+            "PostalCode": "",
+            "Suburb": "Adelaide",
+            "PrimaryRoleName": "Referrer",
+            "Email": "hhs@dva.gov.au",
+            "ProviderNumber": ""
+          },
+          {
+            "ID": "82262d98-fc7a-47fc-8a6d-bf8203a5cc04",
+            "CompanyName": "DVA - Department of Veterans' Affairs",
+            "ContactName": "Accounts, DVA",
+            "RoleNames": "Bill To",
+            "Service": "",
+            "Phone": "1800 550457 option 4",
+            "PrimaryRole": "9498bfd4-eafc-4b8b-9c4f-1d3e2941ff0d",
+            "FirstName": "DVA",
+            "LastName": "Accounts",
+            "Position": "",
+            "PostalCode": "4000",
+            "Suburb": "Brisbane",
+            "PrimaryRoleName": "Bill To",
+            "Email": "admin@workcom.com.au",
+            "ProviderNumber": ""
+          },
+          {
+            "ID": "ee242a4b-2eee-40e8-9c28-a7c55d5ef7a6",
+            "CompanyName": "Workcom",
+            "ContactName": "Barnes-Daysh, Melissa",
+            "RoleNames": "Relationship Manager",
+            "Service": "",
+            "Phone": "0412 150 368",
+            "PrimaryRole": "b15d4f06-b2bf-4091-990c-c711bed57fd6",
+            "FirstName": "Melissa",
+            "LastName": "Barnes-Daysh",
+            "Position": "Operations Manager",
+            "PostalCode": "4551",
+            "Suburb": "Birtinya",
+            "PrimaryRoleName": "Relationship Manager",
+            "Email": "melissa.barnes-daysh@workcom.com.au",
+            "ProviderNumber": ""
+          },
+          {
+            "ID": "f5a0553d-dbc5-4412-83b5-05f15fb605f8",
+            "CompanyName": "Workcom",
+            "ContactName": "Legends, Admin",
+            "RoleNames": "Workcom Admin",
+            "Service": "",
+            "Phone": "(07) 5491 6490",
+            "PrimaryRole": "51bd2254-2389-43bf-8ecf-9863ace7d46c",
+            "FirstName": "Admin",
+            "LastName": "Legends",
+            "Position": "WorkCom Admin",
+            "PostalCode": "4575",
+            "Suburb": "Birtinya",
+            "PrimaryRoleName": "Workcom Admin",
+            "Email": "admin@workcom.com.au",
+            "ProviderNumber": ""
+          }
+        ]
+      }
+    ],
+    "/CustomField/GetData": [
+      {
+        "CaseNumber": 17688,
+        "Source": 1,
+        "DisplayOnCaseDetails": false,
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "ccBenefit_Type_": 0,
+        "ccReport___Email_Update_Required": 0,
+        "ccMLC_Rehab_Status": 0,
+        "ccMLC_support_provision": 0,
+        "ccMLC___service_option": 0,
+        "ccMLC___service_goal": 0,
+        "ccMLC___status_at_referral": 0,
+        "ccMLC___status_at_reporting": 0,
+        "ccMLC___status_at_closure": 0,
+        "ccAIA_Status": "",
+        "ccAIA_Proposed_Action": "",
+        "ccAIA_Date_of_Update": null,
+        "ccAIA_Outcome_Status_at_the_time_of_completion": 0,
+        "ccAIA_Issues_concerns": "",
+        "ccAIA_Further_Rehab_Recommended": 0,
+        "ccEmployability_Assessment_Completed": 0,
+        "ccCSAT_Case_Closure_1": 0,
+        "ccNPS_Score_at_time_of_Closure": 0,
+        "ccNPS_Outcome_1": 0,
+        "ccMet_QA_Requirements_1": 0,
+        "ccQA_Not_Met_Reason_1": "",
+        "ccEmployer_Contacted": 0,
+        "ccTreater_GP_Contacted": 0,
+        "ccVerbatim_Feedback": "",
+        "ccAssessment_Status_at_time_of_completion": 0,
+        "ccEE_Outcome": 0,
+        "ccFurther_Referral": 0,
+        "ccMetlife_Status": "",
+        "ccMetlife_Proposed_Action": "",
+        "ccUpdated___date": null,
+        "ccMetlife_Outcome_capacity_at_time_of_completion": 0,
+        "ccMetlife_Outcome_status_at_the_time_of_completion": 0,
+        "ccMetlife_Issues_Concerns": "",
+        "ccMetlife_Further_Rehab_Recommended": 0,
+        "ccADMIN_to_Update": null,
+        "ccDepartment": 0,
+        "ccFund": 0,
+        "ccInsurance_Type": 0,
+        "ccONGOING": null,
+        "ccEmployment_status_at_time_of_referral_": 0,
+        "ccCapacity_at_time_of_referral_": 0,
+        "ccCurrent_Service": 0,
+        "ccProgress_Status__for_IP_": "",
+        "ccIssues_Concers": "",
+        "ccDate": null,
+        "ccCLOSURE": null,
+        "ccCapacity_at_time_of_closure": 0,
+        "ccClaimant_status_at_time_of_closure": 0,
+        "ccEmployment_Outcome": 0,
+        "ccPlease_also_complete_CLOSURE_TAB_for_TAL": null,
+        "ccWCQLD_Status": "",
+        "ccWCQLD_Proposed_Action": "",
+        "ccWCQLD_Date_of_Update": null,
+        "ccWCQLD_Issues_Concerns": "",
+        "ccClosure_Outcome": 0,
+        "ccIf_No_RTW___Reason": 0,
+        "ccSurvey_Completed_Type": 0,
+        "ccPre_Survey_Assessment_for_Pain_Scale_2": 0,
+        "ccPost_Survey_Assessment_for_Pain_Scale_1": 0,
+        "ccPre_Survey_Assessment_for_DASS_21___Depression_1": 0,
+        "ccPre_Survey_Assessment_for_DASS_21___Anxiety_1": 0,
+        "ccPre_Survey_Assessment_for_DASS_21___Stress_1": 0,
+        "ccPost_Survey_Assessment_for_DASS_21___Depression_1": 0,
+        "ccPost_Survey_Assessment_for_DASS_21___Anxiety_1": 0,
+        "ccPost_Survey_Assessment_for_DASS_21___Stress_1": 0,
+        "ccCase_Status": 0,
+        "ccStatus": "",
+        "ccProposedAction": "",
+        "ccDateofUpdate_": null,
+        "ccIssues_Concerns": "",
+        "ccClosure_Status": 0,
+        "ccOutcome_Status_at_time_of_completion": 0,
+        "ccFurther_Rehab_Recommended": 0,
+        "ccClosure_Outcome_": 0,
+        "ccReferred_Date_": null,
+        "ccInsurer_Update_Request": 0,
+        "ccReport___Email_Summary_Submitted": null,
+        "cc_20_Days_Delay_Reason": "",
+        "ccMedEbridge___Date_Consent_Form_Uploaded": null,
+        "ccPCN_signed_date": null,
+        "ccPCN_client_refused": null,
+        "ccMedical_disclosure_form_signed": null,
+        "ccMedical_disclosure_client_refused": null,
+        "ccReferral_acknowledged_date": null,
+        "ccClient_contact_date": null,
+        "ccAssessment_due_date": null,
+        "ccAssessment_completed_date": null,
+        "ccAssessment_Plan_due_date": null,
+        "ccAssessment_plan_upload_date": null,
+        "ccAssessment_plan_extension_reason": 0,
+        "ccDVA_consent_to_proceed_date": null,
+        "ccPR_1_due_date": null,
+        "ccPR_1_upload_date": null,
+        "ccPR_2_due_date": null,
+        "ccPR_2_upload_date": null,
+        "ccPR_3_due_date": null,
+        "ccPR_3_upload_date": null,
+        "ccPR_4_due_date": null,
+        "ccPR_4_upload_date": null,
+        "ccPR_5_due_date": null,
+        "ccPR_5_upload_date": null,
+        "ccPR_6_due_date": null,
+        "ccPR_6_upload_date": null,
+        "ccPR_7_due_date": null,
+        "ccPR_7_upload_date": null,
+        "ccPR_8_due_date": null,
+        "ccPR_8_upload_date": null,
+        "ccPR_9_due_date": null,
+        "ccPR_9_upload_date": null,
+        "ccPR_10_due_date": null,
+        "ccPR_10_upload_date": null,
+        "ccPR_11_due_date": null,
+        "ccPR_11_upload_date": null,
+        "ccPR_12_due_date": null,
+        "ccPR_12_upload_date": null,
+        "ccPR_13_due_date": null,
+        "ccPR_13_upload_date": null,
+        "ccPR_14_due_date": null,
+        "ccPR_14_upload_date": null,
+        "ccPR_15_due_date": null,
+        "ccPR_15_upload_date": null,
+        "ccPR_16_due_date": null,
+        "ccPR_16_upload_date": null,
+        "ccPR_17_due_date": null,
+        "ccPR_17_upload_date": null,
+        "ccPR_18_due_date": null,
+        "ccPR_18_upload_date": null,
+        "ccPR_19_due_date": null,
+        "ccPR_19_upload_date": null,
+        "ccPR_20_due_date": null,
+        "ccPR_20_upload_date": null,
+        "ccPR_21_due_date": null,
+        "ccPR_21_upload_date": null,
+        "ccPR_22_due_date": null,
+        "ccPR_22_upload_date": null,
+        "ccPlan_completion_due_date": null,
+        "ccPlan_completion_actual_date": null,
+        "ccPlan_extension_granted": null,
+        "ccClosure_report_upload_date": null,
+        "ccPlan_closing___AIR_not_required": null,
+        "ccAIR_plan_extension_due_date": null,
+        "ccAIR_plan_extension_upload_date": null,
+        "ccAIR_plan_extension_reason": "",
+        "ccAIR_notes": "",
+        "ccWelfare_event_notification_receivedDatePart": null,
+        "ccWelfare_event_notification_receivedTimePart": null,
+        "ccWelfare_event_notified_to_DVA_by_phoneDatePart": null,
+        "ccWelfare_event_notified_to_DVA_by_phoneTimePart": null,
+        "ccWelfare_event_report_provided_to_DVADatePart": null,
+        "ccWelfare_event_report_provided_to_DVATimePart": null,
+        "ccWelfare_events_notes": "",
+        "ccVP_PCN_signed_date": null,
+        "ccVP_PCN_client_refused": null,
+        "ccVP_Medical_disclosure_form_signed": null,
+        "ccVP_medical_disclosure_form_client_refused": null,
+        "ccVP_Referral_acknowledged_date": null,
+        "ccVP_Client_contact_date": null,
+        "ccVP_Assessment_due_date": null,
+        "ccVP_Assessment_date": null,
+        "ccVP_Assessment_plan_due_date": null,
+        "ccVP_Assessment_plan_upload_date": null,
+        "ccVP_Assessment_plan_extension_reason": 0,
+        "ccVP_DVA_consent_to_proceed_date": null,
+        "ccVP_PR_1_due_date": null,
+        "ccVP_PR_1_upload_date": null,
+        "ccVP_Plan_completion_due_date": null,
+        "ccVP_Plan_completion_actual_date": null,
+        "ccVP_Plan_extension_granted": null,
+        "ccVP_Closure_report_upload_date": null,
+        "ccVP_Plan_closing___AIR_not_required": null,
+        "ccVP_AIR_plan_extension_due_date": null,
+        "ccVP_AIR_plan_extension_upload_date": null,
+        "ccVP_AIR_plan_extension_reason": "",
+        "ccVP_AIR_notes": "",
+        "ccORAMS_Ax_Referral_Method": 0,
+        "ccORAMS_Ax_Agency": 0,
+        "ccORAMS_Ax_Region": 0,
+        "ccORAMS_Ax_Accepted_Date": null,
+        "ccORAMS_Ax_Assessment_Due_Date": null,
+        "ccORAMS_Ax_Assessment_Date": null,
+        "ccORAMS_Ax_Preliminary_Findings_Due_Date": null,
+        "ccORAMS_Ax_Preliminary_Findings_Date": null,
+        "ccORAMS_Ax_Assessment_Report_Due_Date": null,
+        "ccORAMS_Ax_Assessment_Report_Submitted_Date": null,
+        "ccORAMS_Ax_Referral_Acceptance_Exception_Reason": 0,
+        "ccORAMS_Ax_Referral_Acceptance_Exception_Comment": "",
+        "ccORAMS_Ax_Assessment_Completed_Exception_Reason": 0,
+        "ccORAMS_Ax_Assessment_Completed_Exception_Comment": "",
+        "ccORAMS_Ax_Report_Completed_Exception_Reason": 0,
+        "ccORAMS_Ax_Report_Completed_Exception_Comment": "",
+        "ccORAMS___Referral_Method": 0,
+        "ccORAMS___Agency": 0,
+        "ccORAMS___Region": 0,
+        "ccORAMS___Accepted_Date": null,
+        "ccORAMS___Draft_Program_Due_Date": null,
+        "ccORAMS___Draft_Program_Submitted_Date": null,
+        "ccORAMS___Program_Due_Date": null,
+        "ccORAMS___Program_Submitted_Date": null,
+        "ccORAMS___Program_Expiry_Date": null,
+        "ccORAMS___Program_Alteration_Due_Date": null,
+        "ccORAMS___Program_Alteration_Submitted_Date": null,
+        "ccORAMS___Service_Cessation_Date": null,
+        "ccORAMS___Cessation_Report_Due_Date": null,
+        "ccORAMS___Cessation_Report_Submitted_Date": null,
+        "ccORAMS___Referral_Acceptance_Exception_Reason": 0,
+        "ccORAMS___Referral_Acceptance_Exception_Comment": "",
+        "ccORAMS___Program_Completed_Exception_Reason": 0,
+        "ccORAMS___Program_Completed_Exception_Comment": "",
+        "ccORAMS___Cessation_Report_Completed_Exception_Reason": 0,
+        "ccORAMS___Cessation_Report_Completed_Exception_Comment": "",
+        "ccORAMS___RTW_Outcome": 0,
+        "ccORAMS_SS_Referral_Method": 0,
+        "ccORAMS_SS_Agency": 0,
+        "ccORAMS_SS_Region": 0,
+        "ccORAMS_SS_Accepted_Date": null,
+        "ccORAMS_SS_Assessment_Due_Date": null,
+        "ccORAMS_SS_Assessment_Date": null,
+        "ccORAMS_SS_Preliminary_Findings_Due_Date": null,
+        "ccORAMS_SS_Preliminary_Findings_Date": null,
+        "ccORAMS_SS_Report_Due_Date": null,
+        "ccORAMS_SS_Report_Submitted_Date": null,
+        "ccORAMS_SS_Referral_Acceptance_Exception_Reason": 0,
+        "ccORAMS_SS_Referral_Acceptance_Exception_Comment": "",
+        "ccORAMS_SS_Assessment_Completed_Exception_Reason": 0,
+        "ccORAMS_SS_Assessment_Completed_Exception_Comment": "",
+        "ccORAMS_SS_Report_Completed_Exception_Reason": 0,
+        "ccORAMS_SS_Report_Completed_Exception_Comment": "",
+        "ccClient_Contact_Due_Date": "2026-01-12T00:00:00",
+        "ccClient_Contact___Date": "2026-01-12T00:00:00",
+        "ccADL_Assessment_Due_Date": "2026-01-23T00:00:00",
+        "ccADL_Assessment_Date": "2026-01-19T00:00:00",
+        "ccADL_Assessment_Report_Due_Date": "2026-01-30T00:00:00",
+        "ccADL_Assessment_Report_Upload_Date": "2026-01-19T00:00:00",
+        "ccOngoing_File_Audit_Completion_Date": null,
+        "ccOngoing_File_Audit_Corrective_Actions_Feedback": "",
+        "ROP": []
+      }
+    ],
+    "/CaseContact/GetData": [
+      {
+        "ID": "0a01c9eb-80da-4647-9f57-0ffd185e543f",
+        "CaseNumber": 17688,
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "RoleIDList": [
+          {
+            "ID": "9498bfd4-eafc-4b8b-9c4f-1d3e2941ff0d",
+            "Description": "Bill To",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58ab4abf-a364-47c2-a850-df55a6c2d938",
+            "Description": "Carer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "ca7d1d7b-6ceb-4551-9d80-443048f2d2b8",
+            "Description": "CC",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9370f85d-9d3e-4776-8a87-21fcb627cf0b",
+            "Description": "Claim Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "f08cb92e-f6de-4d90-bd13-d3d9a8631325",
+            "Description": "Claims Team",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e0b51510-641b-4e1e-93fa-ce44929d2a14",
+            "Description": "Client",
+            "IsSelected": true,
+            "Details": null
+          },
+          {
+            "ID": "bdb8672b-7ed7-467e-b603-52358522e417",
+            "Description": "Daughter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58412091-fa90-4f27-92bd-b0dd8d59db75",
+            "Description": "ECM",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78eff316-b6f7-43ad-8754-4965ed2c0876",
+            "Description": "Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "107c3ad1-08fc-401e-92a2-a617c70a114b",
+            "Description": "Exercise Physiologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9f8b4f28-0570-413a-93c2-4e3631897fc4",
+            "Description": "Host Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "4f273e0a-02fc-4815-9c98-ed4eb3446577",
+            "Description": "INA Provider",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "7976540b-f312-4542-b975-31e41723dd3d",
+            "Description": "Insurer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cba607c8-b3f5-4a01-8e8d-e01a181ded4a",
+            "Description": "Interpreter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "afa5ecc7-6ea7-497b-9555-58a017542d1d",
+            "Description": "More Good Days",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "313b50fc-de46-4f68-8958-1360eee51f7b",
+            "Description": "Occupational Therapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c593bb7a-8e9d-4823-b2d5-7448c9a1afee",
+            "Description": "Original Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78b9fb35-d887-4ad6-9d94-4abbf44a78c8",
+            "Description": "Osteopath",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cc98721e-11fd-495b-98a8-9acb54d1d056",
+            "Description": "Parent",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "36fca3b2-4229-4304-acc5-f9a872e00628",
+            "Description": "Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "377459bf-6bab-43fc-a55c-6329eb57cae4",
+            "Description": "Physical Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "a278968c-cca9-4c2f-96e7-e0d82e5341b3",
+            "Description": "Physiotherapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e06236f8-d66c-4b80-b786-6e030757d8cc",
+            "Description": "Power Of Attorney",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "5c7fe2c6-61a6-4447-b446-d7fd677d4a5f",
+            "Description": "Psych Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78e22eba-344c-483e-9ff5-1a04c28444c5",
+            "Description": "Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c388c3fd-8328-4db3-9ac4-ab779c61a582",
+            "Description": "Psychologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e84255e9-ee68-4de3-8d9b-433e46e93638",
+            "Description": "QA",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b86192fd-f030-4de4-93c4-76d9c2aac7bf",
+            "Description": "Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e80f7dc5-4c01-4d70-8d2f-e11ddab57b68",
+            "Description": "Rehab Advisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b15d4f06-b2bf-4091-990c-c711bed57fd6",
+            "Description": "Relationship Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "de519167-07b2-4f06-9ac6-e678fa61ec54",
+            "Description": "Social Worker",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bda121e4-adfd-427f-bb69-b9ff5818f5d2",
+            "Description": "Solicitor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "adfa0352-fecd-4f79-ace4-934eb6624a36",
+            "Description": "Son",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "1b5bff20-f86c-48d9-a1fd-0e6cbea156d7",
+            "Description": "Spouse/Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "d4704b9c-8c72-460c-a2b4-ac46b14af80d",
+            "Description": "Supervisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "8dfc0eed-caee-48c4-acfd-0b8516cbf567",
+            "Description": "Supplier Activity Statement EMAIL TO",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "6788eeec-efec-4de1-9bb3-1ef6f51c1815",
+            "Description": "Third Party Contact",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "935138b1-27d4-4bb1-a3a8-c3a1bf948e68",
+            "Description": "Treating Doctor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9ce1798b-93d9-48ae-bf59-33b15e153e4c",
+            "Description": "Treating Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "785c22c8-1d95-4d14-9851-4277b32d2623",
+            "Description": "Treating Specialist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "51bd2254-2389-43bf-8ecf-9863ace7d46c",
+            "Description": "Workcom Admin",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cacb3b4c-21f2-42b9-aef8-da4c6bdb1930",
+            "Description": "Workplace",
+            "IsSelected": false,
+            "Details": null
+          }
+        ],
+        "ServiceID": "00000000-0000-0000-0000-000000000000",
+        "IsOnCCList": true,
+        "Notes": "",
+        "Reference": "",
+        "ContactInfo": {
+          "ID": "0ee50f21-4b83-42b4-8aa3-bac964320210",
+          "CompanyName": "",
+          "FirstName": "Barry John",
+          "LastName": "Anderson",
+          "TitleID": "071673e3-aeb5-4fac-8222-bb18d905a19f",
+          "Phone1": "",
+          "Phone2": "",
+          "Mobile": "0409 971 951",
+          "Fax": "",
+          "Email1": "brrava@bigpond.com",
+          "Email2": "",
+          "Street": "18 Kononda Ct ",
+          "Suburb": "Mooloolaba",
+          "PostalCode": "4557",
+          "RegionID": "3c5a26e1-5c50-435a-8d75-f7a859140224",
+          "CountryID": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "PositionID": "00000000-0000-0000-0000-000000000000",
+          "DepartmentID": "00000000-0000-0000-0000-000000000000",
+          "ProviderNumber": "",
+          "WebAddress": "",
+          "Gender": "M",
+          "GovernmentIDNumber": "",
+          "InterpreterRequired": false,
+          "Notes": "",
+          "DateOfBirth": "1951-05-26T00:00:00",
+          "Address2UsePrimary": true,
+          "Street2": "18 Kononda Ct ",
+          "Suburb2": "Mooloolaba",
+          "PostalCode2": "4557",
+          "RegionID2": "3c5a26e1-5c50-435a-8d75-f7a859140224",
+          "CountryID2": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "LastChanged": "AAAAAADYT54=",
+          "ROP": []
+        },
+        "CustomFields": {
+          "CaseNumber": 17688,
+          "Source": 2,
+          "DisplayOnCaseDetails": false,
+          "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+          "ROP": []
+        },
+        "InvoiceWarning": null,
+        "LastChanged": "AAAAAADYT6A=",
+        "ROP": [
+          "ContactInfo.Street2",
+          "ContactInfo.Suburb2",
+          "ContactInfo.PostalCode2",
+          "ContactInfo.RegionID2",
+          "ContactInfo.CountryID2"
+        ]
+      },
+      {
+        "ID": "b8153bb2-fda4-4e62-a0f2-73c2444240ed",
+        "CaseNumber": 17688,
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "RoleIDList": [
+          {
+            "ID": "9498bfd4-eafc-4b8b-9c4f-1d3e2941ff0d",
+            "Description": "Bill To",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58ab4abf-a364-47c2-a850-df55a6c2d938",
+            "Description": "Carer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "ca7d1d7b-6ceb-4551-9d80-443048f2d2b8",
+            "Description": "CC",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9370f85d-9d3e-4776-8a87-21fcb627cf0b",
+            "Description": "Claim Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "f08cb92e-f6de-4d90-bd13-d3d9a8631325",
+            "Description": "Claims Team",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e0b51510-641b-4e1e-93fa-ce44929d2a14",
+            "Description": "Client",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bdb8672b-7ed7-467e-b603-52358522e417",
+            "Description": "Daughter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58412091-fa90-4f27-92bd-b0dd8d59db75",
+            "Description": "ECM",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78eff316-b6f7-43ad-8754-4965ed2c0876",
+            "Description": "Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "107c3ad1-08fc-401e-92a2-a617c70a114b",
+            "Description": "Exercise Physiologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9f8b4f28-0570-413a-93c2-4e3631897fc4",
+            "Description": "Host Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "4f273e0a-02fc-4815-9c98-ed4eb3446577",
+            "Description": "INA Provider",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "7976540b-f312-4542-b975-31e41723dd3d",
+            "Description": "Insurer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cba607c8-b3f5-4a01-8e8d-e01a181ded4a",
+            "Description": "Interpreter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "afa5ecc7-6ea7-497b-9555-58a017542d1d",
+            "Description": "More Good Days",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "313b50fc-de46-4f68-8958-1360eee51f7b",
+            "Description": "Occupational Therapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c593bb7a-8e9d-4823-b2d5-7448c9a1afee",
+            "Description": "Original Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78b9fb35-d887-4ad6-9d94-4abbf44a78c8",
+            "Description": "Osteopath",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cc98721e-11fd-495b-98a8-9acb54d1d056",
+            "Description": "Parent",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "36fca3b2-4229-4304-acc5-f9a872e00628",
+            "Description": "Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "377459bf-6bab-43fc-a55c-6329eb57cae4",
+            "Description": "Physical Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "a278968c-cca9-4c2f-96e7-e0d82e5341b3",
+            "Description": "Physiotherapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e06236f8-d66c-4b80-b786-6e030757d8cc",
+            "Description": "Power Of Attorney",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "5c7fe2c6-61a6-4447-b446-d7fd677d4a5f",
+            "Description": "Psych Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78e22eba-344c-483e-9ff5-1a04c28444c5",
+            "Description": "Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c388c3fd-8328-4db3-9ac4-ab779c61a582",
+            "Description": "Psychologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e84255e9-ee68-4de3-8d9b-433e46e93638",
+            "Description": "QA",
+            "IsSelected": true,
+            "Details": null
+          },
+          {
+            "ID": "b86192fd-f030-4de4-93c4-76d9c2aac7bf",
+            "Description": "Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e80f7dc5-4c01-4d70-8d2f-e11ddab57b68",
+            "Description": "Rehab Advisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b15d4f06-b2bf-4091-990c-c711bed57fd6",
+            "Description": "Relationship Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "de519167-07b2-4f06-9ac6-e678fa61ec54",
+            "Description": "Social Worker",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bda121e4-adfd-427f-bb69-b9ff5818f5d2",
+            "Description": "Solicitor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "adfa0352-fecd-4f79-ace4-934eb6624a36",
+            "Description": "Son",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "1b5bff20-f86c-48d9-a1fd-0e6cbea156d7",
+            "Description": "Spouse/Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "d4704b9c-8c72-460c-a2b4-ac46b14af80d",
+            "Description": "Supervisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "8dfc0eed-caee-48c4-acfd-0b8516cbf567",
+            "Description": "Supplier Activity Statement EMAIL TO",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "6788eeec-efec-4de1-9bb3-1ef6f51c1815",
+            "Description": "Third Party Contact",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "935138b1-27d4-4bb1-a3a8-c3a1bf948e68",
+            "Description": "Treating Doctor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9ce1798b-93d9-48ae-bf59-33b15e153e4c",
+            "Description": "Treating Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "785c22c8-1d95-4d14-9851-4277b32d2623",
+            "Description": "Treating Specialist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "51bd2254-2389-43bf-8ecf-9863ace7d46c",
+            "Description": "Workcom Admin",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cacb3b4c-21f2-42b9-aef8-da4c6bdb1930",
+            "Description": "Workplace",
+            "IsSelected": false,
+            "Details": null
+          }
+        ],
+        "ServiceID": "00000000-0000-0000-0000-000000000000",
+        "IsOnCCList": true,
+        "Notes": "",
+        "Reference": "",
+        "ContactInfo": {
+          "ID": "931273c0-2dac-44e6-81d7-8a739a8988d8",
+          "CompanyName": "",
+          "FirstName": "DVA",
+          "LastName": "QA DVA  Team",
+          "TitleID": "00000000-0000-0000-0000-000000000000",
+          "Phone1": "",
+          "Phone2": "",
+          "Mobile": "",
+          "Fax": "",
+          "Email1": "dvaqa@workcom.com.au",
+          "Email2": "",
+          "Street": "34 Gaileo Street",
+          "Suburb": "Box Hill",
+          "PostalCode": "2765",
+          "RegionID": "13a6611e-8368-4d63-88d9-4e48214264d2",
+          "CountryID": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "PositionID": "00000000-0000-0000-0000-000000000000",
+          "DepartmentID": "00000000-0000-0000-0000-000000000000",
+          "ProviderNumber": "",
+          "WebAddress": "",
+          "Gender": "",
+          "GovernmentIDNumber": "",
+          "InterpreterRequired": false,
+          "Notes": "",
+          "DateOfBirth": null,
+          "Address2UsePrimary": true,
+          "Street2": "34 Gaileo Street",
+          "Suburb2": "Box Hill",
+          "PostalCode2": "2765",
+          "RegionID2": "13a6611e-8368-4d63-88d9-4e48214264d2",
+          "CountryID2": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "LastChanged": "AAAAAADsqR8=",
+          "ROP": []
+        },
+        "CustomFields": {
+          "CaseNumber": 17688,
+          "Source": 2,
+          "DisplayOnCaseDetails": false,
+          "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+          "ROP": []
+        },
+        "InvoiceWarning": null,
+        "LastChanged": "AAAAAADYT/g=",
+        "ROP": [
+          "ContactInfo.Street2",
+          "ContactInfo.Suburb2",
+          "ContactInfo.PostalCode2",
+          "ContactInfo.RegionID2",
+          "ContactInfo.CountryID2"
+        ]
+      },
+      {
+        "ID": "322df4a9-34b3-40e3-9efe-5be13de6de84",
+        "CaseNumber": 17688,
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "RoleIDList": [
+          {
+            "ID": "9498bfd4-eafc-4b8b-9c4f-1d3e2941ff0d",
+            "Description": "Bill To",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58ab4abf-a364-47c2-a850-df55a6c2d938",
+            "Description": "Carer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "ca7d1d7b-6ceb-4551-9d80-443048f2d2b8",
+            "Description": "CC",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9370f85d-9d3e-4776-8a87-21fcb627cf0b",
+            "Description": "Claim Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "f08cb92e-f6de-4d90-bd13-d3d9a8631325",
+            "Description": "Claims Team",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e0b51510-641b-4e1e-93fa-ce44929d2a14",
+            "Description": "Client",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bdb8672b-7ed7-467e-b603-52358522e417",
+            "Description": "Daughter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58412091-fa90-4f27-92bd-b0dd8d59db75",
+            "Description": "ECM",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78eff316-b6f7-43ad-8754-4965ed2c0876",
+            "Description": "Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "107c3ad1-08fc-401e-92a2-a617c70a114b",
+            "Description": "Exercise Physiologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9f8b4f28-0570-413a-93c2-4e3631897fc4",
+            "Description": "Host Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "4f273e0a-02fc-4815-9c98-ed4eb3446577",
+            "Description": "INA Provider",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "7976540b-f312-4542-b975-31e41723dd3d",
+            "Description": "Insurer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cba607c8-b3f5-4a01-8e8d-e01a181ded4a",
+            "Description": "Interpreter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "afa5ecc7-6ea7-497b-9555-58a017542d1d",
+            "Description": "More Good Days",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "313b50fc-de46-4f68-8958-1360eee51f7b",
+            "Description": "Occupational Therapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c593bb7a-8e9d-4823-b2d5-7448c9a1afee",
+            "Description": "Original Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78b9fb35-d887-4ad6-9d94-4abbf44a78c8",
+            "Description": "Osteopath",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cc98721e-11fd-495b-98a8-9acb54d1d056",
+            "Description": "Parent",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "36fca3b2-4229-4304-acc5-f9a872e00628",
+            "Description": "Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "377459bf-6bab-43fc-a55c-6329eb57cae4",
+            "Description": "Physical Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "a278968c-cca9-4c2f-96e7-e0d82e5341b3",
+            "Description": "Physiotherapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e06236f8-d66c-4b80-b786-6e030757d8cc",
+            "Description": "Power Of Attorney",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "5c7fe2c6-61a6-4447-b446-d7fd677d4a5f",
+            "Description": "Psych Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78e22eba-344c-483e-9ff5-1a04c28444c5",
+            "Description": "Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c388c3fd-8328-4db3-9ac4-ab779c61a582",
+            "Description": "Psychologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e84255e9-ee68-4de3-8d9b-433e46e93638",
+            "Description": "QA",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b86192fd-f030-4de4-93c4-76d9c2aac7bf",
+            "Description": "Referrer",
+            "IsSelected": true,
+            "Details": null
+          },
+          {
+            "ID": "e80f7dc5-4c01-4d70-8d2f-e11ddab57b68",
+            "Description": "Rehab Advisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b15d4f06-b2bf-4091-990c-c711bed57fd6",
+            "Description": "Relationship Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "de519167-07b2-4f06-9ac6-e678fa61ec54",
+            "Description": "Social Worker",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bda121e4-adfd-427f-bb69-b9ff5818f5d2",
+            "Description": "Solicitor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "adfa0352-fecd-4f79-ace4-934eb6624a36",
+            "Description": "Son",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "1b5bff20-f86c-48d9-a1fd-0e6cbea156d7",
+            "Description": "Spouse/Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "d4704b9c-8c72-460c-a2b4-ac46b14af80d",
+            "Description": "Supervisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "8dfc0eed-caee-48c4-acfd-0b8516cbf567",
+            "Description": "Supplier Activity Statement EMAIL TO",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "6788eeec-efec-4de1-9bb3-1ef6f51c1815",
+            "Description": "Third Party Contact",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "935138b1-27d4-4bb1-a3a8-c3a1bf948e68",
+            "Description": "Treating Doctor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9ce1798b-93d9-48ae-bf59-33b15e153e4c",
+            "Description": "Treating Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "785c22c8-1d95-4d14-9851-4277b32d2623",
+            "Description": "Treating Specialist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "51bd2254-2389-43bf-8ecf-9863ace7d46c",
+            "Description": "Workcom Admin",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cacb3b4c-21f2-42b9-aef8-da4c6bdb1930",
+            "Description": "Workplace",
+            "IsSelected": false,
+            "Details": null
+          }
+        ],
+        "ServiceID": "00000000-0000-0000-0000-000000000000",
+        "IsOnCCList": true,
+        "Notes": "",
+        "Reference": "",
+        "ContactInfo": {
+          "ID": "aad26fd5-4f71-4ea5-8419-626047a5e2a6",
+          "CompanyName": "DVA - Department of Veterans' Affairs",
+          "FirstName": "Tanja",
+          "LastName": "62213033",
+          "TitleID": "00000000-0000-0000-0000-000000000000",
+          "Phone1": "1800 838 372",
+          "Phone2": "",
+          "Mobile": "",
+          "Fax": "",
+          "Email1": "hhs@dva.gov.au",
+          "Email2": "",
+          "Street": "",
+          "Suburb": "Adelaide",
+          "PostalCode": "",
+          "RegionID": "085bdaec-937c-4d58-98b2-5be7f97860c8",
+          "CountryID": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "PositionID": "3debf531-ae3f-4914-b87b-8413aecd64bb",
+          "DepartmentID": "00000000-0000-0000-0000-000000000000",
+          "ProviderNumber": "",
+          "WebAddress": "www.dva.gov.au",
+          "Gender": "",
+          "GovernmentIDNumber": "",
+          "InterpreterRequired": false,
+          "Notes": "",
+          "DateOfBirth": null,
+          "Address2UsePrimary": false,
+          "Street2": "",
+          "Suburb2": "Adelaide",
+          "PostalCode2": "",
+          "RegionID2": "085bdaec-937c-4d58-98b2-5be7f97860c8",
+          "CountryID2": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "LastChanged": "AAAAAADYUBE=",
+          "ROP": []
+        },
+        "CustomFields": {
+          "CaseNumber": 17688,
+          "Source": 2,
+          "DisplayOnCaseDetails": false,
+          "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+          "ROP": []
+        },
+        "InvoiceWarning": null,
+        "LastChanged": "AAAAAADYUA8=",
+        "ROP": []
+      },
+      {
+        "ID": "82262d98-fc7a-47fc-8a6d-bf8203a5cc04",
+        "CaseNumber": 17688,
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "RoleIDList": [
+          {
+            "ID": "9498bfd4-eafc-4b8b-9c4f-1d3e2941ff0d",
+            "Description": "Bill To",
+            "IsSelected": true,
+            "Details": null
+          },
+          {
+            "ID": "58ab4abf-a364-47c2-a850-df55a6c2d938",
+            "Description": "Carer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "ca7d1d7b-6ceb-4551-9d80-443048f2d2b8",
+            "Description": "CC",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9370f85d-9d3e-4776-8a87-21fcb627cf0b",
+            "Description": "Claim Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "f08cb92e-f6de-4d90-bd13-d3d9a8631325",
+            "Description": "Claims Team",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e0b51510-641b-4e1e-93fa-ce44929d2a14",
+            "Description": "Client",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bdb8672b-7ed7-467e-b603-52358522e417",
+            "Description": "Daughter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58412091-fa90-4f27-92bd-b0dd8d59db75",
+            "Description": "ECM",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78eff316-b6f7-43ad-8754-4965ed2c0876",
+            "Description": "Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "107c3ad1-08fc-401e-92a2-a617c70a114b",
+            "Description": "Exercise Physiologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9f8b4f28-0570-413a-93c2-4e3631897fc4",
+            "Description": "Host Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "4f273e0a-02fc-4815-9c98-ed4eb3446577",
+            "Description": "INA Provider",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "7976540b-f312-4542-b975-31e41723dd3d",
+            "Description": "Insurer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cba607c8-b3f5-4a01-8e8d-e01a181ded4a",
+            "Description": "Interpreter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "afa5ecc7-6ea7-497b-9555-58a017542d1d",
+            "Description": "More Good Days",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "313b50fc-de46-4f68-8958-1360eee51f7b",
+            "Description": "Occupational Therapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c593bb7a-8e9d-4823-b2d5-7448c9a1afee",
+            "Description": "Original Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78b9fb35-d887-4ad6-9d94-4abbf44a78c8",
+            "Description": "Osteopath",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cc98721e-11fd-495b-98a8-9acb54d1d056",
+            "Description": "Parent",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "36fca3b2-4229-4304-acc5-f9a872e00628",
+            "Description": "Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "377459bf-6bab-43fc-a55c-6329eb57cae4",
+            "Description": "Physical Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "a278968c-cca9-4c2f-96e7-e0d82e5341b3",
+            "Description": "Physiotherapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e06236f8-d66c-4b80-b786-6e030757d8cc",
+            "Description": "Power Of Attorney",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "5c7fe2c6-61a6-4447-b446-d7fd677d4a5f",
+            "Description": "Psych Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78e22eba-344c-483e-9ff5-1a04c28444c5",
+            "Description": "Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c388c3fd-8328-4db3-9ac4-ab779c61a582",
+            "Description": "Psychologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e84255e9-ee68-4de3-8d9b-433e46e93638",
+            "Description": "QA",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b86192fd-f030-4de4-93c4-76d9c2aac7bf",
+            "Description": "Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e80f7dc5-4c01-4d70-8d2f-e11ddab57b68",
+            "Description": "Rehab Advisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b15d4f06-b2bf-4091-990c-c711bed57fd6",
+            "Description": "Relationship Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "de519167-07b2-4f06-9ac6-e678fa61ec54",
+            "Description": "Social Worker",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bda121e4-adfd-427f-bb69-b9ff5818f5d2",
+            "Description": "Solicitor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "adfa0352-fecd-4f79-ace4-934eb6624a36",
+            "Description": "Son",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "1b5bff20-f86c-48d9-a1fd-0e6cbea156d7",
+            "Description": "Spouse/Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "d4704b9c-8c72-460c-a2b4-ac46b14af80d",
+            "Description": "Supervisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "8dfc0eed-caee-48c4-acfd-0b8516cbf567",
+            "Description": "Supplier Activity Statement EMAIL TO",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "6788eeec-efec-4de1-9bb3-1ef6f51c1815",
+            "Description": "Third Party Contact",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "935138b1-27d4-4bb1-a3a8-c3a1bf948e68",
+            "Description": "Treating Doctor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9ce1798b-93d9-48ae-bf59-33b15e153e4c",
+            "Description": "Treating Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "785c22c8-1d95-4d14-9851-4277b32d2623",
+            "Description": "Treating Specialist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "51bd2254-2389-43bf-8ecf-9863ace7d46c",
+            "Description": "Workcom Admin",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cacb3b4c-21f2-42b9-aef8-da4c6bdb1930",
+            "Description": "Workplace",
+            "IsSelected": false,
+            "Details": null
+          }
+        ],
+        "ServiceID": "00000000-0000-0000-0000-000000000000",
+        "IsOnCCList": true,
+        "Notes": "",
+        "Reference": "",
+        "ContactInfo": {
+          "ID": "c970e017-3cd1-4776-8a5e-f97596848a03",
+          "CompanyName": "DVA - Department of Veterans' Affairs",
+          "FirstName": "DVA",
+          "LastName": "Accounts",
+          "TitleID": "00000000-0000-0000-0000-000000000000",
+          "Phone1": "1800 550457 option 4",
+          "Phone2": "1800 838 372",
+          "Mobile": "",
+          "Fax": "",
+          "Email1": "admin@workcom.com.au",
+          "Email2": "HHS.accounts@dva.cgov.au",
+          "Street": "480 Queen Street",
+          "Suburb": "Brisbane",
+          "PostalCode": "4000",
+          "RegionID": "3c5a26e1-5c50-435a-8d75-f7a859140224",
+          "CountryID": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "PositionID": "00000000-0000-0000-0000-000000000000",
+          "DepartmentID": "00000000-0000-0000-0000-000000000000",
+          "ProviderNumber": "",
+          "WebAddress": "www.dva.gov.au",
+          "Gender": "M",
+          "GovernmentIDNumber": "",
+          "InterpreterRequired": false,
+          "Notes": "upload invoice through portal\nhttps://connect.dva.gov.au/provider/upload\n",
+          "DateOfBirth": "1957-04-09T00:00:00",
+          "Address2UsePrimary": true,
+          "Street2": "480 Queen Street",
+          "Suburb2": "Brisbane",
+          "PostalCode2": "4000",
+          "RegionID2": "3c5a26e1-5c50-435a-8d75-f7a859140224",
+          "CountryID2": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "LastChanged": "AAAAAADsqS0=",
+          "ROP": []
+        },
+        "CustomFields": {
+          "CaseNumber": 17688,
+          "Source": 2,
+          "DisplayOnCaseDetails": false,
+          "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+          "ROP": []
+        },
+        "InvoiceWarning": null,
+        "LastChanged": "AAAAAADYUBc=",
+        "ROP": [
+          "ContactInfo.Street2",
+          "ContactInfo.Suburb2",
+          "ContactInfo.PostalCode2",
+          "ContactInfo.RegionID2",
+          "ContactInfo.CountryID2"
+        ]
+      },
+      {
+        "ID": "ee242a4b-2eee-40e8-9c28-a7c55d5ef7a6",
+        "CaseNumber": 17688,
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "RoleIDList": [
+          {
+            "ID": "9498bfd4-eafc-4b8b-9c4f-1d3e2941ff0d",
+            "Description": "Bill To",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58ab4abf-a364-47c2-a850-df55a6c2d938",
+            "Description": "Carer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "ca7d1d7b-6ceb-4551-9d80-443048f2d2b8",
+            "Description": "CC",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9370f85d-9d3e-4776-8a87-21fcb627cf0b",
+            "Description": "Claim Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "f08cb92e-f6de-4d90-bd13-d3d9a8631325",
+            "Description": "Claims Team",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e0b51510-641b-4e1e-93fa-ce44929d2a14",
+            "Description": "Client",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bdb8672b-7ed7-467e-b603-52358522e417",
+            "Description": "Daughter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58412091-fa90-4f27-92bd-b0dd8d59db75",
+            "Description": "ECM",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78eff316-b6f7-43ad-8754-4965ed2c0876",
+            "Description": "Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "107c3ad1-08fc-401e-92a2-a617c70a114b",
+            "Description": "Exercise Physiologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9f8b4f28-0570-413a-93c2-4e3631897fc4",
+            "Description": "Host Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "4f273e0a-02fc-4815-9c98-ed4eb3446577",
+            "Description": "INA Provider",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "7976540b-f312-4542-b975-31e41723dd3d",
+            "Description": "Insurer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cba607c8-b3f5-4a01-8e8d-e01a181ded4a",
+            "Description": "Interpreter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "afa5ecc7-6ea7-497b-9555-58a017542d1d",
+            "Description": "More Good Days",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "313b50fc-de46-4f68-8958-1360eee51f7b",
+            "Description": "Occupational Therapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c593bb7a-8e9d-4823-b2d5-7448c9a1afee",
+            "Description": "Original Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78b9fb35-d887-4ad6-9d94-4abbf44a78c8",
+            "Description": "Osteopath",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cc98721e-11fd-495b-98a8-9acb54d1d056",
+            "Description": "Parent",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "36fca3b2-4229-4304-acc5-f9a872e00628",
+            "Description": "Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "377459bf-6bab-43fc-a55c-6329eb57cae4",
+            "Description": "Physical Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "a278968c-cca9-4c2f-96e7-e0d82e5341b3",
+            "Description": "Physiotherapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e06236f8-d66c-4b80-b786-6e030757d8cc",
+            "Description": "Power Of Attorney",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "5c7fe2c6-61a6-4447-b446-d7fd677d4a5f",
+            "Description": "Psych Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78e22eba-344c-483e-9ff5-1a04c28444c5",
+            "Description": "Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c388c3fd-8328-4db3-9ac4-ab779c61a582",
+            "Description": "Psychologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e84255e9-ee68-4de3-8d9b-433e46e93638",
+            "Description": "QA",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b86192fd-f030-4de4-93c4-76d9c2aac7bf",
+            "Description": "Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e80f7dc5-4c01-4d70-8d2f-e11ddab57b68",
+            "Description": "Rehab Advisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b15d4f06-b2bf-4091-990c-c711bed57fd6",
+            "Description": "Relationship Manager",
+            "IsSelected": true,
+            "Details": null
+          },
+          {
+            "ID": "de519167-07b2-4f06-9ac6-e678fa61ec54",
+            "Description": "Social Worker",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bda121e4-adfd-427f-bb69-b9ff5818f5d2",
+            "Description": "Solicitor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "adfa0352-fecd-4f79-ace4-934eb6624a36",
+            "Description": "Son",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "1b5bff20-f86c-48d9-a1fd-0e6cbea156d7",
+            "Description": "Spouse/Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "d4704b9c-8c72-460c-a2b4-ac46b14af80d",
+            "Description": "Supervisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "8dfc0eed-caee-48c4-acfd-0b8516cbf567",
+            "Description": "Supplier Activity Statement EMAIL TO",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "6788eeec-efec-4de1-9bb3-1ef6f51c1815",
+            "Description": "Third Party Contact",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "935138b1-27d4-4bb1-a3a8-c3a1bf948e68",
+            "Description": "Treating Doctor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9ce1798b-93d9-48ae-bf59-33b15e153e4c",
+            "Description": "Treating Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "785c22c8-1d95-4d14-9851-4277b32d2623",
+            "Description": "Treating Specialist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "51bd2254-2389-43bf-8ecf-9863ace7d46c",
+            "Description": "Workcom Admin",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cacb3b4c-21f2-42b9-aef8-da4c6bdb1930",
+            "Description": "Workplace",
+            "IsSelected": false,
+            "Details": null
+          }
+        ],
+        "ServiceID": "00000000-0000-0000-0000-000000000000",
+        "IsOnCCList": true,
+        "Notes": "",
+        "Reference": "",
+        "ContactInfo": {
+          "ID": "e1c043cc-d0a0-4035-b62b-7f64d03fdcbc",
+          "CompanyName": "Workcom",
+          "FirstName": "Melissa",
+          "LastName": "Barnes-Daysh",
+          "TitleID": "00000000-0000-0000-0000-000000000000",
+          "Phone1": "0412 150 368",
+          "Phone2": "",
+          "Mobile": "0412 150 368",
+          "Fax": "",
+          "Email1": "melissa.barnes-daysh@workcom.com.au",
+          "Email2": "",
+          "Street": "20 Innovation Parkway",
+          "Suburb": "Birtinya",
+          "PostalCode": "4551",
+          "RegionID": "3c5a26e1-5c50-435a-8d75-f7a859140224",
+          "CountryID": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "PositionID": "6a79fcb3-455d-4f46-8900-93ea8bb7c74a",
+          "DepartmentID": "00000000-0000-0000-0000-000000000000",
+          "ProviderNumber": "",
+          "WebAddress": "",
+          "Gender": "",
+          "GovernmentIDNumber": "",
+          "InterpreterRequired": false,
+          "Notes": "",
+          "DateOfBirth": null,
+          "Address2UsePrimary": true,
+          "Street2": "20 Innovation Parkway",
+          "Suburb2": "Birtinya",
+          "PostalCode2": "4551",
+          "RegionID2": "3c5a26e1-5c50-435a-8d75-f7a859140224",
+          "CountryID2": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "LastChanged": "AAAAAADsqRs=",
+          "ROP": []
+        },
+        "CustomFields": {
+          "CaseNumber": 17688,
+          "Source": 2,
+          "DisplayOnCaseDetails": false,
+          "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+          "ROP": []
+        },
+        "InvoiceWarning": null,
+        "LastChanged": "AAAAAADYT+o=",
+        "ROP": [
+          "ContactInfo.Street2",
+          "ContactInfo.Suburb2",
+          "ContactInfo.PostalCode2",
+          "ContactInfo.RegionID2",
+          "ContactInfo.CountryID2"
+        ]
+      },
+      {
+        "ID": "f5a0553d-dbc5-4412-83b5-05f15fb605f8",
+        "CaseNumber": 17688,
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "RoleIDList": [
+          {
+            "ID": "9498bfd4-eafc-4b8b-9c4f-1d3e2941ff0d",
+            "Description": "Bill To",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58ab4abf-a364-47c2-a850-df55a6c2d938",
+            "Description": "Carer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "ca7d1d7b-6ceb-4551-9d80-443048f2d2b8",
+            "Description": "CC",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9370f85d-9d3e-4776-8a87-21fcb627cf0b",
+            "Description": "Claim Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "f08cb92e-f6de-4d90-bd13-d3d9a8631325",
+            "Description": "Claims Team",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e0b51510-641b-4e1e-93fa-ce44929d2a14",
+            "Description": "Client",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bdb8672b-7ed7-467e-b603-52358522e417",
+            "Description": "Daughter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58412091-fa90-4f27-92bd-b0dd8d59db75",
+            "Description": "ECM",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78eff316-b6f7-43ad-8754-4965ed2c0876",
+            "Description": "Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "107c3ad1-08fc-401e-92a2-a617c70a114b",
+            "Description": "Exercise Physiologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9f8b4f28-0570-413a-93c2-4e3631897fc4",
+            "Description": "Host Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "4f273e0a-02fc-4815-9c98-ed4eb3446577",
+            "Description": "INA Provider",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "7976540b-f312-4542-b975-31e41723dd3d",
+            "Description": "Insurer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cba607c8-b3f5-4a01-8e8d-e01a181ded4a",
+            "Description": "Interpreter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "afa5ecc7-6ea7-497b-9555-58a017542d1d",
+            "Description": "More Good Days",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "313b50fc-de46-4f68-8958-1360eee51f7b",
+            "Description": "Occupational Therapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c593bb7a-8e9d-4823-b2d5-7448c9a1afee",
+            "Description": "Original Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78b9fb35-d887-4ad6-9d94-4abbf44a78c8",
+            "Description": "Osteopath",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cc98721e-11fd-495b-98a8-9acb54d1d056",
+            "Description": "Parent",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "36fca3b2-4229-4304-acc5-f9a872e00628",
+            "Description": "Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "377459bf-6bab-43fc-a55c-6329eb57cae4",
+            "Description": "Physical Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "a278968c-cca9-4c2f-96e7-e0d82e5341b3",
+            "Description": "Physiotherapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e06236f8-d66c-4b80-b786-6e030757d8cc",
+            "Description": "Power Of Attorney",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "5c7fe2c6-61a6-4447-b446-d7fd677d4a5f",
+            "Description": "Psych Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78e22eba-344c-483e-9ff5-1a04c28444c5",
+            "Description": "Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c388c3fd-8328-4db3-9ac4-ab779c61a582",
+            "Description": "Psychologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e84255e9-ee68-4de3-8d9b-433e46e93638",
+            "Description": "QA",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b86192fd-f030-4de4-93c4-76d9c2aac7bf",
+            "Description": "Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e80f7dc5-4c01-4d70-8d2f-e11ddab57b68",
+            "Description": "Rehab Advisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b15d4f06-b2bf-4091-990c-c711bed57fd6",
+            "Description": "Relationship Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "de519167-07b2-4f06-9ac6-e678fa61ec54",
+            "Description": "Social Worker",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bda121e4-adfd-427f-bb69-b9ff5818f5d2",
+            "Description": "Solicitor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "adfa0352-fecd-4f79-ace4-934eb6624a36",
+            "Description": "Son",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "1b5bff20-f86c-48d9-a1fd-0e6cbea156d7",
+            "Description": "Spouse/Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "d4704b9c-8c72-460c-a2b4-ac46b14af80d",
+            "Description": "Supervisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "8dfc0eed-caee-48c4-acfd-0b8516cbf567",
+            "Description": "Supplier Activity Statement EMAIL TO",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "6788eeec-efec-4de1-9bb3-1ef6f51c1815",
+            "Description": "Third Party Contact",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "935138b1-27d4-4bb1-a3a8-c3a1bf948e68",
+            "Description": "Treating Doctor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9ce1798b-93d9-48ae-bf59-33b15e153e4c",
+            "Description": "Treating Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "785c22c8-1d95-4d14-9851-4277b32d2623",
+            "Description": "Treating Specialist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "51bd2254-2389-43bf-8ecf-9863ace7d46c",
+            "Description": "Workcom Admin",
+            "IsSelected": true,
+            "Details": null
+          },
+          {
+            "ID": "cacb3b4c-21f2-42b9-aef8-da4c6bdb1930",
+            "Description": "Workplace",
+            "IsSelected": false,
+            "Details": null
+          }
+        ],
+        "ServiceID": "00000000-0000-0000-0000-000000000000",
+        "IsOnCCList": true,
+        "Notes": "",
+        "Reference": "",
+        "ContactInfo": {
+          "ID": "fcce2102-2f29-466a-906e-a2d95690901b",
+          "CompanyName": "Workcom",
+          "FirstName": "Admin",
+          "LastName": "Legends",
+          "TitleID": "00000000-0000-0000-0000-000000000000",
+          "Phone1": "(07) 5491 6490",
+          "Phone2": "",
+          "Mobile": "",
+          "Fax": "",
+          "Email1": "admin@workcom.com.au",
+          "Email2": "",
+          "Street": "1/20 Innovation Parkway",
+          "Suburb": "Birtinya",
+          "PostalCode": "4575",
+          "RegionID": "3c5a26e1-5c50-435a-8d75-f7a859140224",
+          "CountryID": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "PositionID": "1fe28d9b-097d-4a8b-8cf3-14ecfbac4cb8",
+          "DepartmentID": "00000000-0000-0000-0000-000000000000",
+          "ProviderNumber": "",
+          "WebAddress": "",
+          "Gender": "F",
+          "GovernmentIDNumber": "",
+          "InterpreterRequired": false,
+          "Notes": "",
+          "DateOfBirth": null,
+          "Address2UsePrimary": false,
+          "Street2": "1/20 Innovation Parkway",
+          "Suburb2": "Birtinya",
+          "PostalCode2": "4575",
+          "RegionID2": "3c5a26e1-5c50-435a-8d75-f7a859140224",
+          "CountryID2": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "LastChanged": "AAAAAADswN8=",
+          "ROP": []
+        },
+        "CustomFields": {
+          "CaseNumber": 17688,
+          "Source": 2,
+          "DisplayOnCaseDetails": false,
+          "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+          "ROP": []
+        },
+        "InvoiceWarning": null,
+        "LastChanged": "AAAAAADYUAM=",
+        "ROP": []
+      }
+    ],
+    "referrerContact": [
+      {
+        "ID": "322df4a9-34b3-40e3-9efe-5be13de6de84",
+        "CaseNumber": 17688,
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "RoleIDList": [
+          {
+            "ID": "9498bfd4-eafc-4b8b-9c4f-1d3e2941ff0d",
+            "Description": "Bill To",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58ab4abf-a364-47c2-a850-df55a6c2d938",
+            "Description": "Carer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "ca7d1d7b-6ceb-4551-9d80-443048f2d2b8",
+            "Description": "CC",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9370f85d-9d3e-4776-8a87-21fcb627cf0b",
+            "Description": "Claim Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "f08cb92e-f6de-4d90-bd13-d3d9a8631325",
+            "Description": "Claims Team",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e0b51510-641b-4e1e-93fa-ce44929d2a14",
+            "Description": "Client",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bdb8672b-7ed7-467e-b603-52358522e417",
+            "Description": "Daughter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "58412091-fa90-4f27-92bd-b0dd8d59db75",
+            "Description": "ECM",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78eff316-b6f7-43ad-8754-4965ed2c0876",
+            "Description": "Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "107c3ad1-08fc-401e-92a2-a617c70a114b",
+            "Description": "Exercise Physiologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9f8b4f28-0570-413a-93c2-4e3631897fc4",
+            "Description": "Host Employer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "4f273e0a-02fc-4815-9c98-ed4eb3446577",
+            "Description": "INA Provider",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "7976540b-f312-4542-b975-31e41723dd3d",
+            "Description": "Insurer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cba607c8-b3f5-4a01-8e8d-e01a181ded4a",
+            "Description": "Interpreter",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "afa5ecc7-6ea7-497b-9555-58a017542d1d",
+            "Description": "More Good Days",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "313b50fc-de46-4f68-8958-1360eee51f7b",
+            "Description": "Occupational Therapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c593bb7a-8e9d-4823-b2d5-7448c9a1afee",
+            "Description": "Original Referrer",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78b9fb35-d887-4ad6-9d94-4abbf44a78c8",
+            "Description": "Osteopath",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cc98721e-11fd-495b-98a8-9acb54d1d056",
+            "Description": "Parent",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "36fca3b2-4229-4304-acc5-f9a872e00628",
+            "Description": "Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "377459bf-6bab-43fc-a55c-6329eb57cae4",
+            "Description": "Physical Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "a278968c-cca9-4c2f-96e7-e0d82e5341b3",
+            "Description": "Physiotherapist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e06236f8-d66c-4b80-b786-6e030757d8cc",
+            "Description": "Power Of Attorney",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "5c7fe2c6-61a6-4447-b446-d7fd677d4a5f",
+            "Description": "Psych Rehab Consultant",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "78e22eba-344c-483e-9ff5-1a04c28444c5",
+            "Description": "Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "c388c3fd-8328-4db3-9ac4-ab779c61a582",
+            "Description": "Psychologist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "e84255e9-ee68-4de3-8d9b-433e46e93638",
+            "Description": "QA",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b86192fd-f030-4de4-93c4-76d9c2aac7bf",
+            "Description": "Referrer",
+            "IsSelected": true,
+            "Details": null
+          },
+          {
+            "ID": "e80f7dc5-4c01-4d70-8d2f-e11ddab57b68",
+            "Description": "Rehab Advisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "b15d4f06-b2bf-4091-990c-c711bed57fd6",
+            "Description": "Relationship Manager",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "de519167-07b2-4f06-9ac6-e678fa61ec54",
+            "Description": "Social Worker",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "bda121e4-adfd-427f-bb69-b9ff5818f5d2",
+            "Description": "Solicitor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "adfa0352-fecd-4f79-ace4-934eb6624a36",
+            "Description": "Son",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "1b5bff20-f86c-48d9-a1fd-0e6cbea156d7",
+            "Description": "Spouse/Partner",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "d4704b9c-8c72-460c-a2b4-ac46b14af80d",
+            "Description": "Supervisor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "8dfc0eed-caee-48c4-acfd-0b8516cbf567",
+            "Description": "Supplier Activity Statement EMAIL TO",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "6788eeec-efec-4de1-9bb3-1ef6f51c1815",
+            "Description": "Third Party Contact",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "935138b1-27d4-4bb1-a3a8-c3a1bf948e68",
+            "Description": "Treating Doctor",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "9ce1798b-93d9-48ae-bf59-33b15e153e4c",
+            "Description": "Treating Psychiatrist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "785c22c8-1d95-4d14-9851-4277b32d2623",
+            "Description": "Treating Specialist",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "51bd2254-2389-43bf-8ecf-9863ace7d46c",
+            "Description": "Workcom Admin",
+            "IsSelected": false,
+            "Details": null
+          },
+          {
+            "ID": "cacb3b4c-21f2-42b9-aef8-da4c6bdb1930",
+            "Description": "Workplace",
+            "IsSelected": false,
+            "Details": null
+          }
+        ],
+        "ServiceID": "00000000-0000-0000-0000-000000000000",
+        "IsOnCCList": true,
+        "Notes": "",
+        "Reference": "",
+        "ContactInfo": {
+          "ID": "aad26fd5-4f71-4ea5-8419-626047a5e2a6",
+          "CompanyName": "DVA - Department of Veterans' Affairs",
+          "FirstName": "Tanja",
+          "LastName": "62213033",
+          "TitleID": "00000000-0000-0000-0000-000000000000",
+          "Phone1": "1800 838 372",
+          "Phone2": "",
+          "Mobile": "",
+          "Fax": "",
+          "Email1": "hhs@dva.gov.au",
+          "Email2": "",
+          "Street": "",
+          "Suburb": "Adelaide",
+          "PostalCode": "",
+          "RegionID": "085bdaec-937c-4d58-98b2-5be7f97860c8",
+          "CountryID": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "PositionID": "3debf531-ae3f-4914-b87b-8413aecd64bb",
+          "DepartmentID": "00000000-0000-0000-0000-000000000000",
+          "ProviderNumber": "",
+          "WebAddress": "www.dva.gov.au",
+          "Gender": "",
+          "GovernmentIDNumber": "",
+          "InterpreterRequired": false,
+          "Notes": "",
+          "DateOfBirth": null,
+          "Address2UsePrimary": false,
+          "Street2": "",
+          "Suburb2": "Adelaide",
+          "PostalCode2": "",
+          "RegionID2": "085bdaec-937c-4d58-98b2-5be7f97860c8",
+          "CountryID2": "fbae0fad-1bc0-449f-acdb-87ec253e18a9",
+          "LastChanged": "AAAAAADYUBE=",
+          "ROP": []
+        },
+        "CustomFields": {
+          "CaseNumber": 17688,
+          "Source": 2,
+          "DisplayOnCaseDetails": false,
+          "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+          "ROP": []
+        },
+        "InvoiceWarning": null,
+        "LastChanged": "AAAAAADYUA8=",
+        "ROP": []
+      }
+    ],
+    "/CaseEstimate/_List": [
+      [
+        {
+          "ID": "60c81241-eeba-4beb-afef-efd2312c2516",
+          "Description": "DVA - ADL Assessment",
+          "DateCreated": "2026-01-09T15:23:38.263",
+          "DateApproved": "",
+          "TotalCharge": 2497.014,
+          "IsCurrent": true,
+          "StartDate": "2026-01-09T00:00:00",
+          "FinishDate": null,
+          "AmountLeft": 1493.944,
+          "AmountLeftExTax": 1358.1227,
+          "Category": "DVA Assessment Services",
+          "Notes": "",
+          "Status": 0,
+          "TotalBilled": 1003.07,
+          "TotalBilledTax": 91.18,
+          "TotalBilledExTax": 911.89,
+          "TotalChargeExTax": 2270.0127,
+          "TotalChargeTax": 227.0013
+        }
+      ]
+    ],
+    "/CaseCost/_List": [
+      [
+        {
+          "ID": "923812ab-4418-4969-b710-17984b85d122",
+          "Invoiced": true,
+          "LinkedToEstimate": true,
+          "ReferenceDate": "2026-01-12T00:00:00",
+          "Description": "Assessment Services",
+          "EmployeeName": "Leesa Tuffnell",
+          "Quantity": 0.19999999999999998,
+          "TotalCharge": 42.68,
+          "Billable": true,
+          "CostType": 0,
+          "ChargeCode": "",
+          "TaxAmount": 3.88,
+          "ExTaxAmount": 38.8,
+          "UnitChargeAmt": 213.42,
+          "Notes": "Initial Contact – Home Assessment",
+          "ObjectiveDescription": "",
+          "ActivityDescription": "Assessment Services",
+          "GoalDescription": "DVA - ADL Assessment",
+          "Duration": 0.19999999999999998,
+          "Locked": false,
+          "LinkedToAppointment": false,
+          "AppointmentTitle": ""
+        },
+        {
+          "ID": "9674ecbb-ddae-4534-8838-eca2610d87a1",
+          "Invoiced": true,
+          "LinkedToEstimate": true,
+          "ReferenceDate": "2026-01-19T00:00:00",
+          "Description": "Assessment Services",
+          "EmployeeName": "Leesa Tuffnell",
+          "Quantity": 1,
+          "TotalCharge": 213.42,
+          "Billable": true,
+          "CostType": 0,
+          "ChargeCode": "",
+          "TaxAmount": 19.4,
+          "ExTaxAmount": 194.02,
+          "UnitChargeAmt": 213.42,
+          "Notes": "Return travel from Mooloolah to Mooloolaba",
+          "ObjectiveDescription": "",
+          "ActivityDescription": "Assessment Services",
+          "GoalDescription": "DVA - ADL Assessment",
+          "Duration": 1,
+          "Locked": false,
+          "LinkedToAppointment": false,
+          "AppointmentTitle": ""
+        },
+        {
+          "ID": "172a597c-0a41-4bec-a5a9-319b1fc786e2",
+          "Invoiced": true,
+          "LinkedToEstimate": true,
+          "ReferenceDate": "2026-01-19T00:00:00",
+          "Description": "Assessment Services",
+          "EmployeeName": "Leesa Tuffnell",
+          "Quantity": 1.5,
+          "TotalCharge": 320.13,
+          "Billable": true,
+          "CostType": 0,
+          "ChargeCode": "",
+          "TaxAmount": 29.1,
+          "ExTaxAmount": 291.03,
+          "UnitChargeAmt": 213.42,
+          "Notes": "Assessment",
+          "ObjectiveDescription": "",
+          "ActivityDescription": "Assessment Services",
+          "GoalDescription": "DVA - ADL Assessment",
+          "Duration": 1.5,
+          "Locked": false,
+          "LinkedToAppointment": false,
+          "AppointmentTitle": ""
+        },
+        {
+          "ID": "e8405e2e-63eb-4745-bd1b-549ed94cb73f",
+          "Invoiced": true,
+          "LinkedToEstimate": true,
+          "ReferenceDate": "2026-01-19T00:00:00",
+          "Description": "Assessment Services",
+          "EmployeeName": "Leesa Tuffnell",
+          "Quantity": 2,
+          "TotalCharge": 426.84,
+          "Billable": true,
+          "CostType": 0,
+          "ChargeCode": "",
+          "TaxAmount": 38.8,
+          "ExTaxAmount": 388.04,
+          "UnitChargeAmt": 213.42,
+          "Notes": "Activities of Daily Living Assessment Report",
+          "ObjectiveDescription": "",
+          "ActivityDescription": "Assessment Services",
+          "GoalDescription": "DVA - ADL Assessment",
+          "Duration": 2,
+          "Locked": false,
+          "LinkedToAppointment": false,
+          "AppointmentTitle": ""
+        }
+      ]
+    ],
+    "/CaseEstimate/GetData": [
+      {
+        "ID": "60c81241-eeba-4beb-afef-efd2312c2516",
+        "CaseNumber": 17688,
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "Items": [
+          {
+            "Indent": 0,
+            "ItemType": 0,
+            "ID": "60c81241-eeba-4beb-afef-efd2312c2516",
+            "ParentID": "00000000-0000-0000-0000-000000000000",
+            "Description": "DVA - ADL Assessment",
+            "Completed": false,
+            "Duration": "0001-01-01T11:42:00",
+            "DurationLeft": 7,
+            "TotalCharge": 2497.014,
+            "Estimate": {
+              "ID": "60c81241-eeba-4beb-afef-efd2312c2516",
+              "GoalID": "8e4fafac-5a04-4522-b0df-5c6b5dd338cd",
+              "IsCurrent": true,
+              "GoalDetails": "",
+              "StartDate": "2026-01-09T00:00:00",
+              "FinishDate": null,
+              "DateCreated": "2026-01-09T15:23:38.263",
+              "DateApproved": null,
+              "Notes": "",
+              "TemplateCategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+              "CategoryIDList": [
+                {
+                  "ID": "7250f6d2-da1b-4e66-b271-81510f65e76a",
+                  "Description": "Admin",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "c5beba99-9930-4bf1-9566-ffd251d7d566",
+                  "Description": "Comcare (Codes)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "9f54828a-1fda-4fa8-b348-7bee03a2784c",
+                  "Description": "Comcare (Non Comp)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "8d18842d-1177-45e7-bc51-fc00a2691c7c",
+                  "Description": "CTP (QBE QLD)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "20f6cb6c-a8bf-4783-9860-30435f661233",
+                  "Description": "CTP QLD",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "648e50cf-674c-47c7-8c2b-6978d4b8c00d",
+                  "Description": "CTP TAC (Codes)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "fcbc22b5-a7a2-4e36-9c90-a933be107742",
+                  "Description": "CTP TIO (Codes)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "55d9584c-b04d-4319-8abe-d1dfe02b1bb9",
+                  "Description": "Direct Referred - Employers, Lawyers etc",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "4f60afcc-6b70-427e-a126-a3ec508ba01e",
+                  "Description": "Direct Referred - Individual",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+                  "Description": "DVA Assessment Services",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "affc080e-0965-437c-8d03-6e553b37716a",
+                  "Description": "DVA Rehab",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "4e422eaa-e182-4e31-aa1a-d3f867007b97",
+                  "Description": "DVA VP",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "ad61af06-5c3e-483e-8972-44a7164b113f",
+                  "Description": "DVA Warm Handover",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "b2b59c24-932c-40db-8daa-1d8b55345c57",
+                  "Description": "Ergos/Training",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "4235e293-4906-460f-8761-87c71ce51e90",
+                  "Description": "iCare",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "66cb4c19-4d21-45c3-b65e-4bfd838152b0",
+                  "Description": "iCare - Lifetime Care and Support",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "203ad5a6-0e3a-4274-8faa-36f3ebf8f29c",
+                  "Description": "iCare CTP Care",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "bb90294e-84bd-40a3-879e-334509f454c2",
+                  "Description": "iCare Workers Care",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "3d26ef4b-ed4f-47b8-8d6e-b560da1f6935",
+                  "Description": "ICWA CTP",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "0b28616d-8f70-43f7-8094-302240059664",
+                  "Description": "Life (Acenda)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "8009ab80-f5c4-4cf6-b26e-4513858260ea",
+                  "Description": "Life (AIA - Early Engagement)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "9d167ed2-27e1-445d-8758-ca75aca57555",
+                  "Description": "Life (AIA medEbridge)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "fa483be6-b230-4410-a5f3-144545f880fd",
+                  "Description": "Life (Clearview)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "a625c713-8e09-4fa7-8b7e-d7132b88f167",
+                  "Description": "Life (Metlife - Psychosocial Recovery Readiness Pilot)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "a1a88bea-79a6-4db1-821a-da25d95c6847",
+                  "Description": "Life (Metlife)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "f99ad942-84dd-488a-a553-aef07c4ead9c",
+                  "Description": "Life (ResLife - Regain)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "96afba49-e677-4d17-b241-faf220c17b8f",
+                  "Description": "Life (ResLife)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "379677fe-3c97-4920-a76b-018c42d572be",
+                  "Description": "Life (TAL - Aus Super)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "06e6a6ef-5958-41f0-b07c-fd60c5b2b94a",
+                  "Description": "Life (TAL - Insignia Pilot)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "67739934-3e66-424b-be1d-25887d84267b",
+                  "Description": "Life (TAL)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "fab6cf96-92a5-45c7-a0f1-6323a539848e",
+                  "Description": "Life (Zurich)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "bbc7b67f-51fe-4f36-bce8-62372870e724",
+                  "Description": "Life Insurance",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "2fbe19a4-0935-4f30-b2b1-5103ec4f477a",
+                  "Description": "Marketing",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "5a34147b-8b80-4429-a152-843ea4be850f",
+                  "Description": "Mental Health TOC",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "79782844-a860-4ccb-93fc-102f5f7de689",
+                  "Description": "NIIS Qld (GST VARIATION & Codes)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "70e4abb2-1560-465c-bd13-29a4e7f82f12",
+                  "Description": "NRMA CTP ACT",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "f325d47a-835b-4e37-ae94-eab9e9cd2d99",
+                  "Description": "NRMA CTP NSW",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "030906b4-a911-4d22-8e93-6728a5340b1e",
+                  "Description": "NRMA CTP SA",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "00384533-64e7-4f62-bc31-885d7cf8fafc",
+                  "Description": "Oncore",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "660776f3-70b3-4a6e-92c1-346ec645c896",
+                  "Description": "ORAMS Non Comp Rehab Assessment",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "043eb819-0ab6-4ca1-92da-772a890f3cf7",
+                  "Description": "ORAMS Non Comp Rehab Program",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "e97dccfd-0599-46bf-96a6-61483f502295",
+                  "Description": "ORAMS S36 Rehab Assessment",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "7e1324f0-c0b3-4e3e-ab85-20cf1cc4e285",
+                  "Description": "ORAMS S37 Rehab Program",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "f726f1bc-7148-46c6-8482-4a746da5cff8",
+                  "Description": "ORAMS Single Service",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "86098e67-5916-4d81-a6a5-62542d9feac5",
+                  "Description": "QBE CTP NSW",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "f81e7c67-4f80-48f3-892f-d394a7eb71fb",
+                  "Description": "QBE CTP QLD",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "a6412d0d-e629-4465-a508-64ad95930959",
+                  "Description": "RACQ CTP QLD",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "29842a90-b528-4dc6-9ee8-66c3645e3580",
+                  "Description": "Reference",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "646940ec-82c6-4648-90c7-132aaecd0814",
+                  "Description": "Resource Life",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "a5dba078-61a3-4484-abba-a361b8c25676",
+                  "Description": "Self Insured - ComCare (Codes)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "9f0149d5-ac9e-4569-b480-0a971b8971fe",
+                  "Description": "Self-Insured - WCQ (Codes)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "3521ff43-237d-4e23-b572-7eeb3dcfe859",
+                  "Description": "Suncorp CTP ACT",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "36ef122b-fc06-4e73-baaa-ae134b36a9c7",
+                  "Description": "Suncorp CTP NSW",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "d10bdb41-31fc-4b48-ad8c-dc2986e426b9",
+                  "Description": "Suncorp CTP QLD",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "d8a51aa2-30ab-465d-88b1-46df215953a7",
+                  "Description": "Suncorp CTP SA",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "0ec6989d-5cc6-499d-9b2f-38bc39d2bcbc",
+                  "Description": "Suncorp WI ACT",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "102cae53-acc4-4ca8-aa06-1d5c4d75eae1",
+                  "Description": "Suncorp WI NT",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "6bb09dd2-618c-499b-ac77-2a35a1aab394",
+                  "Description": "Suncorp WI TAS",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "606d6899-a247-4c4e-88d0-ec072f880216",
+                  "Description": "Suncorp WI WA",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "d1ba29c2-7b23-4e9e-9399-29bd501932f7",
+                  "Description": "Test Category",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "35245b40-1bc0-4602-83f7-41d552a084ea",
+                  "Description": "Test Category 2",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "4991052c-27b5-4712-be93-c832e2d7d15d",
+                  "Description": "WA Police",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "ecacff58-94fe-4e17-b3df-34eb7a98e674",
+                  "Description": "WorkCover ACT",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "e30be2f5-fbb6-46b0-8075-36b000c25a52",
+                  "Description": "Workcover NSW (Codes)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "dd4c90f3-548b-4621-9de5-09ec3074f93a",
+                  "Description": "WorkCover QLD (Codes)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "924402de-74de-40a8-a3b1-f1ce8d509e14",
+                  "Description": "WorkCover SA (Codes)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "adf72c62-36fe-48bd-b020-aac3b613d0d5",
+                  "Description": "WorkCover VIC",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "be448141-cd0e-4586-bc85-0d0b8a8d785a",
+                  "Description": "WorkCover WA (Codes)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "83d94706-f65f-4478-bbc7-3bbbbc859b68",
+                  "Description": "Workers Comp - NT (Codes)",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "f2bf8191-12ff-4ca8-8136-250ba04c1f00",
+                  "Description": "Workers Comp - TAS",
+                  "IsSelected": false,
+                  "Details": null
+                },
+                {
+                  "ID": "0cbc4829-76b7-41d8-8094-d27885f51822",
+                  "Description": "Youi CTP NSW",
+                  "IsSelected": false,
+                  "Details": null
+                }
+              ],
+              "LastChanged": "AAAAAADYT6g=",
+              "ROP": [
+                "DateCreated"
+              ]
+            },
+            "Objective": null,
+            "Cost": null,
+            "IsMapped": false,
+            "AmountLeft": 1493.944,
+            "QuantityLeft": 7,
+            "ChargeCode": null,
+            "LastChanged": null,
+            "ROP": []
+          },
+          {
+            "Indent": 2,
+            "ItemType": 2,
+            "ID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+            "ParentID": "60c81241-eeba-4beb-afef-efd2312c2516",
+            "Description": "Assessment Services",
+            "Completed": false,
+            "Duration": "0001-01-01T11:42:00",
+            "DurationLeft": 7,
+            "TotalCharge": 2497.014,
+            "Estimate": null,
+            "Objective": null,
+            "Cost": {
+              "Sequence": 0,
+              "ID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+              "CostType": 0,
+              "ActivityID": "bb1c86b8-973d-421a-9615-97742b9bd588",
+              "LookupListID": "bb1c86b8-973d-421a-9615-97742b9bd588",
+              "Description": "Assessment Services",
+              "ActivityIDQuantity": 0,
+              "ChargeCodeID": "00000000-0000-0000-0000-000000000000",
+              "ChargeCode": "",
+              "Quantity": 11.7,
+              "Duration": "0001-01-01T11:42:00",
+              "DurationChargedSecondsTotalHours": 0,
+              "AmountCharged": 1003.07,
+              "UnitChargeAmt": 213.42,
+              "TotalCharge": 2497.014,
+              "Billable": true,
+              "UnitChargeTaxCode": "GST",
+              "TaxAmount": 227.00127272727272,
+              "StartDate": null,
+              "FinishDate": null,
+              "Completed": false,
+              "Notes": "",
+              "UnitChargeTaxRate": 0.1,
+              "UnitChargeAmtExTax": 194.0182,
+              "ActivityServiceTypes": "All",
+              "LastChanged": "AAAAAADYT6w=",
+              "ROP": [
+                "ChargeCodeID",
+                "ChargeCode",
+                "TotalCharge",
+                "TaxAmount",
+                "ActivityServiceTypes"
+              ]
+            },
+            "IsMapped": false,
+            "AmountLeft": 1493.944,
+            "QuantityLeft": 7,
+            "ChargeCode": "",
+            "LastChanged": null,
+            "ROP": []
+          }
+        ],
+        "SelectedID": "00000000-0000-0000-0000-000000000000",
+        "LinkCostsIgnoreDates": 0,
+        "LinkCostsIncludeInvoiced": true,
+        "LinkCostsMessage": null,
+        "ShowCostWarningByService": false,
+        "LastChanged": null,
+        "ROP": []
+      }
+    ],
+    "/CaseCost/GetData": [
+      {
+        "ID": "923812ab-4418-4969-b710-17984b85d122",
+        "ActivityID": "bb1c86b8-973d-421a-9615-97742b9bd588",
+        "CaseNumber": 17688,
+        "Description": "Assessment Services",
+        "StartTime": "1900-01-01T14:00:00",
+        "FinishTime": "1900-01-01T14:12:00",
+        "Duration": "0001-01-01T00:12:00",
+        "UnitChargeAmt": 213.42,
+        "Quantity": 0.19999999999999998,
+        "ReferenceDate": "2026-01-12T00:00:00",
+        "EmployeeID": "d16c390f-4218-4d6f-93a4-d6f4bba96c11",
+        "Notes": "Initial Contact – Home Assessment",
+        "InvoiceString": "91339",
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "IsInvoiced": true,
+        "CostType": 0,
+        "TaxAmount": 3.88,
+        "Invoice": 91339,
+        "ChargeCodeID": "00000000-0000-0000-0000-000000000000",
+        "ChargeCode": "",
+        "Billable": true,
+        "TeamID": "0df848e8-244c-4fb5-afc1-e4c89d268e95",
+        "OfficeID": "a5043a66-5001-471e-94f8-8c16b8c86d22",
+        "LinkedToEstimate": true,
+        "CreateInvoice": false,
+        "EstimateCostTotal": 2497.014,
+        "EstimateCostAmountCharged": 1003.07,
+        "EstimateCostAmountChargedNoRounding": 1003.0739999999998,
+        "EstimateCostID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "OriginalEstimateCostID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "OriginalBillableTotal": 42.68,
+        "OriginalQuantity": 0.19999999999999998,
+        "OriginalUnitChargeAmt": 213.42,
+        "DocumentID": "684a61f4-f578-4963-92af-f7771d6930bb",
+        "LookupListID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "Exclude": false,
+        "IsFinalised": false,
+        "UnitChargeTaxRate": 0.1,
+        "TotalCharge": 42.68,
+        "UnitCostAmt": 125,
+        "AllowCustomCost": false,
+        "EstimateCostAvailableQty": 11.7,
+        "EstimateCostAllocatedQty": 4.7,
+        "UnitChargeTaxCode": "GST",
+        "Locked": false,
+        "CostRelationType": 0,
+        "AppointmentID": "00000000-0000-0000-0000-000000000000",
+        "AppointmentTitle": "",
+        "AppointmentDescription": "",
+        "LastChanged": "AAAAAADZFMw=",
+        "ROP": [
+          "ID",
+          "ActivityID",
+          "CaseNumber",
+          "Description",
+          "StartTime",
+          "FinishTime",
+          "Duration",
+          "UnitChargeAmt",
+          "Quantity",
+          "ReferenceDate",
+          "EmployeeID",
+          "Notes",
+          "InvoiceString",
+          "CategoryID",
+          "IsInvoiced",
+          "CostType",
+          "TaxAmount",
+          "Invoice",
+          "ChargeCodeID",
+          "ChargeCode",
+          "Billable",
+          "TeamID",
+          "OfficeID",
+          "LinkedToEstimate",
+          "CreateInvoice",
+          "EstimateCostTotal",
+          "EstimateCostAmountCharged",
+          "EstimateCostAmountChargedNoRounding",
+          "EstimateCostID",
+          "DocumentID",
+          "LookupListID",
+          "TotalCharge",
+          "UnitCostAmt",
+          "EstimateCostAvailableQty",
+          "EstimateCostAllocatedQty",
+          "UnitChargeTaxCode",
+          "Locked",
+          "CostRelationType",
+          "AppointmentID",
+          "AppointmentTitle",
+          "AppointmentDescription"
+        ]
+      },
+      {
+        "ID": "9674ecbb-ddae-4534-8838-eca2610d87a1",
+        "ActivityID": "bb1c86b8-973d-421a-9615-97742b9bd588",
+        "CaseNumber": 17688,
+        "Description": "Assessment Services",
+        "StartTime": "1900-01-01T12:58:00",
+        "FinishTime": "1900-01-01T13:58:00",
+        "Duration": "0001-01-01T01:00:00",
+        "UnitChargeAmt": 213.42,
+        "Quantity": 1,
+        "ReferenceDate": "2026-01-19T00:00:00",
+        "EmployeeID": "d16c390f-4218-4d6f-93a4-d6f4bba96c11",
+        "Notes": "Return travel from Mooloolah to Mooloolaba",
+        "InvoiceString": "91339",
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "IsInvoiced": true,
+        "CostType": 0,
+        "TaxAmount": 19.4,
+        "Invoice": 91339,
+        "ChargeCodeID": "00000000-0000-0000-0000-000000000000",
+        "ChargeCode": "",
+        "Billable": true,
+        "TeamID": "0df848e8-244c-4fb5-afc1-e4c89d268e95",
+        "OfficeID": "a5043a66-5001-471e-94f8-8c16b8c86d22",
+        "LinkedToEstimate": true,
+        "CreateInvoice": false,
+        "EstimateCostTotal": 2497.014,
+        "EstimateCostAmountCharged": 1003.07,
+        "EstimateCostAmountChargedNoRounding": 1003.0739999999998,
+        "EstimateCostID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "OriginalEstimateCostID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "OriginalBillableTotal": 213.42,
+        "OriginalQuantity": 1,
+        "OriginalUnitChargeAmt": 213.42,
+        "DocumentID": "31e48056-bec3-4282-aa6d-0d5fd2a9a310",
+        "LookupListID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "Exclude": false,
+        "IsFinalised": false,
+        "UnitChargeTaxRate": 0.1,
+        "TotalCharge": 213.42,
+        "UnitCostAmt": 125,
+        "AllowCustomCost": false,
+        "EstimateCostAvailableQty": 11.7,
+        "EstimateCostAllocatedQty": 4.7,
+        "UnitChargeTaxCode": "GST",
+        "Locked": false,
+        "CostRelationType": 0,
+        "AppointmentID": "00000000-0000-0000-0000-000000000000",
+        "AppointmentTitle": "",
+        "AppointmentDescription": "",
+        "LastChanged": "AAAAAADZFM4=",
+        "ROP": [
+          "ID",
+          "ActivityID",
+          "CaseNumber",
+          "Description",
+          "StartTime",
+          "FinishTime",
+          "Duration",
+          "UnitChargeAmt",
+          "Quantity",
+          "ReferenceDate",
+          "EmployeeID",
+          "Notes",
+          "InvoiceString",
+          "CategoryID",
+          "IsInvoiced",
+          "CostType",
+          "TaxAmount",
+          "Invoice",
+          "ChargeCodeID",
+          "ChargeCode",
+          "Billable",
+          "TeamID",
+          "OfficeID",
+          "LinkedToEstimate",
+          "CreateInvoice",
+          "EstimateCostTotal",
+          "EstimateCostAmountCharged",
+          "EstimateCostAmountChargedNoRounding",
+          "EstimateCostID",
+          "DocumentID",
+          "LookupListID",
+          "TotalCharge",
+          "UnitCostAmt",
+          "EstimateCostAvailableQty",
+          "EstimateCostAllocatedQty",
+          "UnitChargeTaxCode",
+          "Locked",
+          "CostRelationType",
+          "AppointmentID",
+          "AppointmentTitle",
+          "AppointmentDescription"
+        ]
+      },
+      {
+        "ID": "172a597c-0a41-4bec-a5a9-319b1fc786e2",
+        "ActivityID": "bb1c86b8-973d-421a-9615-97742b9bd588",
+        "CaseNumber": 17688,
+        "Description": "Assessment Services",
+        "StartTime": "1900-01-01T12:59:00",
+        "FinishTime": "1900-01-01T14:29:00",
+        "Duration": "0001-01-01T01:30:00",
+        "UnitChargeAmt": 213.42,
+        "Quantity": 1.5,
+        "ReferenceDate": "2026-01-19T00:00:00",
+        "EmployeeID": "d16c390f-4218-4d6f-93a4-d6f4bba96c11",
+        "Notes": "Assessment",
+        "InvoiceString": "91339",
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "IsInvoiced": true,
+        "CostType": 0,
+        "TaxAmount": 29.1,
+        "Invoice": 91339,
+        "ChargeCodeID": "00000000-0000-0000-0000-000000000000",
+        "ChargeCode": "",
+        "Billable": true,
+        "TeamID": "0df848e8-244c-4fb5-afc1-e4c89d268e95",
+        "OfficeID": "a5043a66-5001-471e-94f8-8c16b8c86d22",
+        "LinkedToEstimate": true,
+        "CreateInvoice": false,
+        "EstimateCostTotal": 2497.014,
+        "EstimateCostAmountCharged": 1003.07,
+        "EstimateCostAmountChargedNoRounding": 1003.0739999999998,
+        "EstimateCostID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "OriginalEstimateCostID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "OriginalBillableTotal": 320.13,
+        "OriginalQuantity": 1.5,
+        "OriginalUnitChargeAmt": 213.42,
+        "DocumentID": "deb41730-5674-4a4c-a4f7-970ed2507950",
+        "LookupListID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "Exclude": false,
+        "IsFinalised": false,
+        "UnitChargeTaxRate": 0.1,
+        "TotalCharge": 320.13,
+        "UnitCostAmt": 125,
+        "AllowCustomCost": false,
+        "EstimateCostAvailableQty": 11.7,
+        "EstimateCostAllocatedQty": 4.7,
+        "UnitChargeTaxCode": "GST",
+        "Locked": false,
+        "CostRelationType": 0,
+        "AppointmentID": "00000000-0000-0000-0000-000000000000",
+        "AppointmentTitle": "",
+        "AppointmentDescription": "",
+        "LastChanged": "AAAAAADZFNA=",
+        "ROP": [
+          "ID",
+          "ActivityID",
+          "CaseNumber",
+          "Description",
+          "StartTime",
+          "FinishTime",
+          "Duration",
+          "UnitChargeAmt",
+          "Quantity",
+          "ReferenceDate",
+          "EmployeeID",
+          "Notes",
+          "InvoiceString",
+          "CategoryID",
+          "IsInvoiced",
+          "CostType",
+          "TaxAmount",
+          "Invoice",
+          "ChargeCodeID",
+          "ChargeCode",
+          "Billable",
+          "TeamID",
+          "OfficeID",
+          "LinkedToEstimate",
+          "CreateInvoice",
+          "EstimateCostTotal",
+          "EstimateCostAmountCharged",
+          "EstimateCostAmountChargedNoRounding",
+          "EstimateCostID",
+          "DocumentID",
+          "LookupListID",
+          "TotalCharge",
+          "UnitCostAmt",
+          "EstimateCostAvailableQty",
+          "EstimateCostAllocatedQty",
+          "UnitChargeTaxCode",
+          "Locked",
+          "CostRelationType",
+          "AppointmentID",
+          "AppointmentTitle",
+          "AppointmentDescription"
+        ]
+      },
+      {
+        "ID": "e8405e2e-63eb-4745-bd1b-549ed94cb73f",
+        "ActivityID": "bb1c86b8-973d-421a-9615-97742b9bd588",
+        "CaseNumber": 17688,
+        "Description": "Assessment Services",
+        "StartTime": "1900-01-01T14:42:00",
+        "FinishTime": "1900-01-01T16:42:00",
+        "Duration": "0001-01-01T02:00:00",
+        "UnitChargeAmt": 213.42,
+        "Quantity": 2,
+        "ReferenceDate": "2026-01-19T00:00:00",
+        "EmployeeID": "d16c390f-4218-4d6f-93a4-d6f4bba96c11",
+        "Notes": "Activities of Daily Living Assessment Report",
+        "InvoiceString": "91339",
+        "CategoryID": "558f317e-67cf-461b-b4b8-633d80bd070b",
+        "IsInvoiced": true,
+        "CostType": 0,
+        "TaxAmount": 38.8,
+        "Invoice": 91339,
+        "ChargeCodeID": "00000000-0000-0000-0000-000000000000",
+        "ChargeCode": "",
+        "Billable": true,
+        "TeamID": "0df848e8-244c-4fb5-afc1-e4c89d268e95",
+        "OfficeID": "a5043a66-5001-471e-94f8-8c16b8c86d22",
+        "LinkedToEstimate": true,
+        "CreateInvoice": false,
+        "EstimateCostTotal": 2497.014,
+        "EstimateCostAmountCharged": 1003.07,
+        "EstimateCostAmountChargedNoRounding": 1003.0739999999998,
+        "EstimateCostID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "OriginalEstimateCostID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "OriginalBillableTotal": 426.84,
+        "OriginalQuantity": 2,
+        "OriginalUnitChargeAmt": 213.42,
+        "DocumentID": "fb6c93a8-c6d2-4fe3-bab5-fed4fdded35a",
+        "LookupListID": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "Exclude": false,
+        "IsFinalised": false,
+        "UnitChargeTaxRate": 0.1,
+        "TotalCharge": 426.84,
+        "UnitCostAmt": 125,
+        "AllowCustomCost": false,
+        "EstimateCostAvailableQty": 11.7,
+        "EstimateCostAllocatedQty": 4.7,
+        "UnitChargeTaxCode": "GST",
+        "Locked": false,
+        "CostRelationType": 0,
+        "AppointmentID": "00000000-0000-0000-0000-000000000000",
+        "AppointmentTitle": "",
+        "AppointmentDescription": "",
+        "LastChanged": "AAAAAADZFNI=",
+        "ROP": [
+          "ID",
+          "ActivityID",
+          "CaseNumber",
+          "Description",
+          "StartTime",
+          "FinishTime",
+          "Duration",
+          "UnitChargeAmt",
+          "Quantity",
+          "ReferenceDate",
+          "EmployeeID",
+          "Notes",
+          "InvoiceString",
+          "CategoryID",
+          "IsInvoiced",
+          "CostType",
+          "TaxAmount",
+          "Invoice",
+          "ChargeCodeID",
+          "ChargeCode",
+          "Billable",
+          "TeamID",
+          "OfficeID",
+          "LinkedToEstimate",
+          "CreateInvoice",
+          "EstimateCostTotal",
+          "EstimateCostAmountCharged",
+          "EstimateCostAmountChargedNoRounding",
+          "EstimateCostID",
+          "DocumentID",
+          "LookupListID",
+          "TotalCharge",
+          "UnitCostAmt",
+          "EstimateCostAvailableQty",
+          "EstimateCostAllocatedQty",
+          "UnitChargeTaxCode",
+          "Locked",
+          "CostRelationType",
+          "AppointmentID",
+          "AppointmentTitle",
+          "AppointmentDescription"
+        ]
+      }
+    ]
+  },
+  "structured": {
+    "caseId": "17688",
+    "clientTitle": "Mr",
+    "clientFirstName": "Barry John",
+    "clientLastName": "Anderson",
+    "clientEmail": "brrava@bigpond.com",
+    "clientPhone": "0409 971 951",
+    "clientLandline": "",
+    "clientSecondaryEmail": "",
+    "clientDateOfBirth": "1951-05-26",
+    "clientSex": "male",
+    "claimNumber": "REH5478965",
+    "billerCode": "R4832H5561",
+    "conditionDate": "2022-08-15",
+    "referralDate": "2026-01-09",
+    "dateClosed": "2026-01-19",
+    "statusId": "7e1e4bbf-dff1-4bfa-a1b5-6afe29cebda0",
+    "statusDescription": "Closed",
+    "categoryId": "558f317e-67cf-461b-b4b8-633d80bd070b",
+    "categoryDescription": "DVA Assessment Services",
+    "requirementId": "ecab4059-835c-468f-ace8-aa5e40418ff2",
+    "requirementDescription": "Activities of Daily Living Assessment",
+    "referralTypeId": "6974d59a-cdfd-4b4a-98c5-d858e390f2b4",
+    "referralTypeDescription": "DVA Activities of Daily Living Assessment",
+    "assignedUserId": "d16c390f-4218-4d6f-93a4-d6f4bba96c11",
+    "assignedUserName": "Leesa Tuffnell",
+    "assignedUserEmail": "leesa.tuffnell@workcom.com.au",
+    "clientAddress": {
+      "addressLine1": "18 Kononda Ct ",
+      "addressLine2": "",
+      "suburb": "Mooloolaba",
+      "state": "Queensland (QLD)",
+      "postcode": "4557",
+      "country": "Australia"
+    },
+    "clientBillingAddress": null,
+    "referrer": {
+      "firstName": "Tanja",
+      "lastName": "62213033",
+      "email": "hhs@dva.gov.au",
+      "phone": "1800 838 372",
+      "fax": "",
+      "position": "Household Services Officer"
+    },
+    "customer": {
+      "name": "DVA - Department of Veterans' Affairs",
+      "addressLine1": "",
+      "addressLine2": "",
+      "suburb": "Adelaide",
+      "state": "South Australia (SA)",
+      "postcode": "",
+      "country": "Australia",
+      "email": "hhs@dva.gov.au"
+    },
+    "caseContacts": [
+      {
+        "firstName": "DVA",
+        "lastName": "Accounts",
+        "email": "admin@workcom.com.au",
+        "company": "DVA - Department of Veterans' Affairs",
+        "phone": "1800 550457 option 4",
+        "fax": "",
+        "role": "Bill To",
+        "address": {
+          "addressLine1": "480 Queen Street",
+          "addressLine2": "",
+          "suburb": "Brisbane",
+          "state": "Queensland (QLD)",
+          "postcode": "4000",
+          "country": "Australia"
+        }
+      },
+      {
+        "firstName": "Melissa",
+        "lastName": "Barnes-Daysh",
+        "email": "melissa.barnes-daysh@workcom.com.au",
+        "company": "Workcom",
+        "phone": "0412 150 368",
+        "fax": "",
+        "role": "Relationship Manager",
+        "address": {
+          "addressLine1": "20 Innovation Parkway",
+          "addressLine2": "",
+          "suburb": "Birtinya",
+          "state": "Queensland (QLD)",
+          "postcode": "4551",
+          "country": "Australia"
+        }
+      }
+    ],
+    "employmentStatusId": "",
+    "employmentStatusDescription": "",
+    "causeId": "",
+    "causeDescription": "",
+    "conditionId": "3cdcd690-ff92-44ef-959f-80b8e523d676",
+    "conditionDescription": "Multiple Conditions",
+    "billingTemplates": [
+      {
+        "id": "60c81241-eeba-4beb-afef-efd2312c2516",
+        "name": "DVA - ADL Assessment",
+        "items": [
+          {
+            "id": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+            "name": "Assessment Services",
+            "chargeCode": "",
+            "billingType": "HOURLY",
+            "taxType": "GST",
+            "rate": 21342,
+            "quantity": 42120,
+            "total": 249701,
+            "billingTemplateInstanceId": "60c81241-eeba-4beb-afef-efd2312c2516",
+            "createdAt": "2026-01-09"
+          }
+        ],
+        "caseId": "17688",
+        "createdAt": "2026-01-09",
+        "archived": false
+      }
+    ],
+    "costs": [
+      {
+        "status": "INVOICED",
+        "billingType": "HOURLY",
+        "quantity": 720,
+        "rate": 21342,
+        "total": 4268,
+        "billingInstanceItemId": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "documentId": "684a61f4-f578-4963-92af-f7771d6930bb",
+        "employeeId": "d16c390f-4218-4d6f-93a4-d6f4bba96c11",
+        "date": "2026-01-12",
+        "createdAt": "2026-01-12"
+      },
+      {
+        "status": "INVOICED",
+        "billingType": "HOURLY",
+        "quantity": 3600,
+        "rate": 21342,
+        "total": 21342,
+        "billingInstanceItemId": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "documentId": "31e48056-bec3-4282-aa6d-0d5fd2a9a310",
+        "employeeId": "d16c390f-4218-4d6f-93a4-d6f4bba96c11",
+        "date": "2026-01-19",
+        "createdAt": "2026-01-19"
+      },
+      {
+        "status": "INVOICED",
+        "billingType": "HOURLY",
+        "quantity": 5400,
+        "rate": 21342,
+        "total": 32013,
+        "billingInstanceItemId": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "documentId": "deb41730-5674-4a4c-a4f7-970ed2507950",
+        "employeeId": "d16c390f-4218-4d6f-93a4-d6f4bba96c11",
+        "date": "2026-01-19",
+        "createdAt": "2026-01-19"
+      },
+      {
+        "status": "INVOICED",
+        "billingType": "HOURLY",
+        "quantity": 7200,
+        "rate": 21342,
+        "total": 42684,
+        "billingInstanceItemId": "05c32bc4-a82f-4853-9ecc-e5f5103fc715",
+        "documentId": "fb6c93a8-c6d2-4fe3-bab5-fed4fdded35a",
+        "employeeId": "d16c390f-4218-4d6f-93a4-d6f4bba96c11",
+        "date": "2026-01-19",
+        "createdAt": "2026-01-19"
+      }
+    ]
+  }
+}

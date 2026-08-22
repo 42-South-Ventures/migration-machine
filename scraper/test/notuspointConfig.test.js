@@ -12,6 +12,7 @@ test('derives every importer endpoint from NOTUSPOINT_URL', () => {
     costsUrl: 'https://dev.example.com/api/importer/case/costs',
     requirementsUrl: 'https://dev.example.com/api/importer/requirements/matching',
     customFieldsUrl: 'https://dev.example.com/api/importer/custom-fields/matching',
+    customFieldOptionsUrl: 'https://dev.example.com/api/importer/custom-fields',
   });
 });
 

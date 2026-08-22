@@ -43,6 +43,15 @@ function formatDate(iso) {
   return iso.split('T')[0];
 }
 
+// CaseManager CostType maps directly to the corresponding NotusPoint billing
+// mode: 0 = Hourly, 1 = Item, 2 = Quantity/fixed amount.
+function billingTypeFromCaseManagerCostType(costType) {
+  if (costType === 0 || costType === '0') return 'HOURLY';
+  if (costType === 1 || costType === '1') return 'ITEM';
+  if (costType === 2 || costType === '2') return 'FIXED_AMOUNT';
+  throw new Error(`Unsupported CaseManager CostType ${JSON.stringify(costType)}`);
+}
+
 function buildAddress(map, { street, suburb, postalCode, regionId, countryId }) {
   return {
     addressLine1: street ?? '',
@@ -120,12 +129,13 @@ function buildBillingTemplates(caseId, endpoints) {
     const expiryDate = formatDate(estimate.FinishDate);
 
     const items = (itemsByEstimateId[estimate.ID] ?? []).map(cost => {
-      const hourly = cost.CostType === 0;
+      const billingType = billingTypeFromCaseManagerCostType(cost.CostType);
+      const hourly = billingType === 'HOURLY';
       const item = {
         id: cost.ID,
         name: cost.Description || 'Unknown',
         chargeCode: cost.ChargeCode ?? '',
-        billingType: hourly ? 'HOURLY' : 'FIXED_AMOUNT',
+        billingType,
         taxType: cost.UnitChargeTaxCode === 'GST' || cost.UnitChargeTaxRate > 0 ? 'GST' : 'GST_FREE',
         rate: Math.round((cost.UnitChargeAmt ?? 0) * 100),
         quantity: hourly ? Math.round((cost.Quantity ?? 0) * 3600) : Math.round(cost.Quantity ?? 0),
@@ -163,9 +173,11 @@ function buildBillingTemplates(caseId, endpoints) {
 // it to a NotusPoint user created by the staff import.
 function buildCosts(endpoints) {
   return (endpoints?.['/CaseCost/GetData'] ?? []).map(cost => {
-    const hourly = cost.CostType === 0;
+    const billingType = billingTypeFromCaseManagerCostType(cost.CostType);
+    const hourly = billingType === 'HOURLY';
     return {
       status: cost.IsInvoiced ? 'INVOICED' : 'LOGGED',
+      billingType,
       quantity: hourly ? Math.round((cost.Quantity ?? 0) * 3600) : Math.round(cost.Quantity ?? 0),
       rate: Math.round((cost.UnitChargeAmt ?? 0) * 100),
       total: Math.round((cost.TotalCharge ?? 0) * 100),
@@ -333,5 +345,6 @@ function countsFor(structured) {
 }
 
 module.exports = {
+  billingTypeFromCaseManagerCostType,
   buildLookupMap, buildEmployeeMap, buildCustomer, buildStructuredCase, countsFor,
 };

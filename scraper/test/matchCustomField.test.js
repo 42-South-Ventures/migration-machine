@@ -145,8 +145,16 @@ test('stores destination options by Case Manager custom field ID', () => {
     'old-1': [{ value: 'option-1', label: 'Weekly benefit' }],
     'old-2': [],
   });
+  assert.deepEqual(result.labelsByCaseManagerFieldId, {
+    'old-1': 'Benefit Type',
+    'old-2': 'Empty List',
+  });
 
   const output = renderMappingFile(result);
+  assert.match(output, /const customFieldLabelsByCaseManagerId =/);
+  assert.match(output, /"old-1": "Benefit Type"/);
+  assert.match(output, /LABELS_BY_CASE_MANAGER_FIELD_ID/);
+  assert.match(output, /CASE_MANAGER_FIELDS_BY_ID/);
   assert.match(output, /const customFieldOptionsByCaseManagerId =/);
   assert.match(output, /"value": "option-1"/);
   assert.match(output, /"label": "Weekly benefit"/);

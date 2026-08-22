@@ -25,6 +25,7 @@ function getNotusPointConfig(env = process.env) {
     costsUrl: env.IMPORT_COSTS_URL || `${caseUrl}/costs`,
     requirementsUrl: env.IMPORT_REQUIREMENTS_URL || `${root}/requirements/matching`,
     customFieldsUrl: env.IMPORT_CUSTOM_FIELDS_URL || `${root}/custom-fields/matching`,
+    customFieldOptionsUrl: env.IMPORT_CUSTOM_FIELD_OPTIONS_URL || `${root}/custom-fields`,
   };
 }
 

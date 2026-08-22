@@ -48,8 +48,9 @@ npm start        # or just `migrate` (globally linked via npm link)
 Launches a menu that drives the whole pipeline:
 
 - **🚀 Full migration (fresh)** — wipes all migration state (after
-  confirmation), exports case data, downloads documents, then uploads to
-  the NotusPoint importer.
+  confirmation), generates fresh requirement and custom-field mappings, then
+  exports case data, downloads documents, and uploads to the NotusPoint
+  importer.
 - **▶️ Resume / retry** — continues where the last run left off. Every stage
   skips cases already marked done in the ledger and retries failed ones, so
   a crash at case 2,400 of 3,000 restarts in seconds.
@@ -77,6 +78,9 @@ Launches a menu that drives the whole pipeline:
   Destination multiple-choice options are retained as `{ value, label }`
   pairs under the generated mapping's non-enumerable
   `OPTIONS_BY_CASE_MANAGER_FIELD_ID` lookup, keyed by the source field ID.
+  Original Case Manager labels are similarly available through
+  `LABELS_BY_CASE_MANAGER_FIELD_ID`, allowing case-value keys to be associated
+  by normalized label text when Case Manager does not return field IDs.
   After exact matching, a conservative fuzzy pass handles punctuation and
   apostrophe differences, small misspellings, and names missing a word. It
   accepts only a strong, clear best match; close candidates remain unmatched.
@@ -166,7 +170,9 @@ how the CLI isolates single-case workspaces.
 The data export. Logs in once, fetches the shared lookup lists and employee
 list (saved to `shared.json`), then captures every case ID in
 `caseList.txt` not yet exported (`CM_CASE_CONCURRENCY` cases at a time,
-with contact/estimate/cost detail fetches in parallel within each case).
+with contact/estimate/cost/custom-field detail fetches in parallel within each
+case). Custom-field values come from `/CustomField/GetData` and remain in the
+raw endpoint data until upload, where the generated mapping interprets them.
 Each case is saved to `data/<caseId>.json` as `{ fetchedAt, endpoints,
 structured }` where `structured` is the importer-ready record (built by
 `lib/structured.js`; `null` when the case has no Client contact).
@@ -224,7 +230,13 @@ from their Case Manager documents:
 
 1. The Case Manager contact with the `Referrer` role is found or created as a
    NotusPoint customer through `/api/importer/customer`; its returned ID is
-   used for the case + billing templates sent to `/api/importer/case`. The
+   used for the case + billing templates + custom fields sent to
+   `/api/importer/case`. Custom-field response keys are matched against the
+   Case Manager labels stored in `mappings/customFieldMapping.js`. List option
+   IDs are resolved through the Case Manager `/CustomField/GetAllLookups`
+   snapshot stored in that mapping, then matched case-insensitively after
+   trimming against NotusPoint option labels. Missing destination options are
+   created idempotently through `/api/importer/custom-fields/:id/options`. The
    customer name is also used as `billingTo`, and its billing address mirrors
    its main address. Cases without a usable Referrer are assigned to a
    find-or-created customer named exactly `Unmatched Customers`.
@@ -232,7 +244,9 @@ from their Case Manager documents:
    as `multipart/form-data`, recording each created file id against the
    manifest entry's Case Manager `documentId`.
 3. Costs to `/api/importer/case/costs`, with each cost's `fileId` resolved
-   from its `documentId`. While a case still has failed file uploads its
+   from its `documentId`. CaseManager `CostType` maps as `0 → HOURLY`,
+   `1 → ITEM`, and `2 → FIXED_AMOUNT`; hourly `quantity` and
+   `nominalDuration` are sent in seconds. While a case still has failed file uploads its
    costs are held back ("blocked") so a later resume can import them WITH
    their file links; `--costs-without-files` forces them through instead.
 
@@ -287,7 +301,8 @@ Requirements`.
 ### `node generateCustomFieldMapping.js`
 
 Fetches active Case Manager custom-field definitions (`ShowInactive=false`)
-and the NotusPoint custom-field matching list, then writes
+plus `/CustomField/GetAllLookups`, and the NotusPoint custom-field matching
+list, then writes
 `mappings/customFieldMapping.js`. `List`, `Boolean`, single/multiline `Text`,
 `Number`, and `Date` are translated to NotusPoint's `SELECT`, `SELECT`,
 `SHORT_TEXT`/`LONG_TEXT`, `NUMBER`, and `DATE` types respectively. Boolean
@@ -311,11 +326,13 @@ Legacy single-case fetch into `cases.json`. Superseded by the CLI's
 Use the CLI (`npm start` → 🚀 or ▶️). Manually it's:
 
 1. Populate `caseList.txt` — one case ID per line
-2. `node runAll.js` — export case + contact data
-3. `node downloadDocuments.js` — download all documents (can overlap with 4)
-4. `node uploadCases.js` — import into the new production system; re-run to
+2. Generate the requirement and custom-field mappings (the full CLI migration
+   does this automatically)
+3. `node runAll.js` — export case + contact data
+4. `node downloadDocuments.js` — download all documents (can overlap with 5)
+5. `node uploadCases.js` — import into the new production system; re-run to
    drain cases as their documents finish
-5. CLI → ✅ Verify migration — confirm everything landed
+6. CLI → ✅ Verify migration — confirm everything landed
 
 Re-running any step resumes/retries; wipe via the CLI to start over.
 

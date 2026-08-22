@@ -182,6 +182,18 @@ async function createClient({
       return body.data ?? [];
     },
 
+    getAllCustomFieldLookups: () => postJson(
+      '/CustomField/GetAllLookups',
+      '/CustomField/GetAllLookups',
+      {},
+    ),
+
+    getCaseCustomFields: (caseId) => postJson(
+      '/CustomField/GetData',
+      '/CustomField/GetData',
+      { ID: caseId },
+    ),
+
     getCaseEstimates: (caseId) => request('/CaseEstimate/_List', async (t) => {
       const res = await context.request.post(`${BASE_URL}/CaseEstimate/_List`, {
         headers: buildHeaders(t, FORM_CT),
@@ -245,14 +257,16 @@ async function createClient({
     // Full capture of one case. Detail fetches fire together but every HTTP
     // call goes through the global limiter, so it's bounded, not a burst.
     captureCase: async (caseId) => {
-      const [caseData, contacts] = await Promise.all([
+      const [caseData, contacts, customFields] = await Promise.all([
         client.getCaseData(caseId),
         client.getCaseContacts(caseId),
+        client.getCaseCustomFields(caseId),
       ]);
 
       const endpoints = {
         '/Case/GetData': [caseData],
         '/CaseContact/_List': [contacts],
+        '/CustomField/GetData': [customFields],
       };
 
       const contactRows = Array.isArray(contacts?.data) ? contacts.data : [];
