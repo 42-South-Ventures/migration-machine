@@ -97,9 +97,8 @@ Launches a menu that drives the whole pipeline:
   custom selection of components.
 - **🔒 Purge sensitive data** — deletes every file containing client/staff
   data scraped from Case Manager (`data/`, `documents/`, `shared.json`, the
-  ledger, single-case workspaces, legacy exports) so only code and config
-  remain — for before letting AI tooling (or anyone else) loose on the
-  repo. `caseList.txt` (just case ids) and `.env` are kept.
+  migration ledger, single-case workspaces, and legacy exports).
+  `caseList.txt` (just case ids) and `.env` are kept.
 
 ## The ledger (`migrationState.json`)
 

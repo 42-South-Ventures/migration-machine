@@ -267,6 +267,10 @@ async function buildNotusPointCustomFields({
 
   const groups = rawValueGroups(raw);
   const output = {};
+  const selectedByDestination = new Map();
+  const matchRank = (field) => field.matchType === 'exact' ? 2
+    : field.matchType === 'fuzzy' ? 1
+      : 0;
   for (const [cmFieldId, npFieldId] of Object.entries(mapping)) {
     if (!npFieldId) continue;
     const field = metadata[cmFieldId];
@@ -276,26 +280,35 @@ async function buildNotusPointCustomFields({
     const rawValue = combineRawValues(matchedValues, field);
     if (rawValue === undefined) continue;
 
+    const selected = selectedByDestination.get(npFieldId);
+    if (selected && matchRank(field) <= selected.matchRank) {
+      // Several legacy Case Manager fields can map to one NotusPoint field.
+      // Prefer an exact-name match; mappings with equal accuracy keep the
+      // first value encountered instead of failing or silently overwriting it.
+      continue;
+    }
+
     const sourceOptionLabel = field.type === 'SELECT'
       ? sourceSelectLabel(field, rawValue)
       : undefined;
     const value = field.type === 'SELECT'
       ? await resolveOption(cmFieldId, npFieldId, sourceOptionLabel)
       : scalarValue(field, rawValue);
-    if (Object.prototype.hasOwnProperty.call(output, npFieldId) && output[npFieldId] !== value) {
-      throw new Error(`Case ${caseId} has conflicting values mapped to custom field ${npFieldId}`);
-    }
     output[npFieldId] = value;
-    onMappedField?.({
-      caseManagerFieldId: cmFieldId,
-      caseManagerLabel: field.label,
-      caseManagerValues: matchedValues,
-      sourceValue: rawValue,
-      ...(sourceOptionLabel !== undefined ? { sourceOptionLabel } : {}),
-      notusPointFieldId: npFieldId,
-      sentValue: value,
+    selectedByDestination.set(npFieldId, {
+      matchRank: matchRank(field),
+      transfer: {
+        caseManagerFieldId: cmFieldId,
+        caseManagerLabel: field.label,
+        caseManagerValues: matchedValues,
+        sourceValue: rawValue,
+        ...(sourceOptionLabel !== undefined ? { sourceOptionLabel } : {}),
+        notusPointFieldId: npFieldId,
+        sentValue: value,
+      },
     });
   }
+  for (const { transfer } of selectedByDestination.values()) onMappedField?.(transfer);
   return output;
 }
 

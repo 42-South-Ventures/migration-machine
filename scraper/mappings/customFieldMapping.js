@@ -498,7 +498,8 @@ const caseManagerFieldsById = {
         "value": "2660",
         "label": "TPD"
       }
-    ]
+    ],
+    "matchType": "fuzzy"
   },
   "683222f7-53d9-45f9-8c59-6ac0a48fbbfe": {
     "label": "Acenda Report / Email Update Required",
@@ -518,7 +519,8 @@ const caseManagerFieldsById = {
         "value": "7007",
         "label": "Email Update Only"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "2605d8cc-8229-42d1-a00c-27b18e1a1569": {
     "label": "Acenda Rehab Status",
@@ -538,7 +540,8 @@ const caseManagerFieldsById = {
         "value": "12682",
         "label": "On Hold"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "58676ac7-b10a-42f5-bd4b-17616300a008": {
     "label": "Acenda support provision",
@@ -570,7 +573,8 @@ const caseManagerFieldsById = {
         "value": "12688",
         "label": "TPD Single Service"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "2481bc13-6253-4fb9-9c11-e83d9f3f86b9": {
     "label": "Acenda - service option",
@@ -666,7 +670,8 @@ const caseManagerFieldsById = {
         "value": "13301",
         "label": "ADL Assessment"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "8d46a3d0-e6d9-4028-9c92-a0e45370d004": {
     "label": "Acenda - service goal",
@@ -778,7 +783,8 @@ const caseManagerFieldsById = {
         "value": "13331",
         "label": "Appropriate completion of ADL Assessment "
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "29e958fe-c3d8-460e-ae2f-70dd199d631d": {
     "label": "Acenda - status at referral",
@@ -1010,7 +1016,8 @@ const caseManagerFieldsById = {
         "value": "13408",
         "label": "9.       Alternative employer / Full hrs / Modified or alternative duties"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "7e84e642-1096-4130-b843-1860d688db79": {
     "label": "Acenda - status at reporting",
@@ -1242,7 +1249,8 @@ const caseManagerFieldsById = {
         "value": "13520",
         "label": "9.       Alternative employer / Full hrs / Modified or alternative duties"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "15bbfe83-b38c-422d-b803-3d76c6c83478": {
     "label": "Acenda - status at closure",
@@ -1474,7 +1482,8 @@ const caseManagerFieldsById = {
         "value": "13464",
         "label": "9.       Alternative employer / Full hrs / Modified or alternative duties"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "1bec8062-3133-4898-b04a-a867d21f1730": {
     "label": "Asx Date-",
@@ -1513,49 +1522,56 @@ const caseManagerFieldsById = {
         "value": "12562",
         "label": "File Closed Prior to Asx or Report"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "d9e4e33f-72a3-4705-b1c9-bb85c4226887": {
     "label": "Report / Initial Summary Submitted",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccReport___Email_Summary_Submitted",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "200c9983-9de0-4e29-916c-d15f03a76143": {
     "label": "if >20 Days Delay on Report - Reason",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "cc_20_Days_Delay_Reason",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "c67cad1e-8564-4371-9ceb-5d147656ca71": {
     "label": "MedEbridge - Date Consent Form Uploaded",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccMedEbridge___Date_Consent_Form_Uploaded",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "ef162754-938b-4b8f-ad5b-2973779f972a": {
     "label": "AIA Status",
     "type": "LONG_TEXT",
     "sourceType": "Text",
     "valueKey": "ccAIA_Status",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "ee44020b-026a-4f10-a42d-f241f27a2cb4": {
     "label": "AIA Proposed Action",
     "type": "LONG_TEXT",
     "sourceType": "Text",
     "valueKey": "ccAIA_Proposed_Action",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "d8e9cfd9-fa94-4f93-ba5b-6899be1a917f": {
     "label": "AIA Date of Update",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccAIA_Date_of_Update",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "3561f8bd-ffd6-46a1-95e7-5484f257a3a7": {
     "label": "AIA Outcome Status at the time of completion",
@@ -1615,14 +1631,16 @@ const caseManagerFieldsById = {
         "value": "13857",
         "label": "Working Same Duties Reduced Hours"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "45d4ba64-c3a3-4811-b7dd-7c81d4769dbc": {
     "label": "AIA Issues/concerns",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccAIA_Issues_concerns",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "9668e544-00e0-4b3c-bec2-e6e615bf361c": {
     "label": "AIA Further Rehab Recommended",
@@ -1638,7 +1656,8 @@ const caseManagerFieldsById = {
         "value": "13859",
         "label": "No"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "d48b17c1-a632-4944-9434-299812315256": {
     "label": "Employability Assessment Completed",
@@ -1658,7 +1677,8 @@ const caseManagerFieldsById = {
         "value": "13916",
         "label": "Yes - options identified"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "8b9a82c2-4658-4fec-bfd3-8184d6adc94e": {
     "label": "CSAT Case Closure",
@@ -1690,7 +1710,8 @@ const caseManagerFieldsById = {
         "value": "13928",
         "label": "Very Satisfied"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "6cb1c118-ff39-459d-be52-ba14ffbe1455": {
     "label": "NPS Score at time of Closure",
@@ -1746,7 +1767,8 @@ const caseManagerFieldsById = {
         "value": "13940",
         "label": "N/A"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "17562bc2-5333-459f-9934-f7f1849b0da2": {
     "label": "NPS Outcome",
@@ -1770,7 +1792,8 @@ const caseManagerFieldsById = {
         "value": "13944",
         "label": "N/A"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "31c251c2-c69b-41d6-a2f6-8fde06a53f71": {
     "label": "Met QA Requirements",
@@ -1786,77 +1809,88 @@ const caseManagerFieldsById = {
         "value": "13922",
         "label": "No"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "162ea8d0-a776-429d-976c-88c50b7f4229": {
     "label": "QA Not Met Reason",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccQA_Not_Met_Reason_1",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "c63fd704-5485-47f6-91e4-6a96304d57b7": {
     "label": "Plan closing - AIR not required",
     "type": "SELECT",
     "sourceType": "Boolean",
     "valueKey": "ccPlan_closing___AIR_not_required",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "f120d0f7-a433-4e06-9e47-4115083c06a1": {
     "label": "AIR plan extension due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccAIR_plan_extension_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "93f6fedb-99b6-42c5-8f58-c545237fdd33": {
     "label": "AIR plan extension upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccAIR_plan_extension_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "36248f6b-eaef-49ea-8ed6-f7869087461b": {
     "label": "AIR plan extension reason",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccAIR_plan_extension_reason",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "6d0038a7-c7e1-447d-87a2-53cded02595d": {
     "label": "AIR notes",
     "type": "LONG_TEXT",
     "sourceType": "Memo",
     "valueKey": "ccAIR_notes",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "8cbf9695-0373-4ceb-9f8c-440fdbbcd7cb": {
     "label": "Assessment due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccAssessment_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "dcdc2cbc-f39d-4209-99c5-6de0d283a9f8": {
     "label": "Assessment completed date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccAssessment_completed_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "1eb741c2-e390-4192-ac5c-3e677744213b": {
     "label": "Assessment/plan due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccAssessment_Plan_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "cfc479c5-6640-484a-a138-135312438b09": {
     "label": "Assessment/plan upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccAssessment_plan_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "08b9a6f6-e4c0-4d27-9739-db72364a7c5b": {
     "label": "Assessment/plan extension reason",
@@ -1880,28 +1914,32 @@ const caseManagerFieldsById = {
         "value": "12867",
         "label": "Client commitments"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "0c062d08-b59a-4124-ab66-77256016b56a": {
     "label": "DVA consent to proceed date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccDVA_consent_to_proceed_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "f5bb28e3-9a4f-4b03-ab2d-68aa2a232c23": {
     "label": "Ongoing File Audit Completion Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccOngoing_File_Audit_Completion_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "a3e6a7d4-3ff6-49d5-94df-c035092e7695": {
     "label": "Ongoing File Audit Corrective Actions/Feedback",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccOngoing_File_Audit_Corrective_Actions_Feedback",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "42299b4d-c7af-42fd-a30d-d5df4ae77b2f": {
     "label": "Closure Outcome",
@@ -1977,49 +2015,56 @@ const caseManagerFieldsById = {
         "value": "13969",
         "label": "Claimant resigned"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "77b63a72-4b7a-4fa1-8c37-4a832d20855d": {
     "label": "Client Contact Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccClient_Contact_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "c5fbbf31-9ad6-47bc-aeea-5384b0a629dc": {
     "label": "Client Contact - Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccClient_Contact___Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "5c69a0da-3382-48a8-b642-1faf0290d575": {
     "label": "ADL Assessment Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccADL_Assessment_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "4ce008ab-f6af-41b3-9ff4-5449d64c324b": {
     "label": "ADL Assessment Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccADL_Assessment_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "cac8183f-40f8-406f-9c78-68ce81e565da": {
     "label": "ADL Assessment Report Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccADL_Assessment_Report_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "43028c35-db12-4763-b2a8-f1d7e76baab8": {
     "label": "ADL Assessment Report Upload Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccADL_Assessment_Report_Upload_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "31052097-21bf-4445-8f30-43c897ab2b86": {
     "label": "Employer Contacted",
@@ -2035,7 +2080,8 @@ const caseManagerFieldsById = {
         "value": "13661",
         "label": "No"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "c94818ad-2d99-4ddc-b1bb-75f41dfbf35a": {
     "label": "Treater/GP Contacted",
@@ -2051,14 +2097,16 @@ const caseManagerFieldsById = {
         "value": "13663",
         "label": "No"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "c7265fb1-6e2d-4c4b-8fdf-b2efb9fe14fe": {
     "label": "Verbatim Feedback",
     "type": "LONG_TEXT",
     "sourceType": "Text",
     "valueKey": "ccVerbatim_Feedback",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "b9875e7a-914c-4514-b0e1-e55cbf9ea2fb": {
     "label": "Assessment Status at time of completion",
@@ -2074,7 +2122,8 @@ const caseManagerFieldsById = {
         "value": "13964",
         "label": "Assessment not completed"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "5372b3ee-3882-4e67-862f-f2aff271924c": {
     "label": "EE Outcome",
@@ -2094,7 +2143,8 @@ const caseManagerFieldsById = {
         "value": "13688",
         "label": "Recommended to an occupational rehabilitation program"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "661c171e-4c0e-436a-8057-3a1e1744b8fe": {
     "label": "Further Referral",
@@ -2110,70 +2160,80 @@ const caseManagerFieldsById = {
         "value": "13666",
         "label": "Occupational Rehab Referral"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "47f56f20-daf6-4eea-b535-6106dee4131e": {
     "label": "PCN provided date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPCN_signed_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "f1bf1229-ac72-4684-bc2d-d34e838dcb3a": {
     "label": "PCN client refused",
     "type": "SELECT",
     "sourceType": "Boolean",
     "valueKey": "ccPCN_client_refused",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "6393ac14-c276-4b45-b80a-7cee43fdc664": {
     "label": "Medical disclosure form signed",
     "type": "SELECT",
     "sourceType": "Boolean",
     "valueKey": "ccMedical_disclosure_form_signed",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "a83aa059-a20d-495c-a6aa-a47a2ccffba5": {
     "label": "Medical disclosure client refused",
     "type": "SELECT",
     "sourceType": "Boolean",
     "valueKey": "ccMedical_disclosure_client_refused",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "720e0fe4-6db4-407d-84f0-1a0cef2ad7c7": {
     "label": "Referral acknowledged date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccReferral_acknowledged_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "f7870f12-86a4-4da9-92ce-f0d15d6b1eda": {
     "label": "Client contact date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccClient_contact_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "b0f0260e-b5ee-4a62-878e-0aa3e37e670c": {
     "label": "Metlife Status",
     "type": "LONG_TEXT",
     "sourceType": "Text",
     "valueKey": "ccMetlife_Status",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "746e852d-5e87-4297-86bf-e058c156e240": {
     "label": "Metlife Proposed Action",
     "type": "LONG_TEXT",
     "sourceType": "Text",
     "valueKey": "ccMetlife_Proposed_Action",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "1ff32a39-0f6a-4bf2-a579-22f6c87fd5de": {
     "label": "Metlife Date of Update",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccUpdated___date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "21459d95-d3a2-4d25-bcfa-280c6b3e0d4f": {
     "label": "Metlife Outcome capacity at time of completion",
@@ -2205,7 +2265,8 @@ const caseManagerFieldsById = {
         "value": "13975",
         "label": "Unfit for work"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "7d5974e6-020e-41ad-a568-175134f97278": {
     "label": "Metlife Outcome status at time of completion",
@@ -2253,14 +2314,16 @@ const caseManagerFieldsById = {
         "value": "13985",
         "label": "Working same duties partial hours"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "c43f1cc1-9281-48bd-8ec7-e7cf803f2abf": {
     "label": "Metlife Issues/Concerns",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccMetlife_Issues_Concerns",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "7e4443a5-5b61-406b-bb0b-44f789648292": {
     "label": "Metlife Further Rehab Recommended",
@@ -2276,7 +2339,8 @@ const caseManagerFieldsById = {
         "value": "13987",
         "label": "No"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "0ceaa9fe-4598-409f-9cf6-9a60288d0917": {
     "label": "ORAMS Ax Referral Method",
@@ -2292,7 +2356,8 @@ const caseManagerFieldsById = {
         "value": "12885",
         "label": "Off Portal"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "51a68359-a6d7-45fe-9d12-0be4f9017690": {
     "label": "ORAMS Ax Agency",
@@ -2472,7 +2537,8 @@ const caseManagerFieldsById = {
         "value": "13214",
         "label": "TT"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "37cb7a00-f6c7-46cc-8c60-51e62f3ba170": {
     "label": "ORAMS Ax Region",
@@ -2596,56 +2662,64 @@ const caseManagerFieldsById = {
         "value": "13598",
         "label": "WA South West"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "3dc63933-1707-426d-8664-65947690119c": {
     "label": "ORAMS Ax Accepted Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_Ax_Accepted_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "b9ab977d-89bb-4727-ac31-e3c6b216212a": {
     "label": "ORAMS Ax Assessment Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_Ax_Assessment_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "ca6c9aeb-3114-463a-a890-74d70380bacc": {
     "label": "ORAMS Ax Assessment Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_Ax_Assessment_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "eaa3e827-fac8-4438-9cb3-7fa9d14e2389": {
     "label": "ORAMS Ax Preliminary Findings Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_Ax_Preliminary_Findings_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "976df2d5-9d83-480f-84d5-1c9ed872926c": {
     "label": "ORAMS Ax Preliminary Findings Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_Ax_Preliminary_Findings_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "95af407e-dfad-4dc3-80aa-4c1b7f42c525": {
     "label": "ORAMS Ax Assessment Report Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_Ax_Assessment_Report_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "9a1d1278-e943-4d06-889c-6c3b9b09ff52": {
     "label": "ORAMS Ax Assessment Report Submitted Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_Ax_Assessment_Report_Submitted_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "022f07b7-9854-4ada-8117-093e44b437c1": {
     "label": "ORAMS Ax Referral Acceptance Exception Reason",
@@ -2673,14 +2747,16 @@ const caseManagerFieldsById = {
         "value": "12937",
         "label": "Information Delay"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "62c09f72-ebdc-4b07-89ef-4bfb0214c995": {
     "label": "ORAMS Ax Referral Acceptance Exception Comment",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccORAMS_Ax_Referral_Acceptance_Exception_Comment",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "871d9da9-3011-4dec-af39-89a9a8d3c76f": {
     "label": "ORAMS Ax Assessment Completed Exception Reason",
@@ -2708,14 +2784,16 @@ const caseManagerFieldsById = {
         "value": "12942",
         "label": "Provider"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "24358e08-5e56-40ce-a5c0-505a9d0fa4be": {
     "label": "ORAMS Ax Assessment Completed Exception Comment",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccORAMS_Ax_Assessment_Completed_Exception_Comment",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "48fec116-0408-4a24-94c4-6c56e430cd86": {
     "label": "ORAMS Ax Report Completed Exception Reason",
@@ -2743,14 +2821,16 @@ const caseManagerFieldsById = {
         "value": "12947",
         "label": "Provider"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "b0973f78-4eae-4323-bd09-5241bed006c0": {
     "label": "ORAMS Ax Report Completed Exception Comment",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccORAMS_Ax_Report_Completed_Exception_Comment",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "3d6f6b86-a935-4761-9d1e-d9532fb6d5d5": {
     "label": "ORAMS - Referral Method",
@@ -2766,7 +2846,8 @@ const caseManagerFieldsById = {
         "value": "12949",
         "label": "Off Portal"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "cd3354e5-a4a6-448d-b3a4-571bc6d4d037": {
     "label": "ORAMS - Agency",
@@ -2946,7 +3027,8 @@ const caseManagerFieldsById = {
         "value": "13170",
         "label": "TT"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "ed44fae2-999b-4505-95a9-de3e3ac4327a": {
     "label": "ORAMS - Region",
@@ -3070,84 +3152,96 @@ const caseManagerFieldsById = {
         "value": "13593",
         "label": "WA South West"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "61fbf844-65d7-4743-b031-5a417350c97e": {
     "label": "ORAMS - Accepted Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS___Accepted_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "b68134e4-6e41-4904-a3e7-7ed35170f066": {
     "label": "ORAMS - Draft Program Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS___Draft_Program_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "2dc2aa01-7ac0-40d2-be56-745c272343ad": {
     "label": "ORAMS - Draft Program Submitted Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS___Draft_Program_Submitted_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "96906dee-da24-42da-aaae-220ab0bfc938": {
     "label": "ORAMS - Program Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS___Program_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "4cd0f8e2-65a2-4e8c-b04e-7b9d722ed53b": {
     "label": "ORAMS - Program Submitted Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS___Program_Submitted_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "d6ab72c0-17bc-4dcd-a33e-1e652ef63ec2": {
     "label": "ORAMS - Program Expiry Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS___Program_Expiry_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "4be0ae15-cbe2-4e82-a850-28bdcc002c58": {
     "label": "ORAMS - Program Alteration Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS___Program_Alteration_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "f717a90d-aadf-48d7-aa48-4d29381a3933": {
     "label": "ORAMS - Program Alteration Submitted Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS___Program_Alteration_Submitted_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "34a99a66-e01e-443a-9b04-ea70663329a2": {
     "label": "ORAMS - Service Cessation Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS___Service_Cessation_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "2a18d289-3485-45b6-9d62-37eb8b95beb9": {
     "label": "ORAMS - Cessation Report Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS___Cessation_Report_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "f928296d-fb46-40bd-8871-42aec37dafc7": {
     "label": "ORAMS - Cessation Report Submitted Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS___Cessation_Report_Submitted_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "91144622-2584-498b-bdf3-c1fdafa9f6c1": {
     "label": "ORAMS - Referral Acceptance Exception Reason",
@@ -3175,14 +3269,16 @@ const caseManagerFieldsById = {
         "value": "13006",
         "label": "Provider"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "fa02ad8f-4749-40b7-8ff2-e220d7cfa87c": {
     "label": "ORAMS - Referral Acceptance Exception Comment",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccORAMS___Referral_Acceptance_Exception_Comment",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "1ad3ec4c-ed6d-4325-8512-562bce24bab7": {
     "label": "ORAMS - Program Completed Exception Reason",
@@ -3210,14 +3306,16 @@ const caseManagerFieldsById = {
         "value": "13011",
         "label": "Provider"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "d6319d39-facc-47c6-8f98-7d69ce5f6be7": {
     "label": "ORAMS - Program Completed Exception Comment",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccORAMS___Program_Completed_Exception_Comment",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "4a0949ae-dd10-46dc-a180-8726e3242ccc": {
     "label": "ORAMS - Cessation Report Completed Exception Reason",
@@ -3245,14 +3343,16 @@ const caseManagerFieldsById = {
         "value": "13016",
         "label": "Provider"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "cbd30b2b-cbe4-4215-8a37-4e187d706db0": {
     "label": "ORAMS - Cessation Report Completed Exception Comment",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccORAMS___Cessation_Report_Completed_Exception_Comment",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0acca878-6809-4fb8-bc95-e35a7cfb4585": {
     "label": "ORAMS - RTW Outcome",
@@ -3304,7 +3404,8 @@ const caseManagerFieldsById = {
         "value": "13027",
         "label": "11 - Unknown"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "cf5a9e76-aa4c-496a-970d-e881cf46b51e": {
     "label": "ORAMS SS Referral Method",
@@ -3320,7 +3421,8 @@ const caseManagerFieldsById = {
         "value": "13029",
         "label": "Off Portal"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "0d1809dd-6f63-4682-ab68-0798f26b5f87": {
     "label": "ORAMS SS Agency",
@@ -3500,7 +3602,8 @@ const caseManagerFieldsById = {
         "value": "13171",
         "label": "NDIS"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "90e00aa5-ebe1-47be-90c4-29a23977f8b6": {
     "label": "ORAMS SS Region",
@@ -3624,56 +3727,64 @@ const caseManagerFieldsById = {
         "value": "13603",
         "label": "WA South West"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "29e31196-2804-42d5-82d9-6efc04a98678": {
     "label": "ORAMS SS Accepted Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_SS_Accepted_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "ddd8b5c0-82a8-4809-889e-ebebb673097c": {
     "label": "ORAMS SS Assessment Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_SS_Assessment_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "28fee365-2676-4291-89a5-7d0a8c4e0324": {
     "label": "ORAMS SS Assessment Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_SS_Assessment_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "4b06dfaf-3fcb-43cf-aefa-0d959d3a84f6": {
     "label": "ORAMS SS Preliminary Findings Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_SS_Preliminary_Findings_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0b6e9d17-03d2-4148-a002-f2e209c83cd0": {
     "label": "ORAMS SS Preliminary Findings Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_SS_Preliminary_Findings_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "d949debf-6e06-45df-9130-60171e4eab01": {
     "label": "ORAMS SS Report Due Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_SS_Report_Due_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "63c1d516-367c-4063-99ce-bcffc34a83d5": {
     "label": "ORAMS SS Report Submitted Date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccORAMS_SS_Report_Submitted_Date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "fd210e22-923d-4176-a9b4-c6d5b135c269": {
     "label": "ORAMS SS Referral Acceptance Exception Reason",
@@ -3701,14 +3812,16 @@ const caseManagerFieldsById = {
         "value": "13080",
         "label": "Provider"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "69104ccd-5cc8-4514-b7b6-b988f78d061e": {
     "label": "ORAMS SS Referral Acceptance Exception Comment",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccORAMS_SS_Referral_Acceptance_Exception_Comment",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "764ffe6d-62a6-4f04-90dd-993ee8a7ff4b": {
     "label": "ORAMS SS Assessment Completed Exception Reason",
@@ -3736,14 +3849,16 @@ const caseManagerFieldsById = {
         "value": "13085",
         "label": "Provider"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "15ea3b1f-f290-489e-9304-6fc9f84d951d": {
     "label": "ORAMS SS Assessment Completed Exception Comment",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccORAMS_SS_Assessment_Completed_Exception_Comment",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "76b54f37-2462-429e-a21c-c7f85b3583a0": {
     "label": "ORAMS SS Report Completed Exception Reason",
@@ -3771,378 +3886,432 @@ const caseManagerFieldsById = {
         "value": "13090",
         "label": "Provider"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "59a9d119-8d4e-47bc-b414-f15b4cb2d87b": {
     "label": "ORAMS SS Report Completed Exception Comment",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccORAMS_SS_Report_Completed_Exception_Comment",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "87becc33-2ccb-4d4f-ab35-dcdc6135af32": {
     "label": "Plan completion due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPlan_completion_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "faf1ee3c-f3d3-4d0c-b9cb-01d1b348df92": {
     "label": "Plan completion actual date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPlan_completion_actual_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0b228c5d-cfc0-4d18-bed3-6d92cd8bba96": {
     "label": "Plan extension granted",
     "type": "SELECT",
     "sourceType": "Boolean",
     "valueKey": "ccPlan_extension_granted",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "e9be40b5-400a-47c9-ba50-20ffa14a6886": {
     "label": "Closure report upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccClosure_report_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "6c4de319-d922-4b26-a5fd-e8fcb45c44dc": {
     "label": "PR 1 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_1_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "ebefb454-1986-43dd-b5f8-af9e81efa373": {
     "label": "PR 1 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_1_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "6e791b41-7235-4722-9c6e-a9bb02818a18": {
     "label": "PR 2 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_2_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "ea1022f9-7bfc-45c7-b47e-212071f5586d": {
     "label": "PR 2 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_2_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "2d17af61-cccb-4d25-b8d5-b563979b2bdb": {
     "label": "PR 3 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_3_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "7f30bebe-d601-4b46-86db-d49d31e60d49": {
     "label": "PR 3 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_3_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "e5368ce5-e6fd-4cab-b5c5-d6a01a51eaee": {
     "label": "PR 4 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_4_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "bfddd2ee-a262-47bf-b2d0-f17e88c290ca": {
     "label": "PR 4 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_4_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "facdce8e-a2f1-4422-9896-07b3b7c2374c": {
     "label": "PR 5 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_5_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "4fba8f58-8f37-4d36-98e6-5f4709318922": {
     "label": "PR 5 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_5_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "bb2b0a7d-4854-4ff1-9e92-a8d2f120f344": {
     "label": "PR 6 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_6_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0a4c21e4-3fd0-410e-a1ab-b59413ded5b0": {
     "label": "PR 6 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_6_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "58e2b0c1-b774-4b84-8d5d-b5177b6f3f6c": {
     "label": "PR 7 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_7_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "296a1df2-223a-46a2-bc15-b3cfdab13a50": {
     "label": "PR 7 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_7_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "291db64e-45a7-487b-b05f-6842445dc492": {
     "label": "PR 8 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_8_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "b31a678d-4845-4769-8434-494b4f192129": {
     "label": "PR 8 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_8_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0c19e9bd-3b36-466c-8abc-199e064cd271": {
     "label": "PR 9 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_9_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0058b1de-e47b-4333-a70d-618fc5f75f57": {
     "label": "PR 9 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_9_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "85cf3010-a91e-4dbc-8006-a4cdf9584e60": {
     "label": "PR 10 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_10_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "a4323061-cf16-47b9-a4d8-10eacecb7c36": {
     "label": "PR 10 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_10_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "6d9ccfb4-ab3a-4880-8112-6d324e0192d5": {
     "label": "PR 11 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_11_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "46df2548-c492-4bde-985f-a1d00270aaf5": {
     "label": "PR 11 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_11_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "969bf3a0-79d4-4e35-9ecf-b69a08ed7cf1": {
     "label": "PR 12 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_12_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "c41c5863-6250-4556-8db5-199178e466a1": {
     "label": "PR 12 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_12_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "c653a8ba-561a-428b-a2f1-c606b64121f2": {
     "label": "PR 13 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_13_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "5dd56e51-e252-488e-a2ab-c150f13dc60f": {
     "label": "PR 13 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_13_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "56b0da44-69ad-4b85-aeed-e828ce709c3f": {
     "label": "PR 14 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_14_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "34a5a778-571b-4a79-9ad9-365a08a7a4ee": {
     "label": "PR 14 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_14_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0b65d4f0-54ac-4232-97ab-ac154cd640aa": {
     "label": "PR 15 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_15_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "873965f3-f6b7-49fa-844a-4c1710c09868": {
     "label": "PR 15 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_15_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "c4807d65-932d-4681-998e-081dd1579ae1": {
     "label": "PR 16 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_16_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "d57e3701-3f0d-4fb5-97e1-acf1211b1f01": {
     "label": "PR 16 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_16_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "c074252e-3905-44d5-bb26-52b6af53e515": {
     "label": "PR 17 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_17_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0843ca15-32d7-4e05-b601-ef18ed380347": {
     "label": "PR 17 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_17_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "bc054b2d-e25d-4690-889f-42f3a181ef9f": {
     "label": "PR 18 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_18_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "15d9d6a2-37b6-459c-ba79-13d56e6568f1": {
     "label": "PR 18 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_18_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "4c8c1ba1-aa1b-480e-974b-e33ad0dbe31b": {
     "label": "PR 19 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_19_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "25cd315f-44a7-49f6-88a7-daf283b9653e": {
     "label": "PR 19 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_19_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "c79f196a-2adf-451e-9083-d69c4b2eb54f": {
     "label": "PR 20 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_20_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "ca23133c-a3c6-4a89-bb40-8a1b34f0b57e": {
     "label": "PR 20 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_20_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "e1487bee-a65e-4611-9ec7-e2c14732cdeb": {
     "label": "PR 21 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_21_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0e025bc5-7957-4a57-a941-5ff15a4a7e1b": {
     "label": "PR 21 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_21_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "9ab76dca-d4ab-43d4-9e48-7c4d97e9362b": {
     "label": "PR 22 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_22_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "166ae180-ed7a-4da8-8122-0e93f2e2823c": {
     "label": "PR 22 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccPR_22_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "e4913065-f857-470b-8b5a-f243612b26a8": {
     "label": "Status",
     "type": "LONG_TEXT",
     "sourceType": "Text",
     "valueKey": "ccStatus",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "3a5706ef-81c2-4214-8cd0-d9cdfd3809e8": {
     "label": "Proposed Action",
     "type": "LONG_TEXT",
     "sourceType": "Text",
     "valueKey": "ccProposedAction",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0a30857c-d0b6-44cc-b3a9-1e24f798345a": {
     "label": "Date of Update.",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccDateofUpdate_",
-    "options": []
+    "options": [],
+    "matchType": "fuzzy"
   },
   "c55847a6-f829-4fc1-81b9-fe4d3b932184": {
     "label": "Issues/Concerns",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccIssues_Concerns",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "2f7e31f7-7ec7-4ff3-8de8-f3457f5c1767": {
     "label": "Outcome Capacity at time of completion",
@@ -4174,7 +4343,8 @@ const caseManagerFieldsById = {
         "value": "12772",
         "label": "Some capacity for work - Reduced hours or restrictions"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "7ec598fb-ce34-4249-bffb-e1fdfd5e3c27": {
     "label": "Outcome Status at time of completion",
@@ -4230,7 +4400,8 @@ const caseManagerFieldsById = {
         "value": "12784",
         "label": "Working same duties reduced hours"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "7412af17-195e-4120-aa93-d4fc0c8dfe9c": {
     "label": "Further Rehab Recommended",
@@ -4282,7 +4453,8 @@ const caseManagerFieldsById = {
         "value": "13866",
         "label": "N/A"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "bf2f4fd7-9a68-4718-a394-f012a2f14916": {
     "label": "Pre-Survey Assessment for Pain Scale",
@@ -4338,7 +4510,8 @@ const caseManagerFieldsById = {
         "value": "13883",
         "label": "N/A"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "dde29b96-b8c5-44dd-8870-b4cba719c877": {
     "label": "Post Survey Assessment for Pain Scale",
@@ -4394,7 +4567,8 @@ const caseManagerFieldsById = {
         "value": "13895",
         "label": "N/A"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "0b1b5d5b-7486-41d7-9926-7c7b34523262": {
     "label": "Pre Survey Assessment for DASS 21 - Depression",
@@ -4426,7 +4600,8 @@ const caseManagerFieldsById = {
         "value": "13901",
         "label": "Severe 21-27"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "5cd95fe6-6281-4063-9b52-c9ede7d638f6": {
     "label": "Pre Survey Assessment for DASS 21 - Anxiety",
@@ -4458,7 +4633,8 @@ const caseManagerFieldsById = {
         "value": "13907",
         "label": "Severe 15-19"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "c7413058-d389-4d3c-979c-8aa2a0c8320f": {
     "label": "Pre Survey Assessment for DASS 21 - Stress",
@@ -4490,7 +4666,8 @@ const caseManagerFieldsById = {
         "value": "13913",
         "label": "Severe 26-33"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "fba05540-e971-496d-8319-ea1b423dff3a": {
     "label": "Post Survey Assessment for DASS 21 - Depression",
@@ -4522,7 +4699,8 @@ const caseManagerFieldsById = {
         "value": "13950",
         "label": "Severe 21-27"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "78a4b119-376a-4017-b373-748a3e659018": {
     "label": "Post Survey Assessment for DASS 21 - Anxiety",
@@ -4554,7 +4732,8 @@ const caseManagerFieldsById = {
         "value": "13956",
         "label": "Severe 15-19"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "9fa467db-8ad6-4060-afef-12ba66b5af41": {
     "label": "Post Survey Assessment for DASS 21 - Stress",
@@ -4586,7 +4765,8 @@ const caseManagerFieldsById = {
         "value": "13962",
         "label": "Severe 26-33"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "8af75556-16c7-4e42-b55d-1cb48c8536c5": {
     "label": "Case Status",
@@ -4634,7 +4814,8 @@ const caseManagerFieldsById = {
         "value": "13257",
         "label": "In Assessment"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "92ba1447-9a9a-4cc1-b347-51524094e5cd": {
     "label": "ADMIN to Update",
@@ -4994,14 +5175,16 @@ const caseManagerFieldsById = {
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccIssues_Concers",
-    "options": []
+    "options": [],
+    "matchType": "fuzzy"
   },
   "723bd52c-28df-4707-b272-e0730d080091": {
     "label": "Date of Update,",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccDate",
-    "options": []
+    "options": [],
+    "matchType": "fuzzy"
   },
   "dbd4b189-7265-471c-9483-9ac83d0c3f3a": {
     "label": "......CLOSURE.(Consultant to Update).............",
@@ -5146,63 +5329,72 @@ const caseManagerFieldsById = {
     "type": "SELECT",
     "sourceType": "Boolean",
     "valueKey": "ccVP_Plan_closing___AIR_not_required",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "3981652a-aa3e-4657-86aa-b609a70984e3": {
     "label": "VP AIR plan extension due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_AIR_plan_extension_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "5dbe3345-e51d-4b7c-80f7-a7e4d24383b3": {
     "label": "VP AIR plan extension upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_AIR_plan_extension_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "b59d7f2e-5b7c-44af-a50b-c4a11321a796": {
     "label": "VP AIR plan extension reason",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccVP_AIR_plan_extension_reason",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "94a662cc-6d5f-4471-beaa-c2c2b395d50f": {
     "label": "VP AIR notes",
     "type": "LONG_TEXT",
     "sourceType": "Memo",
     "valueKey": "ccVP_AIR_notes",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "86ca1ea1-d74a-4038-b93f-f2a650aea4bc": {
     "label": "VP Assessment due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_Assessment_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "89c4cc1c-9284-455c-a37a-fc797c31af36": {
     "label": "VP Assessment completed date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_Assessment_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "9933bd5c-14ad-4e8e-ad7c-a25164740210": {
     "label": "VP Assessment/plan due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_Assessment_plan_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "ee89366a-a14d-4469-a583-08ca116f1a2d": {
     "label": "VP Assessment/plan upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_Assessment_plan_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "81fe6d25-e210-4349-ae55-c812012b6cdb": {
     "label": "VP Assessment/plan extension reason",
@@ -5226,126 +5418,144 @@ const caseManagerFieldsById = {
         "value": "13608",
         "label": "Client hospitalisation/illness"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "ded89c0a-554e-4f49-9863-eda4f59c25af": {
     "label": "VP DVA consent to proceed date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_DVA_consent_to_proceed_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0721ae47-8876-4a6a-a2e7-04aad092585e": {
     "label": "VP PCN provided date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_PCN_signed_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "7236d78e-3fea-4864-b695-d524bf409195": {
     "label": "VP PCN client refused",
     "type": "SELECT",
     "sourceType": "Boolean",
     "valueKey": "ccVP_PCN_client_refused",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "1608a94e-0548-48d8-a6f1-d4a6d55b5d9f": {
     "label": "VP Medical disclosure form signed",
     "type": "SELECT",
     "sourceType": "Boolean",
     "valueKey": "ccVP_Medical_disclosure_form_signed",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "32608ef8-22ca-4cf8-a61e-58bbd0a95970": {
     "label": "VP medical disclosure form client refused",
     "type": "SELECT",
     "sourceType": "Boolean",
     "valueKey": "ccVP_medical_disclosure_form_client_refused",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "87d8e8ea-bcd3-4dc2-b7c0-8d026c49bcf4": {
     "label": "VP Referral acknowledged date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_Referral_acknowledged_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "3c6871c1-ae3d-4820-b0bf-00187698cba0": {
     "label": "VP Client contact date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_Client_contact_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "7294542f-e246-4043-a9e6-32303abf253b": {
     "label": "VP Plan completion due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_Plan_completion_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "0c90927d-2404-41a2-947f-b12712f0c0e7": {
     "label": "VP Plan completion actual date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_Plan_completion_actual_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "7bcb8bda-5ba0-4e75-8d27-eebc1bc21b8a": {
     "label": "VP Plan extension granted",
     "type": "SELECT",
     "sourceType": "Boolean",
     "valueKey": "ccVP_Plan_extension_granted",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "43b94917-aae6-4607-80cc-602fa8311335": {
     "label": "VP Closure report upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_Closure_report_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "e548cf6e-0224-47be-a614-b6de07adcd93": {
     "label": "VP PR 1 due date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_PR_1_due_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "c5f3c629-3175-420d-8921-49e33fc44e4c": {
     "label": "VP PR 1 upload date",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccVP_PR_1_upload_date",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "f46cf736-3818-4682-873b-220c27fbd7ae": {
     "label": "WCQLD Status",
     "type": "LONG_TEXT",
     "sourceType": "Text",
     "valueKey": "ccWCQLD_Status",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "59f8d4a3-bcc1-4c98-a77d-b6e327c46b3c": {
     "label": "WCQLD Proposed Action",
     "type": "LONG_TEXT",
     "sourceType": "Text",
     "valueKey": "ccWCQLD_Proposed_Action",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "9e5f63b6-80c0-4973-a186-95ec190ca7e7": {
     "label": "WCQLD Date of Update",
     "type": "DATE",
     "sourceType": "Date",
     "valueKey": "ccWCQLD_Date_of_Update",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "caf6a3a3-27bd-40b5-ac1f-41ac7f6c4d9c": {
     "label": "WCQLD Issues/Concerns",
     "type": "SHORT_TEXT",
     "sourceType": "Text",
     "valueKey": "ccWCQLD_Issues_Concerns",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "901b4e28-d8b4-4018-a697-4adb76fba851": {
     "label": "Closure Outcome.",
@@ -5385,7 +5595,8 @@ const caseManagerFieldsById = {
         "value": "13988",
         "label": "Assessment Only"
       }
-    ]
+    ],
+    "matchType": "fuzzy"
   },
   "7c6334f3-d044-45f8-9a82-47ab86468979": {
     "label": "If No RTW - Reason",
@@ -5429,35 +5640,40 @@ const caseManagerFieldsById = {
         "value": "13844",
         "label": "Other"
       }
-    ]
+    ],
+    "matchType": "exact"
   },
   "c741e158-0796-4330-a774-ae0c55dea4c2": {
     "label": "Welfare event notification received",
     "type": "DATE",
     "sourceType": "Date Time",
     "valueKey": "ccWelfare_event_notification_received",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "62fb885e-4840-4673-b395-4788aa9510b2": {
     "label": "Welfare event notified to DVA by phone",
     "type": "DATE",
     "sourceType": "Date Time",
     "valueKey": "ccWelfare_event_notified_to_DVA_by_phone",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "746e166b-81a3-4ead-84b0-f5df5ba63c22": {
     "label": "Welfare event report provided to DVA",
     "type": "DATE",
     "sourceType": "Date Time",
     "valueKey": "ccWelfare_event_report_provided_to_DVA",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   },
   "d5435e79-26bf-4590-912f-5f1173758ff0": {
     "label": "Welfare events notes",
     "type": "LONG_TEXT",
     "sourceType": "Memo",
     "valueKey": "ccWelfare_events_notes",
-    "options": []
+    "options": [],
+    "matchType": "exact"
   }
 };
 
@@ -5737,6 +5953,10 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "pre-dis-occupation--pre-dis-employer--partial-rtw",
       "label": "Pre-dis occupation / Pre-dis employer / Partial RTW"
+    },
+    {
+      "value": "14773d6c-aba8-4a87-9605-321fdac6c320",
+      "label": "Unknown"
     }
   ],
   "29e958fe-c3d8-460e-ae2f-70dd199d631d": [
@@ -6637,6 +6857,10 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "yes",
       "label": "Yes"
+    },
+    {
+      "value": "b8d579be-e87e-4ba3-afad-a11cb54c35a6",
+      "label": "No"
     }
   ],
   "08b9a6f6-e4c0-4d27-9739-db72364a7c5b": [
@@ -6873,6 +7097,10 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "6cdd2507-32d6-49a5-8ba3-6c4ca865f9f4",
       "label": "No"
+    },
+    {
+      "value": "3f4c06eb-540f-4ddc-a909-1d6c5e4ef4db",
+      "label": "Yes"
     }
   ],
   "21459d95-d3a2-4d25-bcfa-280c6b3e0d4f": [
@@ -7135,6 +7363,26 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "tt-treasury",
       "label": "TT Treasury"
+    },
+    {
+      "value": "098a1932-9ffb-46aa-8a81-0f2d04119b3f",
+      "label": "NDIA"
+    },
+    {
+      "value": "ec4b8725-b71c-4bcc-ad5d-7194deffbcac",
+      "label": "SA"
+    },
+    {
+      "value": "933ffb2a-e24e-4638-87c7-a8f7a78ce89e",
+      "label": "NDIS"
+    },
+    {
+      "value": "091a38ba-b52b-4650-a92b-0c4cb0032cef",
+      "label": "ACQSC"
+    },
+    {
+      "value": "48a3ef88-1b88-466f-b7af-c68e1e01c13b",
+      "label": "AFP"
     }
   ],
   "37cb7a00-f6c7-46cc-8c60-51e62f3ba170": [
@@ -7503,6 +7751,42 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "tt-treasury",
       "label": "TT Treasury"
+    },
+    {
+      "value": "0313344e-cb60-44ec-8c9c-3114b9dd2b2e",
+      "label": "SA"
+    },
+    {
+      "value": "2e2863c0-5aa8-4807-b005-3b0c81238c7e",
+      "label": "NDIA"
+    },
+    {
+      "value": "bda2c94f-32ed-4c6f-a673-c2a1d47eb4eb",
+      "label": "CSIRO"
+    },
+    {
+      "value": "be072a83-e6d6-477a-9f06-da677a734f80",
+      "label": "COMCARE"
+    },
+    {
+      "value": "1c0d02f4-7d2a-42be-afce-e2658d6302a4",
+      "label": "DAFF"
+    },
+    {
+      "value": "4d2e31a1-918c-44ec-adbb-a015ca65e222",
+      "label": "ACQSC"
+    },
+    {
+      "value": "95038390-b49c-47d1-82aa-a862c562024b",
+      "label": "NDIS"
+    },
+    {
+      "value": "17af1ad9-08a8-4ee1-82ac-6a674428ce27",
+      "label": "DoD"
+    },
+    {
+      "value": "2b78db34-ad4d-4b01-b2cd-14e3dc3e03a2",
+      "label": "AFP"
     }
   ],
   "ed44fae2-999b-4505-95a9-de3e3ac4327a": [
@@ -7917,6 +8201,10 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "tt-treasury",
       "label": "TT Treasury"
+    },
+    {
+      "value": "afb79b86-adbc-42db-ae9d-bac28d0a665d",
+      "label": "SA"
     }
   ],
   "90e00aa5-ebe1-47be-90c4-29a23977f8b6": [
@@ -8107,6 +8395,10 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "yes",
       "label": "Yes"
+    },
+    {
+      "value": "35b06d43-1f12-4baa-913e-a813302c8ec1",
+      "label": "No"
     }
   ],
   "2f7e31f7-7ec7-4ff3-8de8-f3457f5c1767": [
@@ -8193,6 +8485,10 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "volunteering",
       "label": "Volunteering"
+    },
+    {
+      "value": "074b3928-f27c-4a3c-94bd-bffd69c1fd05",
+      "label": "Unknown"
     }
   ],
   "7ec598fb-ce34-4249-bffb-e1fdfd5e3c27": [
@@ -8243,6 +8539,14 @@ const customFieldOptionsByCaseManagerId = {
     {
       "value": "working-same-duties-reduced-hours",
       "label": "Working same duties reduced hours"
+    },
+    {
+      "value": "bd831372-8c60-4ca4-ab8a-cde60b55a7d3",
+      "label": "Working Alternate duties reduced hours"
+    },
+    {
+      "value": "44caca07-3b6e-4648-be62-2511c5519900",
+      "label": "Working Alternate Duties full hours"
     }
   ],
   "c94d9cb2-500d-4b43-a5a6-adacfbcd8149": [

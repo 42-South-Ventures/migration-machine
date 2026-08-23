@@ -124,6 +124,7 @@ function buildCustomFieldMapping(fieldsFromCM, fieldsFromNP) {
 
     const newField = candidates[0];
     mapping[oldField.id] = newField.id;
+    caseManagerFieldsById[oldField.id].matchType = matchType;
     if (Array.isArray(newField.options)) {
       optionsByCaseManagerFieldId[oldField.id] = newField.options;
     }

@@ -549,10 +549,10 @@ async function wipeUploadRecords() {
   log.info('Note: single-case workspaces keep their own ledgers — wipe those separately if needed.');
 }
 
-// Deletes everything containing client/staff data scraped from Case Manager
-// (case data, documents, employee lists, the ledger with its staff emails)
-// so the repo is safe to open up — e.g. to AI tooling. caseList.txt stays
-// (just sequential case ids, not sensitive), as do code, config and .env.
+// Deletes everything containing client/staff data scraped from Case Manager,
+// including the migration ledger, so retained progress never points at case
+// exports or documents that have been purged. caseList.txt stays (just
+// sequential case ids), as do code, config and .env.
 async function purgeSensitiveData() {
   const targets = [
     MAIN.dataDir, MAIN.documentsDir, MAIN.sharedFile, MAIN.ledgerFile,
@@ -572,7 +572,7 @@ async function purgeSensitiveData() {
   });
   if (cancelled(sure) || sure !== true) return;
   rmAll(existing);
-  log.success('Purged — no client data remains in the repo (only code, config and .env).');
+  log.success('Purged — no client data or migration progress remains in the repo.');
 }
 
 async function wipeMenu() {

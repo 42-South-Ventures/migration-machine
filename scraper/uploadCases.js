@@ -195,6 +195,7 @@ function toCaseImportDto(
     caseId: caseRecord.caseId,
     clientFirstName: caseRecord.clientFirstName || "Unknown",
     clientLastName: caseRecord.clientLastName || "Unknown",
+    clientTitle: String(caseRecord.clientTitle ?? "").trim(),
     clientEmail: caseRecord.clientEmail || "unknown@example.com",
     clientPhone: caseRecord.clientPhone || "0000 0000 0000",
     claimNumber: caseRecord.claimNumber || "Unknown",
@@ -218,9 +219,6 @@ function toCaseImportDto(
     customerId,
     requirementId: resolveRequirementId(requirementMapping, caseRecord),
   };
-
-  const clientTitle = String(caseRecord.clientTitle ?? "").trim();
-  if (clientTitle) dto.clientTitle = clientTitle;
 
   // No referral date in Case Manager -> none in NotusPoint; a placeholder
   // string would be parsed into an invalid Date and rejected by the DB
